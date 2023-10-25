@@ -1,0 +1,422 @@
+
+    {
+      "isbn": {
+        "S": "9780399590504"
+      },
+      "author": {
+        "S": "Michelle Obama"
+      },
+      "description": {
+        "S": "Michelle Obama's memoir 'Becoming' reflects on her life, from her childhood in Chicago to her years in the White House, in this insightful and candid memoir."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "14.50"
+      },
+      "quantity": {
+        "N": "12"
+      },
+      "rating": {
+        "N": "4.8"
+      },
+      "reviews": {
+        "SS": [
+          "A deeply personal and inspiring account of an extraordinary life.",
+          "Michelle Obama's writing is both eloquent and relatable.",
+          "Becoming is a memoir that resonates with readers from all walks of life."
+        ],
+      "title": {
+        "S": "Becoming"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780399592591"
+      },
+      "author": {
+        "S": "Tara Westover"
+      },
+      "description": {
+        "S": "Tara Westover's memoir 'Educated' tells the astonishing story of her survival and pursuit of education in the face of a challenging and isolated upbringing."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "12.99"
+      },
+      "quantity": {
+        "N": "14"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "An extraordinary tale of self-discovery and triumph against all odds.",
+          "Tara Westover's storytelling is both honest and enlightening.",
+          "Educated is a compelling and thought-provoking memoir."
+        ],
+      "title": {
+        "S": "Educated"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780743247542"
+      },
+      "author": {
+        "S": "Jeannette Walls"
+      },
+      "description": {
+        "S": "Jeannette Walls recounts her tumultuous and unconventional upbringing in her captivating memoir 'The Glass Castle.'"
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "12.99"
+      },
+      "quantity": {
+        "N": "16"
+      },
+      "rating": {
+        "N": "4.6"
+      },
+      "reviews": {
+        "SS": [
+          "A powerful and heart-wrenching account of resilience and determination.",
+          "Jeannette Walls's storytelling is both moving and inspiring.",
+          "This memoir is a must-read for anyone who appreciates the strength of the human spirit."
+        ],
+      "title": {
+        "S": "The Glass Castle"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780062300546"
+      },
+      "author": {
+        "S": "J.D. Vance"
+      },
+      "description": {
+        "S": "J.D. Vance's memoir 'Hillbilly Elegy' offers a personal and thought-provoking reflection on his upbringing in a working-class family and the challenges of the American Dream."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "14.25"
+      },
+      "quantity": {
+        "N": "18"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "A compelling and honest account of the struggles and aspirations of a family from rural America.",
+          "Hillbilly Elegy's storytelling is both insightful and thought-provoking.",
+          "This memoir is a relevant and moving exploration of social and economic challenges."
+        ],
+      "title": {
+        "S": "Hillbilly Elegy"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780399588198"
+      },
+      "author": {
+        "S": "Trevor Noah"
+      },
+      "description": {
+        "S": "Trevor Noah's memoir 'Born a Crime' traces his journey from growing up in apartheid-era South Africa to becoming the host of The Daily Show, all with humor and insight."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "12.25"
+      },
+      "quantity": {
+        "N": "14"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "A hilarious and thought-provoking memoir that offers a unique perspective on life and comedy.",
+          "Trevor Noah's storytelling is both witty and perceptive.",
+          "Born a Crime is a memoir that will have you laughing and learning at the same time."
+        ],
+      "title": {
+        "S": "Born a Crime"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9781524763138"
+      },
+      "author": {
+        "S": "Michelle Obama"
+      },
+      "description": {
+        "S": "Michelle Obama's deeply personal and thought-provoking memoir 'A Promised Land' shares her experiences, values, and hopes for the future."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "14.25"
+      },
+      "quantity": {
+        "N": "20"
+      },
+      "rating": {
+        "N": "4.9"
+      },
+      "reviews": {
+        "SS": [
+          "A powerful and heartfelt memoir that provides insight into the world of politics and leadership.",
+          "Michelle Obama's writing is both eloquent and inspiring.",
+          "A Promised Land is a memoir that resonates with those who believe in the promise of a better future."
+        ],
+      "title": {
+        "S": "A Promised Land"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780399216016"
+      },
+      "author": {
+        "S": "Maya Angelou"
+      },
+      "description": {
+        "S": "Maya Angelou's 'I Know Why the Caged Bird Sings' is a powerful and poetic memoir that resonates with readers of all backgrounds."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "12.99"
+      },
+      "quantity": {
+        "N": "16"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "A powerful and poetic memoir that resonates with readers of all backgrounds.",
+          "Maya Angelou's storytelling is both eloquent and deeply moving.",
+          "I Know Why the Caged Bird Sings is a timeless masterpiece of memoir literature."
+        ],
+      "title": {
+        "S": "I Know Why the Caged Bird Sings"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9781451648546"
+      },
+      "author": {
+        "S": "Cheryl Strayed"
+      },
+      "description": {
+        "S": "Cheryl Strayed's 'Wild' is a brave and inspiring memoir about her solo hike of over a thousand miles along the Pacific Crest Trail."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "11.99"
+      },
+      "quantity": {
+        "N": "16"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "A powerful and transformative journey of self-discovery and healing.",
+          "Cheryl Strayed's storytelling is both honest and moving.",
+          "Wild is a memoir that encourages readers to embrace their own adventures."
+        ],
+      "title": {
+        "S": "Wild"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780061336214"
+      },
+      "author": {
+        "S": "Elizabeth Gilbert"
+      },
+      "description": {
+        "S": "Elizabeth Gilbert's memoir 'Eat, Pray, Love' chronicles her year-long journey of self-discovery and healing through Italy, India, and Indonesia."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "11.25"
+      },
+      "quantity": {
+        "N": "16"
+      },
+      "rating": {
+        "N": "4.6"
+      },
+      "reviews": {
+        "SS": [
+          "A transformative journey of self-discovery and healing that resonates with readers worldwide.",
+          "Elizabeth Gilbert's storytelling is both honest and captivating.",
+          "Eat, Pray, Love is a memoir that encourages readers to embark on their own quests for meaning."
+        ],
+      "title": {
+        "S": "Eat, Pray, Love"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780062347296"
+      },
+      "author": {
+        "S": "Mindy Kaling"
+      },
+      "description": {
+        "S": "Mindy Kaling's memoir 'Is Everyone Hanging Out Without Me?' is a humorous and insightful collection of essays on her life, career, and observations."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "9.99"
+      },
+      "quantity": {
+        "N": "22"
+      },
+      "rating": {
+        "N": "4.6"
+      },
+      "reviews": {
+        "SS": [
+          "A funny and relatable memoir that will have you laughing and nodding along.",
+          "Mindy Kaling's writing is both witty and perceptive.",
+          "Is Everyone Hanging Out Without Me? is a delightful and enjoyable read."
+        ],
+      "title": {
+        "S": "Is Everyone Hanging Out Without Me?"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780307279347"
+      },
+      "author": {
+        "S": "Theodore Roosevelt"
+      },
+      "description": {
+        "S": "Theodore Roosevelt's memoir 'Theodore Roosevelt: An Autobiography' offers an account of his life, from his early years to his presidency, with a focus on his experiences in the American West."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "14.50"
+      },
+      "quantity": {
+        "N": "19"
+      },
+      "rating": {
+        "N": "4.8"
+      },
+      "reviews": {
+        "SS": [
+          "An insightful and well-written memoir by one of America's most iconic figures.",
+          "Theodore Roosevelt's writing is both engaging and informative.",
+          "An Autobiography is a timeless testament to a remarkable life."
+        ],
+      "title": {
+        "S": "Theodore Roosevelt: An Autobiography"
+      }
+    },
+    {
+      "isbn": {
+        "S": "9780802125392"
+      },
+      "author": {
+        "S": "Patti Smith"
+      },
+      "description": {
+        "S": "Patti Smith's memoir 'Just Kids' offers a heartfelt account of her close friendship with Robert Mapplethorpe and their artistic journeys in New York City."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Memoir"
+      },
+      "price": {
+        "N": "11.99"
+      },
+      "quantity": {
+        "N": "18"
+      },
+      "rating": {
+        "N": "4.6"
+      },
+      "reviews": {
+        "SS": [
+          "A touching and artistic memoir that captures the essence of a remarkable era in New York City.",
+          "Patti Smith's storytelling is both evocative and sincere.",
+          "Just Kids is a tribute to friendship and artistic passion."
+        ],
+      "title": {
+        "S": "Just Kids"
+      }
+    },
+  
