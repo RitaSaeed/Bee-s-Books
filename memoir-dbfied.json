@@ -430,7 +430,8 @@
         },
         "title": {
           "S": "From Garage to Grammy: My Musical Odyssey"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000213"
@@ -465,7 +466,8 @@
         },
         "title": {
           "S": "Bridging Borders: One Woman's Mission"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000214"
@@ -500,7 +502,8 @@
         },
         "title": {
           "S": "Transcending Boundaries: My True Self"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000215"
@@ -535,7 +538,8 @@
         },
         "title": {
           "S": "A Chef's Culinary Journey"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000216"
@@ -570,7 +574,8 @@
         },
         "title": {
           "S": "Solo Parenting: Navigating Life's Twists"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000217"
@@ -605,7 +610,8 @@
         },
         "title": {
           "S": "From Suits to Sandals"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000218"
@@ -640,7 +646,8 @@
         },
         "title": {
           "S": "Transcending Boundaries: My True Self"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000219"
@@ -675,7 +682,8 @@
         },
         "title": {
           "S": "A Chef's Culinary Journey"
-      },
+      }
+    },
       {
         "isbn": {
           "S": "10000000220"
@@ -711,6 +719,7 @@
         "title": {
           "S": "Backpacker's Odyssey: Exploring the World"
       }
+    }
     ]
   }
   
