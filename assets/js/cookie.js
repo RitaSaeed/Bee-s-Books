@@ -6,7 +6,6 @@
         for (const param of params) {
             if (param.startsWith('id_token=')) {
                 idToken = param.split('=')[1];
-                setValueToElement('home-user', 'Welcome ' + getValueFromJWT("id_token","cognito:username"));
             }
         }
 
@@ -16,6 +15,9 @@
             window.location.replace(window.location.pathname);
         } 
 
+        if(existingIdTokenCookie) {
+            setValueToElement('home-user', 'Welcome ' + getValueFromJWT("id_token","cognito:username"));
+        }
 
        printJWT(existingIdTokenCookie)
 
