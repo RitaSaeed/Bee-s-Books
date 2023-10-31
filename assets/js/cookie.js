@@ -12,10 +12,10 @@
         if (idToken && !existingIdTokenCookie) {
             const secureFlag = "secure";
             document.cookie = `id_token=${idToken}; ${secureFlag}; path=/`;
-            window.location.replace(window.location.pathname);
         } 
 
-        console.log(existingIdTokenCookie)
+        window.location.replace(window.location.pathname);
+       printJWT(existingIdTokenCookie)
 
         function printJWT(cookie) {
             const jwtParts = jwtCookieValue.split('.');
