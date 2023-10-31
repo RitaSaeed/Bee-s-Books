@@ -19,7 +19,7 @@
        printJWT(existingIdTokenCookie)
 
         function printJWT(cookie) {
-            const jwtParts = jwtCookieValue.split('.');
+            const jwtParts = cookie.split('.');
             if (jwtParts.length === 3) {
                 const jwtPayload = JSON.parse(atob(jwtParts[1])); 
                 console.log("JWT Data:", jwtPayload);
