@@ -51,9 +51,9 @@ function getValueFromJWT(cookieName, fieldName) {
         const decodedPayload = atob(parts[1]);
         const payloadData = JSON.parse(decodedPayload);
         
-        if (payloadData[fieldName]) {
-            return payloadData[fieldName];
-        }
+            if (payloadData[fieldName]) {
+                return payloadData[fieldName];
+            }
         }
     }
     return null; 
@@ -61,10 +61,10 @@ function getValueFromJWT(cookieName, fieldName) {
     
 
 function setValueToElement(elementId, value) {
-const element = document.getElementById(elementId);
-if (element) {
-    element.textContent = value;
-} else {
-    console.error(`Element with ID "${elementId}" not found.`);
-}
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.textContent = value;
+    } else {
+        console.error(`Element with ID "${elementId}" not found.`);
+    }
 }
