@@ -6,6 +6,7 @@
         for (const param of params) {
             if (param.startsWith('id_token=')) {
                 idToken = param.split('=')[1];
+                setValueToElement('home-user', 'Welcome ' + getValueFromJWT("id_token","cognito:username"));
             }
         }
 
@@ -18,7 +19,7 @@
 
        printJWT(existingIdTokenCookie)
 
-        
+       
 
 
         function printJWT(cookie) {
@@ -39,7 +40,7 @@
                 return decodeURIComponent(cookieValue);
               }
             }
-            return null; // Return null if the cookie is not found
+            return null; 
         }
 
         
@@ -62,3 +63,12 @@
             return null; 
           }
           
+
+          function setValueToElement(elementId, value) {
+            const element = document.getElementById(elementId);
+            if (element) {
+              element.textContent = value;
+            } else {
+              console.error(`Element with ID "${elementId}" not found.`);
+            }
+          }
