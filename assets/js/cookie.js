@@ -10,6 +10,7 @@
         }
 
         if (idToken && !existingIdTokenCookie) {
-            document.cookie = `id_token=${idToken}; path=/`;
+            const secureFlag = "secure";
+            document.cookie = `id_token=${idToken}; ${secureFlag}; path=/`;
             window.location.replace(window.location.pathname);
         }
