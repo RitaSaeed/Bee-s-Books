@@ -13,4 +13,17 @@
             const secureFlag = "secure";
             document.cookie = `id_token=${idToken}; ${secureFlag}; path=/`;
             window.location.replace(window.location.pathname);
-        }
+        } 
+
+        print(existingIdTokenCookie)
+        
+        function printJWT(cookie) {
+            const jwtParts = jwtCookieValue.split('.');
+            if (jwtParts.length === 3) {
+                const jwtPayload = JSON.parse(atob(jwtParts[1])); 
+                console.log("JWT Data:", jwtPayload);
+            } else {
+                console.error("Invalid JWT format");
+            }
+        } 
+        
