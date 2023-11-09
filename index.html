@@ -50,8 +50,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
-                                <form>
-                                    <div></div><input class="form-control" type="search" placeholder="Search by title, author, ISBN..." style="border-radius: 32px;border-width: 2px;border-color: #432E36;border-top-right-radius: 32px;border-bottom-right-radius: 32px;margin: 0.5rem;" onkeydown="searchOnEnter(event)"><div><script>
+                                <form><input class="form-control" type="search" placeholder="Search by title, author, ISBN..." style="border-radius: 32px;border-width: 2px;border-color: #432E36;border-top-right-radius: 32px;border-bottom-right-radius: 32px;margin: 0.5rem;" onkeydown="searchOnEnter(event)"><div><script>
     function searchOnEnter(event) {
         if (event.key === "Enter") {
             // Replace 'your_target_page.html' with the actual target page URL
@@ -59,15 +58,14 @@
         }
         console.log(event.key);
     }
-</script></div>
-                                </form>
+</script></div></form>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2 d-lg-flex d-xl-flex justify-content-lg-end align-items-lg-center justify-content-xl-end align-items-xl-center justify-content-xxl-end" style="font-weight: bold;">
                                 <div class="dropdown d-flex flex-shrink-0" style="position: relative;margin: 0.5rem;background: #DB9D47;border-style: solid;border-color: #DB9D47;border-radius: 25px;"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="false" href="#" style="color: white;padding: 0.65rem;">Profile&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
                                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
                                         </svg></a>
-                                    <div class="dropdown-menu"><a class="dropdown-item" id="home-user" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=37etf145kk3a88vougdbkavtsh&amp;response_type=token&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart" href=""><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                                    <div class="dropdown-menu"><a class="dropdown-item" id="home-user" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=37etf145kk3a88vougdbkavtsh&amp;response_type=token&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
                                             </svg></a></div>
                                 </div>
@@ -79,7 +77,137 @@
         </div>
     </nav><!-- End: Navbar Centered Brand -->
     <header class="bg-primary-gradient"></header>
-    <div class="container d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="margin-top: 40px;margin-bottom: 40px;height: 40px;background: #FFFFFF;"><a href="product.html">Click me to go to a sample product page (not complete)</a></div><!-- Start: Footer Multi Column -->
+    <section class="d-md-flex justify-content-md-center" style="height:auto;">
+        <div class="container bg-primary-gradient py-5" style="margin-bottom:37px;margin-top:10px;padding-left:0px;padding-right:0px;">
+            <p style="font-weight:bold;font-size:20px;text-align:center;">Fiction Favorites</p>
+            <div class="carousel slide d-md-flex" data-bs-ride="false" id="carousel-fiction">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-16"><img class="img-fluid" id="img-1" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-17"><img class="img-fluid" id="img-2" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-18"><img class="img-fluid" id="img-3" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-19"><img class="img-fluid" id="img-4" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-20"><img class="img-fluid" id="img-5" src="" style="height:90%;width:100%;"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-21"><img class="img-fluid" id="img-6" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-22"><img class="img-fluid" id="img-7" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-23"><img class="img-fluid" id="img-8" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-24"><img class="img-fluid" id="img-9" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-25"><img class="img-fluid" id="img-10" src="" style="width:100%;height:90%;"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-26"><img class="img-fluid" id="img-11" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-27"><img class="img-fluid" id="img-12" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-28"><img class="img-fluid" id="img-13" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-29"><img class="img-fluid" id="img-14" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-30"><img class="img-fluid" id="img-15" src="" style="width:100%;height:90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-4" role="button" data-bs-slide="prev" style="width:5%;"><span style="color:var(--bs-success-text-emphasis);filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Previous</span></a><!-- End: Previous -->
+                    <!-- Start: Next --><a class="carousel-control-next" href="#carousel-4" role="button" data-bs-slide="next" style="width:5%;"><span style="filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Next</span></a><!-- End: Next -->
+                </div>
+                <div class="carousel-indicators d-md-flex justify-content-md-center align-items-md-end" style="width:auto;height:auto;margin-bottom:0px;filter:invert(100%);"><button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="2"></button></div>
+            </div>
+            <p style="font-weight:bold;font-size:20px;text-align:center;padding-top:5px;">Non-Fiction Favorites</p>
+            <div class="carousel slide d-md-flex" data-bs-ride="false" id="carousel-non-fiction">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-6"><img class="img-fluid" id="img1" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-7"><img class="img-fluid" id="img2" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-8"><img class="img-fluid" id="img3" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-9"><img class="img-fluid" id="img4" src="" style="height:90%;width:100%;"></div>
+                            <div class="col" id="container-10"><img class="img-fluid" id="img5" src="" style="height:90%;width:100%;"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-1"><img class="img-fluid" id="img6" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-2"><img class="img-fluid" id="img7" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-3"><img class="img-fluid" id="img8" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-4"><img class="img-fluid" id="img9" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-5"><img class="img-fluid" id="img10" src="" style="width:100%;height:90%;"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
+                            <div class="col" id="container-11"><img class="img-fluid" id="img11" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-12"><img class="img-fluid" id="img12" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-13"><img class="img-fluid" id="img13" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-14"><img class="img-fluid" id="img14" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-15"><img class="img-fluid" id="img15" src="" style="width:100%;height:90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-4" role="button" data-bs-slide="prev" style="width:5%;"><span style="color:var(--bs-success-text-emphasis);filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Previous</span></a><!-- End: Previous -->
+                    <!-- Start: Next --><a class="carousel-control-next" href="#carousel-4" role="button" data-bs-slide="next" style="width:5%;"><span style="filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Next</span></a><!-- End: Next -->
+                </div>
+                <div class="carousel-indicators d-md-flex justify-content-md-center align-items-md-end" style="width:auto;height:auto;margin-bottom:0px;filter:invert(100%);"><button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="2"></button></div>
+            </div>
+            <div><script> 
+        
+        function randomDynamic(id){
+            
+            var isbnArray = [];
+            for (let x = 0; x < 16; x++){
+                var isbn = Math.floor(Math.random() * (1000000140 - 1000000081 + 1) + 1000000081);
+                while(isbnArray.indexOf(isbn) !== -1){
+                   isbn = Math.floor(Math.random() * (1000000140 - 1000000081 + 1) + 1000000081); 
+                }
+                isbnArray.push(isbn);
+            }
+            for (let x = 0; x < 16; x++){
+                console.log(isbnArray[x]);
+            }
+            
+            var i = 0
+            const intr = setInterval(function() {
+                const apiUrl = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + isbnArray[i];
+                
+                fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP error! Status: ${response.status}');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let imgName = id + i
+                    // console.log(imgName)
+                    document.getElementById(imgName).src = data["Item"]["imgsrc"];
+                    // console.log(data["Item"]["imgsrc"]);
+                })
+                .catch(error => {
+                    console.error('Fetch error:',error);
+                });
+            
+                i++;
+                // console.log(i);
+                if (i > 14) {
+                    clearInterval(intr)
+                }
+            }, 250);
+        }
+        
+        window.onload = function loadFrame() {
+            setTimeout(function () {
+                randomDynamic("img-");
+                randomDynamic("img");
+            }, 100);
+        };
+    </script></div>
+            <hr><a href="product.html">Click me to go to a sample product page (not complete)</a>
+        </div>
+    </section><!-- Start: Footer Multi Column -->
     <footer id="bb-footer" class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
