@@ -1,24 +1,49 @@
-const existingIdTokenCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('id_token='));
-const params = window.location.hash.substring(1).split('&');
+const curURL = window.location.href;
+access_token = ''
 
-let idToken = null;
+if (curURL.includes('code=')) {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const code = urlSearchParams.get('code');
+  window.history.replaceState({}, document.title, 'https://darichards-main-patch-7ef4.dva0ia48yehl5.amplifyapp.com/');
 
-for (const param of params) {
-    if (param.startsWith('id_token=')) {
-        idToken = param.split('=')[1];
+  let post_body = {
+    "body": {
+        "code": code
     }
+  }
+
+  fetch('https://qs84bpwvhb.execute-api.us-east-1.amazonaws.com/beta/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+
+    },
+    body: JSON.stringify(post_body),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Bad token request.');
+      }
+      return response.json();
+    })
+    .then((data) => {
+        console.log(data.body)
+        access_token = data.body.access_token
+        setAccessTokenSessionCookie(data.body.access_token);
+
+        setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
+        updateHref('home-user', window.location.href + "accountPage")
+    })
+    .catch((error) => {
+      console.log('Error: ', error);
+    });
 }
 
-if (idToken && !existingIdTokenCookie) {
-    const secureFlag = "secure";
-    document.cookie = `id_token=${idToken}; ${secureFlag}; path=/`;
-    window.location.replace(window.location.pathname);
-} 
-
-if(existingIdTokenCookie) {
-    setValueToElement('home-user', 'Welcome ' + getValueFromJWT("id_token","cognito:username") + "!");
+function setAccessTokenSessionCookie(accessToken) {
+    
+    var cookieString = `access_token=${accessToken}; path=/;`;
+    document.cookie = cookieString;
 }
-
 
 function printJWT(cookie) {
     const jwtParts = cookie.split('.');
@@ -67,4 +92,111 @@ function setValueToElement(elementId, value) {
     } else {
         console.error(`Element with ID "${elementId}" not found.`);
     }
+}
+
+function updateHref(elementId, url) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.href = url;
+    } else {
+        console.error(`Element with ID "${elementId}" not found.`);
+    }
+}
+
+
+function populateAccountPage() {
+
+    const username = getValueFromJWT('access_token', 'username');
+
+    fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("name").value = data.name;
+      document.getElementById("email").value = data.email;
+      document.getElementById("address").value = data.address;
+    })
+    .catch(error => {
+      console.error("API request failed: ", error);
+    });
+
+}
+
+function updateUserInfo() {
+    const usernameVal = getValueFromJWT('id_token', 'cognito:username')
+    const nameVal = document.getElementById("name").value
+    const emailVal = document.getElementById("email").value
+    const addressVal = document.getElementById("address").value
+
+
+    const requestBody = {
+        username : usernameVal,
+        name : nameVal,
+        email : emailVal,
+        address : addressVal
+    }
+
+    fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+        method: 'POST',
+        body: JSON.stringify(requestBody),
+        headers: {
+            "Content-Type": "application/json"
+          }
+    })
+    .then(response => response.json())
+    .then(data => {
+     console.log(data)
+    })
+    .catch(error => {
+      console.error("API request failed: ", error);
+    });
+
+    closeConfirmationModal()
+}
+
+function deleteUser() {
+    const usernameVal = getValueFromJWT('id_token', 'cognito:username')
+
+    const requestBody = {
+        username : usernameVal,
+        
+    }
+
+    fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+        method: 'DELETE',
+        body: JSON.stringify(requestBody),
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+     window.location.href = '/'
+     console.log(data)
+    })
+    .catch(error => {
+      console.error("API request failed: ", error);
+    });
+
+
+}
+
+
+function showDeleteConfirmationModal() {
+    $('#deletionModal').modal('show');
+}
+
+function closeConfirmationModal() {
+    $('#confirmationModal').modal('hide');
+}
+
+function showConfirmationModal() {
+    $('#confirmationModal').modal('show');
+}
+
+function closeDeletionModal() {
+    $('#deletionModal').modal('hide');
 }
