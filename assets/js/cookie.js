@@ -29,7 +29,8 @@ if (curURL.includes('code=')) {
     .then((data) => {
         console.log(data.body)
         access_token = data.body.access_token
-        setAccessTokenSessionCookie(data.body.access_token);
+        setSessionCookie('access_token', data.body.access_token);
+        setSessionCookie('id_token', data.body.access_token);
 
         setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
         updateHref('home-user', window.location.href + "accountPage")
@@ -39,9 +40,9 @@ if (curURL.includes('code=')) {
     });
 }
 
-function setAccessTokenSessionCookie(accessToken) {
+function setSessionCookie(name, value) {
     
-    var cookieString = `access_token=${accessToken}; path=/;`;
+    var cookieString = `${name}=${value}; path=/;`;
     document.cookie = cookieString;
 }
 
@@ -107,7 +108,7 @@ function updateHref(elementId, url) {
 function populateAccountPage() {
 
     const username = getValueFromJWT('access_token', 'username');
-    const accessToken = getCookie('access_token')
+    const accessToken = getCookie('id_token')
 
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
         headers: {
