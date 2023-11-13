@@ -42,7 +42,6 @@ if (curURL.includes('code=')) {
 
 if(document.title.includes('Account Page')) {
     populateAccountPage()
-    document.getElementById("deleteAccount").addEventListener('click', showDeleteConfirmationModal);
 }   
 
 function setSessionCookie(name, value) {
