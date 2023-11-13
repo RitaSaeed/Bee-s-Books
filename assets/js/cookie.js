@@ -40,7 +40,7 @@ if (curURL.includes('code=')) {
     });
 }
 
-if(window.title == 'Account Page') {
+if(window.title.includes('Account Page')) {
     populateAccountPage()
 }
 
@@ -110,6 +110,8 @@ function updateHref(elementId, url) {
 
 
 function populateAccountPage() {
+    $('#loadingModal').modal('show');
+
 
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
@@ -127,11 +129,14 @@ function populateAccountPage() {
     })
     .catch(error => {
       console.error("API request failed: ", error);
+    }).finally(() => {
+      $('#loadingModal').modal('hide');
     });
 
 }
 
 function updateUserInfo() {
+    $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
     const nameVal = document.getElementById("name").value
     const emailVal = document.getElementById("email").value
@@ -159,15 +164,18 @@ function updateUserInfo() {
     })
     .catch(error => {
       console.error("API request failed: ", error);
+    }).finally(() => {
+        $('#loadingModal').modal('hide');
     });
 
     closeConfirmationModal()
 }
 
 function deleteUser() {
+    $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
     const accessToken = getCookie('id_token')
-    
+
     const requestBody = {
         username : usernameVal,
         
@@ -188,6 +196,8 @@ function deleteUser() {
     })
     .catch(error => {
       console.error("API request failed: ", error);
+    }).finally(() => {
+        $('#loadingModal').modal('hide');
     });
 
 
