@@ -40,10 +40,6 @@ if (curURL.includes('code=')) {
     });
 }
 
-if(document.title.includes('Account Page')) {
-    populateAccountPage()
-}   
-
 function setSessionCookie(name, value) {
     
     var cookieString = `${name}=${value}; path=/;`;
