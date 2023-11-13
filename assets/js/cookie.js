@@ -30,7 +30,7 @@ if (curURL.includes('code=')) {
         console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
-        setSessionCookie('id_token', data.body.access_token);
+        setSessionCookie('id_token', data.body.id_token);
 
         setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
         updateHref('home-user', window.location.href + "accountPage")
