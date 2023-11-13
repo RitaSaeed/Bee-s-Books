@@ -112,7 +112,7 @@ function populateAccountPage() {
 
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `${accessToken}`,
         },
       })
     .then(response => response.json())
