@@ -107,6 +107,7 @@ function updateHref(elementId, url) {
 function populateAccountPage() {
 
     const username = getValueFromJWT('access_token', 'username');
+    const accessToken = getCookie('access_token')
 
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
         headers: {
