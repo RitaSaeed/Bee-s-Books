@@ -40,6 +40,10 @@ if (curURL.includes('code=')) {
     });
 }
 
+if(window.title == 'Account Page') {
+    populateAccountPage()
+}
+
 function setSessionCookie(name, value) {
     
     var cookieString = `${name}=${value}; path=/;`;
@@ -132,7 +136,7 @@ function updateUserInfo() {
     const nameVal = document.getElementById("name").value
     const emailVal = document.getElementById("email").value
     const addressVal = document.getElementById("address").value
-
+    const accessToken = getCookie('id_token')
 
     const requestBody = {
         username : usernameVal,
@@ -145,6 +149,7 @@ function updateUserInfo() {
         method: 'POST',
         body: JSON.stringify(requestBody),
         headers: {
+            Authorization: `${accessToken}`,
             "Content-Type": "application/json"
           }
     })
@@ -161,7 +166,8 @@ function updateUserInfo() {
 
 function deleteUser() {
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
-
+    const accessToken = getCookie('id_token')
+    
     const requestBody = {
         username : usernameVal,
         
@@ -171,7 +177,8 @@ function deleteUser() {
         method: 'DELETE',
         body: JSON.stringify(requestBody),
         headers: {
-        'Content-Type': 'application/json'
+            Authorization: `${accessToken}`,
+            'Content-Type': 'application/json'
         }
     })
     .then(response => response.json())
