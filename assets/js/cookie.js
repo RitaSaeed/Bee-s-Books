@@ -108,7 +108,6 @@ function updateHref(elementId, url) {
 function populateAccountPage() {
     $('#loadingModal').modal('show');
 
-
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
 
@@ -122,11 +121,12 @@ function populateAccountPage() {
       document.getElementById("name").value = data.name;
       document.getElementById("email").value = data.email;
       document.getElementById("address").value = data.address;
+      $('#loadingModal').modal('hide');
     })
     .catch(error => {
       console.error("API request failed: ", error);
     }).finally(() => {
-      $('#loadingModal').modal('hide');
+      
     });
 }
 
