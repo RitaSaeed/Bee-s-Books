@@ -128,7 +128,6 @@ function populateAccountPage() {
     }).finally(() => {
       $('#loadingModal').modal('hide');
     });
-    $('#loadingModal').modal('hide');
 }
 
 function updateUserInfo() {
