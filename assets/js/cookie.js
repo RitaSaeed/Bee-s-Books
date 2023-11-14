@@ -106,7 +106,7 @@ function updateHref(elementId, url) {
 
 
 function populateAccountPage() {
-    $('#loadingModal').modal('show');
+    //$('#loadingModal').modal('show');
     console.log('starting')
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
