@@ -128,7 +128,7 @@ function populateAccountPage() {
     }).finally(() => {
       $('#loadingModal').modal('hide');
     });
-
+    $('#loadingModal').modal('hide');
 }
 
 function updateUserInfo() {
@@ -156,7 +156,7 @@ function updateUserInfo() {
     })
     .then(response => response.json())
     .then(data => {
-     console.log(data)
+        console.log(data)
     })
     .catch(error => {
       console.error("API request failed: ", error);
