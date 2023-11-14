@@ -199,6 +199,10 @@ function deleteUser() {
 
 }
 
+function updatePassword() {
+    window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/forgotPassword?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdarichards-main-patch-225e.dva0ia48yehl5.amplifyapp.com%2F"
+}
+
 
 function showDeleteConfirmationModal() {
     $('#deletionModal').modal('show');
