@@ -107,7 +107,7 @@ function updateHref(elementId, url) {
 
 function populateAccountPage() {
     //$('#loadingModal').modal('show');
-    console.log('starting')
+
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
 
@@ -121,12 +121,12 @@ function populateAccountPage() {
       document.getElementById("name").value = data.name;
       document.getElementById("email").value = data.email;
       document.getElementById("address").value = data.address;
-      console.log('data')
+      
     })
     .catch(error => {
       console.error("API request failed: ", error);
     }).finally(() => {
-        console.log('finally')
+       
         $('#loadingModal').modal('hide');
     });
 }
@@ -201,6 +201,10 @@ function deleteUser() {
 
 function updatePassword() {
     window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/forgotPassword?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdarichards-main-patch-225e.dva0ia48yehl5.amplifyapp.com%2F"
+}
+
+function manageUsers() {
+    window.location.href = 'manageUsers.html'
 }
 
 
