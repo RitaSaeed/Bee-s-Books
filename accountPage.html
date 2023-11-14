@@ -84,9 +84,11 @@
                                 <label for="address">Address:</label>
                                 <input type="text" class="form-control" id="address" placeholder="Your Address">
                             </div>
-                            <button type="submit" class="btn btn-primary shadow flex-grow-0 flex-shrink-0 ms-auto text-nowrap" style="background: #DB9D47;border-width: 0px;margin-right: 0px;margin-left: 0px;font-size: 1rem;">Save Changes</button>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary shadow flex-grow-1 text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Save Changes</button>
+                                <button id="deleteAccount" onclick="showDeleteConfirmationModal()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #d74731; border-width: 0px; font-size: 1rem;">Delete Account</button>
+                            </div>
                         </form>
-                        <button id="deleteAccount" onclick="showDeleteConfirmationModal()"class="btn btn-danger shadow flex-grow-0 flex-shrink-0 ms-auto text-nowrap" style="background: #d74731;border-width: 0px;margin-right: 0px;margin-left: 0px;font-size: 1rem;">Delete Account</button>
                     </div>
                 </div>
             </div>
