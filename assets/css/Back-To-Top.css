@@ -39,3 +39,10 @@ svg {
   /*animation: swipe 5s linear infinite;*/
 }
 
+a {
+}
+
+:root {
+  --bs-emphasis-color: #fff;
+}
+
