@@ -1,0 +1,723 @@
+[
+    {
+      "isbn": {
+        "S": "1000000161"
+      },
+      "author": {
+        "S": "Alan Moore"
+      },
+      "description": {
+        "S": "A chilling story set in a dystopian future where an anarchist seeks to overthrow a totalitarian government."
+      },
+      "fiction?": {
+        "BOOL": true
+      },
+      "genre": {
+        "S": "Graphic Novel"
+      },
+      "price": {
+        "N": "14.99"
+      },
+      "quantity": {
+        "N": "15"
+      },
+      "rating": {
+        "N": "4.9"
+      },
+      "reviews": {
+        "SS": [
+          "A groundbreaking piece in the realm of graphic novels.",
+          "Moore's storytelling paired with brilliant illustrations is captivating.",
+          "A story that stays with you long after reading."
+        ]
+      },
+      "title": {
+        "S": "V for Vendetta"
+      }
+    },
+    {
+      "isbn": {
+        "S": "1000000162"
+      },
+      "author": {
+        "S": "Frank Miller"
+      },
+      "description": {
+        "S": "A dark reimagining of Batman's return to Gotham to combat crime and corruption."
+      },
+      "fiction?": {
+        "BOOL": true
+      },
+      "genre": {
+        "S": "Graphic Novel"
+      },
+      "price": {
+        "N": "13.99"
+      },
+      "quantity": {
+        "N": "20"
+      },
+      "rating": {
+        "N": "4.8"
+      },
+      "reviews": {
+        "SS": [
+          "Miller's take on the Dark Knight is both gritty and captivating.",
+          "A must-read for any Batman fan.",
+          "A game-changer in the superhero genre."
+        ]
+      },
+      "title": {
+        "S": "The Dark Knight Returns"
+      }
+    },
+    {
+        "isbn": {
+        "S": "1000000163"
+        },
+        "author": {
+        "S": "Art Spiegelman"
+        },
+        "description": {
+        "S": "A poignant tale of a Jewish man's experiences during the Holocaust, narrated through anthropomorphic animal characters."
+        },
+        "fiction?": {
+        "BOOL": false
+        },
+        "genre": {
+        "S": "Graphic Novel"
+        },
+        "price": {
+        "N": "16.99"
+        },
+        "quantity": {
+        "N": "13"
+        },
+        "rating": {
+        "N": "4.9"
+        },
+        "reviews": {
+        "SS": [
+            "A powerful representation of history using the medium of comics.",
+            "Spiegelman's magnum opus.",
+            "A heart-wrenching tale of survival and loss."
+        ]
+        },
+        "title": {
+        "S": "Maus"
+        }
+    },
+    {   
+    "isbn": {
+        "S": "1000000164"
+    },
+    "author": {
+        "S": "Brian K. Vaughan"
+    },
+    "description": {
+        "S": "An epic tale of two lovers from warring planets, trying to raise their child amidst galactic conflict."
+        },
+    "fiction?": {
+        "BOOL": true
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "12.99"
+        },
+    "quantity": {
+        "N": "17"
+        },
+    "rating": {
+        "N": "4.8"
+    },
+    "reviews": {
+        "SS": [
+        "A space opera like no other.",
+        "Vaughan's storytelling is top-notch, supported by stunning illustrations.",
+        "Saga pulls at the heartstrings while taking readers on a galactic journey."
+            ]
+        },
+    "title": {
+        "S": "Saga"
+    }
+    },
+    {
+    "isbn": {
+        "S": "1000000165"
+    },
+    "author": {
+        "S": "Jeff Smith"
+    },
+    "description": {
+        "S": "Follow the adventures of the Bone cousins in a magical world filled with mysteries."
+    },
+    "fiction?": {
+        "BOOL": true
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "10.99"
+    },
+    "quantity": {
+        "N": "20"
+    },
+    "rating": {
+        "N": "4.7"
+    },
+    "reviews": {
+        "SS": [
+        "A delightful blend of humor, adventure, and drama.",
+        "Smith's world-building is phenomenal.",
+        "Bone is a classic in the graphic novel genre."
+        ]
+    },
+    "title": {
+        "S": "Bone"
+    }
+    },
+    {
+    "isbn": {
+        "S": "1000000166"
+    },
+    "author": {
+        "S": "Grant Morrison"
+    },
+    "description": {
+        "S": "A deconstruction of the superhero genre, exploring themes of identity, power, and reality itself."
+    },
+    "fiction?": {
+        "BOOL": true
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "13.99"
+    },
+    "quantity": {
+        "N": "12"
+    },
+    "rating": {
+        "N": "4.6"
+    },
+    "reviews": {
+        "SS": [
+        "A mind-bending tour de force.",
+        "Morrison challenges the very nature of superhero mythology.",
+        "A must-read for those who love thought-provoking narratives."
+        ]
+    },
+    "title": {
+    "S": "Flex Mentallo"
+    }
+    },
+    {
+    "isbn": {
+        "S": "1000000167"
+    },
+    "author": {
+        "S": "Craig Thompson"
+    },
+    "description": {
+        "S": "A coming-of-age autobiographical tale highlighting faith, family, and love."
+    },
+    "fiction?": {
+        "BOOL": false
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "15.99"
+    },
+    "quantity": {
+        "N": "10"
+    },
+    "rating": {
+        "N": "4.7"
+    },
+    "reviews": {
+     "SS": [
+        "A beautifully drawn and deeply personal narrative.",
+        "Thompson's work resonates with readers from all walks of life.",
+        "A masterful exploration of growing up and the complexities of faith."
+    ]
+    },
+    "title": {
+     "S": "Blankets"
+    }
+},
+{
+    "isbn": {
+        "S": "1000000168"
+    },
+    "author": {
+        "S": "Jill Thompson"
+    },
+    "description": {
+        "S": "A retelling of Neil Gaiman's Sandman, exploring the backstory of the popular character, Death."
+    },
+    "fiction?": {
+        "BOOL": true
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "14.99"
+    },
+    "quantity": {
+        "N": "11"
+    },
+    "rating": {
+        "N": "4.6"
+    },
+    "reviews": {
+        "SS": [
+        "A fresh take on a beloved character.",
+            "Thompson's artwork adds a unique charm to the tale.",
+            "An intimate look at the most human of the Endless."
+        ]
+        },
+    "title": {
+        "S": "Death: At Death's Door"
+        }
+    },
+    {
+    "isbn": {
+        "S": "1000000169"
+    },
+    "author": {
+        "S": "Daniel Clowes"
+    },
+    "description": {
+        "S": "A story of an ordinary man's life, filled with loneliness and simple dreams."
+    },
+    "fiction?": {
+        "BOOL": true
+    },
+    "genre": {
+        "S": "Graphic Novel"
+    },
+    "price": {
+        "N": "13.99"
+    },
+    "quantity": {
+        "N": "9"
+    },
+    "rating": {
+        "N": "4.5"
+    },
+    "reviews": {
+        "SS": [
+        "A poignant portrayal of everyday life.",
+        "Clowes captures the essence of human longing and connection.",
+        "A narrative that's both funny and deeply melancholic."
+    ]
+    },
+    "title": {
+        "S": "Ghost World"
+    }
+    },
+{
+    "isbn": {
+    "S": "1000000170"
+    },
+    "author": {
+    "S": "Gene Luen Yang"
+    },
+    "description": {
+    "S": "Two parallel stories – one about a Chinese boy in a traditional past, the other about a modern-day American of Chinese descent, both struggling with their identities."
+    },
+    "fiction?": {
+    "BOOL": true
+    },
+    "genre": {
+    "S": "Graphic Novel"
+    },
+    "price": {
+    "N": "15.99"
+    },
+    "quantity": {
+    "N": "14"
+    },
+    "rating": {
+    "N": "4.6"
+    },
+    "reviews": {
+    "SS": [
+        "A masterful exploration of cultural identity.",
+        "Yang's storytelling is as deep as it is captivating.",
+        "Both heartwarming and thought-provoking."
+    ]
+    },
+    "title": {
+    "S": "American Born Chinese"
+    }
+},
+{
+    "isbn": {
+    "S": "1000000171"
+    },
+    "author": {
+    "S": "Raina Telgemeier"
+    },
+    "description": {
+    "S": "A middle school girl's journey through the challenges of family, growing up, and the unpredictability of life."
+    },
+    "fiction?": {
+    "BOOL": true
+    },
+    "genre": {
+    "S": "Graphic Novel"
+    },
+    "price": {
+    "N": "10.99"
+    },
+    "quantity": {
+    "N": "20"
+    },
+    "rating": {
+    "N": "4.8"
+    },
+    "reviews": {
+    "SS": [
+        "Relatable and beautifully illustrated.",
+        "A heartwarming tale that resonates with all ages.",
+        "Telgemeier's touch with family dynamics is spot on."
+    ]
+    },
+    "title": {
+    "S": "Sisters"
+    }
+    },
+    {
+    "isbn": {
+    "S": "1000000172"
+    },
+    "author": {
+    "S": "John Lewis"
+    },
+    "description": {
+    "S": "A first-hand account of the struggles and events of the Civil Rights Movement in the US."
+    },
+    "fiction?": {
+    "BOOL": false
+    },
+    "genre": {
+    "S": "Graphic Novel"
+    },
+    "price": {
+    "N": "16.99"
+    },
+    "quantity": {
+    "N": "15"
+    },
+    "rating": {
+    "N": "4.9"
+    },
+    "reviews": {
+    "SS": [
+        "A powerful representation of a pivotal moment in history.",
+        "Lewis's personal account is both moving and enlightening.",
+        "A must-read for anyone wanting to understand America's past."
+    ]
+    },
+    "title": {
+    "S": "March"
+    }
+    },
+    {
+        "isbn": {
+        "S": "1000000173"
+        },
+        "author": {
+        "S": "Noelle Stevenson"
+        },
+        "description": {
+        "S": "A young shapeshifter named Nimona teams up with a mad scientist to expose the corruption of the kingdom's institutions."
+        },
+        "fiction?": {
+        "BOOL": true
+        },
+        "genre": {
+        "S": "Graphic Novel"
+        },
+        "price": {
+        "N": "14.99"
+        },
+        "quantity": {
+        "N": "12"
+        },
+        "rating": {
+        "N": "4.7"
+        },
+        "reviews": {
+        "SS": [
+            "Whimsical, dark, and full of heart.",
+            "Stevenson's world-building and characters are second to none.",
+            "A blend of humor, action, and deeper undertones."
+        ]
+        },
+        "title": {
+        "S": "Nimona"
+        }
+    },
+    {
+        "isbn": {
+        "S": "1000000174"
+        },
+        "author": {
+        "S": "Scott McCloud"
+        },
+        "description": {
+        "S": "An in-depth exploration into the art of making comics, serving as both a guide and an analysis of the medium."
+        },
+        "fiction?": {
+        "BOOL": false
+        },
+        "genre": {
+        "S": "Graphic Novel"
+        },
+        "price": {
+        "N": "17.99"
+        },
+        "quantity": {
+        "N": "16"
+        },
+        "rating": {
+        "N": "4.8"
+        },
+        "reviews": {
+        "SS": [
+            "A definitive guide for anyone interested in the world of comics.",
+            "McCloud's insights are both profound and practical.",
+            "Transformative reading for comic creators and enthusiasts alike."
+        ]
+        },
+        "title": {
+        "S": "Understanding Comics"
+        }
+    },
+  {
+      "isbn": {
+      "S": "1000000175"
+      },
+      "author": {
+      "S": "Brian K. Vaughan"
+      },
+      "description": {
+      "S": "In a world where every mammal with a Y chromosome suddenly dies, one man and his monkey remain."
+      },
+      "fiction?": {
+      "BOOL": true
+      },
+      "genre": {
+      "S": "Graphic Novel"
+      },
+      "price": {
+      "N": "15.99"
+      },
+      "quantity": {
+      "N": "18"
+      },
+      "rating": {
+      "N": "4.7"
+      },
+      "reviews": {
+      "SS": [
+          "A thrilling post-apocalyptic journey.",
+          "Vaughan's storytelling prowess shines brightly.",
+          "A deep dive into societal structures and human nature."
+      ]
+      },
+      "title": {
+      "S": "Y: The Last Man"
+      }
+  },
+{
+      "isbn": {
+      "S": "1000000176"
+      },
+      "author": {
+      "S": "Tillie Walden"
+      },
+      "description": {
+      "S": "A beautifully illustrated tale of love and coming-of-age in the backdrop of ice skating."
+      },
+      "fiction?": {
+      "BOOL": true
+      },
+      "genre": {
+      "S": "Graphic Novel"
+      },
+      "price": {
+      "N": "13.99"
+      },
+      "quantity": {
+      "N": "15"
+      },
+      "rating": {
+      "N": "4.6"
+      },
+      "reviews": {
+      "SS": [
+          "A touching portrayal of love, adolescence, and passion.",
+          "Walden's artwork and narrative are both captivating and tender.",
+          "A heartwarming tale of finding oneself."
+      ]
+      },
+      "title": {
+      "S": "Spinning"
+      }
+  },
+    {
+    "isbn": {
+      "S": "1000000177"
+    },
+    "author": {
+      "S": "Emily Carroll"
+    },
+    "description": {
+      "S": "A collection of five spine-chilling tales, masterfully illustrated to haunt the reader."
+    },
+    "fiction?": {
+      "BOOL": true
+    },
+    "genre": {
+      "S": "Graphic Novel"
+    },
+    "price": {
+      "N": "14.99"
+    },
+    "quantity": {
+      "N": "12"
+    },
+    "rating": {
+      "N": "4.5"
+    },
+    "reviews": {
+      "SS": [
+        "Haunting and beautifully crafted.",
+        "Carroll's illustrations are as evocative as her storytelling.",
+        "A must-read for fans of horror and suspense."
+      ]
+    },
+    "title": {
+      "S": "Through the Woods"
+    }
+  },
+{
+    "isbn": {
+    "S": "1000000178"
+    },
+    "author": {
+    "S": "Jamie Hernandez"
+    },
+    "description": {
+    "S": "The trials and tribulations of Maggie and her friends in the punk rock scene of 1980s California."
+    },
+    "fiction?": {
+    "BOOL": true
+    },
+    "genre": {
+    "S": "Graphic Novel"
+    },
+    "price": {
+    "N": "16.99"
+    },
+    "quantity": {
+    "N": "14"
+    },
+    "rating": {
+    "N": "4.8"
+    },
+    "reviews": {
+    "SS": [
+        "A perfect blend of punk, drama, and heart.",
+        "Hernandez's characters are vibrant and unforgettable.",
+        "A seminal work in graphic novel literature."
+    ]
+    },
+    "title": {
+    "S": "Love and Rockets"
+    }
+},
+    {
+      "isbn": {
+        "S": "1000000179"
+      },
+      "author": {
+        "S": "Neil Gaiman"
+      },
+      "description": {
+        "S": "The tale of Dream of the Endless, who rules over the realm of dreams."
+      },
+      "fiction?": {
+        "BOOL": true
+      },
+      "genre": {
+        "S": "Graphic Novel"
+      },
+      "price": {
+        "N": "15.99"
+      },
+      "quantity": {
+        "N": "10"
+      },
+      "rating": {
+        "N": "4.7"
+      },
+      "reviews": {
+        "SS": [
+          "Gaiman at his finest.",
+          "A mesmerizing tale of gods, dreams, and the nature of existence.",
+          "A unique and magical journey."
+        ]
+      },
+      "title": {
+        "S": "The Sandman"
+      }
+    },
+    {
+      "isbn": {
+        "S": "1000000180"
+      },
+      "author": {
+        "S": "Marjane Satrapi"
+      },
+      "description": {
+        "S": "A memoir detailing the author's childhood to early adult years in Iran during and after the Islamic Revolution."
+      },
+      "fiction?": {
+        "BOOL": false
+      },
+      "genre": {
+        "S": "Graphic Novel"
+      },
+      "price": {
+        "N": "12.99"
+      },
+      "quantity": {
+        "N": "8"
+      },
+      "rating": {
+        "N": "4.8"
+      },
+      "reviews": {
+        "SS": [
+          "A touching portrayal of a life amidst revolution and change.",
+          "Satrapi's work is both moving and educational.",
+          "A raw, beautiful memoir that gives voice to the Iranian experience."
+        ]
+      },
+      "title": {
+        "S": "Persepolis"
+      }
+    }
+  ]
+  
