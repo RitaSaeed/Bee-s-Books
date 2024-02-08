@@ -1,0 +1,345 @@
+[
+    {
+      "isbn": { "S": "1000000141" },
+      "author": { "S": "Jane Austen" },
+      "description": { "S": "A tale of love, society, and misunderstandings in the 19th-century English countryside." },
+      "fiction?": { "BOOL": true },
+      "genre": { "S": "Classics" },
+      "price": { "N": "9.99" },
+      "quantity": { "N": "15" },
+      "rating": { "N": "4.8" },
+      "reviews": { "SS": [
+          "Timeless and beautifully written.",
+          "Elizabeth Bennet is a heroine for the ages.",
+          "Austen's critique of society is as relevant today as ever."
+        ]
+      },
+      "title": { "S": "Pride and Prejudice" }
+    },
+    {
+      "isbn": { "S": "1000000142" },
+      "author": { "S": "F. Scott Fitzgerald" },
+      "description": { "S": "The tragic tale of Jay Gatsby's undying love for the ever-elusive Daisy Buchanan." },
+      "fiction?": { "BOOL": true },
+      "genre": { "S": "Classics" },
+      "price": { "N": "10.49" },
+      "quantity": { "N": "12" },
+      "rating": { "N": "4.7" },
+      "reviews": { "SS": [
+          "A haunting portrayal of the American Dream.",
+          "Gatsby's world of opulence and tragedy is unforgettable.",
+          "Fitzgerald's masterpiece captures the spirit of an era."
+        ]
+      },
+      "title": { "S": "The Great Gatsby" }
+    },
+    {
+      "isbn": { "S": "1000000143" },
+      "author": { "S": "George Orwell" },
+      "description": { "S": "A dystopian novel depicting a world where freedom and truth are suppressed under totalitarian rule." },
+      "fiction?": { "BOOL": true },
+      "genre": { "S": "Classics" },
+      "price": { "N": "11.49" },
+      "quantity": { "N": "18" },
+      "rating": { "N": "4.9" },
+      "reviews": { "SS": [
+          "Orwell's vision is both terrifying and illuminating.",
+          "A chilling reminder of the fragility of freedom.",
+          "1984 remains one of the most important novels ever written."
+        ]
+      },
+      "title": { "S": "1984" }
+    },
+        {
+          "isbn": { "S": "1000000144" },
+          "author": { "S": "Harper Lee" },
+          "description": { "S": "A deep and poignant story set in the American South, touching on issues of race and the loss of innocence." },
+          "fiction?": { "BOOL": true },
+          "genre": { "S": "Classics" },
+          "price": { "N": "10.99" },
+          "quantity": { "N": "20" },
+          "rating": { "N": "4.9" },
+          "reviews": { "SS": [
+              "A powerful tale of growing up and seeking justice.",
+              "Atticus Finch stands as one of literature's greatest heroes.",
+              "Lee's only novel is a masterpiece."
+            ]
+          },
+          "title": { "S": "To Kill a Mockingbird" }
+        },
+        {
+          "isbn": { "S": "1000000145" },
+          "author": { "S": "Herman Melville" },
+          "description": { "S": "The tale of Captain Ahab's obsessive pursuit of the white whale, Moby-Dick." },
+          "fiction?": { "BOOL": true },
+          "genre": { "S": "Classics" },
+          "price": { "N": "12.49" },
+          "quantity": { "N": "10" },
+          "rating": { "N": "4.6" },
+          "reviews": { "SS": [
+              "A profound reflection on obsession and the human spirit.",
+              "Melville's language is rich and poetic.",
+              "One of the most ambitious novels in American literature."
+            ]
+          },
+          "title": { "S": "Moby-Dick" }
+        },
+        {
+          "isbn": { "S": "1000000146" },
+          "author": { "S": "Leo Tolstoy" },
+          "description": { "S": "An epic tale of love, war, and fate set against the backdrop of the Napoleonic Wars." },
+          "fiction?": { "BOOL": true },
+          "genre": { "S": "Classics" },
+          "price": { "N": "14.99" },
+          "quantity": { "N": "8" },
+          "rating": { "N": "4.8" },
+          "reviews": { "SS": [
+              "A monumental work examining the nature of life, love, and war.",
+              "Tolstoy's characters are deep, multi-dimensional, and unforgettable.",
+              "A literary achievement of the highest order."
+            ]
+          },
+          "title": { "S": "War and Peace" }
+        },
+        {
+          "isbn": { "S": "1000000147" },
+          "author": { "S": "Mark Twain" },
+          "description": { "S": "The adventures of a young boy named Tom and his friends in the fictional town of St. Petersburg, Missouri." },
+          "fiction?": { "BOOL": true },
+          "genre": { "S": "Classics" },
+          "price": { "N": "9.49" },
+          "quantity": { "N": "15" },
+          "rating": { "N": "4.7" },
+          "reviews": { "SS": [
+              "Twain's humor and wit shine throughout.",
+              "A delightful depiction of childhood mischief and adventure.",
+              "Tom Sawyer remains one of the most beloved characters in literature."
+            ]
+          },
+          "title": { "S": "The Adventures of Tom Sawyer" }
+        },
+        {
+          "isbn": { "S": "1000000148" },
+          "author": { "S": "Charlotte Brontë" },
+          "description": { "S": "The life journey of the titular character, an orphan who faces hardship, love, and self-discovery." },
+          "fiction?": { "BOOL": true },
+          "genre": { "S": "Classics" },
+          "price": { "N": "10.99" },
+          "quantity": { "N": "12" },
+          "rating": { "N": "4.8" },
+          "reviews": { "SS": [
+              "A powerful narrative of resilience and strength.",
+              "Jane's struggles and triumphs are timeless.",
+              "Brontë's writing is passionate and evocative."
+            ]
+          },
+          "title": { "S": "Jane Eyre" }
+        },
+        {
+              "isbn": { "S": "1000000149" },
+              "author": { "S": "Emily Brontë" },
+              "description": { "S": "A tragic love story set on the Yorkshire moors, following the tumultuous relationship between Catherine and Heathcliff." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "11.49" },
+              "quantity": { "N": "14" },
+              "rating": { "N": "4.7" },
+              "reviews": { "SS": [
+                  "A haunting tale of passion and revenge.",
+                  "Brontë's prose is dark and atmospheric.",
+                  "One of the greatest love stories ever told."
+                ]
+              },
+              "title": { "S": "Wuthering Heights" }
+            },
+            {
+              "isbn": { "S": "1000000150" },
+              "author": { "S": "Homer" },
+              "description": { "S": "The epic tale of Odysseus's journey home after the fall of Troy." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "12.99" },
+              "quantity": { "N": "10" },
+              "rating": { "N": "4.6" },
+              "reviews": { "SS": [
+                  "A timeless epic of adventure and heroism.",
+                  "Homer's tale has inspired countless works in Western literature.",
+                  "The trials of Odysseus are both thrilling and deeply human."
+                ]
+              },
+              "title": { "S": "The Odyssey" }
+            },
+            {
+              "isbn": { "S": "1000000151" },
+              "author": { "S": "Fyodor Dostoevsky" },
+              "description": { "S": "A deep exploration of morality, free will, and the nature of evil, focusing on the three Karamazov brothers." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "13.99" },
+              "quantity": { "N": "8" },
+              "rating": { "N": "4.9" },
+              "reviews": { "SS": [
+                  "A profound philosophical novel.",
+                  "Dostoevsky's characters grapple with deep existential questions.",
+                  "An immersive journey into the depths of the human soul."
+                ]
+              },
+              "title": { "S": "The Brothers Karamazov" }
+            },
+            {
+              "isbn": { "S": "1000000152" },
+              "author": { "S": "Charles Dickens" },
+              "description": { "S": "The tale of young Pip and his journey from an impoverished childhood to adulthood, and the various characters he meets along the way." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "12.49" },
+              "quantity": { "N": "12" },
+              "rating": { "N": "4.8" },
+              "reviews": { "SS": [
+                  "Dickens's masterful storytelling shines through.",
+                  "A rich tapestry of characters and themes.",
+                  "A novel about ambition, love, and social class."
+                ]
+              },
+              "title": { "S": "Great Expectations" }
+            },
+            {
+              "isbn": { "S": "1000000153" },
+              "author": { "S": "Victor Hugo" },
+              "description": { "S": "Set in the backdrop of Paris, it follows the lives of several characters, particularly the tragic hero Jean Valjean." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "14.99" },
+              "quantity": { "N": "7" },
+              "rating": { "N": "4.9" },
+              "reviews": { "SS": [
+                  "A monumental work that touches on justice, love, and redemption.",
+                  "Hugo's depiction of Paris is vivid and detailed.",
+                  "Les Misérables is both a critical social commentary and a powerful human story."
+                ]
+              },
+              "title": { "S": "Les Misérables" }
+            },
+            {
+              "isbn": { "S": "1000000154" },
+              "author": { "S": "Mary Shelley" },
+              "description": { "S": "The story of Victor Frankenstein and the creature he creates, touching on themes of ambition, isolation, and the nature of humanity." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "10.99" },
+              "quantity": { "N": "10" },
+              "rating": { "N": "4.7" },
+              "reviews": { "SS": [
+                  "A chilling and tragic tale.",
+                  "Shelley's novel is a deep reflection on creation and responsibility.",
+                  "The figure of Frankenstein's monster has become iconic in horror literature."
+                ]
+              },
+              "title": { "S": "Frankenstein" }
+            },
+            {
+              "isbn": { "S": "1000000155" },
+              "author": { "S": "Ernest Hemingway" },
+              "description": { "S": "The story of Robert Jordan, an American fighting during the Spanish Civil War, grappling with love, conflict, and the nature of sacrifice." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "11.99" },
+              "quantity": { "N": "9" },
+              "rating": { "N": "4.8" },
+              "reviews": { "SS": [
+                  "A profound exploration of love and war.",
+                  "Hemingway's prose is stark and powerful.",
+                  "A testament to the human spirit in times of conflict."
+                ]
+              },
+              "title": { "S": "For Whom the Bell Tolls" }
+            },
+            {
+              "isbn": { "S": "1000000156" },
+              "author": { "S": "John Steinbeck" },
+              "description": { "S": "Following the Joad family as they migrate from Oklahoma to California during the Great Depression, facing adversity and searching for a better life." },
+              "fiction?": { "BOOL": true },
+              "genre": { "S": "Classics" },
+              "price": { "N": "11.49" },
+              "quantity": { "N": "11" },
+              "rating": { "N": "4.9" },
+              "reviews": { "SS": [
+                "A heart-wrenching portrayal of the human cost of economic downturns.",
+                "Steinbeck's characters are raw, real, and unforgettable.",
+                "A deep dive into the American experience during one of its darkest hours."
+              ]
+            },
+            "title": { "S": "The Grapes of Wrath" }
+          },
+          {
+            "isbn": { "S": "1000000157" },
+            "author": { "S": "James Joyce" },
+            "description": { "S": "A day in the life of Leopold Bloom in Dublin, this novel is a deep exploration of life, love, and the nature of consciousness." },
+            "fiction?": { "BOOL": true },
+            "genre": { "S": "Classics" },
+            "price": { "N": "13.99" },
+            "quantity": { "N": "6" },
+            "rating": { "N": "4.7" },
+            "reviews": { "SS": [
+                "Joyce's prose is intricate and challenging, but deeply rewarding.",
+                "Ulysses changes the way we view the very nature of literature.",
+                "A landmark in modernist literature."
+              ]
+            },
+            "title": { "S": "Ulysses" }
+          },
+          {
+            "isbn": { "S": "1000000158" },
+            "author": { "S": "Aldous Huxley" },
+            "description": { "S": "Set in a future society where happiness is mandated and individuality is suppressed, it's a profound examination of freedom, control, and human nature." },
+            "fiction?": { "BOOL": true },
+            "genre": { "S": "Classics" },
+            "price": { "N": "10.99" },
+            "quantity": { "N": "13" },
+            "rating": { "N": "4.8" },
+            "reviews": { "SS": [
+                "A chilling prediction of a possible future society.",
+                "Huxley's vision is as relevant today as it was when written.",
+                "A must-read for anyone interested in the intersection of society, technology, and control."
+              ]
+            },
+            "title": { "S": "Brave New World" }
+          },
+          {
+            "isbn": { "S": "1000000159" },
+            "author": { "S": "E. M. Forster" },
+            "description": { "S": "A tale of love and social class set against the backdrop of early 20th-century England." },
+            "fiction?": { "BOOL": true },
+            "genre": { "S": "Classics" },
+            "price": { "N": "10.49" },
+            "quantity": { "N": "14" },
+            "rating": { "N": "4.6" },
+            "reviews": { "SS": [
+                "Forster's observations on society are sharp and insightful.",
+                "A powerful story of love and inequality.",
+                "The narrative captures the essence of Edwardian England."
+              ]
+            },
+            "title": { "S": "A Room with a View" }
+          },
+          {
+            "isbn": { "S": "1000000160" },
+            "author": { "S": "Virginia Woolf" },
+            "description": { "S": "An introspective look at a day in the life of Clarissa Dalloway as she prepares for a party, with deep dives into the minds of various characters." },
+            "fiction?": { "BOOL": true },
+            "genre": { "S": "Classics" },
+            "price": { "N": "11.99" },
+            "quantity": { "N": "9" },
+            "rating": { "N": "4.7" },
+            "reviews": { "SS": [
+                "Woolf's prose is lyrical and innovative.",
+                "A profound exploration of human consciousness and the passage of time.",
+                "One of the pinnacles of modernist literature."
+              ]
+            },
+            "title": { "S": "Mrs Dalloway" }
+          }
+
+          
+      ]
+      
