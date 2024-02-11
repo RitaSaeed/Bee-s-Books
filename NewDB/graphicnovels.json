@@ -1,0 +1,226 @@
+{
+    "books": [
+      {
+        "SK": "ISBN#1000000161",
+        "author": "Alan Moore",
+        "description": "A chilling story set in a dystopian future where an anarchist seeks to overthrow a totalitarian government.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "14.99",
+        "quantity": 15,
+        "rating": "4.9",
+        "title": "V for Vendetta",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000162",
+        "author": "Frank Miller",
+        "description": "A dark reimagining of Batman's return to Gotham to combat crime and corruption.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "13.99",
+        "quantity": 20,
+        "rating": "4.8",
+        "title": "The Dark Knight Returns",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000163",
+        "author": "Art Spiegelman",
+        "description": "A poignant tale of a Jewish man's experiences during the Holocaust, narrated through anthropomorphic animal characters.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "16.99",
+        "quantity": 13,
+        "rating": "4.9",
+        "title": "Maus",
+        "fiction": "No"
+      },
+      {
+        "SK": "ISBN#1000000164",
+        "author": "Brian K. Vaughan",
+        "description": "An epic tale of two lovers from warring planets, trying to raise their child amidst galactic conflict.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "12.99",
+        "quantity": 17,
+        "rating": "4.8",
+        "title": "Saga",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000165",
+        "author": "Jeff Smith",
+        "description": "Follow the adventures of the Bone cousins in a magical world filled with mysteries.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "10.99",
+        "quantity": 20,
+        "rating": "4.7",
+        "title": "Bone",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000166",
+        "author": "Grant Morrison",
+        "description": "A deconstruction of the superhero genre, exploring themes of identity, power, and reality itself.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "13.99",
+        "quantity": 12,
+        "rating": "4.6",
+        "title": "Flex Mentallo",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000167",
+        "author": "Craig Thompson",
+        "description": "A coming-of-age autobiographical tale highlighting faith, family, and love.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "15.99",
+        "quantity": 10,
+        "rating": "4.7",
+        "title": "Blankets",
+        "fiction": "No"
+      },
+      {
+        "SK": "ISBN#1000000168",
+        "author": "Jill Thompson",
+        "description": "A retelling of Neil Gaiman's Sandman, exploring the backstory of the popular character, Death.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "14.99",
+        "quantity": 11,
+        "rating": "4.6",
+        "title": "Death: At Death's Door",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000169",
+        "author": "Daniel Clowes",
+        "description": "A story of an ordinary man's life, filled with loneliness and simple dreams.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "13.99",
+        "quantity": 9,
+        "rating": "4.5",
+        "title": "Ghost World",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000170",
+        "author": "Gene Luen Yang",
+        "description": "Two parallel stories – one about a Chinese boy in a traditional past, the other about a modern-day American of Chinese descent, both struggling with their identities.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "15.99",
+        "quantity": 14,
+        "rating": "4.6",
+        "title": "American Born Chinese",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000171",
+        "author": "Raina Telgemeier",
+        "description": "A middle school girl's journey through the challenges of family, growing up, and the unpredictability of life.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "10.99",
+        "quantity": 20,
+        "rating": "4.8",
+        "title": "Sisters",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000172",
+        "author": "John Lewis",
+        "description": "A first-hand account of the struggles and events of the Civil Rights Movement in the US.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "16.99",
+        "quantity": 15,
+        "rating": "4.9",
+        "title": "March",
+        "fiction": "No"
+      },
+      {
+        "SK": "ISBN#1000000173",
+        "author": "Noelle Stevenson",
+        "description": "A fantasy adventure featuring a diverse group of characters on a quest to save their kingdom.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "13.99",
+        "quantity": 18,
+        "rating": "4.7",
+        "title": "Nimona",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000174",
+        "author": "Marjane Satrapi",
+        "description": "An autobiographical account of the author's childhood and early adult years in Iran during and after the Islamic Revolution.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "14.99",
+        "quantity": 16,
+        "rating": "4.8",
+        "title": "Persepolis",
+        "fiction": "No"
+      },
+      {
+        "SK": "ISBN#1000000175",
+        "author": "Brian K. Vaughan",
+        "description": "In a world where every mammal with a Y chromosome suddenly dies, one man and his monkey remain.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "15.99",
+        "quantity": 18,
+        "rating": "4.7",
+        "title": "Y: The Last Man",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000176",
+        "author": "Tillie Walden",
+        "description": "A beautifully illustrated tale of love and coming-of-age in the backdrop of ice skating.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "13.99",
+        "quantity": 15,
+        "rating": "4.6",
+        "title": "Spinning",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000177",
+        "author": "Emily Carroll",
+        "description": "A collection of five spine-chilling tales, masterfully illustrated to haunt the reader.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "14.99",
+        "quantity": 12,
+        "rating": "4.5",
+        "title": "Through the Woods",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000178",
+        "author": "Jamie Hernandez",
+        "description": "The trials and tribulations of Maggie and her friends in the punk rock scene of 1980s California.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "16.99",
+        "quantity": 14,
+        "rating": "4.8",
+        "title": "Love and Rockets",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000179",
+        "author": "Neil Gaiman",
+        "description": "The tale of Dream of the Endless, who rules over the realm of dreams.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "15.99",
+        "quantity": 10,
+        "rating": "4.7",
+        "title": "The Sandman",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000180",
+        "author": "Marjane Satrapi",
+        "description": "A memoir detailing the author's childhood to early adult years in Iran during and after the Islamic Revolution.",
+        "PK": "GENRE#Graphic Novel",
+        "price": "12.99",
+        "quantity": 8,
+        "rating": "4.8",
+        "title": "Persepolis",
+        "fiction": "No"
+      }
+      
+    ]
+  }
+  

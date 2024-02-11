@@ -1,0 +1,225 @@
+{
+    "books": [
+      {
+        "SK": "ISBN#1000000021",
+        "author": "Gillian Flynn",
+        "description": "A gripping psychological thriller about a woman's sudden disappearance and the dark secrets that surface.",
+        "PK": "GENRE#Mystery",
+        "price": "13.99",
+        "quantity": 15,
+        "rating": "4.6",
+        "title": "Gone Girl",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000022",
+        "author": "Stieg Larsson",
+        "description": "A journalist and a hacker team up to investigate a decades-old disappearance, uncovering corruption and murder in the process.",
+        "PK": "GENRE#Mystery",
+        "price": "14.99",
+        "quantity": 19,
+        "rating": "4.4",
+        "title": "The Girl with the Dragon Tattoo",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000023",
+        "author": "Dan Brown",
+        "description": "A professor and a cryptologist unravel a complex code that leads them on a quest to uncover a religious mystery.",
+        "PK": "GENRE#Mystery",
+        "price": "12.99",
+        "quantity": 17,
+        "rating": "4.5",
+        "title": "The Da Vinci Code",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000024",
+        "author": "Thomas Harris",
+        "description": "An FBI agent consults with a brilliant but insane serial killer to solve a series of gruesome murders.",
+        "PK": "GENRE#Mystery",
+        "price": "15.99",
+        "quantity": 13,
+        "rating": "4.7",
+        "title": "The Silence of the Lambs",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000025",
+        "author": "Arthur Conan Doyle",
+        "description": "Sherlock Holmes and Dr. Watson investigate a legendary supernatural hound that haunts the Baskerville family.",
+        "PK": "GENRE#Mystery",
+        "price": "11.99",
+        "quantity": 16,
+        "rating": "4.8",
+        "title": "The Hound of the Baskervilles",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000026",
+        "author": "Tana French",
+        "description": "A detective confronts a traumatic event from his childhood when a young girl's murder in the same woods reopens old wounds.",
+        "PK": "GENRE#Mystery",
+        "price": "13.49",
+        "quantity": 14,
+        "rating": "4.3",
+        "title": "In the Woods",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000027",
+        "author": "Agatha Christie",
+        "description": "Hercule Poirot must solve a murder mystery on a luxurious train journey.",
+        "PK": "GENRE#Mystery",
+        "price": "12.99",
+        "quantity": 17,
+        "rating": "4.5",
+        "title": "Murder on the Orient Express",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000028",
+        "author": "Dashiell Hammett",
+        "description": "Private detective Sam Spade becomes entangled in a hunt for a priceless statue.",
+        "PK": "GENRE#Mystery",
+        "price": "11.49",
+        "quantity": 19,
+        "rating": "4.4",
+        "title": "The Maltese Falcon",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000029",
+        "author": "Donna Tartt",
+        "description": "A group of classics students becomes embroiled in a murder mystery within their own ranks.",
+        "PK": "GENRE#Mystery",
+        "price": "14.99",
+        "quantity": 15,
+        "rating": "4.6",
+        "title": "The Secret History",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000030",
+        "author": "Robert Galbraith (pseudonym for J.K. Rowling)",
+        "description": "Private investigator Cormoran Strike delves into the suicide of a supermodel, only to uncover a complex murder.",
+        "PK": "GENRE#Mystery",
+        "price": "13.49",
+        "quantity": 16,
+        "rating": "4.4",
+        "title": "The Cuckoo's Calling",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000031",
+        "author": "Gillian Flynn",
+        "description": "Libby Day revisits her family's gruesome murder in a quest for the truth about what happened that night.",
+        "PK": "GENRE#Mystery",
+        "price": "15.99",
+        "quantity": 13,
+        "rating": "4.5",
+        "title": "Dark Places",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000032",
+        "author": "Michael Connelly",
+        "description": "Defense attorney Mickey Haller faces a challenging case as he switches to the other side of the courtroom.",
+        "PK": "GENRE#Mystery",
+        "price": "12.49",
+        "quantity": 18,
+        "rating": "4.3",
+        "title": "The Reversal",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000033",
+        "author": "Alexander McCall Smith",
+        "description": "Precious Ramotswe opens Botswana's first female detective agency, solving cases with wit and wisdom.",
+        "PK": "GENRE#Mystery",
+        "price": "14.99",
+        "quantity": 20,
+        "rating": "4.7",
+        "title": "The No. 1 Ladies' Detective Agency",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000034",
+        "author": "Louise Penny",
+        "description": "Chief Inspector Armand Gamache investigates a suspicious death in a tranquil village with hidden secrets.",
+        "PK": "GENRE#Mystery",
+        "price": "16.49",
+        "quantity": 14,
+        "rating": "4.8",
+        "title": "Still Life",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000035",
+        "author": "Agatha Christie",
+        "description": "A classic mystery novel where ten strangers are lured to an island and accused of past crimes.",
+        "PK": "GENRE#Mystery",
+        "price": "11.99",
+        "quantity": 15,
+        "rating": "4.6",
+        "title": "And Then There Were None",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000036",
+        "author": "Harlan Coben",
+        "description": "A man's life is turned upside down when he discovers his wife's secret past.",
+        "PK": "GENRE#Mystery",
+        "price": "14.99",
+        "quantity": 17,
+        "rating": "4.5",
+        "title": "Tell No One",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000037",
+        "author": "Paula Hawkins",
+        "description": "A psychological thriller where a woman becomes obsessed with a couple she watches from the train every day.",
+        "PK": "GENRE#Mystery",
+        "price": "13.49",
+        "quantity": 16,
+        "rating": "4.7",
+        "title": "The Girl on the Train",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000038",
+        "author": "Ruth Ware",
+        "description": "A murder mystery set on a luxury cruise ship where everyone is a suspect.",
+        "PK": "GENRE#Mystery",
+        "price": "15.99",
+        "quantity": 18,
+        "rating": "4.8",
+        "title": "The Woman in Cabin 10",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000039",
+        "author": "B.A. Paris",
+        "description": "A gripping psychological thriller where a woman's life takes a dark turn on her honeymoon.",
+        "PK": "GENRE#Mystery",
+        "price": "12.49",
+        "quantity": 19,
+        "rating": "4.6",
+        "title": "Behind Closed Doors",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000040",
+        "author": "Agatha Christie",
+        "description": "Miss Marple investigates a murder at an English country estate.",
+        "PK": "GENRE#Mystery",
+        "price": "11.99",
+        "quantity": 20,
+        "rating": "4.5",
+        "title": "The Murder at the Vicarage",
+        "fiction": "Yes"
+      }
+    ]
+  }
+  

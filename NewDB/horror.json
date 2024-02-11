@@ -1,0 +1,224 @@
+{
+  "books": [
+    {
+      "SK": "#ISBN1000000001",
+      "PK": "GENRE#Horror",
+      "title": "The Haunting of Hill House",
+      "author": "Shirley Jackson",
+      "price": "$12.99",
+      "description": "A chilling tale of a haunted mansion that has stood for 80 years, featuring four people who come to stay there and experience its sinister power.",
+      "rating": "4.5",
+      "fiction": "Yes",
+      "quantity": 85
+    },
+    {
+      "SK": "#ISBN1000000002",
+      "PK": "GENRE#Horror",
+      "title": "It",
+      "author": "Stephen King",
+      "price": "$14.95",
+      "description": "Pennywise the Dancing Clown terrorizes the small town of Derry, Maine, in this masterful horror novel by Stephen King.",
+      "rating": "4.8",
+      "fiction": "Yes",
+      "quantity": 28
+    },
+    {
+      "SK": "#ISBN1000000003",
+      "PK": "GENRE#Horror",
+      "title": "Dracula",
+      "author": "Bram Stoker",
+      "price": "$9.99",
+      "description": "Bram Stoker's iconic novel about Count Dracula, a vampire who threatens the safety of London, is a classic horror story that has stood the test of time.",
+      "rating": "4.7",
+      "fiction": "Yes",
+      "quantity": 42
+    },
+    {
+      "SK": "#ISBN1000000004",
+      "PK": "GENRE#Horror",
+      "title": "Psycho",
+      "author": "Robert Bloch",
+      "price": "$11.99",
+      "description": "Robert Bloch's psychological thriller about the unsettling events at the Bates Motel and the mysterious Norman Bates is a true horror classic.",
+      "rating": "4.4",
+      "fiction": "Yes",
+      "quantity": 73
+    },
+    {
+      "SK": "#ISBN1000000005",
+      "PK": "GENRE#Horror",
+      "title": "Bird Box",
+      "author": "Josh Malerman",
+      "price": "$10.50",
+      "description": "Josh Malerman's post-apocalyptic horror novel tells the story of a mother and her two children, blindfolded and trying to survive in a world filled with supernatural creatures that drive people to madness.",
+      "rating": "4.6",
+      "fiction": "Yes",
+      "quantity": 9
+    },
+    {
+      "SK": "#ISBN1000000006",
+      "PK": "GENRE#Horror",
+      "title": "The Shining",
+      "author": "Stephen King",
+      "price": "$13.75",
+      "description": "Stephen King's classic story of the Torrance family's descent into madness while serving as caretakers for the haunted Overlook Hotel is a must-read for horror fans.",
+      "rating": "4.7",
+      "fiction": "Yes",
+      "quantity": 64
+    },
+    {
+      "SK": "#ISBN1000000007",
+      "PK": "GENRE#Horror",
+      "title": "The Exorcist",
+      "author": "William Peter Blatty",
+      "price": "$12.99",
+      "description": "William Peter Blatty's tale of the demonic possession of a young girl and the desperate exorcism attempts to save her soul is a terrifying and unforgettable horror story.",
+      "rating": "4.6",
+      "fiction": "Yes",
+      "quantity": 17
+    },
+    {
+      "SK": "#ISBN1000000008",
+      "PK": "GENRE#Horror",
+      "title": "Hell House",
+      "author": "Richard Matheson",
+      "price": "$9.95",
+      "description": "Richard Matheson's novel follows a team of researchers who enter the notorious Belasco House, known as the Mount Everest of haunted houses, to uncover its dark secrets.",
+      "rating": "4.4",
+      "fiction": "Yes",
+      "quantity": 31
+    },
+    {
+      "SK": "#ISBN1000000009",
+      "PK": "GENRE#Horror",
+      "title": "The Silence of the Lambs",
+      "author": "Thomas Harris",
+      "price": "$14.50",
+      "description": "Thomas Harris's thriller introduces the brilliant but insane Dr. Hannibal Lecter and FBI trainee Clarice Starling, who must consult him to catch a serial killer known as Buffalo Bill.",
+      "rating": "4.7",
+      "fiction": "Yes",
+      "quantity": 99
+    },
+    {
+      "SK": "#ISBN1000000010",
+      "PK": "GENRE#Horror",
+      "title": "The Girl with All the Gifts",
+      "author": "M.R. Carey",
+      "price": "$11.75",
+      "description": "M.R. Carey's post-apocalyptic thriller follows a group of survivors, including a young girl with a mysterious gift, as they navigate a world overrun by fungal zombies.",
+      "rating": "4.6",
+      "fiction": "Yes",
+      "quantity": 55
+    },
+    {
+      "SK": "#ISBN1000000011",
+      "PK": "GENRE#Horror",
+      "title": "American Psycho",
+      "author": "Bret Easton Ellis",
+      "price": "$12.99",
+      "description": "Bret Easton Ellis's novel follows the life of Patrick Bateman, a wealthy investment banker who also happens to be a psychopathic serial killer.",
+      "rating": "4.5",
+      "fiction": "Yes",
+      "quantity": 34
+    },
+    {
+      "SK": "#ISBN1000000012",
+      "PK": "GENRE#Horror",
+      "title": "The Ruins",
+      "author": "Scott Smith",
+      "price": "$10.99",
+      "description": "Scott Smith's horror novel tells the story of a group of American tourists who venture into the Mexican jungle and discover an ancient, malevolent force that lurks within the ruins.",
+      "rating": "4.4",
+      "fiction": "Yes",
+      "quantity": 13
+    },
+    {
+      "SK": "#ISBN1000000013",
+      "PK": "GENRE#Horror",
+      "title": "House of Leaves",
+      "author": "Mark Z. Danielewski",
+      "price": "$16.75",
+      "description": "Mark Z. Danielewski's innovative and mind-bending novel explores a family's experience in a labyrinthine, ever-changing house that defies the laws of physics and reality.",
+      "rating": "4.7",
+      "fiction": "Yes",
+      "quantity": 76
+    },
+    {
+      "SK": "#ISBN1000000014",
+      "PK": "GENRE#Horror",
+      "title": "The Babadook",
+      "author": "Jennifer Kent",
+      "price": "$8.99",
+      "description": "Jennifer Kent's horror film's novelization tells the story of a mother and her troubled son who are haunted by a sinister creature known as the Babadook.",
+      "rating": "4.3",
+      "fiction": "Yes",
+      "quantity": 60
+    },
+    {
+      "SK": "#ISBN1000000015",
+      "PK": "GENRE#Horror",
+      "title": "The Ritual",
+      "author": "Adam Nevill",
+      "price": "$10.99",
+      "description": "Adam Nevill's horror novel follows a group of old friends who embark on a hiking trip in the Scandinavian wilderness, only to encounter ancient evil and terror.",
+      "rating": "4.3",
+      "fiction": "Yes",
+      "quantity": 48
+    },
+    {
+      "SK": "#ISBN1000000016",
+      "PK": "GENRE#Horror",
+      "title": "Annihilation",
+      "author": "Jeff VanderMeer",
+      "price": "$9.75",
+      "description": "Jeff VanderMeer's novel follows an expedition into a mysterious and dangerous area known as Area X, where the laws of nature seem to be twisted and reality itself is uncertain.",
+      "rating": "4.2",
+      "fiction": "Yes",
+      "quantity": 2
+    },
+    {
+      "SK": "#ISBN1000000017",
+      "PK": "GENRE#Horror",
+      "title": "Coraline",
+      "author": "Neil Gaiman",
+      "price": "$8.99",
+      "description": "Neil Gaiman's dark fantasy novella follows a young girl named Coraline who discovers a parallel world where everything seems perfect, but sinister secrets lurk beneath the surface.",
+      "rating": "4.5",
+      "fiction": "Yes",
+      "quantity": 77
+    },
+    {
+      "SK": "#ISBN1000000018",
+      "PK": "GENRE#Horror",
+      "title": "Heart-Shaped Box",
+      "author": "Joe Hill",
+      "price": "$11.25",
+      "description": "Joe Hill's debut novel follows an aging rock star who buys a haunted suit online, only to find himself haunted by the vengeful ghost of its former owner.",
+      "rating": "4.5",
+      "fiction": "Yes",
+      "quantity": 95
+    },
+    {
+      "SK": "#ISBN1000000019",
+      "PK": "GENRE#Horror",
+      "title": "The Fisherman",
+      "author": "John Langan",
+      "price": "$13.99",
+      "description": "John Langan's horror novel follows two widowers who find solace in fishing, only to encounter a terrifying creature and ancient evil in the waters of upstate New York.",
+      "rating": "4.4",
+      "fiction": "Yes",
+      "quantity": 29
+    },
+    {
+      "SK": "#ISBN1000000020",
+      "PK": "GENRE#Horror",
+      "title": "Let the Right One In",
+      "author": "John Ajvide Lindqvist",
+      "price": "$12.75",
+      "description": "John Ajvide Lindqvist's novel tells the story of a bullied young boy who befriends a mysterious girl next door, only to discover she is a centuries-old vampire.",
+      "rating": "4.6",
+      "fiction": "Yes",
+      "quantity": 6
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+    "books": [
+      {
+        "SK": "ISBN#1000000121",
+        "author": "Nicholas Sparks",
+        "description": "A heartwarming love story set in a small coastal town.",
+        "PK": "GENRE#Romance",
+        "price": "14.99",
+        "quantity": 20,
+        "rating": "4.5",
+        "title": "The Notebook",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000122",
+        "author": "Jojo Moyes",
+        "description": "An emotional journey of two people from different worlds brought together by fate.",
+        "PK": "GENRE#Romance",
+        "price": "15.49",
+        "quantity": 18,
+        "rating": "4.4",
+        "title": "Me Before You",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000123",
+        "author": "Colleen Hoover",
+        "description": "A contemporary romance that explores love, loss, and second chances.",
+        "PK": "GENRE#Romance",
+        "price": "13.95",
+        "quantity": 22,
+        "rating": "4.3",
+        "title": "It Ends with Us",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000124",
+        "author": "E.L. James",
+        "description": "An intoxicating and passionate romance that pushes boundaries.",
+        "PK": "GENRE#Romance",
+        "price": "14.79",
+        "quantity": 19,
+        "rating": "4.2",
+        "title": "Fifty Shades of Grey",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000125",
+        "author": "Julia Quinn",
+        "description": "A delightful historical romance filled with humor and wit.",
+        "PK": "GENRE#Romance",
+        "price": "12.95",
+        "quantity": 20,
+        "rating": "4.6",
+        "title": "The Duke and I",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000126",
+        "author": "Taylor Jenkins Reid",
+        "description": "An epic love story set in the world of rock 'n' roll.",
+        "PK": "GENRE#Romance",
+        "price": "14.99",
+        "quantity": 21,
+        "rating": "4.5",
+        "title": "Daisy Jones & The Six",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000127",
+        "author": "Nicholas Sparks",
+        "description": "A bittersweet romance that transcends time and memory.",
+        "PK": "GENRE#Romance",
+        "price": "13.99",
+        "quantity": 17,
+        "rating": "4.4",
+        "title": "The Longest Ride",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000128",
+        "author": "Helen Hoang",
+        "description": "A unique and heartwarming romance between two individuals with their own challenges.",
+        "PK": "GENRE#Romance",
+        "price": "15.49",
+        "quantity": 19,
+        "rating": "4.6",
+        "title": "The Kiss Quotient",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000129",
+        "author": "Jodi Picoult",
+        "description": "A powerful and thought-provoking love story that explores life's difficult choices.",
+        "PK": "GENRE#Romance",
+        "price": "14.95",
+        "quantity": 20,
+        "rating": "4.3",
+        "title": "The Storyteller",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000130",
+        "author": "Marian Keyes",
+        "description": "A funny and heartwarming tale of love and second chances.",
+        "PK": "GENRE#Romance",
+        "price": "12.95",
+        "quantity": 18,
+        "rating": "4.4",
+        "title": "The Last Chance Saloon",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000131",
+        "author": "Sylvain Reynard",
+        "description": "A passionate and sensual love story set in the world of academia.",
+        "PK": "GENRE#Romance",
+        "price": "14.79",
+        "quantity": 21,
+        "rating": "4.5",
+        "title": "Gabriel's Inferno",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000132",
+        "author": "Nora Roberts",
+        "description": "A romantic suspense novel that keeps you on the edge of your seat.",
+        "PK": "GENRE#Romance",
+        "price": "14.99",
+        "quantity": 17,
+        "rating": "4.4",
+        "title": "The Obsession",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000133",
+        "author": "Lisa Kleypas",
+        "description": "A historical romance filled with passion and intrigue.",
+        "PK": "GENRE#Romance",
+        "price": "13.99",
+        "quantity": 19,
+        "rating": "4.3",
+        "title": "Devil in Winter",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000134",
+        "author": "Kristin Hannah",
+        "description": "A moving and emotional love story set against the backdrop of World War II.",
+        "PK": "GENRE#Romance",
+        "price": "16.49",
+        "quantity": 15,
+        "rating": "4.5",
+        "title": "The Nightingale",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000135",
+        "author": "Sarah Pekkanen",
+        "description": "A heartwarming story of two people who discover love in unexpected places.",
+        "PK": "GENRE#Romance",
+        "price": "14.99",
+        "quantity": 20,
+        "rating": "4.4",
+        "title": "The Art of Falling in Love",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000136",
+        "author": "Emily Giffin",
+        "description": "A captivating and emotionally charged story of love, loss, and redemption.",
+        "PK": "GENRE#Romance",
+        "price": "13.95",
+        "quantity": 18,
+        "rating": "4.3",
+        "title": "Something Borrowed",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000137",
+        "author": "Nicholas Sparks",
+        "description": "A poignant love story that explores the power of forgiveness.",
+        "PK": "GENRE#Romance",
+        "price": "14.79",
+        "quantity": 21,
+        "rating": "4.5",
+        "title": "The Choice",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000138",
+        "author": "Kristin Hannah",
+        "description": "A gripping and emotional story of two sisters and their bond during turbulent times.",
+        "PK": "GENRE#Romance",
+        "price": "15.95",
+        "quantity": 19,
+        "rating": "4.6",
+        "title": "Firefly Lane",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000139",
+        "author": "J.R. Ward",
+        "description": "A captivating paranormal romance set in a world of vampires and intrigue.",
+        "PK": "GENRE#Romance",
+        "price": "16.49",
+        "quantity": 17,
+        "rating": "4.5",
+        "title": "Dark Lover",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000140",
+        "author": "E.L. James",
+        "description": "A sensual and provocative romance that explores the complexities of desire.",
+        "PK": "GENRE#Romance",
+        "price": "14.99",
+        "quantity": 18,
+        "rating": "4.4",
+        "title": "The Mister",
+        "fiction": "Yes"
+      }
+    ]
+  }
+  

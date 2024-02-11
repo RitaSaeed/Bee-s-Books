@@ -1,0 +1,225 @@
+{
+  "books": [
+    {
+      "SK": "ISBN#1000000101",
+      "author": "Haruki Murakami",
+      "description": "A surreal journey through the minds of two characters who share a unique connection.",
+      "PK": "GENRE#Contemporary",
+      "price": "15.99",
+      "quantity": 18,
+      "rating": "4.5",
+      "title": "Kafka on the Shore",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000102",
+      "author": "Celeste Ng",
+      "description": "A tale of family, secrets, and the intricacies of motherhood.",
+      "PK": "GENRE#Contemporary",
+      "price": "15.99",
+      "quantity": 18,
+      "rating": "4.6",
+      "title": "Little Fires Everywhere",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000103",
+      "author": "Tara Westover",
+      "description": "An incredible memoir of a woman who grows up in a strict and abusive household but goes on to earn a PhD from Cambridge University.",
+      "PK": "GENRE#Contemporary",
+      "price": "16.99",
+      "quantity": 15,
+      "rating": "4.7",
+      "title": "Educated",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000104",
+      "author": "Meg Wolitzer",
+      "description": "A novel about the complexities of female friendship and ambition.",
+      "PK": "GENRE#Contemporary",
+      "price": "13.79",
+      "quantity": 21,
+      "rating": "4.3",
+      "title": "The Female Persuasion",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000105",
+      "author": "Leila Slimani",
+      "description": "A chilling and suspenseful tale of a nanny's role in a family's life.",
+      "PK": "GENRE#Contemporary",
+      "price": "12.95",
+      "quantity": 19,
+      "rating": "4.1",
+      "title": "The Perfect Nanny",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000106",
+      "author": "Tommy Orange",
+      "description": "A powerful narrative that weaves together the lives of Native Americans in Oakland, California.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.99",
+      "quantity": 20,
+      "rating": "4.5",
+      "title": "There There",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000107",
+      "author": "Sally Rooney",
+      "description": "A complex and subtle love story that explores the intricacies of human connection.",
+      "PK": "GENRE#Contemporary",
+      "price": "15.49",
+      "quantity": 17,
+      "rating": "4.4",
+      "title": "Conversations with Friends",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000108",
+      "author": "Elizabeth Strout",
+      "description": "A collection of interconnected stories about the people of a small town in Illinois.",
+      "PK": "GENRE#Contemporary",
+      "price": "16.99",
+      "quantity": 15,
+      "rating": "4.3",
+      "title": "Olive Kitteridge",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000109",
+      "author": "Liane Moriarty",
+      "description": "A story of secrets, lies, and the consequences of keeping the truth hidden.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.95",
+      "quantity": 20,
+      "rating": "4.6",
+      "title": "Big Little Lies",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000110",
+      "author": "A.J. Finn",
+      "description": "A psychological thriller about an agoraphobic woman who believes she has witnessed a crime.",
+      "PK": "GENRE#Contemporary",
+      "price": "13.99",
+      "quantity": 18,
+      "rating": "4.2",
+      "title": "The Woman in the Window",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000111",
+      "author": "Jodi Picoult",
+      "description": "A gripping story that delves into moral dilemmas, family secrets, and the consequences of choices.",
+      "PK": "GENRE#Contemporary",
+      "price": "16.95",
+      "quantity": 22,
+      "rating": "4.4",
+      "title": "The Book of Two Ways",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000112",
+      "author": "Gillian Flynn",
+      "description": "A psychological thriller about the mysterious disappearance of a woman and the secrets that come to light.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.79",
+      "quantity": 19,
+      "rating": "4.3",
+      "title": "Gone Girl",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000113",
+      "author": "Donna Tartt",
+      "description": "A coming-of-age story of a young boy who becomes entangled in a world of art, obsession, and deception.",
+      "PK": "GENRE#Contemporary",
+      "price": "16.49",
+      "quantity": 15,
+      "rating": "4.4",
+      "title": "The Goldfinch",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000114",
+      "author": "Kristin Hannah",
+      "description": "A story of two sisters in France during World War II, their struggles, and their unbreakable bond.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.95",
+      "quantity": 20,
+      "rating": "4.6",
+      "title": "The Nightingale",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000115",
+      "author": "Delia Owens",
+      "description": "A mystery and coming-of-age novel set in the marshes of North Carolina.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.95",
+      "quantity": 20,
+      "rating": "4.6",
+      "title": "Where the Crawdads Sing",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000116",
+      "author": "Tayari Jones",
+      "description": "A novel about love, race, and injustice in America.",
+      "PK": "GENRE#Contemporary",
+      "price": "15.99",
+      "quantity": 16,
+      "rating": "4.5",
+      "title": "An American Marriage",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000117",
+      "author": "Kevin Kwan",
+      "description": "A humorous and satirical novel that explores the lives of wealthy Asian families.",
+      "PK": "GENRE#Contemporary",
+      "price": "15.99",
+      "quantity": 18,
+      "rating": "4.2",
+      "title": "Crazy Rich Asians",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000118",
+      "author": "Celeste Ng",
+      "description": "A powerful story that explores family dynamics, race, and identity.",
+      "PK": "GENRE#Contemporary",
+      "price": "14.95",
+      "quantity": 20,
+      "rating": "4.5",
+      "title": "Everything I Never Told You",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000119",
+      "author": "Chimamanda Ngozi Adichie",
+      "description": "A thought-provoking novel about race, identity, and the complexities of human connection.",
+      "PK": "GENRE#Contemporary",
+      "price": "16.99",
+      "quantity": 15,
+      "rating": "4.6",
+      "title": "Americanah",
+      "fiction": "Yes"
+    },
+    {
+        "SK": "ISBN#1000000120",
+        "author": "Elena Ferrante",
+        "description": "The first book in the Neapolitan Novels series, following the lifelong friendship of two women in post-war Italy.",
+        "PK": "GENRE#Contemporary",
+        "price": "16.95",
+        "quantity": 17,
+        "rating": "4.5",
+        "title": "My Brilliant Friend",
+        "fiction": "Yes"
+      }
+      
+  ]
+}

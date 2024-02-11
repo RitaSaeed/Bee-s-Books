@@ -1,0 +1,224 @@
+{
+  "books": [
+    {
+      "SK": "ISBN#1000000081",
+      "author": "Clive Cussler",
+      "description": "Follow Dirk Pitt as he explores the depths of the ocean and uncovers lost shipwrecks and mysteries.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "13.99",
+      "quantity": 16,
+      "rating": "4.5",
+      "title": "Sahara",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000082",
+      "author": "Ernest Hemingway",
+      "description": "Join Santiago in his epic battle against a giant marlin in the Gulf Stream in this classic novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "10.99",
+      "quantity": 18,
+      "rating": "4.8",
+      "title": "The Old Man and the Sea",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000083",
+      "author": "Jack London",
+      "description": "Experience the harsh Alaskan wilderness and the struggle for survival in this adventure classic.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "9.99",
+      "quantity": 25,
+      "rating": "4.7",
+      "title": "The Call of the Wild",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000084",
+      "author": "Stephen King",
+      "description": "Embark on a perilous journey through a post-apocalyptic world in this gripping adventure novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "12.99",
+      "quantity": 15,
+      "rating": "4.5",
+      "title": "The Stand",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000085",
+      "author": "Jack Kerouac",
+      "description": "Join Sal Paradise and Dean Moriarty on their cross-country road trip in this iconic Beat Generation novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "14.99",
+      "quantity": 22,
+      "rating": "4.6",
+      "title": "On the Road",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000086",
+      "author": "Tom Clancy",
+      "description": "Follow Jack Ryan as he deals with international espionage and threats to national security.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "11.99",
+      "quantity": 20,
+      "rating": "4.4",
+      "title": "The Hunt for Red October",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000087",
+      "author": "Wilbur Smith",
+      "description": "Set out on African adventures and exploration with the Courtney family in this thrilling saga.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "15.99",
+      "quantity": 19,
+      "rating": "4.6",
+      "title": "When the Lion Feeds",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000088",
+      "author": "John Grisham",
+      "description": "Experience legal thrills and suspense as a young lawyer takes on a powerful law firm in Memphis.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "12.99",
+      "quantity": 17,
+      "rating": "4.5",
+      "title": "The Firm",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000089",
+      "author": "Michael Crichton",
+      "description": "Delve into the world of genetic engineering and corporate intrigue on a remote island.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "14.99",
+      "quantity": 14,
+      "rating": "4.7",
+      "title": "Jurassic Park",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000090",
+      "author": "Patrick O'Brian",
+      "description": "Join Captain Jack Aubrey and Stephen Maturin on their seafaring adventures during the Napoleonic Wars.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "16.99",
+      "quantity": 13,
+      "rating": "4.8",
+      "title": "Master and Commander",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000091",
+      "author": "David Baldacci",
+      "description": "Join the enigmatic assassin Will Robie as he carries out dangerous missions for the U.S. government.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "12.99",
+      "quantity": 18,
+      "rating": "4.6",
+      "title": "The Hit",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000092",
+      "author": "Andy Weir",
+      "description": "Experience the gripping story of an astronaut stranded on Mars and his fight for survival.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "10.99",
+      "quantity": 16,
+      "rating": "4.7",
+      "title": "The Martian",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000093",
+      "author": "Michael Crichton",
+      "description": "Explore the world of dinosaur cloning and its consequences in this thrilling adventure novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "14.99",
+      "quantity": 20,
+      "rating": "4.6",
+      "title": "Jurassic Park",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000094",
+      "author": "Daniel Defoe",
+      "description": "Join Robinson Crusoe as he survives shipwreck and isolation on a deserted island in this classic adventure.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "11.99",
+      "quantity": 19,
+      "rating": "4.5",
+      "title": "Robinson Crusoe",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000095",
+      "author": "Michael Ende",
+      "description": "Join Bastian Balthazar Bux on a magical adventure through the world of Fantasia in this beloved novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "12.99",
+      "quantity": 17,
+      "rating": "4.7",
+      "title": "The Neverending Story",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000096",
+      "author": "J.R.R. Tolkien",
+      "description": "Embark on a quest to destroy the One Ring and defeat the Dark Lord Sauron in this epic fantasy novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "19.99",
+      "quantity": 15,
+      "rating": "4.9",
+      "title": "The Lord of the Rings",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000097",
+      "author": "C.S. Lewis",
+      "description": "Step through the wardrobe and into the magical land of Narnia in this beloved children's fantasy novel.",
+      "PK": "GENRE#Action/Adventure",
+      "price": "9.99",
+      "quantity": 21,
+      "rating": "4.8",
+      "title": "The Lion, the Witch and the Wardrobe",
+      "fiction": "Yes"
+    },
+    {
+        "SK": "ISBN#1000000098",
+        "author": "Tom Clancy",
+        "description": "Join Jack Ryan as he faces international terrorism and political intrigue in this action-packed novel.",
+        "PK": "GENRE#Action/Adventure",
+        "price": "13.99",
+        "quantity": 14,
+        "rating": "4.6",
+        "title": "Clear and Present Danger",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000099",
+        "author": "Ken Follett",
+        "description": "Experience espionage, sabotage, and heroism in the midst of World War II in this historical adventure.",
+        "PK": "GENRE#Action/Adventure",
+        "price": "15.99",
+        "quantity": 12,
+        "rating": "4.7",
+        "title": "Eye of the Needle",
+        "fiction": "Yes"
+      },
+      {
+        "SK": "ISBN#1000000100",
+        "author": "Andy McNab",
+        "description": "Join Nick Stone, a former SAS operative, in his high-stakes adventures as a professional killer.",
+        "PK": "GENRE#Action/Adventure",
+        "price": "11.99",
+        "quantity": 16,
+        "rating": "4.5",
+        "title": "Remote Control",
+        "fiction": "Yes"
+      }      
+  ]
+}

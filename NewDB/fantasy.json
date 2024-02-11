@@ -1,0 +1,224 @@
+{
+    "books": [
+        {
+            "SK": "ISBN#1000000061",
+            "author": "J.R.R. Tolkien",
+            "description": "The second volume of 'The Lord of the Rings' continues the epic journey of Frodo and his companions as they confront new challenges and dangers in their quest to destroy the One Ring.",
+            "PK": "GENRE#Fantasy",
+            "price": "15.99",
+            "quantity": 19,
+            "rating": "4.8",
+            "title": "The Two Towers",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000062",
+            "author": "George R.R. Martin",
+            "description": "In the second book of the 'A Song of Ice and Fire' series, the Seven Kingdoms continue to experience political turmoil and war as various claimants vie for the Iron Throne.",
+            "PK": "GENRE#Fantasy",
+            "price": "16.99",
+            "quantity": 15,
+            "rating": "4.6",
+            "title": "A Clash of Kings",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000063",
+            "author": "Brandon Sanderson",
+            "description": "Vin, a powerful Allomancer, and her allies face new challenges as they work to overthrow the oppressive Lord Ruler and bring hope to a world enslaved by dark forces.",
+            "PK": "GENRE#Fantasy",
+            "price": "14.99",
+            "quantity": 14,
+            "rating": "4.7",
+            "title": "The Well of Ascension",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000064",
+            "author": "J.K. Rowling",
+            "description": "Follow Harry Potter's second year at Hogwarts School of Witchcraft and Wizardry as he uncovers the mystery of the Chamber of Secrets and faces a new dark threat.",
+            "PK": "GENRE#Fantasy",
+            "price": "12.99",
+            "quantity": 17,
+            "rating": "4.8",
+            "title": "Harry Potter and the Chamber of Secrets",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000065",
+            "author": "Patrick Rothfuss",
+            "description": "Kvothe continues his journey as a gifted musician and magician, delving into the mysteries of the arcane arts and confronting new challenges in a world filled with wonder and danger.",
+            "PK": "GENRE#Fantasy",
+            "price": "14.49",
+            "quantity": 20,
+            "rating": "4.6",
+            "title": "The Wise Man's Fear",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000066",
+            "author": "J.R.R. Tolkien",
+            "description": "Bilbo Baggins's nephew, Frodo, embarks on a perilous journey to destroy the One Ring, encountering allies and enemies in a quest to save Middle-earth.",
+            "PK": "GENRE#Fantasy",
+            "price": "13.99",
+            "quantity": 16,
+            "rating": "4.7",
+            "title": "The Fellowship of the Ring",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000067",
+            "author": "Brandon Sanderson",
+            "description": "In the city of Elantris, a fallen prince seeks to change the fate of its cursed inhabitants as they discover the power of magic once again.",
+            "PK": "GENRE#Fantasy",
+            "price": "14.99",
+            "quantity": 11,
+            "rating": "4.5",
+            "title": "Elantris",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000068",
+            "author": "Brandon Sanderson",
+            "description": "In a world where magical Shardblades exist, a young scholar, Kaladin, must overcome his past and lead a group of soldiers in a war against a powerful enemy.",
+            "PK": "GENRE#Fantasy",
+            "price": "15.99",
+            "quantity": 18,
+            "rating": "4.6",
+            "title": "The Way of Kings",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000069",
+            "author": "Scott Lynch",
+            "description": "Master thief Locke Lamora and his band of con artists find themselves in a dangerous game of wits and intrigue as they navigate the criminal underworld of Camorr.",
+            "PK": "GENRE#Fantasy",
+            "price": "13.99",
+            "quantity": 9,
+            "rating": "4.4",
+            "title": "The Lies of Locke Lamora",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000070",
+            "author": "Tad Williams",
+            "description": "In a land filled with magic and ancient mysteries, Simon embarks on an epic quest to save his world from the evil forces of the Storm King.",
+            "PK": "GENRE#Fantasy",
+            "price": "14.49",
+            "quantity": 13,
+            "rating": "4.5",
+            "title": "The Dragonbone Chair",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000071",
+            "author": "Erin Morgenstern",
+            "description": "Celia and Marco, two young magicians, engage in a magical competition within a mysterious and enchanting circus known as Le Cirque des Rêves, unaware of the consequences of their game.",
+            "PK": "GENRE#Fantasy",
+            "price": "15.99",
+            "quantity": 12,
+            "rating": "4.6",
+            "title": "The Night Circus",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000072",
+            "author": "Susanna Clarke",
+            "description": "In 19th century England, two magicians, Mr. Norrell and Jonathan Strange, emerge to bring magic back to the realm, but their ambitions lead to a dangerous rivalry.",
+            "PK": "GENRE#Fantasy",
+            "price": "16.49",
+            "quantity": 10,
+            "rating": "4.7",
+            "title": "Jonathan Strange & Mr Norrell",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000073",
+            "author": "Ray Bradbury",
+            "description": "In a dystopian society where books are banned, fireman Guy Montag rebels against the oppressive regime, discovering the power of literature and the importance of free thought.",
+            "PK": "GENRE#Science Fiction",
+            "price": "11.99",
+            "quantity": 14,
+            "rating": "4.8",
+            "title": "Fahrenheit 451",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000074",
+            "author": "Philip K. Dick",
+            "description": "Set in a post-apocalyptic world, 'Do Androids Dream of Electric Sheep?' follows bounty hunter Rick Deckard as he hunts down rogue androids on the decaying streets of future Los Angeles.",
+            "PK": "GENRE#Science Fiction",
+            "price": "12.99",
+            "quantity": 16,
+            "rating": "4.6",
+            "title": "Do Androids Dream of Electric Sheep?",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000075",
+            "author": "Orson Scott Card",
+            "description": "Gifted children, including the brilliant Ender Wiggin, are trained from a young age to lead humanity's forces against an alien threat in a distant future where the fate of Earth hangs in the balance.",
+            "PK": "GENRE#Science Fiction",
+            "price": "14.49",
+            "quantity": 18,
+            "rating": "4.7",
+            "title": "Ender's Game",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000076",
+            "author": "Isaac Asimov",
+            "description": "In a future where robots serve humanity, detective Elijah Baley and his robot partner R. Daneel Olivaw investigate a murder on a distant planet, uncovering a conspiracy that threatens the stability of the galaxy.",
+            "PK": "GENRE#Science Fiction",
+            "price": "13.99",
+            "quantity": 20,
+            "rating": "4.7",
+            "title": "The Caves of Steel",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000077",
+            "author": "Frank Herbert",
+            "description": "In a universe where noble houses vie for control of the desert planet Arrakis and its valuable spice, young Paul Atreides must navigate political intrigue and fulfill his destiny as the messiah of the desert.",
+            "PK": "GENRE#Science Fiction",
+            "price": "15.99",
+            "quantity": 15,
+            "rating": "4.8",
+            "title": "Dune",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000078",
+            "author": "Ray Bradbury",
+            "description": "In this collection of short stories, Ray Bradbury explores themes of technology, censorship, and the human condition in a series of thought-provoking and visionary tales.",
+            "PK": "GENRE#Science Fiction",
+            "price": "14.49",
+            "quantity": 13,
+            "rating": "4.6",
+            "title": "The Illustrated Man",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000079",
+            "author": "Arthur C. Clarke",
+            "description": "A team of astronauts embarks on a mission to investigate a mysterious monolith discovered on the Moon, leading to a journey into the depths of space and the evolution of humanity.",
+            "PK": "GENRE#Science Fiction",
+            "price": "16.99",
+            "quantity": 16,
+            "rating": "4.7",
+            "title": "2001: A Space Odyssey",
+            "fiction": "Yes"
+        },
+        {
+            "SK": "ISBN#1000000080",
+            "author": "William Gibson",
+            "description": "Case, a washed-up computer hacker, is hired for one last job that leads him into the dangerous world of cyberspace and corporate espionage in this groundbreaking cyberpunk novel.",
+            "PK": "GENRE#Science Fiction",
+            "price": "15.99",
+            "quantity": 17,
+            "rating": "4.5",
+            "title": "Neuromancer",
+            "fiction": "Yes"
+        }
+    ]
+}

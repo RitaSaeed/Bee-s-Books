@@ -1,25 +1,20 @@
 import boto3
 import json
+import sys
 dynamodb = boto3.resource('dynamodb')
 
 table = dynamodb.Table('Product-Order-Table')
 
-with open("memoir.json", "r") as file:
-    books = json.load(file)
-
-
-#with open("memoir2.json", "r") as file:
-#    books2 = json.load(file)
-
-#books.update(books2)
-# all_books = {**books, **books2}
-
+filename = sys.argv[1]
 
 try:
-    # Insert caretakers
-    for book in books:
-        table.put_item(Item=book)
-    print("Book inserted successfully.")
+
+    with open(filename, 'r') as json_file:
+        books = json.load(json_file)
+
+    with table.batch_writer() as batch:
+        for book in books["books"]:
+            batch.put_item(Item=book)
 
 
 except Exception as e:

@@ -1,0 +1,224 @@
+{
+  "books": [
+    {
+      "SK": "ISBN#1000000041",
+      "author": "Frank Herbert",
+      "description": "Follow the epic journey of Paul Atreides as he navigates the treacherous politics of Arrakis and the power of spice.",
+      "PK": "GENRE#Science Fiction",
+      "price": "14.99",
+      "quantity": 10,
+      "rating": "4.6",
+      "title": "Dune",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000042",
+      "author": "Orson Scott Card",
+      "description": "Join Ender Wiggin in his journey to save humanity in a world threatened by an alien species.",
+      "PK": "GENRE#Science Fiction",
+      "price": "12.99",
+      "quantity": 8,
+      "rating": "4.4",
+      "title": "Ender's Game",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000043",
+      "author": "William Gibson",
+      "description": "Enter the cyberpunk world of Case, a washed-up hacker, as he uncovers the secrets of an AI and a powerful drug known as 'Neuromancer.'",
+      "PK": "GENRE#Science Fiction",
+      "price": "11.49",
+      "quantity": 15,
+      "rating": "4.3",
+      "title": "Neuromancer",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000044",
+      "author": "Suzanne Collins",
+      "description": "In a dystopian society, Katniss Everdeen must fight for her life in the Hunger Games, a televised battle to the death.",
+      "PK": "GENRE#Science Fiction",
+      "price": "13.49",
+      "quantity": 14,
+      "rating": "4.5",
+      "title": "The Hunger Games",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000045",
+      "author": "Isaac Asimov",
+      "description": "Join Hari Seldon as he predicts the fall of the Galactic Empire and strives to preserve knowledge in the face of a dark age.",
+      "PK": "GENRE#Science Fiction",
+      "price": "15.99",
+      "quantity": 19,
+      "rating": "4.7",
+      "title": "Foundation",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000046",
+      "author": "Aldous Huxley",
+      "description": "In a future society engineered for stability, Bernard Marx and Lenina Crowne discover the price of conformity and the loss of individuality.",
+      "PK": "GENRE#Science Fiction",
+      "price": "14.99",
+      "quantity": 20,
+      "rating": "4.6",
+      "title": "Brave New World",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000047",
+      "author": "George Orwell",
+      "description": "Winston Smith rebels against the oppressive regime of Big Brother in a bleak, surveillance-driven future.",
+      "PK": "GENRE#Science Fiction",
+      "price": "11.99",
+      "quantity": 12,
+      "rating": "4.7",
+      "title": "1984",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000048",
+      "author": "Neal Stephenson",
+      "description": "Hiro Protagonist, a hacker and pizza delivery driver, is drawn into a world of virtual reality, corporate espionage, and the enigmatic drug Snow Crash.",
+      "PK": "GENRE#Science Fiction",
+      "price": "13.99",
+      "quantity": 17,
+      "rating": "4.5",
+      "title": "Snow Crash",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000049",
+      "author": "Ursula K. Le Guin",
+      "description": "Join Genly Ai, an ambassador on a mission to a planet inhabited by androgynous beings, as he navigates cultural and political complexities.",
+      "PK": "GENRE#Science Fiction",
+      "price": "12.49",
+      "quantity": 18,
+      "rating": "4.6",
+      "title": "The Left Hand of Darkness",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000050",
+      "author": "Andy Weir",
+      "description": "Astronaut Mark Watney is left stranded on Mars and must use his ingenuity and scientific skills to survive until rescue is possible.",
+      "PK": "GENRE#Science Fiction",
+      "price": "14.99",
+      "quantity": 14,
+      "rating": "4.7",
+      "title": "The Martian",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000051",
+      "author": "Richard K. Morgan",
+      "description": "In a world where consciousness can be transferred between bodies, Takeshi Kovacs, a former soldier, investigates a wealthy man's murder.",
+      "PK": "GENRE#Science Fiction",
+      "price": "15.99",
+      "quantity": 11,
+      "rating": "4.3",
+      "title": "Altered Carbon",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000052",
+      "author": "James S.A. Corey",
+      "description": "Join Detective Miller and Captain Holden as they uncover a conspiracy that threatens humanity in a colonized solar system.",
+      "PK": "GENRE#Science Fiction",
+      "price": "13.99",
+      "quantity": 19,
+      "rating": "4.7",
+      "title": "The Expanse: Leviathan Wakes",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000053",
+      "author": "Philip K. Dick",
+      "description": "Rick Deckard, a bounty hunter, is tasked with hunting down and 'retiring' rogue androids in a dystopian future.",
+      "PK": "GENRE#Science Fiction",
+      "price": "12.99",
+      "quantity": 15,
+      "rating": "4.5",
+      "title": "Do Androids Dream of Electric Sheep?",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000054",
+      "author": "Arthur C. Clarke",
+      "description": "A mysterious monolith is discovered on the moon, leading humanity on a journey to the outer reaches of the solar system and beyond.",
+      "PK": "GENRE#Science Fiction",
+      "price": "14.49",
+      "quantity": 13,
+      "rating": "4.7",
+      "title": "2001: A Space Odyssey",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000055",
+      "author": "H.G. Wells",
+      "description": "Witness the invasion of Earth by Martians and the struggle for survival in this classic science fiction novel.",
+      "PK": "GENRE#Science Fiction",
+      "price": "10.99",
+      "quantity": 18,
+      "rating": "4.4",
+      "title": "The War of the Worlds",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000056",
+      "author": "Octavia E. Butler",
+      "description": "Lauren Olamina, a young woman with hyperempathy, navigates a post-apocalyptic America while founding a new religion.",
+      "PK": "GENRE#Science Fiction",
+      "price": "13.99",
+      "quantity": 16,
+      "rating": "4.5",
+      "title": "Parable of the Sower",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000057",
+      "author": "Mary Shelley",
+      "description": "Victor Frankenstein, a young scientist, creates a grotesque creature in a daring experiment, leading to tragic consequences.",
+      "PK": "GENRE#Science Fiction",
+      "price": "11.99",
+      "quantity": 20,
+      "rating": "4.3",
+      "title": "Frankenstein",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000058",
+      "author": "Ray Bradbury",
+      "description": "Experience a future society where books are banned, and firemen burn any that are found.",
+      "PK": "GENRE#Science Fiction",
+      "price": "12.49",
+      "quantity": 19,
+      "rating": "4.6",
+      "title": "Fahrenheit 451",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000059",
+      "author": "Margaret Atwood",
+      "description": "In a patriarchal society of the future, women are subjugated and valued only for their ability to bear children.",
+      "PK": "GENRE#Science Fiction",
+      "price": "14.99",
+      "quantity": 14,
+      "rating": "4.7",
+      "title": "The Handmaid's Tale",
+      "fiction": "Yes"
+    },
+    {
+      "SK": "ISBN#1000000060",
+      "author": "Dan Simmons",
+      "description": "A group of scientists embarks on an expedition to a remote planet to study an ancient alien artifact, but they discover something far more sinister.",
+      "PK": "GENRE#Science Fiction",
+      "price": "15.49",
+      "quantity": 17,
+      "rating": "4.4",
+      "title": "Hyperion",
+      "fiction": "Yes"
+    }
+  ]
+}
