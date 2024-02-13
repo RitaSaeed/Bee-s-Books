@@ -46,3 +46,44 @@ a {
   --bs-emphasis-color: #fff;
 }
 
+@media (min-width: 992px) {
+  #navcol-3 {
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-item {
+  }
+}
+
+@media (min-width: 992px) {
+  form {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  form {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1400px) {
+  form {
+    width: 750px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .navbar-nav {
+    padding-left: 265px;
+  }
+}
+
+.navbar {
+}
+
+body {
+  background: var(--bs-emphasis-color);
+}
+
