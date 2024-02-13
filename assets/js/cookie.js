@@ -11,7 +11,7 @@ if (curURL.includes('code=')) {
         "code": code
     }
   }
-
+ console.log(post_body)
   fetch('https://qs84bpwvhb.execute-api.us-east-1.amazonaws.com/beta/token', {
     method: 'POST',
     headers: {
