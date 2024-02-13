@@ -24,9 +24,11 @@ if (curURL.includes('code=')) {
       if (!response.ok) {
         throw new Error('Bad token request.');
       }
+      console.log(response)
       return response.json();
     })
     .then((data) => {
+        console.log(data)
         console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
@@ -70,6 +72,27 @@ function getCookie(name) {
     }
     return null; 
 }
+
+function logoutClicked() {
+    try {
+        deleteCookie('access_token');
+        deleteCookie('id_token');
+        location.reload()
+    } catch (error) {
+        console.log(error);
+    }
+}
+function deleteCookie(cookieName) {
+    // Check if the cookie exists
+    if (getCookie(cookieName)) {
+        // Set the expiration date in the past to delete the cookie
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        console.log(`Cookie '${cookieName}' deleted successfully.`);
+    } else {
+        console.log(`Cookie '${cookieName}' does not exist.`);
+    }
+}
+
 
 
 function getValueFromJWT(cookieName, fieldName) {
