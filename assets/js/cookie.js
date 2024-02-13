@@ -28,8 +28,6 @@ if (curURL.includes('code=')) {
       return response.json();
     })
     .then((data) => {
-        console.log(data)
-        console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
         setSessionCookie('id_token', data.body.id_token);
