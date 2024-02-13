@@ -34,6 +34,10 @@ if (curURL.includes('code=')) {
 
         setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
         updateHref('home-user', window.location.href + "accountPage")
+
+        const logoutLink = document.querySelector('#logout-link');
+        logoutLink.style.display = 'inline-block';
+
     })
     .catch((error) => {
       console.log('Error: ', error);
