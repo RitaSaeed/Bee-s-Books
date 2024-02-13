@@ -4,7 +4,7 @@ access_token = ''
 if (curURL.includes('code=')) {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const code = urlSearchParams.get('code');
-  window.history.replaceState({}, document.title, 'https://darichards-main-patch-225e.dva0ia48yehl5.amplifyapp.com/');
+  window.history.replaceState({}, document.title, 'https://darichards-main-patch-0ecb.dva0ia48yehl5.amplifyapp.com/');
 
   let post_body = {
     "body": {
