@@ -269,13 +269,13 @@
             ];
 
             fields.forEach(function(field) {
-                console.log(row.getData(field))
+                console.log(row.getData()[field])
                 var input = document.createElement("input");
                 input.type = "text";
                 input.placeholder = field.title;
                 input.style.width = field.width + "px";
                 input.id = field.field; // Assign unique ID
-                input.value = row.getData(field)
+                input.value = row.getData()[field]
                 container.appendChild(input);
                 container.appendChild(document.createElement("br"));
             });
