@@ -270,13 +270,13 @@
             var rowData = row.getData()
             console.log(rowData)
             fields.forEach(function(field) {
-                console.log(rowData[field])
+                console.log(rowData[field.field])
                 var input = document.createElement("input");
                 input.type = "text";
                 input.placeholder = field.title;
                 input.style.width = field.width + "px";
                 input.id = field.field; // Assign unique ID
-                input.value = rowData[field]
+                input.value = rowData[field.field]
                 container.appendChild(input);
                 container.appendChild(document.createElement("br"));
             });
