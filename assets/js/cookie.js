@@ -229,7 +229,7 @@ function updatePassword() {
 }
 
 function manageUsers() {
-    window.location.href = 'manageUsers.html'
+    window.location.href = 'admindashboard.html'
 }
 
 
