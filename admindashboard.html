@@ -219,9 +219,7 @@
                 });
 
                 table.on("rowClick", function(e, row){
-                    console.log(row)
-                    userDashboard(row)
-                    
+                    userDashboard(row)   
                 });
 
             } catch (error) {
@@ -230,7 +228,9 @@
         });
         
         async function userDashboard(row) {
-            
+            var overlay = document.createElement("div");
+            overlay.classList.add("dashboard-overlay");
+            document.body.appendChild(overlay);
             var container = document.createElement("div");
             container.classList.add("dashboard-container");
             var user = {};
@@ -245,8 +245,8 @@
                 //{ title: "Admin", field: "admin", hozAlign: "center", vertAlign: "middle", formatter: "tickCross", width: 75 }
             ];
             var rowData = row.getData()
-            console.log(rowData)
             fields.forEach(function(field) {
+
                 var label = document.createElement("label");
                 label.textContent = field.title;
                 container.appendChild(label);
@@ -272,7 +272,6 @@
                 });
                 // Call update user function
                 updateUser(user);
-                console.log(user);
             });
             container.appendChild(submitButton);
 
@@ -307,13 +306,10 @@
             closeButton.textContent = "Close";
             closeButton.classList.add("btn", "btn-danger");
             closeButton.addEventListener("click", function() {
-                // Close the dashboard
                 document.body.removeChild(container);
+                document.body.removeChild(overlay);
             });
             container.appendChild(closeButton);
-
-
-            // Append the main container to the body
             document.body.appendChild(container);
 
         }
@@ -343,7 +339,7 @@
             .catch(error => {
             console.error("API request failed: ", error);
             })
-            return
+            window.reload(true)
         }
 
         async function revokeAdmin(user) {
@@ -430,7 +426,7 @@
             }
 
 
-            //location.reload(true);
+            location.reload(true);
 
             return true;
         }
@@ -573,6 +569,17 @@
             margin-bottom: 25px;
             width: 150px;
         }
+
+        .dashboard-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+            z-index: 9999; /* ensure the overlay appears above other elements */
+        }
+
 
     </style>
 </body>
