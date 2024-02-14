@@ -220,8 +220,8 @@
                 }
 
                 mappedUsers = users.map(mapUserToTabulator)
-                var user = {};
                 
+
                 var table = new Tabulator("#userTableContainer", {
                     height: 300,
                     data: mappedUsers,
@@ -255,7 +255,7 @@
         async function userDashboard() {
             var container = document.createElement("div");
             container.classList.add("dashboard-container");
-
+            var user = {};
             // Create text fields
             var fields = [
                 { title: "Username", field: "username", width: 125 },
@@ -282,6 +282,7 @@
             submitButton.classList.add("btn", "btn-success");
             submitButton.addEventListener("click", function() {
                 // Add your update user logic here
+                user = {}
                 fields.forEach(function(field) {
                     user[field.field] = document.getElementById(field.field).value;
                 });
