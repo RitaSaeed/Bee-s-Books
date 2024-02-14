@@ -215,7 +215,7 @@
                         name: user.name || '',
                         address: user.address || 'null',
                         admin: user.isAdmin || false,
-                        confirmed: user["cognito:user_status"],
+                        confirmed: user["cognito:user_status"] || "Unconfirmed",
                         unsubscribed: user.Unsubscribed || 'null'
                     };
                 }
@@ -226,6 +226,8 @@
                     height: 300,
                     data: mappedUsers,
                     layout: 'fitDataFill',
+                    pagination: "local", // Enable pagination
+                    paginationSize: 5, // Set page size
                     columns: [
                         { title: "Username", field: "username", width: 125 },
                         { title: "Email", field: "email", width: 250 },
@@ -372,6 +374,7 @@
         .tabulator-col { 
             /* Your styles here */
             color: white;
+            background-color: #7C83BC;
         }
 
         /* Table Rows */
