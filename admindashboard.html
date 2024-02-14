@@ -271,9 +271,24 @@
                 input.type = "text";
                 input.placeholder = field.title;
                 input.style.width = field.width + "px";
+                input.id = field.field; // Assign unique ID
                 container.appendChild(input);
                 container.appendChild(document.createElement("br"));
             });
+
+            var submitButton = document.createElement("button");
+            submitButton.textContent = "Update User";
+            submitButton.classList.add("btn", "btn-success");
+            submitButton.addEventListener("click", function() {
+                // Add your update user logic here
+                fields.forEach(function(field) {
+                    user[field.field] = document.getElementById(field.field).value;
+                });
+                // Call update user function
+                updateUser(user);
+                console.log(user);
+            });
+            container.appendChild(submitButton);
 
             // Create buttons
             var buttonLabels = ["Delete User", "Make Admin", "Revoke Admin", "Password Reset"];
@@ -282,15 +297,29 @@
                 button.textContent = label;
                 button.classList.add("btn", "btn-primary");
                 button.addEventListener("click", function() {
-                    // Add your button click logic here
-                    console.log(label + " clicked");
+                    switch (label) {
+                        case "Delete User":
+                            deleteUser();
+                            break;
+                        case "Make Admin":
+                            makeAdmin();
+                            break;
+                        case "Revoke Admin":
+                            revokeAdmin();
+                            break;
+                        case "Password Reset":
+                            passwordReset();
+                            break;
+                        default:
+                            console.log("Unknown button clicked");
+                    }
                 });
                 container.appendChild(button);
             });
 
             var closeButton = document.createElement("button");
             closeButton.textContent = "Close";
-            closeButton.classList.add("btn", "btn-secondary");
+            closeButton.classList.add("btn", "btn-danger");
             closeButton.addEventListener("click", function() {
                 // Close the dashboard
                 document.body.removeChild(container);
@@ -304,6 +333,19 @@
         }
 
         async function updateUser(user) {
+            console.log('updating...')
+            return
+        }
+
+        async function revokeAdmin(user) {
+            console.log('revoking admin...')
+
+            return
+        }
+
+        async function passworReset(user) {
+            console.log('password reset...')
+
             return
         }
 
