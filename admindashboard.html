@@ -288,6 +288,16 @@
                 container.appendChild(button);
             });
 
+            var closeButton = document.createElement("button");
+            closeButton.textContent = "Close";
+            closeButton.classList.add("btn", "btn-secondary");
+            closeButton.addEventListener("click", function() {
+                // Close the dashboard
+                document.body.removeChild(container);
+            });
+            container.appendChild(closeButton);
+
+
             // Append the main container to the body
             document.body.appendChild(container);
 
@@ -470,6 +480,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #fff;
+            z-index: 100;
         }
 
         /* Style the buttons */
