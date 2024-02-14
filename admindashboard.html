@@ -284,6 +284,7 @@
                 // Add your update user logic here
                 user = {}
                 fields.forEach(function(field) {
+                    console.log(field)
                     user[field.field] = document.getElementById(field.field).value;
                 });
                 // Call update user function
