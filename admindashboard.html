@@ -269,6 +269,7 @@
             ];
 
             fields.forEach(function(field) {
+                console.log(row.getData(field))
                 var input = document.createElement("input");
                 input.type = "text";
                 input.placeholder = field.title;
