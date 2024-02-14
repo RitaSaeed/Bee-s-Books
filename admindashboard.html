@@ -247,7 +247,9 @@
             var rowData = row.getData()
             console.log(rowData)
             fields.forEach(function(field) {
-                console.log(rowData[field.field])
+                var label = document.createElement("label");
+                label.textContent = field.title;
+                container.appendChild(label);
                 var input = document.createElement("input");
                 input.type = "text";
                 input.placeholder = field.title;
@@ -260,7 +262,7 @@
 
             var submitButton = document.createElement("button");
             submitButton.textContent = "Update User";
-            submitButton.classList.add("btn", "btn-success");
+            //submitButton.classList.add("btn", "btn-success");
             submitButton.addEventListener("click", function() {
                 // Add your update user logic here
                 user = {}
@@ -567,6 +569,7 @@
         /* Style the buttons */
         .dashboard-container .btn {
             margin-right: 10px;
+            margin-bottom: 25px;
             width: 150px;
         }
 
