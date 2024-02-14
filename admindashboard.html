@@ -208,7 +208,6 @@
                 const users = await getUsers();
 
                 function mapUserToTabulator(user) {
-                    console.log(user)
                     return {
                         username: user.username,
                         email: user.email || user["cognito:email_alias"],
@@ -243,12 +242,60 @@
 
                 table.on("rowClick", function(e, row){
                     console.log(row)
+                    userDashboard()
+                    
                 });
 
             } catch (error) {
                 console.error("Error getting users:", error);
             }
         });
+        
+        async function userDashboard() {
+            var container = document.createElement("div");
+            container.classList.add("dashboard-container");
+
+            // Create text fields
+            var fields = [
+                { title: "Username", field: "username", width: 125 },
+                { title: "Email", field: "email", width: 250 },
+                { title: "Name", field: "name", width: 150 },
+                { title: "Address", field: "address", width: 200 },
+                { title: "Confirmed", field: "confirmed", width: 100 },
+                { title: "Unsubscribed", field: "unsubscribed", width: 75 },
+                { title: "Admin", field: "admin", hozAlign: "center", vertAlign: "middle", formatter: "tickCross", width: 75 }
+            ];
+
+            fields.forEach(function(field) {
+                var input = document.createElement("input");
+                input.type = "text";
+                input.placeholder = field.title;
+                input.style.width = field.width + "px";
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            });
+
+            // Create buttons
+            var buttonLabels = ["Delete User", "Make Admin", "Revoke Admin", "Password Reset"];
+            buttonLabels.forEach(function(label) {
+                var button = document.createElement("button");
+                button.textContent = label;
+                button.classList.add("btn", "btn-primary");
+                button.addEventListener("click", function() {
+                    // Add your button click logic here
+                    console.log(label + " clicked");
+                });
+                container.appendChild(button);
+            });
+
+            // Append the main container to the body
+            document.body.appendChild(container);
+
+        }
+
+        async function updateUser(user) {
+            return
+        }
 
         async function getUsers() {
             try {
@@ -381,7 +428,7 @@
             color: white;
             background-color: #7C83BC;
         }
-        
+
         .tabulator-header .tabulator-col-title .tabulator-col-content .tabulator-col {
             color: white;
             background-color: #7C83BC;
@@ -410,7 +457,25 @@
         /* Cell */
         .tabulator-cell { 
             /* Your styles here */
-}
+        }
+
+        .dashboard-container {
+            width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+        }
+
+        /* Style the buttons */
+        .dashboard-container .btn {
+            margin-right: 10px;
+        }
 
     </style>
 </body>
