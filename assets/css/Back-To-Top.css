@@ -87,3 +87,11 @@ body {
   background: var(--bs-emphasis-color);
 }
 
+tr {
+}
+
+#dashboard- {
+  /*background-color: white;*/
+  /*color: black;*/
+}
+

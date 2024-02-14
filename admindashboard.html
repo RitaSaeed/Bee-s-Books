@@ -27,11 +27,11 @@
     <div>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item" role="presentation" id="tab1"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Dashboard Home</a></li>
-            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
+            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
             <li class="nav-item" role="presentation" id="tab3"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Users</a></li>
             <li class="nav-item" role="presentation" id="tab4"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Active Promotions</a></li>
             <li class="nav-item" role="presentation" id="tab5"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Orders</a></li>
-            <li class="nav-item" role="presentation" id="tab6"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-6">User Communications</a></li>
+            <li class="nav-item" role="presentation" id="tab6"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-6">User Communications</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane" role="tabpanel" id="tab-1">
@@ -44,8 +44,24 @@
                     </div>
                 </section><!-- End: Banner Clean -->
             </div>
-            <div class="tab-pane" role="tabpanel" id="tab-2">
-                <p>Content for tab 2.</p>
+            <div class="tab-pane active" role="tabpanel" id="tab-2">
+                <div class="container" style="padding: 1rem;">
+                    <div class="table-responsive" id="data-tables-products" style="margin: 1rem;padding: 1rem;">
+                        <table class="table" id="products">
+                            <thead>
+                                <tr>
+                                    <th>ISBN</th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>QTY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: var(--bs-primary-bg-subtle);"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-3">
                 <div class="container" style="padding: 1rem;">
@@ -147,7 +163,7 @@
             <div class="tab-pane" role="tabpanel" id="tab-5">
                 <p>Content for tab 5.</p>
             </div>
-            <div class="tab-pane active" role="tabpanel" id="tab-6">
+            <div class="tab-pane" role="tabpanel" id="tab-6">
                 <div class="container">
                     <!-- Start: Contact Form Basic -->
                     <section class="position-relative py-4 py-xl-5">
@@ -181,6 +197,7 @@
     <script src="assets/js/Back-To-Top-javascrip.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
+    <script src="assets/js/productTable.js"></script>
     <script src="assets/js/usertable.js"></script>
 </body>
 
