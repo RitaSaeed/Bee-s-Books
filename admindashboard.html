@@ -201,7 +201,6 @@
                 const isAdmin = await checkAdminStatus();
         
                 if (!isAdmin) {
-                    // Display access denied alert and return
                     alert("Access Denied: You are not authorized to view this content.");
                     return;
                 }
@@ -214,7 +213,10 @@
                         username: user.username,
                         email: user.email || user["cognito:email_alias"],
                         name: user.name || '',
-                        admin: user.isAdmin || false
+                        address: user.address || ' ',
+                        admin: user.isAdmin || false,
+                        confirmed: user["cognito:user_status"],
+                        unsubscribed: user.unsubscribed || ' '
                     };
                 }
 
@@ -225,9 +227,9 @@
                     data: mappedUsers,
                     layout: 'fitDataFill',
                     columns: [
-                        { title: "Username", field: "username", width: 150 },
+                        { title: "Username", field: "username", width: 125 },
                         { title: "Email", field: "email", width: 250 },
-                        { title: "Name", field: "name", width: 200 },
+                        { title: "Name", field: "name", width: 150 },
                         { title: "Address", field: "address", width: 200 },
                         { title: "Confirmed", field: "confirmed", width: 200 },
                         { title: "Unsubscribed", field: "unsubscribed", width: 200 },
