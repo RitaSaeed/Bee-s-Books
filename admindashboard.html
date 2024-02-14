@@ -241,6 +241,10 @@
                     ]
                 });
 
+                table.on("rowClick", function(e, row){
+                    console.log(row)
+                });
+
             } catch (error) {
                 console.error("Error getting users:", error);
             }
