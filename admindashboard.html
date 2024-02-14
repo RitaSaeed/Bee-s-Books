@@ -340,6 +340,7 @@
 
         async function updateUser(user) {
             console.log('updating...')
+            const accessToken = getCookie('id_token')
             const requestBody = {
                 username : user['username'],
                 name : user['name'],
