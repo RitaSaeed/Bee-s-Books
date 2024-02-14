@@ -274,6 +274,7 @@
                 input.placeholder = field.title;
                 input.style.width = field.width + "px";
                 input.id = field.field; // Assign unique ID
+                input.value = row.getData(field)
                 container.appendChild(input);
                 container.appendChild(document.createElement("br"));
             });
