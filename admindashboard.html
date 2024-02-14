@@ -243,7 +243,7 @@
 
                 table.on("rowClick", function(e, row){
                     console.log(row)
-                    userDashboard()
+                    userDashboard(row)
                     
                 });
 
@@ -252,7 +252,8 @@
             }
         });
         
-        async function userDashboard() {
+        async function userDashboard(row) {
+            console.log(row.getData())
             var container = document.createElement("div");
             container.classList.add("dashboard-container");
             var user = {};
@@ -284,7 +285,6 @@
                 // Add your update user logic here
                 user = {}
                 fields.forEach(function(field) {
-                    console.log(field)
                     user[field.field] = document.getElementById(field.field).value;
                 });
                 // Call update user function
