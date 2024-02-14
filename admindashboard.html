@@ -220,7 +220,8 @@
                 }
 
                 mappedUsers = users.map(mapUserToTabulator)
-
+                var user = {};
+                
                 var table = new Tabulator("#userTableContainer", {
                     height: 300,
                     data: mappedUsers,
@@ -299,16 +300,16 @@
                 button.addEventListener("click", function() {
                     switch (label) {
                         case "Delete User":
-                            deleteUser();
+                            deleteUser(user.username);
                             break;
                         case "Make Admin":
-                            makeAdmin();
+                            makeAdmin(user.username);
                             break;
                         case "Revoke Admin":
-                            revokeAdmin();
+                            revokeAdmin(user.username);
                             break;
                         case "Password Reset":
-                            passwordReset();
+                            passwordReset(user.username);
                             break;
                         default:
                             console.log("Unknown button clicked");
@@ -339,8 +340,37 @@
 
         async function revokeAdmin(user) {
             console.log('revoking admin...')
+            try {
+                const confirmation = window.confirm("Are you sure you want to perform this action?");
+                if (!confirmation) {
+                    return; 
+                }
+                const accessToken = getCookie('id_token');
+                const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    },
+                    method: "POST",
+                    body: JSON.stringify({  
+                            "isAdmin": false,
+                            "username": user
+                        })
+                });
+                const data = await response;
+                console.log(data)
+            } catch (error) {
+                console.error("API request failed:", error);
+                alert(error)
+                throw error; 
+            } finally {
+                $('#loadingModal').modal('hide');
+            }
 
-            return
+
+
+            location.reload(true);
+            return true;
+
         }
 
         async function passworReset(user) {
