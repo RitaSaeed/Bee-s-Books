@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url(../../assets/fonts/Libre%20Franklin-edba348f1bf3e2199d0719958cd9e576.woff2) format('woff2'),
+	url(../../assets/fonts/Libre%20Franklin-60299de67ead289fcef6582309168230.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
