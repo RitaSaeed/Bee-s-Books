@@ -39,8 +39,18 @@
                         <form id="search-input-form" style="margin-left: 0px;"><input class="form-control" type="search" id="search-input" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);" onkeydown="searchOnEnter(event)"><div><script>
     function searchOnEnter(event) {
         if (event.key === "Enter") {
-            // Replace 'your_target_page.html' with the actual target page URL
             window.history.pushState(null,null,'product-list.html');
+            // var userInput = document.getElementById("search-input");
+            // const apiUrl = "https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=";
+            // console.log(apiUrl+userInput);
+            // fetch(apiUrl+userInput)
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data)
+            //     window.history.pushState(null,null,'product-list.html');
+            // })
+            // .catch((error) => console.error('Error:', error));
+            
         }
         console.log(event.key);
     }
@@ -146,6 +156,7 @@
     <script src="assets/js/modalStopper.js"></script>
     <script src="assets/js/productTable.js"></script>
     <script src="assets/js/usertable.js"></script>
+    <script src="assets/js/viewProductModal.js"></script>
 </body>
 
 </html>
