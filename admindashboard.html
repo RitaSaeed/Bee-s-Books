@@ -339,7 +339,7 @@
             .catch(error => {
             console.error("API request failed: ", error);
             })
-            window.reload(true)
+            location.reload(true)
         }
 
         async function revokeAdmin(user) {
@@ -366,9 +366,7 @@
                 console.error("API request failed:", error);
                 alert(error)
                 throw error; 
-            } finally {
-                $('#loadingModal').modal('hide');
-            }
+            } 
 
 
 
@@ -396,9 +394,7 @@
             } catch (error) {
                 console.error("API request failed:", error);
                 throw error; 
-            } finally {
-                $('#loadingModal').modal('hide');
-            }
+            } 
         }
 
         async function deleteUser(user) {
