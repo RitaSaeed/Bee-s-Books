@@ -344,7 +344,8 @@
                
             })
             .catch(error => {
-            console.error("API request failed: ", error);
+                console.error("API request failed: ", error);
+                console.log(error)
             })
             location.reload(true)
         }
