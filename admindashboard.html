@@ -349,31 +349,26 @@
 
         async function revokeAdmin(user) {
             console.log('revoking admin...')
-            try {
-                const confirmation = window.confirm("Are you sure you want to perform this action?");
-                if (!confirmation) {
-                    return; 
-                }
-                const accessToken = getCookie('id_token');
-                const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
-                    headers: {
-                        Authorization: `${accessToken}`
-                    },
-                    method: "POST",
-                    body: JSON.stringify({  
-                            "isAdmin": false,
-                            "username": user
-                        })
-                });
-                const data = await response;
-                console.log(data)
-            } catch (error) {
-                console.error("API request failed:", error);
-                alert(error)
-                throw error; 
-            } 
-
-
+        
+            const confirmation = window.confirm("Are you sure you want to perform this action?");
+            if (!confirmation) {
+                return; 
+            }
+            const accessToken = getCookie('id_token');
+            const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
+                headers: {
+                    Authorization: `${accessToken}`,
+                    "Content-Type": "application/json"
+                },
+                method: "POST",
+                body: JSON.stringify({  
+                        "isAdmin": false,
+                        "username": user
+                    })
+            });
+            const data = await response;
+            console.log(data)
+            
         }
 
         async function passworReset(user) {
@@ -421,7 +416,7 @@
         }
 
         async function makeAdmin(user) {
-            try {
+           
                 const confirmation = window.confirm("Are you sure you want to perform this action?");
                 if (!confirmation) {
                     return; 
@@ -439,12 +434,6 @@
                 });
                 const data = await response;
                 console.log(data)
-            
-            } catch (error) {
-                console.error("API request failed:", error);
-                alert(error)
-                throw error; 
-            } 
 
         }
         
