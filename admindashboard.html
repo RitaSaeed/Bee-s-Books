@@ -275,7 +275,6 @@
             });
             container.appendChild(submitButton);
 
-            // Create buttons
             var buttonLabels = ["Delete User", "Make Admin", "Revoke Admin", "Password Reset"];
             buttonLabels.forEach(function(label) {
                 var button = document.createElement("button");
@@ -347,7 +346,7 @@
                 console.error("API request failed: ", error);
                 console.log(error)
             })
-            location.reload(true)
+            //location.reload(true)
         }
 
         async function revokeAdmin(user) {
@@ -378,8 +377,7 @@
 
 
 
-            location.reload(true);
-            return true;
+            //location.reload(true);
 
         }
 
