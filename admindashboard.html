@@ -323,7 +323,7 @@
                 address : user['address']
             }
 
-            fetch("rhttps://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
+            fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
                 headers: {
@@ -344,7 +344,6 @@
             })
             .catch(error => {
                 console.error("API request failed: ", error);
-                console.log(error)
             })
             //location.reload(true)
         }
