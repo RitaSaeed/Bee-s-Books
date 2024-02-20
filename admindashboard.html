@@ -345,7 +345,6 @@
             .catch(error => {
                 console.error("API request failed: ", error);
             })
-            location.reload(true)
         }
 
         async function revokeAdmin(user) {
@@ -374,7 +373,6 @@
                 throw error; 
             } 
 
-            location.reload(true);
 
         }
 
@@ -419,12 +417,7 @@
                 console.error("API request failed:", error);
                 alert(error)
                 throw error; 
-            } finally {
-                $('#loadingModal').modal('hide');
-            }
-
-
-            location.reload(true);
+            } 
         }
 
         async function makeAdmin(user) {
@@ -453,8 +446,6 @@
                 throw error; 
             } 
 
-            location.reload(true);
-            return true;
         }
         
 
