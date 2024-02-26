@@ -36,25 +36,39 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <form id="search-input-form" style="margin-left: 0px;"><input class="form-control" type="search" id="search-input" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);" onkeydown="searchOnEnter(event)"><div><script>
-    function searchOnEnter(event) {
-        if (event.key === "Enter") {
-            window.history.pushState(null,null,'product-list.html');
-            // var userInput = document.getElementById("search-input");
-            // const apiUrl = "https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=";
-            // console.log(apiUrl+userInput);
-            // fetch(apiUrl+userInput)
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log(data)
-            //     window.history.pushState(null,null,'product-list.html');
-            // })
-            // .catch((error) => console.error('Error:', error));
+                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);"><!-- Start: User Search --><div><script>
+//     function searchOnEnter(event) {
+//         if (event.key === "Enter") {
+//             window.history.pushState(null,null,'product-list.html');
+//             // var userInput = document.getElementById("search-input");
+//             // const apiUrl = "https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=";
+//             // console.log(apiUrl+userInput);
+//             // fetch(apiUrl+userInput)
+//             // .then(response => response.json())
+//             // .then(data => {
+//             //     console.log(data)
+//             //     window.history.pushState(null,null,'product-list.html');
+//             // })
+//             // .catch((error) => console.error('Error:', error));
             
-        }
-        console.log(event.key);
+//         }
+//         console.log(event.key);
+//     }
+    function handleSubmit(event) {
+        event.preventDefault();
+            let uInput = document.getElementById('uInput').value;
+            localStorage.setItem('uInput', uInput);
+            let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('apiData', JSON.stringify(data));
+                    window.location.href = 'product-list.html'; // replace with your next page URL
+                });
     }
-</script></div></form>
+</script></div><!-- End: User Search -->
+                        </form>
                     </li>
                 </ul>
                 <div class="dropdown d-flex flex-shrink-0" style="position: relative;margin: 0.5rem;background: #7C83BC;border-radius: 25px;border-style: solid;border-color: #7C83BC;margin-right: 70px;"><a aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="profile-toggle" href="#" style="color: white;padding: 0.65rem;background: var(--bs-primary-text-emphasis);border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-radius: 20px;margin-left: 0px;">Profile&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle">
@@ -150,7 +164,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/smart-forms.min.js"></script>
-    <script src="assets/js/Back-To-Top-javascrip.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
     <script src="assets/js/modalStopper.js"></script>
