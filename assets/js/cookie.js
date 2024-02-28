@@ -5,13 +5,12 @@ if (curURL.includes('code=')) {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const code = urlSearchParams.get('code');
   window.history.replaceState({}, document.title, 'https://main.dva0ia48yehl5.amplifyapp.com/');
-
   let post_body = {
     "body": {
         "code": code
     }
   }
- console.log(post_body)
+
   fetch('https://qs84bpwvhb.execute-api.us-east-1.amazonaws.com/beta/token', {
     method: 'POST',
     headers: {
@@ -24,20 +23,19 @@ if (curURL.includes('code=')) {
       if (!response.ok) {
         throw new Error('Bad token request.');
       }
-      console.log(response)
       return response.json();
     })
     .then((data) => {
+        console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
         setSessionCookie('id_token', data.body.id_token);
 
-        setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'))
-        updateHref('home-user-1', window.location.href + "accountPage")
+        setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
+        updateHref('home-user', window.location.href + "accountPage")
 
         const logoutLink = document.querySelector('#logout-link');
         logoutLink.style.display = 'inline-block';
-
     })
     .catch((error) => {
       console.log('Error: ', error);
@@ -48,27 +46,6 @@ function setSessionCookie(name, value) {
     
     var cookieString = `${name}=${value}; path=/;`;
     document.cookie = cookieString;
-}
-
-function printJWT(cookie) {
-    const jwtParts = cookie.split('.');
-    if (jwtParts.length === 3) {
-        const jwtPayload = JSON.parse(atob(jwtParts[1])); 
-        console.log(jwtPayload);
-    } else {
-        console.error("Invalid JWT format");
-    }
-} 
-
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-        const [cookieName, cookieValue] = cookie.trim().split('=');
-        if (cookieName === name) {
-        return decodeURIComponent(cookieValue);
-        }
-    }
-    return null; 
 }
 
 function logoutClicked() {
@@ -91,6 +68,26 @@ function deleteCookie(cookieName) {
     }
 }
 
+function printJWT(cookie) {
+    const jwtParts = cookie.split('.');
+    if (jwtParts.length === 3) {
+        const jwtPayload = JSON.parse(atob(jwtParts[1])); 
+        console.log(jwtPayload);
+    } else {
+        console.error("Invalid JWT format");
+    }
+} 
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.trim().split('=');
+        if (cookieName === name) {
+        return decodeURIComponent(cookieValue);
+        }
+    }
+    return null; 
+}
 
 
 function getValueFromJWT(cookieName, fieldName) {
@@ -146,6 +143,7 @@ function populateAccountPage() {
       document.getElementById("name").value = data.name;
       document.getElementById("email").value = data.email;
       document.getElementById("address").value = data.address;
+      console.log(data)
       
     })
     .catch(error => {
@@ -224,12 +222,13 @@ function deleteUser() {
 
 }
 
+
 function updatePassword() {
     window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/forgotPassword?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdarichards-main-patch-225e.dva0ia48yehl5.amplifyapp.com%2F"
 }
 
 function manageUsers() {
-    window.location.href = 'admindashboard.html'
+    window.location.href = 'manageUsers.html'
 }
 
 
