@@ -4,14 +4,14 @@ access_token = ''
 if (curURL.includes('code=')) {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const code = urlSearchParams.get('code');
-  window.history.replaceState({}, document.title, 'https://darichards-main-patch-225e.dva0ia48yehl5.amplifyapp.com/');
+  window.history.replaceState({}, document.title, 'https://main.dva0ia48yehl5.amplifyapp.com/');
 
   let post_body = {
     "body": {
         "code": code
     }
   }
-
+ console.log(post_body)
   fetch('https://qs84bpwvhb.execute-api.us-east-1.amazonaws.com/beta/token', {
     method: 'POST',
     headers: {
@@ -24,16 +24,20 @@ if (curURL.includes('code=')) {
       if (!response.ok) {
         throw new Error('Bad token request.');
       }
+      console.log(response)
       return response.json();
     })
     .then((data) => {
-        console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
         setSessionCookie('id_token', data.body.id_token);
 
-        setValueToElement("home-user", getValueFromJWT('access_token', 'username'))
-        updateHref('home-user', window.location.href + "accountPage")
+        setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'))
+        updateHref('home-user-1', window.location.href + "accountPage")
+
+        const logoutLink = document.querySelector('#logout-link');
+        logoutLink.style.display = 'inline-block';
+
     })
     .catch((error) => {
       console.log('Error: ', error);
@@ -66,6 +70,27 @@ function getCookie(name) {
     }
     return null; 
 }
+
+function logoutClicked() {
+    try {
+        deleteCookie('access_token');
+        deleteCookie('id_token');
+        location.reload()
+    } catch (error) {
+        console.log(error);
+    }
+}
+function deleteCookie(cookieName) {
+    // Check if the cookie exists
+    if (getCookie(cookieName)) {
+        // Set the expiration date in the past to delete the cookie
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        console.log(`Cookie '${cookieName}' deleted successfully.`);
+    } else {
+        console.log(`Cookie '${cookieName}' does not exist.`);
+    }
+}
+
 
 
 function getValueFromJWT(cookieName, fieldName) {
@@ -204,7 +229,7 @@ function updatePassword() {
 }
 
 function manageUsers() {
-    window.location.href = 'manageUsers.html'
+    window.location.href = 'admindashboard.html'
 }
 
 
