@@ -89,7 +89,7 @@
                                 <input type="text" class="form-control bg-light"  id="phone" placeholder="Your Phone #">
                             </div>
                             <div class="d-flex">
-                                <button type="submit" class="btn btn-primary shadow flex-grow-1 text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Save Changes</button>
+                                <button type="submit" class="btn btn-danger shadow flex-grow-1 text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Save Changes</button>
                             </div>
                             
                         </form>
@@ -104,18 +104,18 @@
                         <h2>Receive Marketing Information</h2>
                         <div class="d-flex " style="padding-top: 15px;">
                             <p>Email</p>
-                            <button id="toggleEmail" onclick="toggleState('toggleEmail')" class="btn shadow text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            <button id="toggleEmail" onclick="toggleState('toggleEmail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
                         </div>
                         <div class="d-flex" style="padding-top: 15px;">
                             <p>Text</p>
-                            <button id="toggleText" onclick="toggleState('toggleText')" class="btn shadow text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            <button id="toggleText" onclick="toggleState('toggleText')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
                         </div>
                         <div class="d-flex" style="padding-top: 15px;">
                             <p>Mail</p>
-                            <button id="toggleMail" onclick="toggleState('toggleMail')" class="btn shadow text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            <button id="toggleMail" onclick="toggleState('toggleMail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
                         </div>
                         <div class="py-2" style="display: flex; justify-content: center; align-items: center;">
-                            <button id="toggleMail" onclick="saveToggles()" class="btn shadow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem; width: 50%;">Save</button>
+                            <button id="toggleMail" onclick="saveToggles()" class="btn btn-danger shadow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem; width: 50%;">Save</button>
                         </div>
                         
                     </div>
@@ -237,6 +237,7 @@
                 
 
         function saveToggles() {
+
             const usernameVal = getValueFromJWT('id_token', 'cognito:username')
             const accessToken = getCookie('id_token')
 
