@@ -89,11 +89,28 @@
                             </div>
                         </form>
                         <button id="updatePassword" onclick="updatePassword()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Update Password</button>
+                        <button id="updatePassword" onclick="updatePassword()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Update Password</button>
                         <button id="manageUsers" onclick="manageUsers()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Manage</button>
                         <button id="deleteAccount" onclick="showDeleteConfirmationModal()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #d74731; border-width: 0px; font-size: 1rem;">Delete Account</button>
                     
                     </div>
+                    <div>
+                        <h2>Marketing Information</h2>
+                        <div class="d-flex justify-content-between" style="padding-top: 15px;">
+                            <p>Email</p>
+                            <button id="toggleEmail" onclick="toggleEmail()" class="btn shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                        </div>
+                        <div class="d-flex justify-content-between" style="padding-top: 15px;">
+                            <p>Text</p>
+                            <button id="toggleText" onclick="toggleText()" class="btn shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                        </div>
+                        <div class="d-flex justify-content-between" style="padding-top: 15px;">
+                            <p>Mail</p>
+                            <button id="toggleMail" onclick="toggleMail()" class="btn shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -194,7 +211,25 @@
     <script src="assets\js\cookie.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', populateAccountPage);
-    </script>
+        //make api call to get user preferences
+        let isOn = false; 
+        
+        function toggleState() {
+          const button = document.getElementById('toggleButton');
+        
+          if (!isOn) {
+            // Change to "On" state
+            button.textContent = 'On';
+            button.style.background = '#4CAF50'; 
+            isOn = true;
+          } else {
+            // Change back to "Off" state
+            button.textContent = 'Off';
+            button.style.background = '#DB9D47';
+            isOn = false;
+          }
+        }
+        </script>
 </body>
 
 </html>
