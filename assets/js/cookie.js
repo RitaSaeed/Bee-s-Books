@@ -15,7 +15,7 @@ if (curURL.includes('code=')) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(post_body),
-  })
+    })
     .then((response) => {
       if (!response.ok) {
         throw new Error('Bad token request.');

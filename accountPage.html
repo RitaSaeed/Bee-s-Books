@@ -80,7 +80,7 @@
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control bg-light" id="email" placeholder="Your Email">
                             </div>
-                            <div class="form-group" style="margin-bottom: 20px;">
+                            <div class="form-group">
                                 <label for="address">Address:</label>
                                 <input type="text" class="form-control bg-light"  id="address" placeholder="Your Address">
                             </div>
@@ -114,6 +114,10 @@
                             <p>Mail</p>
                             <button id="toggleMail" onclick="toggleState('toggleMail')" class="btn shadow text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
                         </div>
+                        <div class="py-2" style="display: flex; justify-content: center; align-items: center;">
+                            <button id="toggleMail" onclick="saveToggles()" class="btn shadow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem; width: 50%;">Save</button>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -230,7 +234,42 @@
                 button.style.background = '#DB9D47';
             }
         }
+                
 
+        function saveToggles() {
+            const usernameVal = getValueFromJWT('id_token', 'cognito:username')
+            const accessToken = getCookie('id_token')
+
+            let toggleEmail = document.getElementById("toggleEmail").textContent === 'On'
+            let togglePhone = document.getElementById("toggleText").textContent === 'On'
+            let toggleMail = document.getElementById("toggleMail").textContent === 'On'
+
+            const requestBody = {
+                username : usernameVal,
+                emailSubscribed : toggleEmail,
+                phoneSubscribed : togglePhone,
+                mailSubscribed : toggleMail
+            }
+            console.log(JSON.stringify(requestBody))
+            fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+                method: 'POST',
+                body: JSON.stringify(requestBody),
+                headers: {
+                    Authorization: `${accessToken}`,
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+            console.error("API request failed: ", error);
+            }).finally(() => {
+                $('#loadingModal').modal('hide');
+            });
+            closeConfirmationModal()
+        }
         </script>
 </body>
 
