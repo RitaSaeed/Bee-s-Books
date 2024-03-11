@@ -120,9 +120,9 @@ function populateAccountPage() {
       })
     .then(response => response.json())
     .then(data => {
-      document.getElementById("name").value = data.name;
-      document.getElementById("email").value = data.email;
-      document.getElementById("address").value = data.address;
+        document.getElementById("name").value = data.name || "";
+        document.getElementById("email").value = data.email || "";
+        document.getElementById("address").value = data.address || "";        
 
       if(data.emailSubscribed && data.emailSubscribed == 'false') {
         let button = document.getElementById("toggleEmail").
