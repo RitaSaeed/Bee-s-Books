@@ -15,7 +15,7 @@ if (curURL.includes('code=')) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(post_body),
-  })
+    })
     .then((response) => {
       if (!response.ok) {
         throw new Error('Bad token request.');
@@ -109,7 +109,8 @@ function updateHref(elementId, url) {
     }
 }
 function populateAccountPage() {
-    //$('#loadingModal').modal('show');
+    var modal = new bootstrap.Modal(document.getElementById('loadingModal'))
+    //modal.show()
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
@@ -119,10 +120,21 @@ function populateAccountPage() {
       })
     .then(response => response.json())
     .then(data => {
-      document.getElementById("name").value = data.name;
-      document.getElementById("email").value = data.email;
-      document.getElementById("address").value = data.address;
-      console.log(data)
+        document.getElementById("name").value = data.name || "";
+        document.getElementById("email").value = data.email || "";
+        document.getElementById("address").value = data.address || "";     
+        document.getElementById("phone").value = data.phone || "";        
+   
+
+      if(data.emailSubscribed && data.emailSubscribed == 'false') {
+        let button = document.getElementById("toggleEmail").
+        button.textContent = 'On';
+        button.style.background = '#7c83bc';
+        isOn = true;
+      } 
+      modal.hide();
+
+      console.log('response',data)
     })
     .catch(error => {
       console.error("API request failed: ", error);
@@ -136,12 +148,15 @@ function updateUserInfo() {
     const nameVal = document.getElementById("name").value
     const emailVal = document.getElementById("email").value
     const addressVal = document.getElementById("address").value
+    const phoneVal = document.getElementById("phone").value
+
     const accessToken = getCookie('id_token')
     const requestBody = {
         username : usernameVal,
         name : nameVal,
         email : emailVal,
-        address : addressVal
+        address : addressVal,
+        phone : phoneVal
     }
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
         method: 'POST',
