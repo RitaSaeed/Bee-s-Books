@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-icons.css">
     <link rel="stylesheet" href="assets/css/Responsive-Product-Slider.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
 </head>
 
 <body style="background: var(--bs-light-bg-subtle);">
@@ -27,11 +28,11 @@
     <div>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item" role="presentation" id="tab1"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Dashboard Home</a></li>
-            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
+            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
             <li class="nav-item" role="presentation" id="tab3"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Users</a></li>
             <li class="nav-item" role="presentation" id="tab4"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Active Promotions</a></li>
             <li class="nav-item" role="presentation" id="tab5"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Orders</a></li>
-            <li class="nav-item" role="presentation" id="tab6"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-6">User Communications</a></li>
+            <li class="nav-item" role="presentation" id="tab6"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-6">User Communications</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane" role="tabpanel" id="tab-1">
@@ -44,8 +45,118 @@
                     </div>
                 </section><!-- End: Banner Clean -->
             </div>
-            <div class="tab-pane" role="tabpanel" id="tab-2">
-                <p>Content for tab 2.</p>
+            <div class="tab-pane active" role="tabpanel" id="tab-2">
+                <div class="container text-end" style="padding-top: 1rem;">
+                    <div class="container"><button class="btn btn-primary circle-button" id="add-product" type="button" data-bs-toggle="modal" data-bs-target="#add-product-modal" style="margin-right:40px;font-size:20px;"><svg class="bi bi-plus-lg" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path></svg></button>
+                        <div class="modal fade" role="dialog" tabindex="-1" id="add-product-modal" aria-labelledby="add-product-modal" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 id="product-modal-label" class="modal-title" style="font-weight: bold;color: var(--bs-emphasis-color);">Book Creation Form</h4><button class="btn-close" id="close-add-product-icon" aria-label="Close" data-bs-dismiss="modal" type="button"></button>
+                                    </div>
+                                    <div class="modal-body" style="background: var(--bs-emphasis-color);">
+                                        <form id="add-product-form" style="width: 100%;">
+                                            <!-- Start: ISBN -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-isbn">ISBN</label><input class="form-control form-control" type="text" id="add-isbn" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required="" minlength="10" maxlength="10" pattern="^\d+$"></div><!-- End: ISBN -->
+                                            <!-- Start: Title -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-title">Title</label><input class="form-control form-control" type="text" id="add-title" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required=""></div><!-- End: Title -->
+                                            <!-- Start: Author -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-author">Author</label><input class="form-control form-control" type="text" id="add-author" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required=""></div><!-- End: Author -->
+                                            <!-- Start: Genre -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-genre">Genre (Choose from the dropdown)</label><select class="form-select" id="add-genre" style="background-color: white;color: black;border-color: black;">
+                                                    <optgroup label="Choose a genre">
+                                                        <option value="Action/Adventure" selected="">Action/Adventure</option>
+                                                        <option value="Biography">Biography</option>
+                                                        <option value="Children's">Children's</option>
+                                                        <option value="Classics">Classics</option>
+                                                        <option value="Contemporary">Contemporary</option>
+                                                        <option value="Fantasy">Fantasy</option>
+                                                        <option value="Food and Drink">Food and Drink</option>
+                                                        <option value="Graphic Novels">Graphic Novels</option>
+                                                        <option value="Horror">Horror</option>
+                                                        <option value="Memoirs">Memoirs</option>
+                                                        <option value="Mystery">Mystery</option>
+                                                        <option value="Romance">Romance</option>
+                                                        <option value="Science Fiction">Science Fiction</option>
+                                                        <option value="Self Help">Self Help</option>
+                                                        <option value="Textbooks">Textbooks</option>
+                                                        <option value="True Crime">True Crime</option>
+                                                    </optgroup>
+                                                </select></div><!-- End: Genre -->
+                                            <!-- Start: Fiction? -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-fiction?">Is it fiction? (Choose from the dropdown)</label><select class="form-select" id="add-fiction" style="background-color: white;color: black;border-color: black;">
+                                                    <optgroup label="Choose one">
+                                                        <option value="Yes" selected="">Fiction</option>
+                                                        <option value="No">Nonfiction</option>
+                                                    </optgroup>
+                                                </select></div><!-- End: Fiction? -->
+                                            <!-- Start: Price -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-price">Price (XX.XX format)</label><input class="form-control form-control" type="text" id="add-price" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required="" pattern="^\d+(\.\d{2})?$"></div><!-- End: Price -->
+                                            <!-- Start: Quantity -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-quantity">Quantity (numbers only)</label><input class="form-control form-control" type="text" id="add-quantity" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required="" pattern="^\d+$"></div><!-- End: Quantity -->
+                                            <!-- Start: Description -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-description">Description</label><textarea class="form-control form-control" id="add-description" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required=""></textarea></div><!-- End: Description -->
+                                            <!-- Start: Image -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-image">Add an image (image URL)</label><textarea class="form-control form-control" id="add-image" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" required=""></textarea></div><!-- End: Image -->
+                                            <!-- Start: Rating -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="locked-field">Rating (Locked)</label><input class="form-control form-control" type="text" id="add-rating" readonly="" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" value="0"></div><!-- End: Rating -->
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" form="add-product-form" type="submit" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Submit</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" role="dialog" tabindex="-1" id="view-product-modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 id="product-modal-label-1" class="modal-title" style="font-weight: bold;color: var(--bs-emphasis-color);">Book Creation Form</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" type="button"></button>
+                                    </div>
+                                    <div class="modal-body" style="background: var(--bs-emphasis-color);">
+                                        <form id="productForm-1" style="width: 100%;">
+                                            <!-- Start: ISBN -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">ISBN</label><input class="form-control form-control" type="text" id="add-isbn-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: ISBN -->
+                                            <!-- Start: Title -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Title</label><input class="form-control form-control" type="text" id="add-title-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Title -->
+                                            <!-- Start: Author -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Author</label><input class="form-control form-control" type="text" id="add-author-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Author -->
+                                            <!-- Start: Genre -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Genre</label><input class="form-control form-control" type="text" id="add-genre-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Genre -->
+                                            <!-- Start: Fiction? -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Is it fiction? (Yes fiction, no nonfiction?)</label><input class="form-control form-control" type="text" id="change-to-dropdown-fiction-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Fiction? -->
+                                            <!-- Start: Price -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Price</label><input class="form-control form-control" type="text" id="add-price-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Price -->
+                                            <!-- Start: Quantity -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Quantity</label><input class="form-control form-control" type="text" id="add-quantity-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Quantity -->
+                                            <!-- Start: Description -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-description">Description</label><textarea class="form-control form-control" id="add-description-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></textarea></div><!-- End: Description -->
+                                            <!-- Start: Image -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="product-description">Add an image</label><textarea class="form-control form-control" id="add-image-1" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></textarea></div><!-- End: Image -->
+                                            <!-- Start: Rating -->
+                                            <div class="text-start form-group"><label class="form-label form-label" for="locked-field">Average Rating</label><input class="form-control form-control" type="text" id="add-rating-1" readonly="" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);"></div><!-- End: Rating -->
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" type="button" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Close</button><button class="btn btn-primary" data-bs-dismiss="modal" form="productForm" type="submit" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Submit</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="padding: 1rem;padding-top: 0.1rem;">
+                    <div class="table-responsive table-striped" id="data-tables-products" style="margin: 1rem;padding: 1rem;">
+                        <table class="table" id="products">
+                            <thead>
+                                <tr>
+                                    <th style="color: var(--bs-primary-text-emphasis);">ISBN</th>
+                                    <th style="color: var(--bs-primary-text-emphasis);">Title</th>
+                                    <th style="color: var(--bs-primary-text-emphasis);">Author</th>
+                                    <th style="color: var(--bs-primary-text-emphasis);">QTY</th>
+                                </tr>
+                            </thead>
+                            <tbody class="custom-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-3">
 
@@ -130,7 +241,7 @@
             <div class="tab-pane" role="tabpanel" id="tab-5">
                 <p>Content for tab 5.</p>
             </div>
-            <div class="tab-pane active" role="tabpanel" id="tab-6">
+            <div class="tab-pane" role="tabpanel" id="tab-6">
                 <div class="container">
                     <!-- Start: Contact Form Basic -->
                     <section class="position-relative py-4 py-xl-5">
@@ -161,9 +272,11 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/Back-To-Top-javascrip.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
+    <script src="assets/js/cookie.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
+    <script src="assets/js/modalStopper.js"></script>
+    <script src="assets/js/productTable.js"></script>
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/cookie.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.5.4/css/tabulator.min.css" integrity="sha512-t/BIXyXv+371F1q9LGQd6fIMakUqG+Ov+5RvnQ7WMijVYmxMG9yNBA5Vr4QCRAQIAxSfcILi8pk1kaQGrbRdhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
