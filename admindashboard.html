@@ -265,12 +265,10 @@
             submitButton.textContent = "Update User";
             submitButton.classList.add("btn", "btn-primary");
             submitButton.addEventListener("click", function() {
-                // Add your update user logic here
                 user = {}
                 fields.forEach(function(field) {
                     user[field.field] = document.getElementById(field.field).value;
                 });
-                // Call update user function
                 updateUser(user);
             });
             container.appendChild(submitButton);
@@ -358,7 +356,8 @@
             const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/admin/users", {
                 headers: {
                     Authorization: `${accessToken}`,
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin" : "*"
                 },
                 method: "POST",
                 body: JSON.stringify({  
@@ -570,7 +569,6 @@
             margin-bottom: 15px;
         }
 
-        /* Style the buttons */
         .dashboard-container .btn {
             margin-right: 10px;
             margin-bottom: 25px;
@@ -583,8 +581,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-            z-index: 99; /* ensure the overlay appears above other elements */
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 99; 
         }
 
 
