@@ -71,7 +71,7 @@
                 <div class="row justify-content-center align-items-center" style="min-width: 650px">
                     <div class="col-md-6" style="min-width: 650px">
                         <h2>Account Information</h2>
-                        <form id="accountForm" onsubmit="showConfirmationModal(); return false;">
+                        <form id="accountForm" onsubmit="showConfirmationModal(); return false;" class="w-100">
                             <div class="form-group mb-2">
                                 <label for="name">Name:</label>
                                 <input type="text" class="form-control bg-light" id="name" placeholder="Your Name">
@@ -94,31 +94,32 @@
                             
                         </form>
                         <div class="mt-3 d-flex justify-content-between">
-                            <button id="updatePassword" onclick="updatePassword()" class="btn btn-danger shadow flex-grow-1 text-nowrap " style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Update Password</button>
-                            <button id="manageUsers" onclick="manageUsers()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Manage</button>
-                            <button id="deleteAccount" onclick="showDeleteConfirmationModal()" class="btn btn-danger shadow flex-grow-1 text-nowrap ms-3" style="background: #d74731; border-width: 0px; font-size: 1rem;">Delete Account</button>    
-                        </div>
-                       
-                    </div>
-                    <div class="px-5 py-5">
-                        <h2>Receive Marketing Information</h2>
-                        <div class="d-flex " style="padding-top: 15px;">
-                            <p>Email</p>
-                            <button id="toggleEmail" onclick="toggleState('toggleEmail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
-                        </div>
-                        <div class="d-flex" style="padding-top: 15px;">
-                            <p>Text</p>
-                            <button id="toggleText" onclick="toggleState('toggleText')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
-                        </div>
-                        <div class="d-flex" style="padding-top: 15px;">
-                            <p>Mail</p>
-                            <button id="toggleMail" onclick="toggleState('toggleMail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
-                        </div>
-                        <div class="py-2" style="display: flex; justify-content: center; align-items: center;">
-                            <button id="toggleMail" onclick="saveToggles()" class="btn btn-danger shadow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem; width: 50%;">Save</button>
+                            <button id="updatePassword" onclick="updatePassword()" class="btn btn-danger shadow flex-grow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Update Password</button>
+                            <button id="manageUsers" onclick="manageUsers()" class="btn btn-danger shadow flex-grow text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Manage</button>
+                            <button id="deleteAccount" onclick="showDeleteConfirmationModal()" class="btn btn-danger shadow flex-grow text-nowrap ms-3" style="background: #d74731; border-width: 0px; font-size: 1rem;">Delete Account</button>    
                         </div>
                         
+                        <div class="py-4">
+                            <h2>Receive Marketing Information</h2>
+                            <div class="d-flex " style="padding-top: 15px;">
+                                <p>Email</p>
+                                <button id="toggleEmail" onclick="toggleState('toggleEmail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            </div>
+                            <div class="d-flex" style="padding-top: 15px;">
+                                <p>Text</p>
+                                <button id="toggleText" onclick="toggleState('toggleText')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            </div>
+                            <div class="d-flex" style="padding-top: 15px;">
+                                <p>Mail</p>
+                                <button id="toggleMail" onclick="toggleState('toggleMail')" class="btn shadow btn-danger text-nowrap ms-3" style="background: #DB9D47; border-width: 0px; font-size: 1rem;">Off</button>
+                            </div>
+                            <div class="py-2" style="display: flex; justify-content: center; align-items: center;">
+                                <button id="toggleMail" onclick="saveToggles()" class="btn btn-danger shadow text-nowrap" style="background: #DB9D47; border-width: 0px; font-size: 1rem; width: 50%;">Save</button>
+                            </div>
+                            
+                        </div>
                     </div>
+                    
                 </div>
 
             </div>
