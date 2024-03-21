@@ -338,7 +338,7 @@
                     userDashboard(row)   
                 });
 
-                cosnt orders = await getOrders();
+                const orders = await getOrders();
 
                 var ordertable = new Tabulator("#orderTableContainer", {
                     height: 450,
