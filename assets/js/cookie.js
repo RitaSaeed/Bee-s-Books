@@ -109,7 +109,7 @@ function updateHref(elementId, url) {
 }
 function populateAccountPage() {
     setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'))
-
+    updateHref('home-user-1', window.location.href + "accountPage")
     var modal = new bootstrap.Modal(document.getElementById('loadingModal'))
     //modal.show()
     const username = getValueFromJWT('access_token', 'username');
