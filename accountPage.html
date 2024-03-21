@@ -243,33 +243,61 @@
             const accessToken = getCookie('id_token')
 
             let toggleEmail = document.getElementById("toggleEmail").textContent === 'On'
-            let togglePhone = document.getElementById("toggleText").textContent === 'On'
-            let toggleMail = document.getElementById("toggleMail").textContent === 'On'
+
 
             const requestBody = {
                 username : usernameVal,
-                emailSubscribed : toggleEmail,
-                phoneSubscribed : togglePhone,
-                mailSubscribed : toggleMail
+                isUnsubscribed : toggleEmail,
             }
             console.log(JSON.stringify(requestBody))
-            fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+            fetch("https://49mdz9gah9.execute-api.us-east-1.amazonaws.com/beta/notification", {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
                 headers: {
                     Authorization: `${accessToken}`,
                     "Content-Type": "application/json"
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => {
-            console.error("API request failed: ", error);
-            }).finally(() => {
-                $('#loadingModal').modal('hide');
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            }).then(data => {
+                alert(JSON.stringify(data));
+            }).catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
             });
+
+
+
+            // let toggleEmail = document.getElementById("toggleEmail").textContent === 'On'
+            // let togglePhone = document.getElementById("toggleText").textContent === 'On'
+            // let toggleMail = document.getElementById("toggleMail").textContent === 'On'
+
+            // const requestBody = {
+            //     username : usernameVal,
+            //     emailSubscribed : toggleEmail,
+            //     phoneSubscribed : togglePhone,
+            //     mailSubscribed : toggleMail
+            // }
+            // console.log(JSON.stringify(requestBody))
+            // fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+            //     method: 'POST',
+            //     body: JSON.stringify(requestBody),
+            //     headers: {
+            //         Authorization: `${accessToken}`,
+            //         "Content-Type": "application/json"
+            //     }
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data)
+            // })
+            // .catch(error => {
+            // console.error("API request failed: ", error);
+            // }).finally(() => {
+            //     $('#loadingModal').modal('hide');
+            // });
             closeConfirmationModal()
         }
         </script>
