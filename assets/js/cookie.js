@@ -23,7 +23,6 @@ if (curURL.includes('code=')) {
       return response.json();
     })
     .then((data) => {
-        console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
         setSessionCookie('id_token', data.body.id_token);
@@ -109,6 +108,8 @@ function updateHref(elementId, url) {
     }
 }
 function populateAccountPage() {
+    setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'))
+
     var modal = new bootstrap.Modal(document.getElementById('loadingModal'))
     //modal.show()
     const username = getValueFromJWT('access_token', 'username');
@@ -126,7 +127,7 @@ function populateAccountPage() {
         document.getElementById("phone").value = data.phone || "";        
    
 
-      if(data.emailSubscribed && data.emailSubscribed == 'false') {
+      if(data.emailSubscribed && data.emailSubscribed == 'true') {
         let button = document.getElementById("toggleEmail").
         button.textContent = 'On';
         button.style.background = '#7c83bc';
