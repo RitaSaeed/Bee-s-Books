@@ -239,7 +239,10 @@
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-5">
-                <p>Content for tab 5.</p>
+                <div class="container mt-5 mb-5">
+                    <h2>Orders</h2>
+                    <div id="orderTableContainer" style="width: 100%"></div>
+                </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-6">
                 <div class="container">
@@ -335,10 +338,35 @@
                     userDashboard(row)   
                 });
 
+                cosnt orders = await getOrders();
+
+                var ordertable = new Tabulator("#orderTableContainer", {
+                    height: 450,
+                    data: mappedUsers,
+                    layout: 'fitDataFill',
+                    pagination: "local", 
+                    paginationSize: 10, 
+                    columns: [
+                        { title: "Order ID", field: "username", width: 125 },
+                        { title: "Customer Name", field: "email", width: 250 },
+                        { title: "Total", field: "name", width: 150 },
+                        { title: "Items", field: "address", width: 200 },
+                        { title: "Status", field: "confirmed", width: 100 },
+                    ]
+                });
+
+                ordertable.on("rowClick", function(e, row){
+                    orderDashboard(row)   
+                });
+
             } catch (error) {
                 console.error("Error getting users:", error);
             }
         });
+
+        async function orderDashboard() {
+            return
+        }
         
         async function userDashboard(row) {
             var overlay = document.createElement("div");
@@ -517,6 +545,25 @@
                 throw error; 
             } 
         }
+
+        async function getOrders() {
+            try {
+                const accessToken = getCookie('id_token');
+                const response = await fetch("", {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    }
+                });
+                console.log(response);
+                const data = await response.json();
+                return data.body;
+            } catch (error) {
+                console.error("API request failed:", error);
+                throw error; 
+            } 
+        }
+
+
 
         async function deleteUser(user) {
             console.log(user)
