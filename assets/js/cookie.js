@@ -143,7 +143,6 @@ function populateAccountPage() {
         $('#loadingModal').modal('hide');
     });
 }
-
 function updateUserInfo() {
     $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
