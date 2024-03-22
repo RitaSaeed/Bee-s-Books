@@ -125,17 +125,14 @@ function populateAccountPage() {
         document.getElementById("email").value = data.email || "";
         document.getElementById("address").value = data.address || "";     
         document.getElementById("phone").value = data.phone || "";        
-   
-
-      if(data.emailSubscribed && data.emailSubscribed == 'true') {
-        let button = document.getElementById("toggleEmail").
+        
+      if(data.Unsubscribed == "false") {
+        let button = document.getElementById("toggleEmail")
         button.textContent = 'On';
         button.style.background = '#7c83bc';
         isOn = true;
       } 
       modal.hide();
-
-      console.log('response',data)
     })
     .catch(error => {
       console.error("API request failed: ", error);
@@ -143,6 +140,7 @@ function populateAccountPage() {
         $('#loadingModal').modal('hide');
     });
 }
+
 function updateUserInfo() {
     $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
