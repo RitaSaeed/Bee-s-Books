@@ -15,7 +15,7 @@ if (curURL.includes('code=')) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(post_body),
-    })
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error('Bad token request.');
@@ -23,6 +23,7 @@ if (curURL.includes('code=')) {
       return response.json();
     })
     .then((data) => {
+        console.log(data.body)
         access_token = data.body.access_token
         setSessionCookie('access_token', data.body.access_token);
         setSessionCookie('id_token', data.body.id_token);
@@ -43,7 +44,8 @@ function logoutClicked() {
     try {
         deleteCookie('access_token');
         deleteCookie('id_token');
-        location.reload()
+        // location.reload()
+        window.location.href = 'index.html';
     } catch (error) {
         console.log(error);
     }
@@ -108,10 +110,7 @@ function updateHref(elementId, url) {
     }
 }
 function populateAccountPage() {
-    setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'))
-    updateHref('home-user-1', window.location.href + "accountPage")
-    var modal = new bootstrap.Modal(document.getElementById('loadingModal'))
-    //modal.show()
+    //$('#loadingModal').modal('show');
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
@@ -121,21 +120,10 @@ function populateAccountPage() {
       })
     .then(response => response.json())
     .then(data => {
-        document.getElementById("name").value = data.name || "";
-        document.getElementById("email").value = data.email || "";
-        document.getElementById("address").value = data.address || "";     
-        document.getElementById("phone").value = data.phone || "";        
-   
-
-      if(data.emailSubscribed && data.emailSubscribed == 'true') {
-        let button = document.getElementById("toggleEmail").
-        button.textContent = 'On';
-        button.style.background = '#7c83bc';
-        isOn = true;
-      } 
-      modal.hide();
-
-      console.log('response',data)
+      document.getElementById("name").value = data.name;
+      document.getElementById("email").value = data.email;
+      document.getElementById("address").value = data.address;
+      console.log(data)
     })
     .catch(error => {
       console.error("API request failed: ", error);
@@ -149,15 +137,12 @@ function updateUserInfo() {
     const nameVal = document.getElementById("name").value
     const emailVal = document.getElementById("email").value
     const addressVal = document.getElementById("address").value
-    const phoneVal = document.getElementById("phone").value
-
     const accessToken = getCookie('id_token')
     const requestBody = {
         username : usernameVal,
         name : nameVal,
         email : emailVal,
-        address : addressVal,
-        phone : phoneVal
+        address : addressVal
     }
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
         method: 'POST',

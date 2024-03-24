@@ -22,7 +22,7 @@
 </head>
 
 <body style="background: var(--bs-light-bg-subtle);">
-    <header class="d-inline-flex flex-shrink-1 align-items-center justify-content-lg-start align-items-lg-center justify-content-xl-start justify-content-xxl-start" id="dashboard-heading" style="padding: 1rem;width: 100%;background: #7C83BC;margin-bottom: 1rem;"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center justify-content-xxl-center me-2 bs-icon" style="width: 40px;height: 40px;background: #E6E6FF;border-width: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
+    <header class="d-inline-flex flex-shrink-1 align-items-center justify-content-lg-start align-items-lg-center justify-content-xl-start justify-content-xxl-start" id="dashboard-heading" style="padding: 1rem;width: 100%;background: linear-gradient(var(--bs-primary-text-emphasis), rgb(113,119,171) 54%, var(--bs-body-bg) 86%), #7C83BC;margin-bottom: 1rem;box-shadow: 0px 0px 6px var(--bs-primary-text-emphasis);"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center justify-content-xxl-center me-2 bs-icon" style="width: 40px;height: 40px;background: var(--bs-primary-text-emphasis);border-width: 1px;border-color: var(--bs-primary-text-emphasis);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.9513 15.571C17.7695 17.2187 16.9205 18.6654 15.6805 19.635C15.332 20.4692 14.7092 21.1601 13.9247 21.5951C13.7025 22.4574 12.9196 23.0944 11.9879 23.0944C11.0562 23.0944 10.2733 22.4574 10.0511 21.5951C9.26672 21.1602 8.64392 20.4693 8.29547 19.6353C7.05955 18.6691 6.21203 17.229 6.02621 15.5883C4.93527 16.4161 3.37955 16.4118 2.28618 15.4944C1.01696 14.4294 0.851409 12.5371 1.91641 11.2679L6.00966 6.38975C6.27125 3.31753 8.84785 0.905579 11.9878 0.905579C15.1166 0.905579 17.6861 3.30046 17.9631 6.35711L22.0837 11.2679C23.1487 12.5371 22.9831 14.4294 21.7139 15.4944C20.613 16.4182 19.0433 16.4161 17.9513 15.571ZM15.6254 12.9056L13.9472 10.9056H10.0529L8.37467 12.9056H15.6254ZM17.9878 12.6095L19.0195 13.839C19.3745 14.2621 20.0053 14.3173 20.4283 13.9623C20.8514 13.6073 20.9066 12.9765 20.5516 12.5535L17.9878 9.49803V12.6095ZM15.9878 8.90558V6.90558C15.9878 4.69644 14.1969 2.90558 11.9878 2.90558C9.77865 2.90558 7.98779 4.69644 7.98779 6.90558V8.90558H15.9878ZM4.98059 13.839L5.98779 12.6387V9.52726L3.4485 12.5535C3.0935 12.9765 3.14869 13.6073 3.57176 13.9623C3.99483 14.3173 4.62559 14.2621 4.98059 13.839ZM11.9878 18.9056C9.77865 18.9056 7.98779 17.1147 7.98779 14.9056H15.9878C15.9878 17.1147 14.1969 18.9056 11.9878 18.9056Z" fill="currentColor"></path>
             </svg></span>
         <h1 class="flex-nowrap flex-sm-nowrap" style="margin: 0px;color: #fff;">Bee's Books Admin Dashboard</h1>
@@ -42,14 +42,14 @@
                 <section class="py-4 py-xl-5">
                     <div class="container">
                         <div class="text-center p-4 p-lg-5">
-                            <h1 class="fw-bold mb-4" id="dashboard-main-heading">Welcome<br>&lt;username&gt;</h1><button class="btn btn-primary fs-5 me-2 py-2 px-4" id="dashboard-logout" type="button" style="background: #7C83BC;border-color: #7C83BC;border-top-style: none;border-top-color: #7C83BC;">Logout</button>
+                            <h1 class="fw-bold mb-4" id="dashboard-main-heading">Welcome<br>&lt;username&gt;</h1><button class="btn btn-primary fs-5 me-2 py-2 px-4" id="dashboard-logout" type="button" style="background: #7C83BC;border-color: #7C83BC;border-top-style: none;border-top-color: #7C83BC;" onclick="logoutClicked()">Logout</button>
                         </div>
                     </div>
                 </section><!-- End: Banner Clean -->
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
                 <div class="container text-end" style="padding-top: 1rem;">
-                    <div class="container"><button class="btn btn-primary circle-button" id="add-product" type="button" data-bs-toggle="modal" data-bs-target="#add-product-modal" style="margin-right:40px;font-size:20px;"><svg class="bi bi-plus-lg" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path></svg></button>
+                    <div class="container"><button class="btn btn-primary" id="add-product" type="button" data-bs-toggle="modal" data-bs-target="#add-product-modal" style="margin-right: 40px;font-size: 20px;color: var(--bs-emphasis-color);">Add a product</button>
                         <div class="modal fade" role="dialog" tabindex="-1" id="add-product-modal" aria-labelledby="add-product-modal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
