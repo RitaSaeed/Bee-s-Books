@@ -11,27 +11,13 @@ function populateCartPage() {
             "Item": {
                 "products": [],
                 "userID": username
-            },
-            "ResponseMetadata": {
-                "RequestId": "11CQPLSUKMMNREC2KS0AA03JJ3VV4KQNSO5AEMVJF66Q9ASUAAJG",
-                "HTTPStatusCode": 200,
-                "HTTPHeaders": {
-                    "server": "Server",
-                    "date": "Sun, 25 Feb 2024 21:29:31 GMT",
-                    "content-type": "application/x-amz-json-1.0",
-                    "content-length": "170",
-                    "connection": "keep-alive",
-                    "x-amzn-requestid": "11CQPLSUKMMNREC2KS0AA03JJ3VV4KQNSO5AEMVJF66Q9ASUAAJG",
-                    "x-amz-crc32": "1124717122"
-                },
-                "RetryAttempts": 0
             }
         }
 
         let products = data.body.products;
 
         for (let i = 0; i < products.length; i++) {
-            cartData.Item.products[i] = {"productID": products[i], "quantity": "5"};
+            cartData.Item.products[i] = {"productID": products[i], "quantity": "1"};
         }
 
         generateProducts(cartData);
