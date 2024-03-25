@@ -20,12 +20,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.5.4/css/tabulator.min.css" integrity="sha512-t/BIXyXv+371F1q9LGQd6fIMakUqG+Ov+5RvnQ7WMijVYmxMG9yNBA5Vr4QCRAQIAxSfcILi8pk1kaQGrbRdhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.5.4/js/tabulator.min.js" integrity="sha512-zGau3PuxNV0oj1OLIKAqTHgq9yW/FH8tY5lxIFIN8s+OSy5RY8DMF/wGJVU3zFqXc0UZSCMwS+73RwIW6VkGdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/tabulator-tables@4.1.4/dist/css/tabulator.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.1.4/dist/js/tabulator.min.js"></script>
 </head>
 
 <body style="background: var(--bs-light-bg-subtle);">
@@ -340,9 +336,9 @@
                     ]
                 });
 
-                // table.on("rowClick", function(e, row){
-                //     userDashboard(row)   
-                // });
+                table.on("rowClick", function(e, row){
+                    userDashboard(row)   
+                });
 
                 const orders = await getOrders();
                 console.log(orders)
@@ -362,7 +358,7 @@
                 // mappedOrders = users.map(mapOrderToTabulator)
                 //console.log(mappedOrders); 
 
-                var ordertable = new Tabulator("#orderTableContainer", {
+                let ordertable = new Tabulator("#orderTableContainer", {
                     height: 450,
                     data: orders,
                     layout: 'fitDataFill',
@@ -378,9 +374,9 @@
                     ]
                 });
 
-                // ordertable.on("rowClick", function(e, row){
-                //     orderDashboard(row)   
-                // });
+                ordertable.on("rowClick", function(e, row){
+                    orderDashboard(row)   
+                });
 
             } catch (error) {
                 console.error("Error getting users:", error);
@@ -388,7 +384,110 @@
         });
 
         async function orderDashboard(row) {
-            return
+                console.log(row.getData());
+                var overlay = document.createElement("div");
+                overlay.classList.add("dashboard-overlay");
+                document.body.appendChild(overlay);
+                var container = document.createElement("div");
+                container.classList.add("dashboard-container");
+
+                var fields = [
+                    { title: "Order ID", field: "SK", width: 125 },
+                    { title: "Customer Name", field: "PK", width: 250 },
+                    { title: "Placed At", field: "DateTime", width: 250 },
+                    { title: "Total", field: "name", width: 150 },
+                    { title: "Items", field: "Products", width: 200 },
+                    { title: "Status", field: "OrderState", width: 100 },
+                ];
+
+                var rowData = row.getData();
+                fields.forEach(function (field) {
+
+                    var label = document.createElement("label");
+                    label.textContent = field.title;
+                    container.appendChild(label);
+                    container.appendChild(document.createElement("br"));
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.placeholder = field.title;
+                    input.style.width = field.width + "px";
+                    input.id = field.field; // Assign unique ID
+                    input.value = rowData[field.field];
+                    input.disabled = true; // Disable editing
+                    container.appendChild(input);
+                    container.appendChild(document.createElement("br"));
+                });
+
+                var statusLabel = document.createElement("label");
+                statusLabel.textContent = "Update Status:";
+                container.appendChild(statusLabel);
+                container.appendChild(document.createElement("br"));
+
+                var statusSelect = document.createElement("select");
+                statusSelect.id = "statusSelect";
+                var statusOptions = ["Processed", "Placed", "Completed", "Cancelled", "Refunded"];
+                statusOptions.forEach(function (status) {
+                    var option = document.createElement("option");
+                    option.value = status.toLowerCase();
+                    option.textContent = status;
+                    statusSelect.appendChild(option);
+                });
+                container.appendChild(statusSelect);
+                container.appendChild(document.createElement("br"));
+
+                var submitButton = document.createElement("button");
+                submitButton.textContent = "Update Order";
+                submitButton.classList.add("btn", "btn-primary");
+                submitButton.addEventListener("click", function () {
+                    //updatedData.status = document.getElementById("statusSelect").value; // Update status from dropdown
+                    updateOrder(row, document.getElementById("statusSelect").value);
+                });
+                container.appendChild(submitButton);
+
+                var closeButton = document.createElement("button");
+                closeButton.textContent = "Close";
+                closeButton.classList.add("btn", "btn-danger");
+                closeButton.addEventListener("click", function () {
+                    document.body.removeChild(overlay);
+                    document.body.removeChild(container);
+                });
+                container.appendChild(closeButton);
+                overlay.appendChild(container);
+            
+        }
+
+        function updateOrder(row, order_status) {
+            // Your code to update the order in the database goes here
+            console.log("Updated order data:", row.getData(), order_status);
+            const accessToken = getCookie('id_token')
+            const requestBody = {
+                user_id : row.getData()['PK'],
+                order_id: row.getData()['SK'],
+                status: order_status
+            }
+            console.log(requestBody);
+            fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
+                method: 'POST',
+                body: JSON.stringify(requestBody),
+                headers: {
+                    Authorization: `${accessToken}`,
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => {
+                if(response.status === 200) {
+                    alert("Updated successfully!")
+                } else {
+                    alert("Error updating order!")
+                }
+                console.log(response)
+            })
+            .then(data => {
+               
+            })
+            .catch(error => {
+                console.error("API request failed: ", error);
+            })
         }
         
         async function userDashboard(row) {

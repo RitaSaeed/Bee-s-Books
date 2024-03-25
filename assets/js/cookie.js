@@ -90,7 +90,7 @@ function getValueFromJWT(cookieName, fieldName) {
         }
     }
     return null;
-    }
+}
 function setValueToElement(elementId, value) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -129,7 +129,7 @@ function populateAccountPage() {
       if(data.Unsubscribed == "false") {
         let button = document.getElementById("toggleEmail")
         button.textContent = 'On';
-        button.style.background = '#7c83bc';
+        button.style.background = 'var(--bs-body-bg)';
         isOn = true;
       } 
       modal.hide();
