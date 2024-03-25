@@ -211,13 +211,15 @@
         });
     }
 
-    fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/subtotal", {
-        method: 'POST',
-        body: JSON.stringify(event),
-        headers: {"Content-Type": "application/json"}})
-    .then(response => response.json()).then(data => {
-        document.getElementById('subtotalID').innerHTML = data.body.value;
-    });
+    function calcSubtotal() {
+        fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/subtotal", {
+            method: 'POST',
+            body: JSON.stringify(event),
+            headers: {"Content-Type": "application/json"}})
+        .then(response => response.json()).then(data => {
+            document.getElementById('subtotalID').innerHTML = data.body.value;
+        });
+    }
 
     function placeOrder() {
         fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
@@ -226,11 +228,13 @@
             headers: {"Content-Type": "application/json"}})
         .then(() => {
             populateCartPage();
+            calcSubtotal();
         });
     }
 
     window.onload = function() {
         populateCartPage();
+        calcSubtotal();
     }
     
     // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
