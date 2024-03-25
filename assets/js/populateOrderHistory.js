@@ -20,9 +20,15 @@ function getOrderHistory(userID) {
 
     return fetch(url)
     .then(response => response.json())
-    .then(data => {
-        console.log(data['dynamodb_response']);
-        return data;
+    .then(response => {
+        let data = response['dynamodb_response'];
+        console.log(data);
+        
+        let container = document.getElementById('order-history-container');
+
+        for (const order in data) {
+            console.log("order: " + JSON.stringify(data[order]));
+        }
     })
     .catch(e => {
         console.log('ERROR: ', e);
