@@ -1,10 +1,10 @@
 let username = getValueFromJWT('access_token', 'username');
-let event = {"payload": {"Key": {"userID": username}}};
+let eventData = {"payload": {"Key": {"userID": username}}};
 
 function populateCartPage() {
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
         method: 'POST',
-        body: JSON.stringify(event),
+        body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
         let cartData = {
@@ -42,7 +42,7 @@ function populateCartPage() {
 function calcSubtotal() {
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/subtotal", {
         method: 'POST',
-        body: JSON.stringify(event),
+        body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
         console.log(data);
@@ -53,9 +53,10 @@ function calcSubtotal() {
 function placeOrder() {
     fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
         method: 'POST',
-        body: JSON.stringify(event),
+        body: eventData,
         headers: {"Content-Type": "application/json"}})
-    .then(() => {
+    .then(response => response.json()).then((data) => {
+        console.log(data);
         populateCartPage();
         calcSubtotal();
     });
