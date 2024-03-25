@@ -29,6 +29,7 @@ function populateCartPage() {
         }
 
         let products = data.body.products;
+        console.log(data);
 
         for (let i = 0; i < products.length; i++) {
             cartData.Item.products[i] = {"productID": products[i], "quantity": "5"};
@@ -44,6 +45,7 @@ function calcSubtotal() {
         body: JSON.stringify(event),
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
+        console.log(data);
         document.getElementById('subtotalID').innerHTML = data.body.value;
     });
 }
