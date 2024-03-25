@@ -169,11 +169,11 @@
                         </form>
                     </li>
                 </ul>
-                <div class="dropdown show d-flex flex-shrink-0" style="position: relative;margin: 0.5rem;background: #7C83BC;border-radius: 25px;border-style: solid;border-color: #7C83BC;margin-right: 70px;"><a aria-expanded="true" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="profile-toggle" href="#" style="color: white;padding: 0.65rem;background: var(--bs-primary-text-emphasis);border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-radius: 20px;margin-left: 0px;">Profile&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle">
+                <div class="dropdown d-flex flex-shrink-0" style="position: relative;margin: 0.5rem;background: #7C83BC;border-radius: 25px;border-style: solid;border-color: #7C83BC;margin-right: 70px;"><a aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="profile-toggle" href="#" style="color: white;padding: 0.65rem;background: var(--bs-primary-text-emphasis);border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-radius: 20px;margin-left: 0px;">Profile&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
                         </svg></a>
-                    <div class="dropdown-menu show" data-bs-popper="none" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
                             </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a></div>
                 </div>
@@ -184,15 +184,15 @@
     <section class="d-md-flex justify-content-md-center">
         <div style="position:sticky;display:flex;margin-top:30px;width:100%;">
             <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist" style="width:20%;margin-left:10px;">
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">Order History</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Order History</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Notifications</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Save For Later</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Bookshelf</a></li>
             </ul>
             <div class="tab-content" style="background:var(--bs-emphasis-color);margin-right:10%;margin-left:2%;margin-bottom:5%;width:70%;">
-                <div class="tab-pane" role="tabpanel" id="tab-1">
-                    <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
+                <div class="tab-pane active" role="tabpanel" id="tab-1">
+                    <div class="container bg-primary-gradient" style="margin-bottom: 37px;margin-top: 37px;padding-left: 0px;padding-right: 0px;background: white;">
                         <h2 style="text-align:center;">Account Information</h2>
                         <form class="d-lg-flex justify-content-lg-center" id="accountForm-1" style="width:100%;margin-bottom:20px;">
                             <div style="width:100%;">
@@ -224,10 +224,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane active" role="tabpanel" id="tab-2"></div>
+                <div class="tab-pane" role="tabpanel" id="tab-2"></div>
                 <div class="tab-pane" role="tabpanel" id="tab-3">
                     <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
-                        <div class="px-5 py-5">
+                        <div class="px-5 py-5" style="background: white;">
                             <h2>Receive Marketing Information</h2>
                             <div class="d-flex" style="padding-top:15px;">
                                 <p>Email</p><button class="btn btn-danger text-nowrap shadow ms-3" id="toggleEmail" style="background:var(--bs-body-bg);border-width:0px;font-size:1rem;">Off</button>
