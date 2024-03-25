@@ -127,7 +127,7 @@
                                     <p>Subtotal:&nbsp;</p>
                                 </div>
                                 <div class="col-5">
-                                    <p>#######</p>
+                                    <p id="subtotalID">#######</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -185,11 +185,11 @@
         let username = getValueFromJWT('access_token', 'username');
         let event = {"payload": {"Key": {"userID": username}}};
 
-        fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
+        fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
             method: 'POST',
             body: JSON.stringify(event),
             headers: {"Content-Type": "application/json"}})
-        .then(response => response.json()).then(response => {
+        .then(response => response.json()).then(data => {
             let cartData = {
                 "Item": {
                     "products": [],
@@ -211,13 +211,21 @@
                 }
             }
 
-            let products = response.body.products;
+            let products = data.body.products;
 
             for (let i = 0; i < products.length; i++) {
                 cartData.Item.products[i] = {"productID": products[i], "quantity": "5"};
             }
 
             generateProducts(cartData);
+        });
+
+        fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/subtotal", {
+            method: 'POST',
+            body: JSON.stringify(event),
+            headers: {"Content-Type": "application/json"}})
+        .then(response => response.json()).then(data => {
+            document.getElementById('subtotalID').innerHTML = data.body.value;
         });
 
         //     let cartData = { //this was grabbed from the example in slack (modified to work since the given isbns were invalid)
