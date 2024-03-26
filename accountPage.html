@@ -184,14 +184,14 @@
     <section class="d-md-flex justify-content-md-center">
         <div style="position:sticky;display:flex;margin-top:30px;width:100%;">
             <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist" style="width:20%;margin-left:10px;">
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">Order History</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" onclick="createOrderHistoryTable()">Order History</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Notifications</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Save For Later</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Bookshelf</a></li>
             </ul>
             <div class="tab-content" style="background:var(--bs-emphasis-color);margin-right:10%;margin-left:2%;margin-bottom:5%;width:70%;">
-                <div class="tab-pane" role="tabpanel" id="tab-1">
+                <div class="tab-pane active" role="tabpanel" id="tab-1">
                     <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
                         <h2 style="text-align:center;">Account Information</h2>
                         <form class="d-lg-flex justify-content-lg-center" id="accountForm-1" style="width:100%;margin-bottom:20px;">
@@ -224,19 +224,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane active" role="tabpanel" id="tab-2">
+                <div class="tab-pane" role="tabpanel" id="tab-2">
 
 
                     <div id="order-history-container" class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
-                        <div class="row justify-content-center order-card">
-                            <div class="order-header">
-                                <div class="inner-box">
-                                    
-                                </div>
-                            </div>
-                            <div class="order-content"></div>
-                            <div class="order-footer"></div>
-                        </div> 
+
                     </div>
 
 
