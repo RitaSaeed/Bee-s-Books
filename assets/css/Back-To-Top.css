@@ -15,9 +15,6 @@
   background-color: #0056b3;
 }
 
-svg {
-}
-
 .btn {
   font-size: 1vw;
   overflow: visible;
@@ -105,5 +102,15 @@ body {
   /*--bs-table-color-state: black;*/
   /*--bs-table-color: black !important;*/
   --bs-emphasis-color: #000;
+}
+
+fieldset, label {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 10px;
 }
 
