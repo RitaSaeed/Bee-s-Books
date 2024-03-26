@@ -77,17 +77,23 @@ function getOrderHistory(userID) {
                 <div class="card-body p-4">
 
                 <div class="mx-n5 px-5 py-4">
-                    <div class="row">
-                        <div class="col-md-2">
+                    <div class="row">`
+
+            for (const prodID in products) {
+                historyHTML += 
+                        `<div class="col-md-2">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" class="img-fluid">
                         </div>
                         <div class="col-md-5 col-lg-7">
-                            <p>${productName}</p>
+                            <p>${products[prodID]}</p>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <p class="mb-0">${productPrice}</p>`;
+                            <p class="mb-0">${productPrice}</p>
+                        </div>`;
+            }
 
-            historyHTML += `</div>
+
+            historyHTML += `
                     </div>
                 </div>
 
