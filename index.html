@@ -131,36 +131,19 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);"><!-- Start: User Search --><div><script>
-//     function searchOnEnter(event) {
-//         if (event.key === "Enter") {
-//             window.history.pushState(null,null,'product-list.html');
-//             // var userInput = document.getElementById("search-input");
-//             // const apiUrl = "https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=";
-//             // console.log(apiUrl+userInput);
-//             // fetch(apiUrl+userInput)
-//             // .then(response => response.json())
-//             // .then(data => {
-//             //     console.log(data)
-//             //     window.history.pushState(null,null,'product-list.html');
-//             // })
-//             // .catch((error) => console.error('Error:', error));
-            
-//         }
-//         console.log(event.key);
-//     }
+                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);" name="uInput"><!-- Start: User Search --><div><script>
     function handleSubmit(event) {
         event.preventDefault();
             let uInput = document.getElementById('uInput').value;
             localStorage.setItem('uInput', uInput);
-            let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    localStorage.setItem('apiData', JSON.stringify(data));
-                    window.location.href = 'product-list.html'; // replace with your next page URL
-                });
+            
+            window.location.href = 'product-list.html?uInput=' + uInput;
+            // fetch(url)
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         localStorage.setItem('apiData', JSON.stringify(data));
+            //         window.location.href = 'product-list.html'; // replace with your next page URL
+            //     });
     }
     function handleGenreClick() {
         
@@ -193,7 +176,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col" id="container-16"><img class="img-fluid" id="img-1" src="" style="width:100%;height:90%;"></div>
+                            <div class="col" id="container-16"><img class="img-fluid flex-grow-1" id="img-1" src="" style="width:100%;height:90%;"></div>
                             <div class="col" id="container-17"><img class="img-fluid" id="img-2" src="" style="height:90%;width:100%;"></div>
                             <div class="col" id="container-18"><img class="img-fluid" id="img-3" src="" style="height:90%;width:100%;"></div>
                             <div class="col" id="container-19"><img class="img-fluid" id="img-4" src="" style="height:90%;width:100%;"></div>
@@ -292,14 +275,6 @@
                                localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${data["Items"][i-1]["SK"].slice(5, 15)}`); 
                                 console.log(localStorage.getItem('productURL'));
                                 window.location.href = 'product.html';
-                                // fetch(userClickURL)
-                                //     .then(response => response.json())
-                                //     .then(data => {
-                                //         //console.log(data);
-                                //         localStorage.setItem('userClick', JSON.stringify(data));
-                                //         window.location.href = 'product.html';
-                                //         console.log(localStorage.getItem('userClick'));// replace with your next page URL
-                                // });
                             };
                     }
                 }
@@ -346,7 +321,7 @@
         }
     </script><!-- End: CarouselJavascript -->
             </div><!-- End: ClickCode -->
-            <hr style="margin-left: 15px;margin-right: 15px;"><a href="product.html" style="margin: 1rem;">Click me to go to a sample product page (not complete)</a>
+            <hr style="margin-left: 15px;margin-right: 15px;">
         </div>
     </section><!-- End: Landing Body -->
     <!-- Start: Footer Multi Column -->
