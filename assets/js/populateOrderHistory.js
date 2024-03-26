@@ -42,8 +42,9 @@ function getOrderHistory(userID) {
                 products.push(productJSON[entry]['S'])
             }
 
-            let total = "FILLER";
-            let productName = "FILLER";
+            let total = "FILLER_TOTAL";
+            let productName = "FILLER_NAME";
+            let productPrice = "FILLER_PRICE"
 
             console.log("orderID: " + JSON.stringify(orderID));
             console.log("date: " + JSON.stringify(date));
@@ -84,9 +85,9 @@ function getOrderHistory(userID) {
                             <p>${productName}</p>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <p class="mb-0">${total}</p>`;
+                            <p class="mb-0">${productPrice}</p>`;
 
-            historyHTML += `/div>
+            historyHTML += `</div>
                     </div>
                 </div>
 
