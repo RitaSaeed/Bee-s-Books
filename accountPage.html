@@ -168,7 +168,7 @@
         <div style="position:sticky;display:flex;margin-top:30px;width:100%;">
             <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist" style="width:20%;margin-left:10px;">
                 <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Order History</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" onclick="createOrderHistoryTable()">Order History</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Notifications</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Save For Later</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Bookshelf</a></li>
@@ -207,7 +207,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="tab-2"></div>
+                <div class="tab-pane" role="tabpanel" id="tab-2">
+
+
+                    <div id="order-history-container" class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
+
+                    </div>
+
+
+                </div>
                 <div class="tab-pane" role="tabpanel" id="tab-3">
                     <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
                         <div class="px-5 py-5" style="background: white;">
@@ -375,6 +383,7 @@
     <script src="assets/js/productTable.js"></script>
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
+    <script src="assets/js/populateOrderHistory.js"></script>
 </body>
 
 </html>
