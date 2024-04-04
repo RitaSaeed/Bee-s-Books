@@ -167,33 +167,33 @@
     <section class="d-md-flex justify-content-md-center">
         <div style="position:sticky;display:flex;margin-top:30px;width:100%;">
             <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist" style="width:20%;margin-left:10px;">
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" onclick="createOrderHistoryTable()">Order History</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2" onclick="createOrderHistoryTable()">Order History</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Notifications</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Save For Later</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Bookshelf</a></li>
             </ul>
             <div class="tab-content" style="background:var(--bs-emphasis-color);margin-right:10%;margin-left:2%;margin-bottom:5%;width:70%;">
-                <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <div class="container bg-primary-gradient" style="margin-bottom: 37px;margin-top: 37px;padding-left: 0px;padding-right: 0px;background: white;">
+                <div class="tab-pane" role="tabpanel" id="tab-1">
+                    <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;background:white;">
                         <h2 style="text-align:center;">Account Information</h2>
                         <form class="d-lg-flex justify-content-lg-center" id="accountForm-1" style="width:100%;margin-bottom:20px;">
                             <div style="width:100%;">
                                 <div class="row row-cols-1 d-lg-flex" style="width:70%;margin:auto;">
-                                    <div class="col"><label class="col-form-label col-form-label" for="email">Email:</label></div>
-                                    <div class="col"><input class="bg-light form-control form-control form-control" type="email" id="email-1" placeholder="Your Email"></div>
+                                    <div class="col"><label class="col-form-label col-form-label col-form-label" for="email">Email:</label></div>
+                                    <div class="col"><input class="bg-light form-control form-control form-control form-control" type="email" id="email-1" placeholder="Your Email"></div>
                                 </div>
                                 <div class="row row-cols-1 justify-content-center" style="width:70%;margin:auto;">
-                                    <div class="col"><label class="col-form-label col-form-label" for="name">Name:</label></div>
-                                    <div class="col"><input class="bg-light form-control form-control form-control" type="text" id="name-1" placeholder="Your Name"></div>
+                                    <div class="col"><label class="col-form-label col-form-label col-form-label" for="name">Name:</label></div>
+                                    <div class="col"><input class="bg-light form-control form-control form-control form-control" type="text" id="name-1" placeholder="Your Name"></div>
                                 </div>
                                 <div class="row row-cols-1 justify-content-center" style="width:70%;margin:auto;">
-                                    <div class="col"><label class="col-form-label col-form-label" for="address">Address:</label></div>
-                                    <div class="col"><input class="bg-light form-control form-control form-control" type="text" id="address-1" placeholder="Your Address"></div>
+                                    <div class="col"><label class="col-form-label col-form-label col-form-label" for="address">Address:</label></div>
+                                    <div class="col"><input class="bg-light form-control form-control form-control form-control" type="text" id="address-1" placeholder="Your Address"></div>
                                 </div>
                                 <div class="row row-cols-1 justify-content-center" style="width:70%;margin:auto;">
-                                    <div class="col"><label class="col-form-label col-form-label" for="Phone">Phone:</label></div>
-                                    <div class="col"><input class="bg-light form-control form-control form-control" type="text" id="phone-1" placeholder="Your Phone #"></div>
+                                    <div class="col"><label class="col-form-label col-form-label col-form-label" for="Phone">Phone:</label></div>
+                                    <div class="col"><input class="bg-light form-control form-control form-control form-control" type="text" id="phone-1" placeholder="Your Phone #"></div>
                                 </div>
                             </div>
                         </form>
@@ -207,18 +207,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="tab-2">
-
-
-                    <div id="order-history-container" class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
-
-                    </div>
-
-
+                <div class="tab-pane active" role="tabpanel" id="tab-2">
+                    <div class="container bg-primary-gradient" id="order-history-container" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;"></div>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-3">
                     <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
-                        <div class="px-5 py-5" style="background: white;">
+                        <div class="px-5 py-5" style="background:white;">
                             <h2>Receive Marketing Information</h2>
                             <div class="d-flex" style="padding-top:15px;">
                                 <p>Email</p><button class="btn btn-danger text-nowrap shadow ms-3" id="toggleEmail" style="background:var(--bs-body-bg);border-width:0px;font-size:1rem;">Off</button>
@@ -376,6 +370,7 @@
         </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/populateOrderHistory.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="assets/js/cookie.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
@@ -383,7 +378,6 @@
     <script src="assets/js/productTable.js"></script>
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
-    <script src="assets/js/populateOrderHistory.js"></script>
 </body>
 
 </html>
