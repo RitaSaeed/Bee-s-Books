@@ -1,5 +1,5 @@
 let username = getValueFromJWT('access_token', 'username');
-let eventData = {"payload": {"Key": {"userID": username}}};
+let eventData = JSON.stringify({"payload": {"Key": {"userID": username}}});
 
 function populateCartPage() {
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
