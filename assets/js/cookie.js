@@ -92,7 +92,7 @@ function getValueFromJWT(cookieName, fieldName) {
         }
     }
     return null;
-    }
+}
 function setValueToElement(elementId, value) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -120,10 +120,18 @@ function populateAccountPage() {
       })
     .then(response => response.json())
     .then(data => {
-      document.getElementById("name").value = data.name;
-      document.getElementById("email").value = data.email;
-      document.getElementById("address").value = data.address;
-      console.log(data)
+        document.getElementById("name").value = data.name || "";
+        document.getElementById("email").value = data.email || "";
+        document.getElementById("address").value = data.address || "";     
+        document.getElementById("phone").value = data.phone || "";        
+        
+      if(data.Unsubscribed == "false") {
+        let button = document.getElementById("toggleEmail")
+        button.textContent = 'On';
+        button.style.background = 'var(--bs-body-bg)';
+        isOn = true;
+      } 
+      modal.hide();
     })
     .catch(error => {
       console.error("API request failed: ", error);
@@ -131,6 +139,7 @@ function populateAccountPage() {
         $('#loadingModal').modal('hide');
     });
 }
+
 function updateUserInfo() {
     $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
