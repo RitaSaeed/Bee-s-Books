@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Products - Brand</title>
+    <title>BeesBooksSprintTwo</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Inter.css">
     <link rel="stylesheet" href="assets/css/Libre%20Franklin.css">
     <link rel="stylesheet" href="assets/css/Raleway.css">
     <link rel="stylesheet" href="assets/css/Roboto.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/Back-To-Top.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
 </head>
 
-<body style="background: #E6E6FA;">
+<body style="background:#E6E6FA;">
     <div id="promo-carousel" style="height: 35px;background: var(--bs-primary-text-emphasis);">
         <div class="carousel slide d-xxl-flex align-items-xxl-center" data-bs-ride="carousel" data-bs-interval="7500" id="carousel-1" style="height: inherit;padding: 0px 0px;padding-bottom: 0px;margin-bottom: 0px;">
             <div class="carousel-inner" style="height: inherit;position: absolute;">
@@ -163,310 +164,250 @@
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
-    <section class="py-5" style="margin-right: 2rem;margin-left: 2rem;margin-bottom: 3rem;margin-top: 1rem;background: white;">
-        <div class="row" style="width: 100%;margin: 1rem;">
-            <div class="col-3" style="border-right-width: 1px;border-right-style: solid;">
-                <header>
-                    <h5 style="margin-top: 1rem;">Filter your search:</h5>
-                    <hr>
-                </header>
-                <form id="filter-form" style="width: 100%;">
-                    <fieldset id="fic-non-field">
-                        <h6>Fiction/Nonfiction</h6>
-                        <div class="form-check"><input type="radio" id="fiction-radio" class="form-check-input" name="fiction" value="Yes"><label class="form-label form-check-label" for="group1Option1">Fiction</label></div>
-                        <div class="form-check"><input type="radio" id="nonfiction-radio" class="form-check-input" name="fiction" value="No"><label class="form-label form-check-label" for="group1Option2"> Nonfiction</label></div>
-                        <hr>
-                    </fieldset>
-                    <fieldset id="genre-field">
-                        <h6>Genre</h6>
-                        <div class="form-check"><input type="radio" id="action-radio" class="form-check-input" name="genre" value="Action/Adventure"><label class="form-label form-check-label" for="group2Option1"> Action/Adventure</label></div>
-                        <div class="form-check"><input type="radio" id="biography-radio" class="form-check-input" name="genre" value="Biography"><label class="form-label form-check-label" for="group2Option2">Biographies</label></div>
-                        <div class="form-check"><input type="radio" id="children-radio" class="form-check-input" name="genre" value="Children's"><label class="form-label form-check-label" for="group2Option2">Children's</label></div>
-                        <div class="form-check"><input type="radio" id="classic-radio" class="form-check-input" name="genre" value="Classics"><label class="form-label form-check-label" for="group2Option2">Classics</label></div>
-                        <div class="form-check"><input type="radio" id="contemporary-radio" class="form-check-input" name="genre" value="Contemporary"><label class="form-label form-check-label" for="group2Option2">Contemporary</label></div>
-                        <div class="form-check"><input type="radio" id="fantasy-radio" class="form-check-input" name="genre" value="Fantasy"><label class="form-label form-check-label" for="group2Option2">Fantasy</label></div>
-                        <div class="form-check"><input type="radio" id="food-radio" class="form-check-input" name="genre" value="Food and Drink"><label class="form-label form-check-label" for="group2Option2">Food and Drink</label></div>
-                        <div class="form-check"><input type="radio" id="graphic-radio" class="form-check-input" name="genre" value="Graphic Novel"><label class="form-label form-check-label" for="group2Option2">Graphic Novels</label></div>
-                        <div class="form-check"><input type="radio" id="horror-radio" class="form-check-input" name="genre" value="Horror"><label class="form-label form-check-label" for="group2Option2">Horror</label></div>
-                        <div class="form-check"><input type="radio" id="memoir-radio" class="form-check-input" name="genre" value="Memoir"><label class="form-label form-check-label" for="group2Option2">Memoirs</label></div>
-                        <div class="form-check"><input type="radio" id="mystery-radio" class="form-check-input" name="genre" value="Mystery"><label class="form-label form-check-label" for="group2Option2">Mystery</label></div>
-                        <div class="form-check"><input type="radio" id="romance-radio" class="form-check-input" name="genre" value="Romance"><label class="form-label form-check-label" for="group2Option2">Romance</label></div>
-                        <div class="form-check"><input type="radio" id="science-radio" class="form-check-input" name="genre" value="Science Fiction"><label class="form-label form-check-label" for="group2Option2">Science Fiction</label></div>
-                        <div class="form-check"><input type="radio" id="self-radio" class="form-check-input" name="genre" value="Self Help"><label class="form-label form-check-label" for="group2Option2">Self Help</label></div>
-                        <div class="form-check"><input type="radio" id="textbook-radio" class="form-check-input" name="genre" value="Textbook"><label class="form-label form-check-label" for="group2Option2">Textbooks</label></div>
-                        <div class="form-check"><input type="radio" id="true-radio" class="form-check-input" name="genre" value="True Crime"><label class="form-label form-check-label" for="group2Option2">True Crime</label></div>
-                    </fieldset><button class="btn btn-primary" id="filter-submit" type="submit" style="margin-top: 1rem;color: var(--bs-emphasis-color);" form="filter-form">Apply Filter</button><button class="btn btn-primary" id="filter-clear" style="margin-top: 1rem;color: var(--bs-emphasis-color);margin-left: 1rem;" form="filter-form" type="button">Clear Filter</button>
-                </form>
-            </div>
-            <div class="col-9">
-                <h3 class="fw-bold text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start" id="results-heading" style="margin: 1rem;">Results for</h3><!-- Start: Results Container -->
-                <div class="container" id="results-container" style="padding-top: 1rem;padding-right: 2rem;padding-left: 2rem;padding-bottom: 2rem;">
-                    <!-- Start: Results --><script>
-        window.onload = function() {
-            const urlSearchParams = new URLSearchParams(window.location.search);
-            const genre = urlSearchParams.get('genre');
-            const fiction = urlSearchParams.get('fiction');
-            const uInput = urlSearchParams.get('uInput');
-            console.log(uInput);
-            
-            let content = [];
-            let resultString = '';
-            
-            if (uInput != null) { 
-                content.push('uInput=' + uInput); 
-                resultString += uInput + '&';
-                document.getElementById('uInput').value = uInput;
-            } else {
-                let localUIn = localStorage.getItem("uInput")
-                console.log(localUIn);
-                if(localUIn != null) {
-                    content.push('uInput=' + localUIn);
-                    resultString += localUIn + '&';
-                    //localStorage.clear();
-                }
+    <div class="modal fade" role="dialog" tabindex="-1" id="rating-modal" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background:var(--bs-primary-bg-subtle);">
+                    <h4 class="modal-title" style="color:var(--bs-link-hover-color);font-weight:bold;">Leave a Rating</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="close-rating" type="button"></button>
+                </div>
+                <div class="modal-body" style="color:var(--bs-primary-bg-subtle);background:var(--bs-primary-bg-subtle);">
+                    <div class="container justify-content-between align-items-center star-container" id="star-container" style="background:var(--bs-primary-bg-subtle);display:flex;"><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);border-color:var(--bs-primary);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><script>
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const stars = document.querySelectorAll('.star-container i');
+    let clicked = false;
+    let selected = 0;
+    
+    
+    stars.forEach((star, index) => {
+        //Responds to mousing over a star
+        star.addEventListener('mouseover', function() {
+            clicked = false;
+            selected = 0;
+            for (let i = 0; i <= 4; i++) {
+                stars[i].classList.add('ion-android-star-outline');
             }
-            if (genre != null) { content.push('genre=' + genre); resultString += genre + '&';}
-            if (fiction != null) { content.push('fiction=' + fiction); resultString += fiction == 'Yes' ? 'fiction' : 'nonfiction'; }
-            
-            resultString = resultString.trim().split('&').join(', ');
-            document.getElementById('results-heading').innerText = "Results for \"" + resultString + "\"";
-            
-            
-            let finalParams = '';
-                      
-            content.forEach(item => {
-               finalParams += item + '&';
-            });
-            
-            finalParams = finalParams.slice(0, -1);
-            
-            let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?${finalParams}`;
-            
-            fetch(url)
-                .then(response => response.json())
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.replace('ion-android-star-outline', 'ion-android-star');
+            }
+        });
+          
+        //Responds to removing a mouse from a star, before and after a click
+        star.addEventListener('mouseout', function() {
+            if(!clicked){
+               for (let i = 0; i <= index; i++) {
+                   stars[i].classList.replace('ion-android-star', 'ion-android-star-outline');
+                }                
+            }
+        });   
+       
+        //Responds to maintaining filled stars after clicking a rating, saves result into 'selected'
+        star.addEventListener('click', function() {
+            console.log("clicked");
+            selected = index + 1;
+            console.log(selected);
+            clicked = true;
+            console.log(clicked);
+        });
+    });
+    
+    //Handles the exit button, will clear the star fields from the previous function if user decided to not submit
+    const exit = document.getElementById("close-rating");
+    exit.addEventListener('click', function(){            
+        stars.forEach((star, index) => {
+
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.replace('ion-android-star', 'ion-android-star-outline');
+            }
+        });   
+    });
+    
+    //Handles the submit button. Will tell the user they have to sign in to leave a rating if they are not registered. If a user is registered they will have confirmation their rating was saved. If a registered user is changing their rating, the previous rating will come up and allow them to change.
+    const submit = document.getElementById("send-rating");
+    submit.addEventListener('click', function(){
+        
+        //const user = getValueFromJWT('access_token', 'username');
+        //console.log(user);
+        
+        //const user = null;
+        const user = "tdchitwood";
+        
+        if(user == null){
+            window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+        }else{
+            let body = "";
+            console.log("submit");
+            if(selected == 0){
+                alert("Please select a star to leave a rating.");
+            }else{
+                const productUrl = localStorage.getItem('productURL');
+                fetch(productUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP error! Status: ${response.status}');
+                    }
+                    return response.json();
+                })
                 .then(data => {
-                    generateCards(data.Items);
-                });
-            
-            
-            if(genre != null && genre.length > 0) {
-                console.log("I am a genre.");
-                let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?genre=${genre}`;
-            let resultString = genre.toString();
-            switch(genre) {
-                case 'Action/Adventure':
-                    document.getElementById('action-radio').checked = true;
-                    break;
-                case 'Biography':
-                    document.getElementById('biography-radio').checked = true;
-                    resultString = 'Biographies';
-                    break;
-                case 'Children\'s':
-                    document.getElementById('children-radio').checked = true;
-                    break;
-                case 'Classics':
-                    document.getElementById('classic-radio').checked = true;
-                    break;
-                case 'Contemporary':
-                    document.getElementById('contemporary-radio').checked = true;
-                    break;
-                case 'Fantasy':
-                    document.getElementById('fantasy-radio').checked = true;
-                    break;
-                case 'Food and Drink':
-                    document.getElementById('food-radio').checked = true;
-                    break;
-                case 'Graphic Novel':
-                    document.getElementById('graphic-radio').checked = true;
-                    resultString = 'Graphic Novels';
-                    break;
-                case 'Horror':
-                    document.getElementById('horror-radio').checked = true;
-                    break;
-                case 'Memoir':
-                    document.getElementById('memoir-radio').checked = true;
-                    resultString = 'Memoirs';
-                    break;
-                case 'Mystery':
-                    document.getElementById('mystery-radio').checked = true;
-                    break;
-                case 'Romance':
-                    document.getElementById('romance-radio').checked = true;
-                    break;
-                case 'Science Fiction':
-                    document.getElementById('science-radio').checked = true;
-                    break;
-                case 'Self Help':
-                    document.getElementById('self-radio').checked = true;
-                    break;
-                case 'Textbook':
-                    document.getElementById('textbook-radio').checked = true;
-                    resultString = 'Textbooks';
-                    break;
-                case 'True Crime':
-                    document.getElementById('true-radio').checked = true;
-                    break;
-            }
-            //document.getElementById('results-heading').innerText = "Results for \"" + resultString + "\"";
-            //history.replaceState(null, '', removeAllParamsFromURL(window.location.href));
-            // fetch(url)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         generateCards(data.Items);
-            //     });
-            }
-            if (fiction != null) {
-                console.log("I am fiction/nonfiction.");
-                let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?fiction=${fiction}`;
-                let fictionTag = fiction == 'Yes' ? 'fiction' : 'nonfiction';
-                //document.getElementById('results-heading').innerText = "Results for \"" + fictionTag + "\"";
-            switch(fiction) {
-                case 'Yes':
-                    document.getElementById('fiction-radio').checked = true;
-                    break;
-                case 'No':
-                    document.getElementById('nonfiction-radio').checked = true;
-                    break;
-            }
-                // fetch(url)
-                // .then(response => response.json())
-                // .then(data => {
-                //     generateCards(data.Items);
-                // });
-                
-            }
-            // else {
-            //     let uInput = localStorage.getItem('uInput');
-            //     if (uInput != null) {
-            //         let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
-            //             document.getElementById('results-heading').innerText = "Results for \"" + uInput.toString() + "\"";
-            //             fetch(url)
-            //             .then(response => response.json())
-            //             .then(data => {
-            //                 generateCards(data.Items);
-            //             });
-            //         console.log("Showing results for " + uInput.toString());
-            //         localStorage.clear();
-            //         }
-            // }
-            
-    }
-    
-//     document.getElementById('filter-submit').addEventListener('click', function(event) {
-//        event.preventDefault();
-//           console.log("Filter-submit clicked.");
-//           // const myForm = document.getElementById('filter-form');
-//           // const formData = new FormData(myForm);
-//           // console.log(formData);
-//         var url = new URL(window.location.href);
-//         var params = new URLSearchParams(url.search);
-//           let userIn = document.getElementById("uInput").value;
-        
-//         var newParams = new URLSearchParams('uInput=' + userIn);
-        
-//        for (let pair of params.entries()) {
-//             newParams.append(pair[0], pair[1]);
-//         }
-
-//         url.search = newParams.toString();
-
-//             history.replaceState(null, null, url.toString());
-        
-//             document.getElementById('filter-form').submit(); 
-            
-//     });
-    
-    document.getElementById('filter-clear').addEventListener('click', function(event) {
-        console.log('Filter-clear clicked.');
-        deselectAllRadios('filter-form');
-        //localStorage.removeItem('uInput');
-        //removeAllParamsFromURL(window.location.href);
-    })
-    
-    function removeAllParamsFromURL(url) {
-        const urlObj = new URL(url);
-        urlObj.search = '';
-        return urlObj.toString();
-    }
-    
-    function deselectAllRadios(formId) {
-        var form = document.getElementById(formId);
-        var radios = form.getElementsByTagName('input');
-
-        for (var i = 0; i < radios.length; i++) {
-            if (radios[i].type === 'radio') {
-                radios[i].checked = false;
+                    let ratebody = {
+                        "isbnpk": data["Items"][0]["SK"].slice(5),
+                        "usersk": user,
+                        "rate": selected,
+                        "genre": data["Items"][0]["PK"].slice(6)
+                      };
+                    body = JSON.stringify(ratebody);
+                    console.log("Body: " + body);
+                    const apiUrl = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/ProductManagement';
+                    console.log(apiUrl);
+                    console.log("body x2: " + body);
+                    fetch(apiUrl, {
+                        method: 'PUT',
+                        body: body,
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(`Error: ${response.status} ${response.statusText}`);
+                        }
+                    })
+                    .then(data => {
+                        console.log('Response data:', data);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                });        
             }
         }
-    }
+        
+    });    
+});
+    
+    
 
     
-    function generateCards(books) {
-    let row = document.getElementById('results-row'); // Container for cards
-
-    books.forEach(book => {
-        let card = document.createElement('div');
-        card.className = 'card col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2 m-3 d-flex flex-column'; // Add margins to the card
-
-        let img = document.createElement('img');
-        img.src = book.img;
-        img.className = 'card-img-top flex-grow-1';
-        img.style.width = '100%'; // Set width to 100%
-        img.style.height = '70%';
-        //img.style.height = 'auto'; // Set height to auto to maintain aspect ratio
-        img.style.objectFit = 'contain'; // Contain the entire image within the space
-
-        let cardBody = document.createElement('div');
-        cardBody.className = 'card-body d-flex flex-column p-3';
-
-        let title = document.createElement('h5');
-        title.className = 'card-title text-wrap'; // Add text-truncate class to make the title responsive
-        title.textContent = book.title;
-
-        let price = document.createElement('p');
-        price.className = 'card-text text-wrap';
-        price.textContent = '$' + book.price;
-
-        // let button = document.createElement('button');
-        // button.className = 'btn btn-primary mt-auto invisible'; // Add to Cart button at the bottom
-        // button.style.color = 'white'; // Set the text color to white
-        // button.textContent = 'Add to Cart';
-        let author = document.createElement('p');
-        author.className = 'card-text';
-        author.textContent = 'by ' + book.author;
-
-        cardBody.appendChild(title);
-        cardBody.appendChild(author);
-        cardBody.appendChild(price);
-
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        row.appendChild(card);
-
-        // Add hover effects
-        card.onmouseover = function() {
-            this.style.border = '1px solid'; // Add a border when hovered over
-        };
-        card.onmouseout = function() {
-            this.style.border = 'none'; // Remove the border when not hovered over
-        };
-        card.onclick = function() {
-            console.log('book clicked');
-            console.log(book.SK.slice(5));
-            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5)}`);
-            console.log(localStorage.getItem('productURL'));
-            window.location.href = 'product.html';
-        };
-    });
-}
 
 
-    </script><!-- End: Results -->
-                    <div class="row" id="results-row"></div>
-                </div><!-- End: Results Container -->
+</script></div>
+                </div>
+                <div class="modal-footer" style="background:var(--bs-primary-bg-subtle);"><button class="btn btn-primary" data-bs-dismiss="modal" id="send-rating" type="button">Submit</button></div>
             </div>
         </div>
-    </section><!-- Start: Footer Multi Column -->
+    </div>
+    <div class="container" style="margin-top:1.5rem;margin-bottom:1.5rem;">
+        <div class="card" style="width:auto;height:auto;">
+            <div class="card-body">
+                <div class="row text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start justify-content-center justify-content-sm-center justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start" style="margin:2rem;">
+                    <div class="col-md-4"><img class="img-fluid" id="book-image" src="" alt="Book Image"></div>
+                    <div class="col-md-8">
+                        <h2 id="book-title">Book Title</h2>
+                        <p class="text-muted" id="book-author"><strong>by&nbsp;</strong></p>
+                        <p id="book-genre"><strong>Genre:</strong></p>
+                        <p id="book-description"><strong>Description:</strong></p>
+                        <p id="book-rating" data-bs-toggle="modal" data-bs-target="#rating-modal"><strong>Rating:</strong></p>
+                        <p id="book-price"><strong>Price:</strong></p>
+                        <div class="row">
+                            <div class="col"><button class="btn btn-primary btn-lg" id="product-to-cart" style="margin-right:0px;font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;">Add to Cart</button><button class="btn btn-primary" id="product-for-later" style="font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;margin-left:1rem;">Save for Later</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div><script>
+        window.onload = function() {
+            const apiUrl = localStorage.getItem('productURL');
+            let bookIsbn = '';
+            console.log(apiUrl);
+            fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error! Status: ${response.status}');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                bookIsbn = data["Items"][0]["SK"];
+                console.log("first");
+                console.log(bookIsbn);
+                console.log("second");
+                document.getElementById('book-title').textContent =
+                    data["Items"][0]["title"];
+                console.log(data["Items"][0]["title"]);
+                document.getElementById('book-author').textContent +=
+                    data["Items"][0]["author"];
+                document.getElementById('book-description').textContent +=
+                    data["Items"][0]["description"];
+                document.getElementById('book-genre').textContent +=
+                    data["Items"][0]["PK"].slice(6);
+                document.getElementById('book-price').textContent += "$" +
+                    data["Items"][0]["price"];
+                if (data["Items"][0]["rating"] != 0.0) {
+                    document.getElementById('book-rating').textContent +=
+                    data["Items"][0]["rating"];
+                }
+                else {
+                    document.getElementById('book-rating').textContent = "No ratings.";
+                }
+                document.getElementById('book-image').src =
+                   data["Items"][0]["img"];
+                //console.log(JSON.parse(data["Item"]["reviews"])[1])
+                // document.getElementById('book-review-two').textContent =
+                //     JSON.parse(data["Item"]["reviews"])[1];
+                // document.getElementById('book-review-three').textContent =
+                //     data["Item"]["reviews"][2];
+                
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+        };
+    
+        document.getElementById("product-for-later").onclick = function() {
+                    console.log("for later clicked");
+                    const isbn = bookIsbn.substring(5);
+                    addFavorite(isbn);
+                }
+    
+        function addFavorite(bookIsbn){
+            const endpoint = 'https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user/favorites';
+            const data = {
+                username: "kjank",
+                favorites: [bookIsbn]
+            }
+            //configure fetch options
+            const fetchOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            //make fetch request to addFavorite lambda endpoint
+            fetch(endpoint, fetchOptions)
+                .then(response => {
+                if(!response.ok){
+                    throw new Error('Network Error');
+                }
+                //parse response as JSON and return it
+                return response.json();
+            })
+            .then(responseData => {
+                //handle response from lambda function
+                console.log('Favorites updated successfully', responseData);
+            })
+            .catch(error => {
+                //handle fetch errors
+                console.log('Error adding favorite', error);
+            })
+        }
+    </script></div><!-- Start: Footer Multi Column -->
     <footer id="bb-footer" class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
