@@ -413,7 +413,77 @@
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-7">
-                <p>Chris pls put your table here and let me know if you need anything</p>
+                <div class="container">
+                    <label for="userIdInput">User ID:</label>
+                    <input type="text" id="userIdInput">
+                    <button onclick="getDataFromAPI()">Load Data</button>
+                </div>
+                
+                <div id="userIdHeader"></div> <!-- Remove "User ID:" text -->
+                
+                <table id="dynamicTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table body will be populated dynamically -->
+                    </tbody>
+                </table>
+                
+                <script>
+                    function getDataFromAPI() {
+                        var userId = document.getElementById("userIdInput").value;
+                        fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                populateTable(data);
+                            })
+                            .catch(error => {
+                                console.error('Error fetching data:', error);
+                            });
+                    }
+                
+                    function populateTable(data) {
+                        var tableBody = document.querySelector("#dynamicTable tbody");
+                        // Clear existing table data
+                        tableBody.innerHTML = "";
+                
+                        // Check if data is not null and is an object
+                        if (data !== null && typeof data === 'object') {
+                            // Access properties directly
+                            var userId = data.userID !== undefined ? data.userID : "Unknown";
+                            var isbns = data.products || [];
+                
+                            // Update userIdHeader
+                            document.getElementById("userIdHeader").textContent = userId;
+                
+                            if (isbns.length > 0) {
+                                // If isbns is an array with items, create a new row for each product
+                                isbns.forEach(function(isbn) {
+                                    var row = tableBody.insertRow();
+                                    var productCell = row.insertCell();
+                                    productCell.textContent = isbn;
+                                });
+                            } else {
+                                // If isbns is an empty array or doesn't exist
+                                var row = tableBody.insertRow();
+                                var messageCell = row.insertCell();
+                                messageCell.textContent = "No products in cart";
+                                messageCell.colSpan = 1;
+                            }
+                        } else {
+                            console.error('Data is not in expected format.');
+                        }
+                    }
+                </script>
+                
             </div>
         </div>
     </div>
