@@ -538,11 +538,23 @@ async function populateUserCartTable(data) {
                     row.insertCell(0).textContent = isbn;
                     if (book && book.Items && book.Items.length > 0) {
                         var firstBook = book.Items[0];
-                        row.insertCell(1).textContent = firstBook.title;
-                        row.insertCell(2).textContent = firstBook.author;
+                        var titleCell = row.insertCell(1);
+                        titleCell.textContent = firstBook.title;
+                        titleCell.style.backgroundColor = 'white';
+                        titleCell.style.color = 'black';
+                        var authorCell = row.insertCell(2);
+                        authorCell.textContent = firstBook.author;
+                        authorCell.style.backgroundColor = 'white';
+                        authorCell.style.color = 'black';
                     } else {
-                        row.insertCell(1).textContent = "Unknown";
-                        row.insertCell(2).textContent = "Unknown";
+                        var unknownCell = row.insertCell(1);
+                        unknownCell.textContent = "Unknown";
+                        unknownCell.style.backgroundColor = 'white';
+                        unknownCell.style.color = 'black';
+                        var unknownCell2 = row.insertCell(2);
+                        unknownCell2.textContent = "Unknown";
+                        unknownCell2.style.backgroundColor = 'white';
+                        unknownCell2.style.color = 'black';
                     }
                 } catch (error) {
                     console.error('Error getting book data:', error);
@@ -554,6 +566,8 @@ async function populateUserCartTable(data) {
             var messageCell = row.insertCell();
             messageCell.textContent = "No products in cart";
             messageCell.colSpan = 1;
+            messageCell.style.backgroundColor = 'white';
+            messageCell.style.color = 'black';
         }
     } else {
         console.error('Data is not in expected format.');
@@ -572,6 +586,7 @@ function getBookForUserCart(isbn) {
             console.error('Error fetching data:', error);
         });
 }
+
 
 
 </script>
