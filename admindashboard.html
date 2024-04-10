@@ -565,22 +565,18 @@
     }
 
     function getBookForUserCart(isbn) {
-        fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbn))
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                //console.log(response.json());
-                return response.json();
-            })
-            .then(data => {
-                console.log('data');
-                //populateUserCartTable(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }
+    return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbn))
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
 </script>
 
 </div>
