@@ -506,7 +506,7 @@
     </div>
     <script>
     document.getElementById("get-user-cart").addEventListener("click", function() {
-        var userId = document.getElementById("userIdInput").value;
+        var userId = document.getElementById("user-id-input").value;
         fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
             .then(response => {
                 if (!response.ok) {
