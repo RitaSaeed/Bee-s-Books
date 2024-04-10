@@ -544,13 +544,20 @@
         .then(book => {
             var row = tableBody.insertRow();
             row.insertCell(0).textContent = isbn;
-            row.insertCell(1).textContent = book.title;
-            row.insertCell(2).textContent = book.author;
+            if (book && book.Items && book.Items.length > 0) {
+                var firstBook = book.Items[0];
+                row.insertCell(1).textContent = firstBook.title;
+                row.insertCell(2).textContent = firstBook.author;
+            } else {
+                row.insertCell(1).textContent = "Unknown";
+                row.insertCell(2).textContent = "Unknown";
+            }
         })
         .catch(error => {
             console.error('Error getting book data:', error);
         });
 });
+
 
             } else {
                 // If isbns is an empty array or doesn't exist
