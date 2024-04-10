@@ -541,12 +541,17 @@
                 // If isbns is an array with items, create a new row for each product
                 isbns.forEach(function(isbn) {
                     var book = getBookForUserCart(isbn);
-                    book = book.Items;
-                    console.log(book);
-                    var row = tableBody.insertRow();
-                    row.insertCell(0).textContent = isbn;
-                    row.insertCell(1).textContent = book.title;
-                    row.insertCell(2).textContent = book.author;
+                    book.forEach(function(book)) {
+                        var row = tableBody.insertRow();
+                        row.insertCell(0).textContent = isbn;
+                        row.insertCell(1).textContent = book.title;
+                        row.insertCell(2).textContent = book.author;
+                    }
+                    //console.log(book);
+                    //var row = tableBody.insertRow();
+                    //row.insertCell(0).textContent = isbn;
+                    //row.insertCell(1).textContent = book.title;
+                    //row.insertCell(2).textContent = book.author;
                     //var productCell = row.insertCell();
                     //productCell.textContent = isbn;
                 });
@@ -568,7 +573,6 @@
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                console.log(response.json());
                 return response.json();
             })
             .then(data => {
