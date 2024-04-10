@@ -524,7 +524,7 @@
     });
 
     function populateTable(data) {
-        var tableBody = document.querySelector("#dynamicTable tbody");
+        var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
         // Clear existing table data
         tableBody.innerHTML = "";
 
