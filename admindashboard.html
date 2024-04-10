@@ -555,19 +555,6 @@
             console.error('Data is not in expected format.');
         }
     }
-/*
-    function populateTable(data) {
-        var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = '';
-
-        data.forEach(item => {
-            var row = tableBody.insertRow();
-            //row.insertCell(0).textContent = item.ISBN;
-            //row.insertCell(1).textContent = item.Title;
-            //row.insertCell(2).textContent = item.Author;
-        });
-    }
-    */
 </script>
 
 </div>
@@ -581,7 +568,7 @@
                                     <th style="color: var(--bs-primary-text-emphasis);">ISBN</th>
                                     <th style="color: var(--bs-primary-text-emphasis);">Title</th>
                                     <th style="color: var(--bs-primary-text-emphasis);">Author</th>
-                                    <th style="color: var(--bs-primary-text-emphasis);">QTY</th>
+                                    <!-- <th style="color: var(bs-primary-text-emphasis);">QTY</th> -->
                                 </tr>
                             </thead>
                             <tbody class="custom-table-body"></tbody>
