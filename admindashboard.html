@@ -515,15 +515,15 @@
                 return response.json();
             })
             .then(data => {
-                console.log('it worked');
-                populateTable(data);
+                //console.log('it worked');
+                populateUserCartTable(data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     });
 
-    function populateTable(data) {
+    function populateUserCartTable(data) {
         var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
         // Clear existing table data
         tableBody.innerHTML = "";
@@ -540,9 +540,13 @@
             if (isbns.length > 0) {
                 // If isbns is an array with items, create a new row for each product
                 isbns.forEach(function(isbn) {
+                    var book = getBookForUserCart(isbn);
                     var row = tableBody.insertRow();
-                    var productCell = row.insertCell();
-                    productCell.textContent = isbn;
+                    row.insertCell(0).textContent = book.isbn;
+                    row.insertCell(1).textContent = book.title;
+                    row.insertCell(2).textContent = book.author;
+                    //var productCell = row.insertCell();
+                    //productCell.textContent = isbn;
                 });
             } else {
                 // If isbns is an empty array or doesn't exist
@@ -554,6 +558,23 @@
         } else {
             console.error('Data is not in expected format.');
         }
+    }
+
+    function getBookForUserCart(isbn) {
+        fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbn))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                //console.log('it worked');
+                populateUserCartTable(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     }
 </script>
 
