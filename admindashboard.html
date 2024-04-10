@@ -535,7 +535,10 @@ async function populateUserCartTable(data) {
                 try {
                     const book = await getBookForUserCart(isbn);
                     var row = tableBody.insertRow();
-                    row.insertCell(0).textContent = isbn;
+                    var isbnCell = row.insertCell(0);
+                    isbnCell.textContent = isbn;
+                    isbnCell.style.backgroundColor = 'white';
+                    isbnCell.style.color = 'black';
                     if (book && book.Items && book.Items.length > 0) {
                         var firstBook = book.Items[0];
                         var titleCell = row.insertCell(1);
