@@ -499,18 +499,22 @@
                     </div>
                     <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" type="button" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Close</button><button class="btn btn-primary" id="submit-edit" data-bs-dismiss="modal" form="productForm" type="submit" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Submit</button><!-- Start: Book Add/Update --><script>
                         // JavaScript
-                        document.getElementById("submit-edit").addEventListener("click", function() {
-                            var id = document.getElementById("edit-isbn").value;
-                            var title = document.getElementById("edit-title").value;
-                            var author = document.getElementById("edit-author").value;
-                            var genre = document.getElementById("edit-genre").value;
-                            var fiction = document.getElementById("edit-fiction").value;
-                            var price = document.getElementById("edit-price").value;
-                            var quantity = document.getElementById("edit-quantity").value;
-                            var description = document.getElementById("edit-description").value;
-                            var image = document.getElementById("edit-image").value;
-                            // You can then use these variables to update the product information in your database or perform other actions
-                        });
+                        document.getElementById("get-user-cart").addEventListener("click", function() {
+                            var userId = document.getElementById("userIdInput").value;
+                            fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error('Network response was not ok');
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    populateTable(data);
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data:', error);
+                                });
+                        }
                     </script><!-- End: Book Add/Update --></div>
                 </div>
             </div>
