@@ -516,13 +516,26 @@
             })
             .then(data => {
                 console.log('it worked');
-                //populateTable(data);
+                populateTable(data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+    });
+
+    function populateTable(data) {
+        var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = '';
+
+        data.forEach(item => {
+            var row = tableBody.insertRow();
+            row.insertCell(0).textContent = item.ISBN;
+            row.insertCell(1).textContent = item.Title;
+            row.insertCell(2).textContent = item.Author;
+        });
     }
-    </script>
+</script>
+
 </div>
 
 
