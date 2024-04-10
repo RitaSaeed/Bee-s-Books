@@ -436,129 +436,14 @@
 
 
 
-
                 <div class="container text-end" style="padding-top: 1rem;">
-    <div class="container">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter user ID" id="user-id-input" style="border-color: var(--bs-primary-text-emphasis); background: var(--bs-emphasis-color)">
-            <button class="btn btn-primary" id="get-user-cart" type="button" style="font-size: 20px;">Get User Cart</button>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="view-product-modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 id="product-modal-label-1" class="modal-title" style="font-weight: bold;color: var(--bs-emphasis-color);">Edit Book Form</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" type="button" style="color: var(--bs-primary-text-emphasis);"></button>
+                    <div class="container">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter user ID" id="user-id-input" style="border-color: var(--bs-primary-text-emphasis); background: var(--bs-emphasis-color)">
+                            <button class="btn btn-primary" id="get-user-cart" type="button" style="font-size: 20px;">Get User Cart</button>
+                        </div>
                     </div>
-                    <div class="modal-body" style="background: var(--bs-emphasis-color);">
-                        <form id="product-form-edit" style="width: 100%;">
-                            <!-- Start: ISBN -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">ISBN</label><input class="form-control form-control" type="text" id="edit-isbn" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="SK"></div><!-- End: ISBN -->
-                            <!-- Start: Title -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Title</label><input class="form-control form-control" type="text" id="edit-title" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="title"></div><!-- End: Title -->
-                            <!-- Start: Author -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Author</label><input class="form-control form-control" type="text" id="edit-author" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="author"></div><!-- End: Author -->
-                            <!-- Start: Genre -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Genre</label><select class="form-select" id="edit-genre" style="background-color: white;color: black;border-color: black;" name="PK">
-                                    <optgroup label="Choose a genre">
-                                        <option value="Action/Adventure">Action/Adventure</option>
-                                        <option value="Biography">Biography</option>
-                                        <option value="Children's">Children's</option>
-                                        <option value="Classics">Classics</option>
-                                        <option value="Contemporary">Contemporary</option>
-                                        <option value="Fantasy">Fantasy</option>
-                                        <option value="Food and Drink">Food and Drink</option>
-                                        <option value="Graphic Novels">Graphic Novels</option>
-                                        <option value="Horror">Horror</option>
-                                        <option value="Memoirs">Memoirs</option>
-                                        <option value="Mystery">Mystery</option>
-                                        <option value="Romance">Romance</option>
-                                        <option value="Science Fiction">Science Fiction</option>
-                                        <option value="Self Help">Self Help</option>
-                                        <option value="Textbooks">Textbooks</option>
-                                        <option value="True Crime">True Crime</option>
-                                    </optgroup>
-                                </select></div><!-- End: Genre -->
-                            <!-- Start: Fiction? -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Fiction or Nonfiction? (Select one)</label><select class="form-select" id="edit-fiction" style="background-color: white;color: black;border-color: black;" name="fiction">
-                                    <optgroup label="Choose one">
-                                        <option value="Yes" selected="">Fiction</option>
-                                        <option value="No">Nonfiction</option>
-                                    </optgroup>
-                                </select></div><!-- End: Fiction? -->
-                            <!-- Start: Price -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Price (XX.XX)</label><input class="form-control form-control" type="text" id="edit-price" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="price"></div><!-- End: Price -->
-                            <!-- Start: Quantity -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-name">Quantity</label><input class="form-control form-control" type="text" id="edit-quantity" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="quantity"></div><!-- End: Quantity -->
-                            <!-- Start: Description -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-description">Description</label><textarea class="form-control form-control" id="edit-description" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="description"></textarea></div><!-- End: Description -->
-                            <!-- Start: Image -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="product-description">Add an image</label><input class="form-control" type="url" id="edit-image" style="color: var(--bs-primary-text-emphasis);background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" placeholder="Enter image URL" name="img"></div><!-- End: Image -->
-                            <!-- Start: Rating -->
-                            <div class="text-start form-group"><label class="form-label form-label" for="locked-field">Average Rating (Locked)</label><input class="form-control form-control" type="text" id="edit-rating" readonly="" style="background: var(--bs-emphasis-color);border-color: var(--bs-primary-text-emphasis);" name="rating"></div><!-- End: Rating -->
-                        </form>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" type="button" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Close</button><button class="btn btn-primary" id="submit-edit" data-bs-dismiss="modal" form="productForm" type="submit" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Submit</button><!-- Start: Book Add/Update --><script>
-                        // JavaScript
-                    </script><!-- End: Book Add/Update --></div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <script>
-    document.getElementById("get-user-cart").addEventListener("click", function() {
-        var userId = document.getElementById("user-id-input").value;
-        fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('it worked');
-                populateTable(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    });
-
-    function populateTable(data) {
-        var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
-        // Clear existing table data
-        tableBody.innerHTML = "";
-
-        // Check if data is not null and is an object
-        if (data !== null && typeof data === 'object') {
-            // Access properties directly
-            var userId = data.userID !== undefined ? data.userID : "Unknown";
-            var isbns = data.products || [];
-
-            // Update userIdHeader
-            //document.getElementById("userIdHeader").textContent = userId;
-
-            if (isbns.length > 0) {
-                // If isbns is an array with items, create a new row for each product
-                isbns.forEach(function(isbn) {
-                    var row = tableBody.insertRow();
-                    var productCell = row.insertCell();
-                    productCell.textContent = isbn;
-                });
-            } else {
-                // If isbns is an empty array or doesn't exist
-                var row = tableBody.insertRow();
-                var messageCell = row.insertCell();
-                messageCell.textContent = "No products in cart";
-                messageCell.colSpan = 1;
-            }
-        } else {
-            console.error('Data is not in expected format.');
-        }
-    }
-</script>
-
-</div>
-
 
                 <div class="container" style="padding: 1rem;padding-top: 0.1rem;">
                     <div class="table-responsive table-striped" id="user-cart" style="margin: 1rem;padding: 1rem;">
@@ -568,15 +453,51 @@
                                     <th style="color: var(--bs-primary-text-emphasis);">ISBN</th>
                                     <th style="color: var(--bs-primary-text-emphasis);">Title</th>
                                     <th style="color: var(--bs-primary-text-emphasis);">Author</th>
-                                    <!-- <th style="color: var(bs-primary-text-emphasis);">QTY</th> -->
                                 </tr>
                             </thead>
                             <tbody class="custom-table-body"></tbody>
                         </table>
                     </div>
                 </div>
-                </div>
 
+                <script>
+                    document.getElementById("get-user-cart").addEventListener("click", function() {
+                        var userId = document.getElementById("user-id-input").value;
+                        fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                console.log('Data received:', data);
+                                populateTable(data);
+                            })
+                            .catch(error => {
+                                console.error('Error fetching data:', error);
+                            });
+                    });
+
+                    function populateTable(data) {
+                        var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
+                        tableBody.innerHTML = '';
+
+                        if (data && data.products && data.products.length > 0) {
+                            data.products.forEach(item => {
+                                var row = tableBody.insertRow();
+                                row.insertCell(0).textContent = item.ISBN;
+                                row.insertCell(1).textContent = item.Title;
+                                row.insertCell(2).textContent = item.Author;
+                            });
+                        } else {
+                            var row = tableBody.insertRow();
+                            var cell = row.insertCell(0);
+                            cell.textContent = "No data available";
+                            cell.colSpan = 3;
+                        }
+                    }
+                </script>
 
 
 
