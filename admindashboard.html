@@ -499,28 +499,30 @@
                     </div>
                     <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" type="button" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Close</button><button class="btn btn-primary" id="submit-edit" data-bs-dismiss="modal" form="productForm" type="submit" style="background: var(--bs-primary-text-emphasis);color: var(--bs-emphasis-color);">Submit</button><!-- Start: Book Add/Update --><script>
                         // JavaScript
-                        document.getElementById("get-user-cart").addEventListener("click", function() {
-                            var userId = document.getElementById("userIdInput").value;
-                            fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
-                                .then(response => {
-                                    if (!response.ok) {
-                                        throw new Error('Network response was not ok');
-                                    }
-                                    return response.json();
-                                })
-                                .then(data => {
-                                    console.log('it worked');
-                                    //populateTable(data);
-                                })
-                                .catch(error => {
-                                    console.error('Error fetching data:', error);
-                                });
-                        }
                     </script><!-- End: Book Add/Update --></div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    document.getElementById("get-user-cart").addEventListener("click", function() {
+        var userId = document.getElementById("userIdInput").value;
+        fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart?username=' + encodeURIComponent(userId))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('it worked');
+                //populateTable(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+    </script>
 </div>
 
 
