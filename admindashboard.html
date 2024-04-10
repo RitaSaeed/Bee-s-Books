@@ -541,6 +541,7 @@
                 // If isbns is an array with items, create a new row for each product
                 isbns.forEach(function(isbn) {
                     var book = getBookForUserCart(isbn);
+                    console.log(book);
                     var row = tableBody.insertRow();
                     row.insertCell(0).textContent = book.isbn;
                     row.insertCell(1).textContent = book.title;
