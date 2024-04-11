@@ -602,6 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var table = document.getElementById("user-cart");
         table.addEventListener("click", function (event) {
             var target = event.target;
+            console.log(typeof(target.parentNode));
             // Check if the clicked element is a table cell
             if (target.tagName === "TD") {
                 sessionStorage.setItem('cartRowClicked', target.parentNode);
