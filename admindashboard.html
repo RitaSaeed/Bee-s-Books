@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const table = document.getElementById('user-cart');
             if (table) {
-                const rowToRemove = table.rows[rowIndex];
+                const rowToRemove = table.rows[parseInt(rowIndex)];
                 if (rowToRemove) {
                     rowToRemove.remove();
                 }
