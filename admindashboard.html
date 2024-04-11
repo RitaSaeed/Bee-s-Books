@@ -445,23 +445,24 @@
         </div>
 
         <!-- Modal HTML structure -->
-        <div class="modal fade" id="cartItemModal" tabindex="-1" aria-labelledby="cartItemModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="background-color: white;"> <!-- Add inline style to set background color to white -->
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cartItemModalLabel">Cart Item Details</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="modalBody">
-                        <!-- Cart item details will be populated here -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" id="removeItemBtn">Remove Item</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
+<div class="modal fade" id="cartItemModal" tabindex="-1" aria-labelledby="cartItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Add modal-dialog-centered class to center the modal -->
+        <div class="modal-content" style="background-color: white; text-align: center;"> <!-- Add text-align: center; to center the text -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartItemModalLabel">Cart Item Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Cart item details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="removeItemBtn">Remove Item</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
+    </div>
+</div>
+
 
 
 
