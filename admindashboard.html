@@ -669,7 +669,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (table) {
                 console.log('parse int');
                 console.log(typeof(parseInt(rowIndex)));
-                const rowToRemove = table.row[parseInt(rowIndex)];
+                const rowIndex = parseInt(rowIndex);
+                const rowToRemove = table.row[rowIndex];
                 if (rowToRemove) {
                     rowToRemove.remove();
                 }
