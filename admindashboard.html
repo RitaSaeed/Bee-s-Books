@@ -663,8 +663,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Item removed successfully');
 
             // Remove the corresponding row from the table
-            //const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
-            const tableRow = dataset;
+            const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
+            //const tableRow = dataset;
             if (tableRow) {
                 tableRow.remove();
             }
