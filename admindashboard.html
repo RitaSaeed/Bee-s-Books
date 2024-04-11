@@ -606,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(typeof(target.parentNode.rowIndex));
             // Check if the clicked element is a table cell
             if (target.tagName === "TD") {
-                sessionStorage.setItem('cartRowClicked', target.parentNode.rowIndex);
+                sessionStorage.setItem('cartRowClicked', parseInt(target.parentNode.rowIndex));
                 // Get the data from the clicked row
                 var isbn = target.parentNode.cells[0].textContent;
                 var title = target.parentNode.cells[1].textContent;
