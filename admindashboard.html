@@ -661,7 +661,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             console.log('Item removed successfully');
-            // You may want to update the UI or take other actions here after successful removal
+
+            // Remove the corresponding row from the table
+            const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
+            if (tableRow) {
+                tableRow.remove();
+            }
         } catch (error) {
             console.error('Error removing item from cart:', error);
             // Handle error appropriately
