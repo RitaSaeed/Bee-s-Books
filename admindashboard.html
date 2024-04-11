@@ -568,31 +568,32 @@ function getBookForUserCart(isbn) {
 
 //cartItem modal functions
 // Add click event listener to table rows
-    document.addEventListener("DOMContentLoaded", function () {
-        var table = document.getElementById("products");
-        table.addEventListener("click", function (event) {
-            var target = event.target;
-            // Check if the clicked element is a table cell
-            if (target.tagName === "TD") {
-                // Get the data from the clicked row
-                var isbn = target.parentNode.cells[0].textContent;
-                var title = target.parentNode.cells[1].textContent;
-                var author = target.parentNode.cells[2].textContent;
-                // Populate modal with row data
-                populateModal(isbn, title, author);
-                // Show the modal
-                var cartItemModal = new bootstrap.Modal(document.getElementById('cartItemModal'), {});
-                cartItemModal.show();
-            }
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    var table = document.getElementById("user-cart");
+    table.addEventListener("click", function (event) {
+        var target = event.target;
+        // Check if the clicked element is a table cell
+        if (target.tagName === "TD") {
+            // Get the data from the clicked row
+            var isbn = target.parentNode.cells[0].textContent;
+            var title = target.parentNode.cells[1].textContent;
+            var author = target.parentNode.cells[2].textContent;
+            // Populate modal with row data
+            populateModal(isbn, title, author);
+            // Show the modal
+            var cartItemModal = new bootstrap.Modal(document.getElementById('cartItemModal'), {});
+            cartItemModal.show();
+        }
     });
+});
 
-    // Function to populate modal with row data
-    function populateModal(isbn, title, author) {
-        var modalBody = document.getElementById("modalBody");
-        modalBody.innerHTML = ""; // Clear previous content
-        modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
-    }
+// Function to populate modal with row data
+function populateModal(isbn, title, author) {
+    var modalBody = document.getElementById("modalBody");
+    modalBody.innerHTML = ""; // Clear previous content
+    modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
+}
+
 </script>
 
 </div>
