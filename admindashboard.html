@@ -444,7 +444,8 @@
             <button class="btn btn-primary" id="get-user-cart" type="button" style="font-size: 20px;">Get User Cart</button>
         </div>
 
-        <div class="modal fade" id="cartItemModal" tabindex="-1" aria-labelledby="cartItemModalLabel" aria-hidden="true">
+        <!-- Modal HTML structure -->
+<div class="modal fade" id="cartItemModal" tabindex="-1" aria-labelledby="cartItemModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -454,9 +455,14 @@
             <div class="modal-body" id="modalBody">
                 <!-- Cart item details will be populated here -->
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="removeItemBtn">Remove Item</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
+
 
         <div id="loading-indicator" style="display: none;">
             <div class="spinner-border text-primary" role="status">
@@ -568,31 +574,52 @@ function getBookForUserCart(isbn) {
 
 //cartItem modal functions
 // Add click event listener to table rows
-document.addEventListener("DOMContentLoaded", function () {
-    var table = document.getElementById("user-cart");
-    table.addEventListener("click", function (event) {
-        var target = event.target;
-        // Check if the clicked element is a table cell
-        if (target.tagName === "TD") {
-            // Get the data from the clicked row
-            var isbn = target.parentNode.cells[0].textContent;
-            var title = target.parentNode.cells[1].textContent;
-            var author = target.parentNode.cells[2].textContent;
-            // Populate modal with row data
-            populateModal(isbn, title, author);
-            // Show the modal
-            var cartItemModal = new bootstrap.Modal(document.getElementById('cartItemModal'), {});
-            cartItemModal.show();
-        }
-    });
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        var table = document.getElementById("user-cart");
+        table.addEventListener("click", function (event) {
+            var target = event.target;
+            // Check if the clicked element is a table cell
+            if (target.tagName === "TD") {
+                // Get the data from the clicked row
+                var isbn = target.parentNode.cells[0].textContent;
+                var title = target.parentNode.cells[1].textContent;
+                var author = target.parentNode.cells[2].textContent;
+                // Populate modal with row data
+                populateModal(isbn, title, author);
+                // Set ISBN as a data attribute for the remove button
+                var removeItemBtn = document.getElementById('removeItemBtn');
+                removeItemBtn.dataset.isbn = isbn;
+                // Show the modal
+                var cartItemModal = new bootstrap.Modal(document.getElementById('cartItemModal'), {});
+                cartItemModal.show();
+            }
+        });
 
-// Function to populate modal with row data
-function populateModal(isbn, title, author) {
-    var modalBody = document.getElementById("modalBody");
-    modalBody.innerHTML = ""; // Clear previous content
-    modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
-}
+        // Add event listener to the Remove Item button
+        var removeItemBtn = document.getElementById('removeItemBtn');
+        removeItemBtn.addEventListener('click', function () {
+            var isbnToRemove = this.dataset.isbn;
+            // Call function to remove item from the cart (you need to implement this function)
+            removeItemFromCart(isbnToRemove);
+            // Close the modal
+            var cartItemModal = bootstrap.Modal.getInstance(document.getElementById('cartItemModal'));
+            cartItemModal.hide();
+        });
+    });
+
+    // Function to populate modal with row data
+    function populateModal(isbn, title, author) {
+        var modalBody = document.getElementById("modalBody");
+        modalBody.innerHTML = ""; // Clear previous content
+        modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
+    }
+
+    // Function to remove item from the cart
+    function removeItemFromCart(isbn) {
+        // Implement logic to remove the item from the cart
+        console.log("Removing item with ISBN:", isbn);
+        // You need to implement the actual removal logic here
+    }
 
 </script>
 
