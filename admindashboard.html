@@ -582,21 +582,17 @@ function getBookForUserCart(isbn) {
 //cartItem modal functions
 
 document.addEventListener("DOMContentLoaded", function () {
-        var userCart = document.getElementById("user-cart");
+        var tableRows = document.querySelectorAll("#user-cart tbody tr");
 
-        userCart.addEventListener("mouseover", function(event) {
-            // Check if the mouseover event target is a table row
-            if (event.target.tagName === "TR") {
-                event.target.classList.add("highlighted-row");
-            }
+        tableRows.forEach(function(row) {
+            row.addEventListener("mouseover", function() {
+                this.classList.add("highlighted-row");
+            });
+            row.addEventListener("mouseout", function() {
+                this.classList.remove("highlighted-row");
+            });
         });
-
-        userCart.addEventListener("mouseout", function(event) {
-            // Check if the mouseout event target is a table row
-            if (event.target.tagName === "TR") {
-                event.target.classList.remove("highlighted-row");
-            }
-        });
+    });
 
 // Add click event listener to table rows
     document.addEventListener("DOMContentLoaded", function () {
