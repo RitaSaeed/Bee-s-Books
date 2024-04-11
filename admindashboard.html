@@ -662,12 +662,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log('Item removed successfully');
 
-            // Remove the corresponding row from the table
-            const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
-            //const tableRow = dataset;
-            if (tableRow) {
-                tableRow.remove();
+            // Find and remove the first row with a matching ISBN
+        const tableRows = document.querySelectorAll(`#user-cart tbody tr`);
+        for (let i = 0; i < tableRows.length; i++) {
+            const rowISBN = tableRows[i].dataset.isbn;
+            if (rowISBN === isbn) {
+                tableRows[i].remove();
+                break; // Stop after removing the first matching row
             }
+        }
         } catch (error) {
             console.error('Error removing item from cart:', error);
             // Handle error appropriately
