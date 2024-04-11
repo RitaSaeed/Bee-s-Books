@@ -604,6 +604,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var target = event.target;
             // Check if the clicked element is a table cell
             if (target.tagName === "TD") {
+                sessionStorage.setItem('cartRowClicked', target.parentNode);
                 // Get the data from the clicked row
                 var isbn = target.parentNode.cells[0].textContent;
                 var title = target.parentNode.cells[1].textContent;
@@ -624,7 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
         removeItemBtn.addEventListener('click', function () {
             var isbnToRemove = this.dataset.isbn;
             // Call function to remove item from the cart (you need to implement this function)
-            removeItemFromCart(sessionStorage.getItem('userID'), isbnToRemove, this.dataset);
+            removeItemFromCart(sessionStorage.getItem('userID'), isbnToRemove, sessionStorage.getItem('cartRowClicked'));
             // Close the modal
             var cartItemModal = bootstrap.Modal.getInstance(document.getElementById('cartItemModal'));
             cartItemModal.hide();
@@ -639,7 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to remove item from the cart
-    async function removeItemFromCart(username, isbn, dataset) {
+    async function removeItemFromCart(username, isbn, row) {
         try {
             const payload = {
                 payload: {
@@ -663,9 +664,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Item removed successfully');
 
             // Find and remove the clicked row
-        const clickedRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
-        if (clickedRow) {
-            clickedRow.remove();
+        //const clickedRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
+        if (row) {
+            row.remove();
         }
         } catch (error) {
             console.error('Error removing item from cart:', error);
