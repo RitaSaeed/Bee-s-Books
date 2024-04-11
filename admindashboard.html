@@ -652,7 +652,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="container" style="padding: 1rem;padding-top: 0.1rem;">
     <style>
         /* CSS for highlighting table row on hover */
-        #user-cart tr:hover {
+        #user-cart tbody tr:hover {
+            cursor:hover {
+                backgroundColor: #CE6EE;
+            }
+        }
+        #user-cart thead:hover {
             background-color: #CEC6EE;
         }
         #user-cart {
