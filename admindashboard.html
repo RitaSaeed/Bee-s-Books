@@ -642,8 +642,10 @@ document.addEventListener("DOMContentLoaded", function () {
     async function removeItemFromCart(username, isbn) {
         try {
             const payload = {
-                Key: username,
-                Products: [isbn]
+                payload: {
+                    Key: username,
+                    Products: [isbn]
+                }
             };
 
             const response = await fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart', {
