@@ -666,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Find and remove the clicked row
         //const clickedRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
         if (row) {
-            row.remove();
+            row.tr.remove();
         }
         } catch (error) {
             console.error('Error removing item from cart:', error);
