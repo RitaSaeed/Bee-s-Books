@@ -624,7 +624,7 @@ document.addEventListener("DOMContentLoaded", function () {
         removeItemBtn.addEventListener('click', function () {
             var isbnToRemove = this.dataset.isbn;
             // Call function to remove item from the cart (you need to implement this function)
-            removeItemFromCart(sessionStorage.getItem('userID'), isbnToRemove);
+            removeItemFromCart(sessionStorage.getItem('userID'), isbnToRemove, this.dataset);
             // Close the modal
             var cartItemModal = bootstrap.Modal.getInstance(document.getElementById('cartItemModal'));
             cartItemModal.hide();
@@ -639,7 +639,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to remove item from the cart
-    async function removeItemFromCart(username, isbn) {
+    async function removeItemFromCart(username, isbn, dataset) {
         try {
             const payload = {
                 payload: {
@@ -663,7 +663,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Item removed successfully');
 
             // Remove the corresponding row from the table
-            const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
+            //const tableRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
+            const tableRow = dataset;
             if (tableRow) {
                 tableRow.remove();
             }
