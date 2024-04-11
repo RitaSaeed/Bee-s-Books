@@ -606,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(typeof(target.parentNode.rowIndex));
             // Check if the clicked element is a table cell
             if (target.tagName === "TD") {
-                sessionStorage.setItem('cartRowClicked', target.parentNode);
+                sessionStorage.setItem('cartRowClicked', target.parentNode.rowIndex);
                 // Get the data from the clicked row
                 var isbn = target.parentNode.cells[0].textContent;
                 var title = target.parentNode.cells[1].textContent;
@@ -642,7 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to remove item from the cart
-    async function removeItemFromCart(username, isbn, row) {
+    async function removeItemFromCart(username, isbn, rowIndex) {
         try {
             const payload = {
                 payload: {
@@ -665,11 +665,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log('Item removed successfully');
 
-            // Find and remove the clicked row
-        //const clickedRow = document.querySelector(`#user-cart tbody tr[data-isbn="${isbn}"]`);
-        if (row) {
-            row.tr.remove();
-        }
+            const table = document.getElementById('user-cart');
+            if (table) {
+                const rowToRemove = table.rows[rowIndex];
+                if (rowToRemove) {
+                    rowToRemove.remove();
+                }
+            }
         } catch (error) {
             console.error('Error removing item from cart:', error);
             // Handle error appropriately
