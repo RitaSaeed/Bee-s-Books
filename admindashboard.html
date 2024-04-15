@@ -572,7 +572,7 @@ async function populateUserCartTable(data) {
 function getBookForUserCart(isbns) {
     const isbnString = isnbs.join(',');
     console.log(isbnString);
-    return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbn))
+    return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbns))
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
