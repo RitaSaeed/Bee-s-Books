@@ -559,7 +559,7 @@ async function populateUserCartTable(data) {
 }
 
 
-function getBookForUserCart(isbns) {
+function getBooksForUserCart(isbns) {
     const isbnString = isbns.join(',');
     // Fetch data from the API
     return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbns.join(',')))
