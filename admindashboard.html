@@ -558,6 +558,14 @@ async function populateUserCartTable(data) {
     }
 }
 
+function addTableCell(row, index, content) {
+    const cell = row.insertCell(index);
+    cell.textContent = content;
+    cell.style.backgroundColor = 'white';
+    cell.style.color = 'black';
+}
+
+
 
 function getBooksForUserCart(isbns) {
     const isbnString = isbns.join(',');
