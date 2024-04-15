@@ -1,12 +1,12 @@
 let username = getValueFromJWT('access_token', 'username');
-let eventData = {"payload": {"Key": {"userID": username}}};
+let eventData = JSON.stringify({"payload": {"Key": {"userID": username}}});
 
 function populateCartPage() {
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
         method: 'POST',
         body: eventData,
-        headers: {"Content-Type": "application/json"}})
-    .then(response => response.json()).then(data => {
+        headers: {"Content-Type": "application/json"}
+    }).then(response => response.json()).then(data => {
         let cartData = {
             "Item": {
                 "products": [],
@@ -15,6 +15,11 @@ function populateCartPage() {
         }
 
         let products = data.body.products;
+
+        if (products === undefined) {
+            console.log("Cart empty");
+            return;
+        }
 
         for (let i = 0; i < products.length; i++) {
             cartData.Item.products[i] = {"productID": products[i], "quantity": "1"};
