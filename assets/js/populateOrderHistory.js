@@ -33,18 +33,16 @@ function getOrderHistory(userID) {
             console.log("order: " + JSON.stringify(data[order]));
 
             let orderID = data[order]['SK']['S'];
-            let date = data[order]['DateTime']['S'].split(' ')[0];
+            let date = data[order]['OrderDate']['S'];
             let productJSON = data[order]['Products']['L'];
 
             var products = [];
 
             for (const entry in productJSON) {
-                products.push(productJSON[entry]['S'])
+                products.push(productJSON[entry]['M'])
             }
 
-            let total = "FILLER_TOTAL";
-            let productName = "FILLER_NAME";
-            let productPrice = "FILLER_PRICE"
+            let total = data[order]['OrderTotal']['N'];
 
             console.log("orderID: " + JSON.stringify(orderID));
             console.log("date: " + JSON.stringify(date));
@@ -80,15 +78,19 @@ function getOrderHistory(userID) {
                     <div class="row">`
 
             for (const prodID in products) {
+                const title = products[prodID]['Title']['S'];
+                const productPrice = products[prodID]['Price']['N'];
+                const img = products[prodID]['ImgLink']['S'];
+
                 historyHTML += 
                         `<div class="col-md-2">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" class="img-fluid">
+                            <img src="${img}" class="img-fluid">
                         </div>
                         <div class="col-md-5 col-lg-7">
-                            <p>${products[prodID]}</p>
+                            <p>${title}</p>
                         </div>
                         <div class="col-md-4 col-lg-3">
-                            <p class="mb-0">${productPrice}</p>
+                            <p class="mb-0">\$${productPrice}</p>
                         </div>`;
             }
 
