@@ -16,6 +16,11 @@ function populateCartPage() {
 
         let products = data.body.products;
 
+        if (products === undefined) {
+            console.log("Cart empty");
+            return;
+        }
+
         for (let i = 0; i < products.length; i++) {
             cartData.Item.products[i] = {"productID": products[i], "quantity": "1"};
         }
