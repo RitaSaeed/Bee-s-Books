@@ -678,7 +678,57 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
     }
 
+    async function removeAllItemsFromCart(username) {
+        try {
+            const payload = {
+                payload: {
+                    Key: username,
+                    Products: [] // Empty array to remove all items
+                }
+            };
 
+            const response = await fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            console.log('All items removed successfully');
+
+            // Re-fetch user's cart data
+            const userId = sessionStorage.getItem('userID');
+            if (userId) {
+                // Call the function to re-populate the user's cart table
+                await populateUserCart(userId);
+            } else {
+                console.error('User ID not found in session storage.');
+            }
+        } catch (error) {
+            console.error('Error removing all items from cart:', error);
+            // Handle error appropriately
+        }
+    }
+
+    // Add event listener to the "Remove All Items" button
+    const removeAllItemsButton = document.getElementById('remove-all-items-btn');
+    if (removeAllItemsButton) {
+        removeAllItemsButton.addEventListener('click', async () => {
+            const userId = sessionStorage.getItem('userID');
+            if (userId) {
+                await removeAllItemsFromCart(userId);
+            } else {
+                console.error('User ID not found in session storage.');
+            }
+        });
+    } else {
+        console.error('Could not find "remove-all-items-btn" button.');
+    }
 
 </script>
 
@@ -711,60 +761,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <tbody class="custom-table-body"></tbody>
         </table>
         <button id="remove-all-cart-items-btn">Remove All Items</button>
-        <script>
-        // Function to remove all items from the cart
-async function removeAllItemsFromCart(username) {
-    try {
-        const payload = {
-            payload: {
-                Key: username,
-                Products: [] // Empty array to remove all items
-            }
-        };
-
-        const response = await fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart', {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        console.log('All items removed successfully');
-
-        // Re-fetch user's cart data
-        const userId = sessionStorage.getItem('userID');
-        if (userId) {
-            // Call the function to re-populate the user's cart table
-            await populateUserCart(userId);
-        } else {
-            console.error('User ID not found in session storage.');
-        }
-    } catch (error) {
-        console.error('Error removing all items from cart:', error);
-        // Handle error appropriately
-    }
-}
-
-// Add event listener to the "Remove All Items" button
-const removeAllItemsButton = document.getElementById('remove-all-items-btn');
-if (removeAllItemsButton) {
-    removeAllItemsButton.addEventListener('click', async () => {
-        const userId = sessionStorage.getItem('userID');
-        if (userId) {
-            await removeAllItemsFromCart(userId);
-        } else {
-            console.error('User ID not found in session storage.');
-        }
-    });
-} else {
-    console.error('Could not find "remove-all-items-btn" button.');
-}
-</script>
     </div>
 </div>
 
