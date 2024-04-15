@@ -321,8 +321,8 @@
                     height: 450,
                     data: mappedUsers,
                     layout: 'fitDataFill',
-                    pagination: "local", // Enable pagination
-                    paginationSize: 10, // Set page size
+                    pagination: "local", 
+                    paginationSize: 10, 
                     columns: [
                         { title: "Username", field: "username", width: 125 },
                         { title: "Email", field: "email", width: 250 },
@@ -331,8 +331,6 @@
                         { title: "Confirmed", field: "confirmed", width: 100 },
                         { title: "Unsubscribed", field: "unsubscribed", width: 75 },
                         { title: "Admin", field: "admin",hozAlign: "center", vertAlign: "middle", formatter: "tickCross", width: 75 },
-                       // { title: "Delete", formatter: deleteButtonFormatter, hozAlign: "center", vertAlign: "middle", width: 100 },
-                       // { title: "Make Admin", formatter: makeAdminButtonFormatter, hozAlign: "center", vertAlign: "middle", width: 130 }
                     ]
                 });
 
@@ -341,22 +339,6 @@
                 });
 
                 const orders = await getOrders();
-                console.log(orders)
-
-                // function mapOrderToTabulator(user) {
-                //     return {
-                //         username: user.username,
-                //         email: user.email || user["cognito:email_alias"],
-                //         name: user.name || '',
-                //         address: user.address || 'null',
-                //         admin: user.isAdmin || false,
-                //         confirmed: user["cognito:user_status"] || "Unconfirmed",
-                //         unsubscribed: user.Unsubscribed || 'null'
-                //     };
-                // }
-
-                // mappedOrders = users.map(mapOrderToTabulator)
-                //console.log(mappedOrders); 
 
                 let ordertable = new Tabulator("#orderTableContainer", {
                     height: 450,
@@ -425,7 +407,7 @@
 
                 var statusSelect = document.createElement("select");
                 statusSelect.id = "statusSelect";
-                var statusOptions = ["Processed", "Placed", "Completed", "Cancelled", "Refunded"];
+                var statusOptions = ["Completed", "Refunded"];
                 statusOptions.forEach(function (status) {
                     var option = document.createElement("option");
                     option.value = status.toLowerCase();
@@ -642,9 +624,7 @@
             .catch(error => {
                 console.error("API request failed: ", error);
             })
-            const data = await response;
-            console.log(data)
-            
+            const data = await response;            
         }
 
         async function passworReset(user) {
@@ -661,7 +641,6 @@
                     }
                 });
                 const data = await response.json();
-                console.log(data);
                 return data;
             } catch (error) {
                 console.error("API request failed:", error);
@@ -678,7 +657,6 @@
                         Authorization: `${accessToken}`,
                     }
                 });
-                console.log(response);
                 const data = await response.json();
                 return data.body;
             } catch (error) {
@@ -778,7 +756,6 @@
                 });
 
                 const data = await response.json();
-                console.log(data);
                 return data.isAdmin;
                 
             } catch (error) {
