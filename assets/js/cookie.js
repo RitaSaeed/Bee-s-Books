@@ -15,7 +15,7 @@ if (curURL.includes('code=')) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(post_body),
-    })
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error('Bad token request.');
@@ -44,7 +44,8 @@ function logoutClicked() {
     try {
         deleteCookie('access_token');
         deleteCookie('id_token');
-        location.reload()
+        // location.reload()
+        window.location.href = 'index.html';
     } catch (error) {
         console.log(error);
     }
@@ -91,7 +92,7 @@ function getValueFromJWT(cookieName, fieldName) {
         }
     }
     return null;
-    }
+}
 function setValueToElement(elementId, value) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -109,8 +110,7 @@ function updateHref(elementId, url) {
     }
 }
 function populateAccountPage() {
-    var modal = new bootstrap.Modal(document.getElementById('loadingModal'))
-    //modal.show()
+    //$('#loadingModal').modal('show');
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
@@ -124,17 +124,14 @@ function populateAccountPage() {
         document.getElementById("email").value = data.email || "";
         document.getElementById("address").value = data.address || "";     
         document.getElementById("phone").value = data.phone || "";        
-   
-
-      if(data.emailSubscribed && data.emailSubscribed == 'false') {
-        let button = document.getElementById("toggleEmail").
+        
+      if(data.Unsubscribed == "false") {
+        let button = document.getElementById("toggleEmail")
         button.textContent = 'On';
-        button.style.background = '#7c83bc';
+        button.style.background = 'var(--bs-body-bg)';
         isOn = true;
       } 
       modal.hide();
-
-      console.log('response',data)
     })
     .catch(error => {
       console.error("API request failed: ", error);
@@ -142,21 +139,19 @@ function populateAccountPage() {
         $('#loadingModal').modal('hide');
     });
 }
+
 function updateUserInfo() {
     $('#loadingModal').modal('show');
     const usernameVal = getValueFromJWT('id_token', 'cognito:username')
     const nameVal = document.getElementById("name").value
     const emailVal = document.getElementById("email").value
     const addressVal = document.getElementById("address").value
-    const phoneVal = document.getElementById("phone").value
-
     const accessToken = getCookie('id_token')
     const requestBody = {
         username : usernameVal,
         name : nameVal,
         email : emailVal,
-        address : addressVal,
-        phone : phoneVal
+        address : addressVal
     }
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user", {
         method: 'POST',
