@@ -503,71 +503,61 @@
 });
 
 async function populateUserCartTable(data) {
-    var tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
+    const tableBody = document.getElementById("user-cart").getElementsByTagName('tbody')[0];
     // Clear existing table data
     tableBody.innerHTML = "";
 
     // Check if data is not null and is an object
-    if (data !== null && typeof data === 'object') {
-        var userId = data.userID !== undefined ? data.userID : "Unknown";
-        var isbns = data.products || [];
+    if (data && typeof data === 'object') {
+        const userId = data.userID || "Unknown";
+        const isbns = data.products || [];
 
         if (isbns.length > 0) {
             // Show loading indicator
-            document.getElementById("loading-indicator").style.display = "block";
+            const loadingIndicator = document.getElementById("loading-indicator");
+            loadingIndicator.style.display = "block";
 
-            // If isbns is an array with items, create a new row for each product
-            for (const isbn of isbns) {
-                try {
-                    const book = await getBookForUserCart(isbn);
-                    var row = tableBody.insertRow();
-                    var isbnCell = row.insertCell(0);
-                    isbnCell.textContent = isbn;
+            try {
+                // Fetch book data for all ISBNs
+                const books = await getBooksForUserCart(isbns);
+
+                // Iterate over the books and populate table rows
+                books.forEach((book, index) => {
+                    const row = tableBody.insertRow();
+                    const isbnCell = row.insertCell(0);
+                    isbnCell.textContent = isbns[index]; // Retrieve ISBN from the original array
                     isbnCell.style.backgroundColor = 'white';
                     isbnCell.style.color = 'black';
-                    if (book && book.Items && book.Items.length > 0) {
-                        var firstBook = book.Items[0];
-                        var titleCell = row.insertCell(1);
-                        titleCell.textContent = firstBook.title;
-                        titleCell.style.backgroundColor = 'white';
-                        titleCell.style.color = 'black';
-                        var authorCell = row.insertCell(2);
-                        authorCell.textContent = firstBook.author;
-                        authorCell.style.backgroundColor = 'white';
-                        authorCell.style.color = 'black';
-                    } else {
-                        var unknownCell = row.insertCell(1);
-                        unknownCell.textContent = "Unknown";
-                        unknownCell.style.backgroundColor = 'white';
-                        unknownCell.style.color = 'black';
-                        var unknownCell2 = row.insertCell(2);
-                        unknownCell2.textContent = "Unknown";
-                        unknownCell2.style.backgroundColor = 'white';
-                        unknownCell2.style.color = 'black';
-                    }
-                } catch (error) {
-                    console.error('Error getting book data:', error);
-                }
-            }
 
-            // Hide loading indicator once all products are added
-            document.getElementById("loading-indicator").style.display = "none";
+                    if (book && book.Items && book.Items.length > 0) {
+                        const firstBook = book.Items[0];
+                        addTableCell(row, 1, firstBook.title);
+                        addTableCell(row, 2, firstBook.author);
+                    } else {
+                        addTableCell(row, 1, "Unknown");
+                        addTableCell(row, 2, "Unknown");
+                    }
+                });
+            } catch (error) {
+                console.error('Error getting book data:', error);
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.style.display = "none";
+            }
         } else {
-            // If isbns is an empty array or doesn't exist
-            var row = tableBody.insertRow();
-            var messageCell = row.insertCell();
+            // If no products in cart
+            const row = tableBody.insertRow();
+            const messageCell = row.insertCell();
             messageCell.textContent = "No products in cart";
             messageCell.colSpan = 1;
             messageCell.style.backgroundColor = 'white';
             messageCell.style.color = 'black';
-
-            // Hide loading indicator if there are no products
-            document.getElementById("loading-indicator").style.display = "none";
         }
     } else {
         console.error('Data is not in expected format.');
     }
 }
+
 
 function getBookForUserCart(isbns) {
     const isbnString = isbns.join(',');
