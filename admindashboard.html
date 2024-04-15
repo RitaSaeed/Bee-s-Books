@@ -664,21 +664,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log('Item removed successfully');
 
-            const table = document.getElementById('user-cart');
-            if (table) {
-                console.log('parse int');
-                console.log(typeof(parseInt(rowIndex)));
-                var index = parseInt(rowIndex);
-                console.log(typeof(index));
-                const rowToRemove = table.rows[index];
-                if (rowToRemove) {
-                    rowToRemove.remove();
-                }
+            // Re-fetch user's cart data
+            const userId = sessionStorage.getItem('userID');
+            if (userId) {
+                // Call the function to re-populate the user's cart table
+                await populateUserCart(userId);
+            } else {
+                console.error('User ID not found in session storage.');
             }
-        } catch (error) {
-            console.error('Error removing item from cart:', error);
-            // Handle error appropriately
-        }
+            } catch (error) {
+                console.error('Error removing item from cart:', error);
+                // Handle error appropriately
+            }
     }
 
 
