@@ -569,7 +569,8 @@ async function populateUserCartTable(data) {
     }
 }
 
-function getBookForUserCart(isbn) {
+function getBookForUserCart(isbns) {
+    const isbnString = isnbs.join(',');
     return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbn))
         .then(response => {
             if (!response.ok) {
