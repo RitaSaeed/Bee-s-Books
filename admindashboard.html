@@ -527,7 +527,7 @@ async function populateUserCartTable(data) {
                     addTableCell(row, 0, isbns[index]); // Insert ISBN
                     addTableCell(row, 1, book.title); // Insert title
                     addTableCell(row, 2, book.author); // Insert author
-                    // Add other cells for additional book information if needed
+                    addTableCell(row, 3, book.price); // Insert price
                 });
             } catch (error) {
                 console.error('Error getting book data:', error);
