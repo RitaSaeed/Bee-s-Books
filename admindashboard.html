@@ -580,6 +580,7 @@ function getBooksForUserCart(isbns) {
         .then(data => {
             // Extract array of books from the 'Items' key
             const books = data.Items || [];
+            console.log(books);
             return books; // Return the array of books
         })
         .catch(error => {
