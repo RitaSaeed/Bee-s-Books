@@ -559,20 +559,27 @@ async function populateUserCartTable(data) {
 }
 
 
-function getBooksForUserCart(isbns) {
+function getBookForUserCart(isbns) {
     const isbnString = isbns.join(',');
-    //console.log(isbnString);
-    return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbnString))
+    // Fetch data from the API
+    return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbns.join(',')))
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             return response.json();
         })
+        .then(data => {
+            // Extract array of books from the 'Items' key
+            const books = data.Items || [];
+            return books; // Return the array of books
+        })
         .catch(error => {
             console.error('Error fetching data:', error);
+            return []; // Return an empty array in case of error
         });
 }
+
 
 //cartItem modal functions
 
