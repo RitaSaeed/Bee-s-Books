@@ -524,18 +524,10 @@ async function populateUserCartTable(data) {
                 // Iterate over the books and populate table rows
                 books.forEach((book, index) => {
                     const row = tableBody.insertRow();
-                    const isbnCell = row.insertCell(0);
-                    isbnCell.textContent = isbns[index]; // Retrieve ISBN from the original array
-                    isbnCell.style.backgroundColor = 'white';
-                    isbnCell.style.color = 'black';
-
-                    books.forEach((book, index) => {
-                        const row = tableBody.insertRow();
-                        addTableCell(row, 0, isbns[index]); // Insert ISBN
-                        addTableCell(row, 1, book.title); // Insert title
-                        addTableCell(row, 2, book.author); // Insert author
-                        // Add other cells for additional book information if needed
-                    });
+                    addTableCell(row, 0, isbns[index]); // Insert ISBN
+                    addTableCell(row, 1, book.title); // Insert title
+                    addTableCell(row, 2, book.author); // Insert author
+                    // Add other cells for additional book information if needed
                 });
             } catch (error) {
                 console.error('Error getting book data:', error);
