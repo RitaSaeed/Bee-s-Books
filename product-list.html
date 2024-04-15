@@ -131,36 +131,19 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);"><!-- Start: User Search --><div><script>
-//     function searchOnEnter(event) {
-//         if (event.key === "Enter") {
-//             window.history.pushState(null,null,'product-list.html');
-//             // var userInput = document.getElementById("search-input");
-//             // const apiUrl = "https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=";
-//             // console.log(apiUrl+userInput);
-//             // fetch(apiUrl+userInput)
-//             // .then(response => response.json())
-//             // .then(data => {
-//             //     console.log(data)
-//             //     window.history.pushState(null,null,'product-list.html');
-//             // })
-//             // .catch((error) => console.error('Error:', error));
-            
-//         }
-//         console.log(event.key);
-//     }
+                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);" name="uInput"><!-- Start: User Search --><div><script>
     function handleSubmit(event) {
         event.preventDefault();
             let uInput = document.getElementById('uInput').value;
             localStorage.setItem('uInput', uInput);
-            let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    localStorage.setItem('apiData', JSON.stringify(data));
-                    window.location.href = 'product-list.html'; // replace with your next page URL
-                });
+            
+            window.location.href = 'product-list.html?uInput=' + uInput;
+            // fetch(url)
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         localStorage.setItem('apiData', JSON.stringify(data));
+            //         window.location.href = 'product-list.html'; // replace with your next page URL
+            //     });
     }
     function handleGenreClick() {
         
@@ -187,141 +170,240 @@
                     <h5 style="margin-top: 1rem;">Filter your search:</h5>
                     <hr>
                 </header>
-                <form style="width: 100%;">
-                    <div class="container">
+                <form id="filter-form" style="width: 100%;">
+                    <fieldset id="fic-non-field">
                         <h6>Fiction/Nonfiction</h6>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="Genre" value="Fiction"><label class="form-check-label" for="formCheck-1">Fiction</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="Genre" value="Nonfiction"><label class="form-check-label" for="formCheck-2">Nonfiction</label></div>
+                        <div class="form-check"><input type="radio" id="fiction-radio" class="form-check-input" name="fiction" value="Yes"><label class="form-label form-check-label" for="group1Option1">Fiction</label></div>
+                        <div class="form-check"><input type="radio" id="nonfiction-radio" class="form-check-input" name="fiction" value="No"><label class="form-label form-check-label" for="group1Option2"> Nonfiction</label></div>
                         <hr>
+                    </fieldset>
+                    <fieldset id="genre-field">
                         <h6>Genre</h6>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" name="Genre" value="Action/Adventure"><label class="form-check-label" for="formCheck-3">Action/Adventure</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-18" name="Genre" value="Biography"><label class="form-check-label" for="formCheck-18">Biography</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-17" name="Genre" value="Children's"><label class="form-check-label" for="formCheck-17">Children's</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-16" name="Genre" value="Classics"><label class="form-check-label" for="formCheck-16">Classics</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-15" name="Genre" value="Contemporary"><label class="form-check-label" for="formCheck-15">Contemporary</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-14" name="Genre" value="Fantasy"><label class="form-check-label" for="formCheck-14">Fantasy</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-13" name="Genre" value="Food and Drink"><label class="form-check-label" for="formCheck-13">Food and Drink</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-12" name="Genre" value="Graphic Novel"><label class="form-check-label" for="formCheck-12">Graphic Novel</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-11" name="Genre" value="Horror"><label class="form-check-label" for="formCheck-11">Horror</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-10" name="Genre" value="Memoir"><label class="form-check-label" for="formCheck-10">Memoir</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-9" name="Genre" value="Mystery"><label class="form-check-label" for="formCheck-9">Mystery</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-8" name="Genre" value="Romance"><label class="form-check-label" for="formCheck-8">Romance</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-7" name="Genre" value="Science Fiction"><label class="form-check-label" for="formCheck-7">Science Fiction</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-6" name="Genre" value="Self Help"><label class="form-check-label" for="formCheck-6">Self Help</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-5" name="Genre" value="Textbook"><label class="form-check-label" for="formCheck-5">Textbooks</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-4" name="Genre" value="True Crime"><label class="form-check-label" for="formCheck-4">True Crime</label></div>
-                    </div>
+                        <div class="form-check"><input type="radio" id="action-radio" class="form-check-input" name="genre" value="Action/Adventure"><label class="form-label form-check-label" for="group2Option1"> Action/Adventure</label></div>
+                        <div class="form-check"><input type="radio" id="biography-radio" class="form-check-input" name="genre" value="Biography"><label class="form-label form-check-label" for="group2Option2">Biographies</label></div>
+                        <div class="form-check"><input type="radio" id="children-radio" class="form-check-input" name="genre" value="Children's"><label class="form-label form-check-label" for="group2Option2">Children's</label></div>
+                        <div class="form-check"><input type="radio" id="classic-radio" class="form-check-input" name="genre" value="Classics"><label class="form-label form-check-label" for="group2Option2">Classics</label></div>
+                        <div class="form-check"><input type="radio" id="contemporary-radio" class="form-check-input" name="genre" value="Contemporary"><label class="form-label form-check-label" for="group2Option2">Contemporary</label></div>
+                        <div class="form-check"><input type="radio" id="fantasy-radio" class="form-check-input" name="genre" value="Fantasy"><label class="form-label form-check-label" for="group2Option2">Fantasy</label></div>
+                        <div class="form-check"><input type="radio" id="food-radio" class="form-check-input" name="genre" value="Food and Drink"><label class="form-label form-check-label" for="group2Option2">Food and Drink</label></div>
+                        <div class="form-check"><input type="radio" id="graphic-radio" class="form-check-input" name="genre" value="Graphic Novel"><label class="form-label form-check-label" for="group2Option2">Graphic Novels</label></div>
+                        <div class="form-check"><input type="radio" id="horror-radio" class="form-check-input" name="genre" value="Horror"><label class="form-label form-check-label" for="group2Option2">Horror</label></div>
+                        <div class="form-check"><input type="radio" id="memoir-radio" class="form-check-input" name="genre" value="Memoir"><label class="form-label form-check-label" for="group2Option2">Memoirs</label></div>
+                        <div class="form-check"><input type="radio" id="mystery-radio" class="form-check-input" name="genre" value="Mystery"><label class="form-label form-check-label" for="group2Option2">Mystery</label></div>
+                        <div class="form-check"><input type="radio" id="romance-radio" class="form-check-input" name="genre" value="Romance"><label class="form-label form-check-label" for="group2Option2">Romance</label></div>
+                        <div class="form-check"><input type="radio" id="science-radio" class="form-check-input" name="genre" value="Science Fiction"><label class="form-label form-check-label" for="group2Option2">Science Fiction</label></div>
+                        <div class="form-check"><input type="radio" id="self-radio" class="form-check-input" name="genre" value="Self Help"><label class="form-label form-check-label" for="group2Option2">Self Help</label></div>
+                        <div class="form-check"><input type="radio" id="textbook-radio" class="form-check-input" name="genre" value="Textbook"><label class="form-label form-check-label" for="group2Option2">Textbooks</label></div>
+                        <div class="form-check"><input type="radio" id="true-radio" class="form-check-input" name="genre" value="True Crime"><label class="form-label form-check-label" for="group2Option2">True Crime</label></div>
+                    </fieldset><button class="btn btn-primary" id="filter-submit" type="submit" style="margin-top: 1rem;color: var(--bs-emphasis-color);" form="filter-form">Apply Filter</button><button class="btn btn-primary" id="filter-clear" style="margin-top: 1rem;color: var(--bs-emphasis-color);margin-left: 1rem;" form="filter-form" type="button">Clear Filter</button>
                 </form>
             </div>
             <div class="col-9">
                 <h3 class="fw-bold text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start" id="results-heading" style="margin: 1rem;">Results for</h3><!-- Start: Results Container -->
-                <div class="container py-5" id="results-container" style="padding-top: 1rem;padding-right: 2rem;padding-left: 2rem;padding-bottom: 2rem;">
+                <div class="container" id="results-container" style="padding-top: 1rem;padding-right: 2rem;padding-left: 2rem;padding-bottom: 2rem;">
                     <!-- Start: Results --><script>
         window.onload = function() {
             const urlSearchParams = new URLSearchParams(window.location.search);
             const genre = urlSearchParams.get('genre');
             const fiction = urlSearchParams.get('fiction');
+            const uInput = urlSearchParams.get('uInput');
+            console.log(uInput);
+            
+            let content = [];
+            let resultList = [];
+            
+            if (uInput != null) { 
+                content.push('uInput=' + uInput); 
+                resultList.push(uInput);
+                document.getElementById('uInput').value = uInput;
+            } else {
+                let localUIn = localStorage.getItem("uInput")
+                console.log(localUIn);
+                if(localUIn != null) {
+                    content.push('uInput=' + localUIn);
+                    resultList.push(localUIn);
+                    //localStorage.clear();
+                    localStorage.removeItem('uInput');
+                }
+            }
+            if (genre != null) { content.push('genre=' + genre); resultList.push(genre);}
+            if (fiction != null) { content.push('fiction=' + fiction); resultList.push(fiction == 'Yes' ? 'fiction' : 'nonfiction'); }
+
+            
+            resultString = resultList.join(", ");
+            if (resultString.length != 0) {
+                document.getElementById('results-heading').innerText = "Results for \"" + resultString + "\"";
+            }
+            else {
+                document.getElementById('results-heading').innerText = "No results found.";
+            }
+            
+            
+            
+            let finalParams = content.join("&");
+            
+            let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?${finalParams}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    generateCards(data.Items);
+                });
+            
             
             if(genre != null && genre.length > 0) {
                 console.log("I am a genre.");
                 let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?genre=${genre}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    generateCards(data.Items);
-                });
-                document.getElementById('results-heading').innerText = "Results for \"" + genre.toString() + "\"";
+            let resultString = genre.toString();
+            switch(genre) {
+                case 'Action/Adventure':
+                    document.getElementById('action-radio').checked = true;
+                    break;
+                case 'Biography':
+                    document.getElementById('biography-radio').checked = true;
+                    resultString = 'Biographies';
+                    break;
+                case 'Children\'s':
+                    document.getElementById('children-radio').checked = true;
+                    break;
+                case 'Classics':
+                    document.getElementById('classic-radio').checked = true;
+                    break;
+                case 'Contemporary':
+                    document.getElementById('contemporary-radio').checked = true;
+                    break;
+                case 'Fantasy':
+                    document.getElementById('fantasy-radio').checked = true;
+                    break;
+                case 'Food and Drink':
+                    document.getElementById('food-radio').checked = true;
+                    break;
+                case 'Graphic Novel':
+                    document.getElementById('graphic-radio').checked = true;
+                    resultString = 'Graphic Novels';
+                    break;
+                case 'Horror':
+                    document.getElementById('horror-radio').checked = true;
+                    break;
+                case 'Memoir':
+                    document.getElementById('memoir-radio').checked = true;
+                    resultString = 'Memoirs';
+                    break;
+                case 'Mystery':
+                    document.getElementById('mystery-radio').checked = true;
+                    break;
+                case 'Romance':
+                    document.getElementById('romance-radio').checked = true;
+                    break;
+                case 'Science Fiction':
+                    document.getElementById('science-radio').checked = true;
+                    break;
+                case 'Self Help':
+                    document.getElementById('self-radio').checked = true;
+                    break;
+                case 'Textbook':
+                    document.getElementById('textbook-radio').checked = true;
+                    resultString = 'Textbooks';
+                    break;
+                case 'True Crime':
+                    document.getElementById('true-radio').checked = true;
+                    break;
             }
-            else if (fiction != null) {
+            //document.getElementById('results-heading').innerText = "Results for \"" + resultString + "\"";
+            //history.replaceState(null, '', removeAllParamsFromURL(window.location.href));
+            // fetch(url)
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         generateCards(data.Items);
+            //     });
+            }
+            if (fiction != null) {
                 console.log("I am fiction/nonfiction.");
                 let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?fiction=${fiction}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    generateCards(data.Items);
-                });
-                document.getElementById('results-heading').innerText = "Results for \"" + fiction.toString() + "\"";
+                let fictionTag = fiction == 'Yes' ? 'fiction' : 'nonfiction';
+                //document.getElementById('results-heading').innerText = "Results for \"" + fictionTag + "\"";
+            switch(fiction) {
+                case 'Yes':
+                    document.getElementById('fiction-radio').checked = true;
+                    break;
+                case 'No':
+                    document.getElementById('nonfiction-radio').checked = true;
+                    break;
             }
-            else {
-                console.log("A genre was not clicked");
-                let apiData = JSON.parse(localStorage.getItem('apiData'));
-                let uInput = localStorage.getItem('uInput');
-                console.log(apiData);
-                console.log(uInput);
-                document.getElementById('results-heading').innerText = "Results for \"" + uInput.toString() + "\"";
-                generateCards(apiData.Items);
+                // fetch(url)
+                // .then(response => response.json())
+                // .then(data => {
+                //     generateCards(data.Items);
+                // });
+                
             }
-            localStorage.clear();
-            // let list = document.getElementById('list');
-
-            // for (let item of apiData.Items) {
-            //     console.log(item); // replace 'item' with the appropriate property name
-            //     let listItem = document.createElement('li');
-            //     listItem.textContent = JSON.stringify(item); // replace 'item' with the appropriate property name
-            //     list.appendChild(listItem);
+            // else {
+            //     let uInput = localStorage.getItem('uInput');
+            //     if (uInput != null) {
+            //         let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
+            //             document.getElementById('results-heading').innerText = "Results for \"" + uInput.toString() + "\"";
+            //             fetch(url)
+            //             .then(response => response.json())
+            //             .then(data => {
+            //                 generateCards(data.Items);
+            //             });
+            //         console.log("Showing results for " + uInput.toString());
+            //         localStorage.clear();
+            //         }
             // }
-        }
+            
+    }
     
+//     document.getElementById('filter-submit').addEventListener('click', function(event) {
+//        event.preventDefault();
+//           console.log("Filter-submit clicked.");
+//           // const myForm = document.getElementById('filter-form');
+//           // const formData = new FormData(myForm);
+//           // console.log(formData);
+//         var url = new URL(window.location.href);
+//         var params = new URLSearchParams(url.search);
+//           let userIn = document.getElementById("uInput").value;
+        
+//         var newParams = new URLSearchParams('uInput=' + userIn);
+        
+//        for (let pair of params.entries()) {
+//             newParams.append(pair[0], pair[1]);
+//         }
 
-//     function generateCards(books) {
-//       let row = document.getElementById('results-row'); // Container for cards
+//         url.search = newParams.toString();
 
-//       books.forEach(book => {
-//         let card = document.createElement('div');
-//         card.className = 'col-sm-2';
-//         card.style.width = '200px'; // Set a fixed width
-//         card.style.height = '400px'; // Set a fixed height
-//         // card.style.overflow = 'auto'; // Add a scrollbar if the content overflows
-//           card.style.position = 'relative'; // Set the card's position to relative
+//             history.replaceState(null, null, url.toString());
+        
+//             document.getElementById('filter-form').submit(); 
+            
+//     });
+    
+    document.getElementById('filter-clear').addEventListener('click', function(event) {
+        console.log('Filter-clear clicked.');
+        deselectAllRadios('filter-form');
+        window.location.href = 'product-list.html';
+        //localStorage.removeItem('uInput');
+        //removeAllParamsFromURL(window.location.href);
+    })
+    
+    function removeAllParamsFromURL(url) {
+        const urlObj = new URL(url);
+        urlObj.search = '';
+        return urlObj.toString();
+    }
+    
+    function deselectAllRadios(formId) {
+        var form = document.getElementById(formId);
+        var radios = form.getElementsByTagName('input');
 
-//         let cardBody = document.createElement('div');
-//         cardBody.className = 'card-body d-flex flex-column '; 
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].type === 'radio') {
+                radios[i].checked = false;
+            }
+        }
+    }
 
-//         let img = document.createElement('img');
-//         img.src = book.img;
-//         img.onload = function() {
-//           let aspectRatio = this.height / this.width;
-//           if (aspectRatio < .8) {
-//               console.log(aspectRatio);
-//             this.style.height = '100%';
-//             this.style.width = 'auto';
-//           } else {
-
-//               this.style.width = '100%';
-//             this.style.height = 'auto';
-//           }
-//           this.style.objectPosition = 'center'; 
-//         };
-//         img.className = 'mb-auto'; 
-
-//         let textContainer = document.createElement('div');
-//           textContainer.style.position = 'absolute'; // Set the textContainer's position to absolute
-//         textContainer.style.bottom = '0'; // Stick the textContainer to the bottom of the card
-//          textContainer.style.width = '100%'; // Ensure the textContainer takes up the full width of the card
-
-//         let title = document.createElement('h4');
-//         title.className = 'card-title';
-//         title.textContent = book.title;
-
-//         let price = document.createElement('p');
-//         price.className = 'card-text';
-//         price.textContent = book.price;
-
-//         textContainer.appendChild(title);
-//         textContainer.appendChild(price);
-
-//         cardBody.appendChild(img);
-//         cardBody.appendChild(textContainer);
-//         card.appendChild(cardBody);
-//         row.appendChild(card);
-
-//           //Calculate and set the font size based on the container size
-//         let fontSize = Math.min(cardBody.offsetWidth / 10, cardBody.offsetHeight / 5);
-//         title.style.fontSize = fontSize + 'px';
-//         price.style.fontSize = fontSize + 'px';
-//       });
+    
     function generateCards(books) {
     let row = document.getElementById('results-row'); // Container for cards
 
@@ -330,11 +412,11 @@
         card.className = 'card col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2 m-3 d-flex flex-column'; // Add margins to the card
 
         let img = document.createElement('img');
-        img.src = book.img;
+        img.src = book.img == null ? 'placeholder-book.gif' : book.img;
         img.className = 'card-img-top flex-grow-1';
-        img.style.width = '100%'; // Set width to 100%
-        //img.style.height = 'auto'; // Set height to auto to maintain aspect ratio
-        img.style.objectFit = 'contain'; // Contain the entire image within the space
+        img.style.width = '100%';
+        img.style.height = '70%';
+        img.style.objectFit = 'contain';
 
         let cardBody = document.createElement('div');
         cardBody.className = 'card-body d-flex flex-column p-3';
@@ -345,7 +427,7 @@
 
         let price = document.createElement('p');
         price.className = 'card-text text-wrap';
-        price.textContent = book.price;
+        price.textContent = '$' + book.price;
 
         // let button = document.createElement('button');
         // button.className = 'btn btn-primary mt-auto invisible'; // Add to Cart button at the bottom
@@ -369,6 +451,13 @@
         };
         card.onmouseout = function() {
             this.style.border = 'none'; // Remove the border when not hovered over
+        };
+        card.onclick = function() {
+            console.log('book clicked');
+            console.log(book.SK.slice(5));
+            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5)}`);
+            console.log(localStorage.getItem('productURL'));
+            window.location.href = 'product.html';
         };
     });
 }
@@ -421,8 +510,10 @@
     </footer><!-- End: Footer Multi Column -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/populateOrderHistory.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="assets/js/cookie.js"></script>
+    <script src="assets/js/cartScript.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
     <script src="assets/js/modalStopper.js"></script>
     <script src="assets/js/productTable.js"></script>
