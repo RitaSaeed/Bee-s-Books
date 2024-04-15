@@ -664,18 +664,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log('Item removed successfully');
 
-            // Re-fetch user's cart data
-            const userId = sessionStorage.getItem('userID');
-            if (userId) {
-                // Call the function to re-populate the user's cart table
-                await populateUserCart(userId);
+            // Set the username in the "user-id-input" element
+            document.getElementById('user-id-input').value = username;
+
+            // Trigger click event on the "get-user-cart" button
+            const getUserCartButton = document.getElementById('get-user-cart');
+            if (getUserCartButton) {
+                getUserCartButton.click();
             } else {
-                console.error('User ID not found in session storage.');
+                console.error('Could not find "get-user-cart" button.');
             }
-            } catch (error) {
-                console.error('Error removing item from cart:', error);
-                // Handle error appropriately
-            }
+                } catch (error) {
+                    console.error('Error removing item from cart:', error);
+                    // Handle error appropriately
+                }
     }
 
 
