@@ -530,7 +530,7 @@ async function populateUserCartTable(data) {
                     isbnCell.style.color = 'black';
 
                     if (book && book.Items && book.Items.length > 0) {
-                        const firstBook = book.Items[0];
+                        const firstBook = book.Items[index];
                         addTableCell(row, 1, firstBook.title);
                         addTableCell(row, 2, firstBook.author);
                     } else {
