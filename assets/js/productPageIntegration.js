@@ -22,7 +22,8 @@ function addProductToCart(ISBN) {
                     "ISBN": ISBN,
                     "Title": data["Items"][0]["title"],
                     "Image": data["Items"][0]["img"],
-                    "Price": data["Items"][0]["price"]
+                    "Price": data["Items"][0]["price"],
+                    "Genre": data["Items"][0]["PK"].slice(6)
                 }]
             }
         });
