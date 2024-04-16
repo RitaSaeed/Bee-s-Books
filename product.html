@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/Raleway.css">
     <link rel="stylesheet" href="assets/css/Roboto.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/Back-To-Top.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
@@ -163,17 +164,147 @@
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="rating-modal" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background:var(--bs-primary-bg-subtle);">
+                    <h4 class="modal-title" style="color:var(--bs-link-hover-color);font-weight:bold;">Leave a Rating</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" id="close-rating" type="button"></button>
+                </div>
+                <div class="modal-body" style="color:var(--bs-primary-bg-subtle);background:var(--bs-primary-bg-subtle);">
+                    <div class="container justify-content-between align-items-center star-container" id="star-container" style="background:var(--bs-primary-bg-subtle);display:flex;"><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);border-color:var(--bs-primary);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><i class="icon ion-android-star-outline" style="font-size:80px;color:var(--bs-success-text-emphasis);"></i><script>
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const stars = document.querySelectorAll('.star-container i');
+    let clicked = false;
+    let selected = 0;
+    
+    
+    stars.forEach((star, index) => {
+        //Responds to mousing over a star
+        star.addEventListener('mouseover', function() {
+            clicked = false;
+            selected = 0;
+            for (let i = 0; i <= 4; i++) {
+                stars[i].classList.add('ion-android-star-outline');
+            }
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.replace('ion-android-star-outline', 'ion-android-star');
+            }
+        });
+          
+        //Responds to removing a mouse from a star, before and after a click
+        star.addEventListener('mouseout', function() {
+            if(!clicked){
+               for (let i = 0; i <= index; i++) {
+                   stars[i].classList.replace('ion-android-star', 'ion-android-star-outline');
+                }                
+            }
+        });   
+       
+        //Responds to maintaining filled stars after clicking a rating, saves result into 'selected'
+        star.addEventListener('click', function() {
+            console.log("clicked");
+            selected = index + 1;
+            console.log(selected);
+            clicked = true;
+            console.log(clicked);
+        });
+    });
+    
+    //Handles the exit button, will clear the star fields from the previous function if user decided to not submit
+    const exit = document.getElementById("close-rating");
+    exit.addEventListener('click', function(){            
+        stars.forEach((star, index) => {
+
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.replace('ion-android-star', 'ion-android-star-outline');
+            }
+        });   
+    });
+    
+    //Handles the submit button. Will tell the user they have to sign in to leave a rating if they are not registered. If a user is registered they will have confirmation their rating was saved. If a registered user is changing their rating, the previous rating will come up and allow them to change.
+    const submit = document.getElementById("send-rating");
+    submit.addEventListener('click', function(){
+        
+        //const user = getValueFromJWT('access_token', 'username');
+        //console.log(user);
+        
+        //const user = null;
+        const user = "tdchitwood";
+        
+        if(user == null){
+            window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+        }else{
+            let body = "";
+            console.log("submit");
+            if(selected == 0){
+                alert("Please select a star to leave a rating.");
+            }else{
+                const productUrl = localStorage.getItem('productURL');
+                fetch(productUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP error! Status: ${response.status}');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let ratebody = {
+                        "isbnpk": data["Items"][0]["SK"].slice(5),
+                        "usersk": user,
+                        "rate": selected,
+                        "genre": data["Items"][0]["PK"].slice(6)
+                      };
+                    body = JSON.stringify(ratebody);
+                    console.log("Body: " + body);
+                    const apiUrl = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/ProductManagement';
+                    console.log(apiUrl);
+                    console.log("body x2: " + body);
+                    fetch(apiUrl, {
+                        method: 'PUT',
+                        body: body,
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(`Error: ${response.status} ${response.statusText}`);
+                        }
+                    })
+                    .then(data => {
+                        console.log('Response data:', data);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                });        
+            }
+        }
+        
+    });    
+});
+
+</script></div>
+                </div>
+                <div class="modal-footer" style="background:var(--bs-primary-bg-subtle);"><button class="btn btn-primary" data-bs-dismiss="modal" id="send-rating" type="button">Submit</button></div>
+            </div>
+        </div>
+    </div>
     <div class="container" style="margin-top: 1.5rem;margin-bottom: 1.5rem;">
         <div class="card" style="width: auto;height: auto;">
             <div class="card-body">
                 <div class="row text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start justify-content-center justify-content-sm-center justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start" style="margin:2rem;">
-                    <div class="col-md-4"><img class="img-fluid" id="book-image" src="" alt="Book Image"></div>
+                    <div class="col-md-4"><img class="img-fluid" id="book-image" src="assets/img/placeholder-book.gif" alt="Book Image"></div>
                     <div class="col-md-8">
                         <h2 id="book-title">Book Title</h2>
                         <p class="text-muted" id="book-author"><strong>by&nbsp;</strong></p>
                         <p id="book-genre"><strong>Genre:</strong>&nbsp;</p>
                         <p id="book-description"><strong>Description:</strong>&nbsp;</p>
-                        <p id="book-rating"><strong>Rating:</strong>&nbsp;</p>
+                        <p id="book-rating" data-bs-toggle="modal" data-bs-target="#rating-modal"><strong>Rating:</strong>&nbsp;</p>
                         <p id="book-price"><strong>Price:</strong></p>
                         <div class="row">
                             <div class="col"><button class="btn btn-primary btn-lg" id="product-to-cart" style="margin-right: 0px;font-size: 12.7px;width: 154.6px;height: 44.4px;font-weight: bold;color: #ffffff;">Add to Cart</button><button class="btn btn-primary" id="product-for-later" style="font-size: 12.7px;width: 154.6px;height: 44.4px;font-weight: bold;color: #ffffff;margin-left: 1rem;">Save for Later</button></div>
@@ -209,7 +340,7 @@
                     data["Items"][0]["description"];
                 document.getElementById('book-genre').textContent +=
                     data["Items"][0]["PK"].slice(6);
-                document.getElementById('book-price').textContent += "$" +
+                document.getElementById('book-price').textContent += " $" +
                     data["Items"][0]["price"];
                 if (data["Items"][0]["rating"] != 0.0) {
                     document.getElementById('book-rating').textContent +=
