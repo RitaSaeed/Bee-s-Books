@@ -22,7 +22,7 @@ function populateCartPage() {
         }
 
         for (let i = 0; i < products.length; i++) {
-            cartData.Item.products[i] = {"productID": products[i], "quantity": "1"};
+            cartData.Item.products[i] = {"productID": products[i]['ISBN'], "quantity": "1"};
         }
 
         generateProducts(cartData);
