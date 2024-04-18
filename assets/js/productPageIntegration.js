@@ -1,11 +1,6 @@
 let username = getValueFromJWT('access_token', 'username');
 
-function addProductToCart(ISBN) {
-    if (typeof(ISBN) !== 'string') {
-        console.log("Invalid ISBN type");
-        return;
-    }
-
+function addProductToCart() {
     const apiUrl = localStorage.getItem('productURL');
 
     fetch(apiUrl).then(response => {
@@ -19,10 +14,11 @@ function addProductToCart(ISBN) {
             "payload": {
                 "Key": {"userID": username}, 
                 "Products": [{
-                    "ISBN": ISBN,
+                    "ISBN": data["Items"][0]["SK"],
                     "Title": data["Items"][0]["title"],
                     "Image": data["Items"][0]["img"],
-                    "Price": data["Items"][0]["price"]
+                    "Price": data["Items"][0]["price"],
+                    "Genre": data["Items"][0]["PK"].slice(6)
                 }]
             }
         });
