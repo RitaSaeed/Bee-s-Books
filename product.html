@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Fetch error:', error);
             });
         };
-      document.getElementById("product-for-later").onclick = function(){
+        document.getElementById("product-for-later").onclick = function(){
                     console.log("clicked");
                     const isbn = bookIsbn.substring(5);
                     checkAndAddFavorite(isbn);
