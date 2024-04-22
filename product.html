@@ -244,11 +244,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const submit = document.getElementById("send-rating");
     submit.addEventListener('click', function(){
         
-        //const user = getValueFromJWT('access_token', 'username');
+        const user = getValueFromJWT('access_token', 'username');
         //console.log(user);
         
         //const user = null;
-        const user = "tdchitwood";
+        // const user = "tdchitwood";
         
         if(user == null){
             window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
@@ -546,7 +546,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/productPageIntegration.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
+    <script src="assets/js/AdminProductJS.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

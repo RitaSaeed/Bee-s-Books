@@ -46,6 +46,185 @@
                             <h1 class="fw-bold mb-4" id="dashboard-main-heading">Welcome<br>&lt;username&gt;</h1><button class="btn btn-primary fs-5 me-2 py-2 px-4" id="dashboard-logout" type="button" style="background:#7C83BC;border-color:#7C83BC;border-top-style:none;border-top-color:#7C83BC;">Logout</button>
                         </div>
                     </div>
+                    <div class="container" style="padding:0px;">
+                        <div class="row" style="width:100%;">
+                            <div class="col-6" style="padding:5px;background:var(--bs-card-cap-bg);border-radius:20px;border-style:none;border-color:var(--bs-card-bg);">
+                                <div class="card" style="border-radius:20px;margin:5rem;border:5px solid var(--bs-primary);box-shadow:0px 0px 12px;">
+                                    <div class="card-body" style="height:auto;">
+                                        <h3 class="text-muted card-subtitle mb-2">Copies Sold to Date</h3>
+                                        <hr>
+                                        <h4 class="card-title" id="copies-to-date" style="height:auto;margin:1rem;font-size:12rem;text-align:center;color:var(--bs-primary-text-emphasis);">0</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6" style="border-radius:20px;">
+                                <div class="card" style="border-radius:20px;margin:5rem;border:5px solid var(--bs-primary);box-shadow:0px 0px 12px;">
+                                    <div class="card-body">
+                                        <h3 class="text-muted card-subtitle mb-2">Revenue to Date</h3>
+                                        <hr>
+                                        <p class="text-nowrap flex-grow-1 flex-shrink-1 card-text" id="rev-to-date" style="font-size: 8rem;color: rgb(0,0,0);">$</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div style="margin:100px;"><canvas id="metricChart"></canvas>
+                                    <div class="text-center" style="margin-top:20px;"><button class="btn btn-primary" id="copiesBtn" type="button" style="background:var(--bs-emphasis-color);border-radius:3px;font-family:system-ui;font-size:10px;color:var(--bs-light-text-emphasis);">Copies Sold</button><button class="btn btn-primary f" id="revBtn" type="button" style="border-radius:3px;background:var(--bs-emphasis-color);font-family:system-ui;margin-left:2px;font-size:10px;color:var(--bs-light-text-emphasis);">Revenue</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div><script>
+        window.onload = function() {
+            const apiUrl = "https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order?username=ORDERMETRICS&orderNum=ORDERMETRICS";
+            console.log(apiUrl);
+
+            fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error! Status: ${response.status}');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.getElementById('copies-to-date').textContent = 
+                    data["Item"]["ItemsSold"];
+                console.log(data["Item"]["ItemsSold"]);
+                document.getElementById('rev-to-date').textContent +=
+                    data["Item"]["RevenueToDate"];
+                console.log(data["Item"]["RevenueToDate"]);
+                
+                
+                var acts = data["Item"]["ActionAdventureSold"];
+                var bios = data["Item"]["BiographySold"];
+                var chils = data["Item"]["ChildrensSold"];
+                var clas = data["Item"]["ClassicsSold"];
+                var cons = data["Item"]["ContemporarySold"];
+                var fans = data["Item"]["FantasySold"];
+                var foods = data["Item"]["FoodandDrinkSold"];
+                var graps = data["Item"]["GraphicNovelSold"];
+                var horrs = data["Item"]["HorrorSold"];
+                var mems = data["Item"]["MemoirSold"];
+                var myss = data["Item"]["MysterySold"];
+                var roms = data["Item"]["RomanceSold"];
+                var scis = data["Item"]["ScienceFictionSold"];
+                var selfs = data["Item"]["SelfHelpSold"];
+                var texts = data["Item"]["TextbookSold"];
+                var tcs = data["Item"]["TrueCrimeSold"];
+                var actr = data["Item"]["ActionAdventureRev"];
+                var bior = data["Item"]["BiographyRev"];
+                var chilr = data["Item"]["ChildrensRev"];
+                var clar = data["Item"]["ClassicsRev"];
+                var conr = data["Item"]["ContemporaryRev"];
+                var fanr = data["Item"]["FantasyRev"];
+                var foodr = data["Item"]["FoodandDrinkRev"];
+                var grapr = data["Item"]["GraphicNovelRev"];
+                var horrr = data["Item"]["HorrorRev"];
+                var memr = data["Item"]["MemoirRev"];
+                var mysr = data["Item"]["MysteryRev"];
+                var romr = data["Item"]["RomanceRev"];
+                var scir = data["Item"]["ScienceFictionRev"];
+                var selfr = data["Item"]["SelfHelpRev"];
+                var textr = data["Item"]["TextbookRev"];
+                var tcr = data["Item"]["TrueCrimeRev"];
+                
+                const ctx = document.getElementById('metricChart');
+                
+                Chart.defaults.font.family = 'system-ui';
+                //Chart.defaults.global.defaultFontColor
+
+                const copiesByGenre = {
+                    labels: ['Action/Adventure', 'Biography', 'Children\'s', 'Classics', 'Contemporary', 'Fantasy', 'Food and Drink', 'Graphic Novel', 'Horror', 'Memoir', 'Mystery', 'Romance', 'Science Fiction', 'Self Help', 'Textbook', 'True Crime'],
+                    datasets: [{
+                        data: [acts, bios, chils, clas, cons, fans, foods, graps, horrs, mems, myss, roms, scis, selfs, texts, tcs],
+                        borderWidth: 1
+                    }]
+                }
+                
+                const copiesChartOptions = 
+                      {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: Math.ceil(Math.max(acts, bios, chils, clas, cons, fans, foods, graps, horrs, mems, myss, roms, scis, selfs, texts, tcs))
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false 
+                            },
+                            title: {
+                                display: true,
+                                text: 'Number of Copies Sold By Genre',
+                                padding: {bottom: 30 },
+                                font: {
+                                    size: 20,
+                                    weight: 'normal'
+                                }
+                            }
+                        }
+                    }
+                
+                const revByGenre = {
+                    labels: ['Action/Adventure', 'Biography', 'Children\'s', 'Classics', 'Contemporary', 'Fantasy', 'Food and Drink', 'Graphic Novel', 'Horror', 'Memoir', 'Mystery', 'Romance', 'Science Fiction', 'Self Help', 'Textbook', 'True Crime'],
+                    datasets: [{
+                        data: [actr, bior, chilr, clar, conr, fanr, foodr, grapr, horrr, memr, mysr, romr, scir, selfr, textr, tcr],
+                        borderWidth: 1
+                    }]
+                }
+                
+                const revChartOptions =
+                      {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: Math.ceil(Math.max(actr, bior, chilr, clar, conr, fanr, foodr, grapr, horrr, memr, mysr, romr, scir, selfr, textr, tcr))
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false 
+                            },
+                            title: {
+                                display: true,
+                                text: 'Revenue By Genre',
+                                padding: {bottom: 30 },
+                                font: {
+                                    size: 20,
+                                    weight: 'normal'
+                                }
+                            }
+                        }
+                    }
+                
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: copiesByGenre,
+                    options: copiesChartOptions
+                }); 
+                
+                const copiesBtn = document.getElementById('copiesBtn');
+                const revBtn = document.getElementById('revBtn');
+                
+                copiesBtn.addEventListener('click', () => {
+                    chart.data = copiesByGenre;
+                    chart.options = copiesChartOptions;
+                    chart.update();
+                });
+                
+                revBtn.addEventListener('click', () => {
+                    chart.data = revByGenre;
+                    chart.options = revChartOptions;
+                    chart.update();
+                });
+                
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+        };
+   
+    </script>
                 </section>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
@@ -143,7 +322,7 @@
                                             <div class="text-start form-group"><label class="form-label form-label form-label form-label" for="locked-field">Average Rating (Locked)</label><input class="form-control form-control form-control form-control" type="text" id="edit-rating" name="rating" readonly="" style="background:var(--bs-emphasis-color);border-color:var(--bs-primary-text-emphasis);"></div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="button">Close</button><button class="btn btn-primary" data-bs-dismiss="modal" form="productForm" id="submit-edit" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="submit">Submit</button><script>
+                                    <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="button">Close</button><button class="btn btn-primary" data-bs-dismiss="modal" form="productForm" id="submit-edit" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="submit">Submit</button><!-- <script>
     const idToken = getCookie("id_token");
     
     const headers = new Headers({
@@ -249,7 +428,7 @@
                                                         console.error(error);
                                                     });
                                             }
-                                        </script></div>
+                                        </script> --></div>
                                 </div>
                             </div>
                         </div>
@@ -1258,7 +1437,9 @@
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="assets/js/AdminJS.js"></script>
+    <script src="assets/js/AdminProductJS.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

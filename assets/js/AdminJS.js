@@ -12,7 +12,7 @@ $(document).ready(async function () {
                 
                 var heading = document.getElementById('dashboard-main-heading');
 
-                heading.textContent = 'Welcome<br>' + AdminUsername;
+                heading.innerHTML = 'Welcome<br>' + AdminUsername;
 
 
                 const users = await getUsers();
