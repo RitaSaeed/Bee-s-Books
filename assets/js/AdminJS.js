@@ -7,6 +7,13 @@ $(document).ready(async function () {
                     alert("Access Denied: You are not authorized to view this content.");
                     return;
                 }
+                
+                const AdminUsername = getValueFromJWT('access_token', 'username');
+                
+                var heading = document.getElementById('#dashboard-main-heading');
+
+                heading.textContent = 'Welcome<br>' + AdminUsername;
+
 
                 const users = await getUsers();
 
