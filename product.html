@@ -53,6 +53,8 @@
                 //const username = getValueFromJWT('access_token', 'username');  
                 setValueToElement("home-user-1", getValueFromJWT('access_token', 'username'));
                 updateHref('home-user-1', "https://main.dva0ia48yehl5.amplifyapp.com/accountPage");
+                const logoutLink = document.querySelector('#logout-link');
+                logoutLink.style.display = 'inline-block';
         }
     });
 
