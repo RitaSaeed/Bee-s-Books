@@ -22,7 +22,9 @@ function populateCartPage() {
         }
 
         for (let i = 0; i < products.length; i++) {
-            cartData.Item.products[i] = {"productID": products[i]['ISBN'], "quantity": "1"};
+            let isbnNumber = products[i]['ISBN'];
+            console.log(isbnNumber);
+            cartData.Item.products[i] = {productID: isbnNumber, quantity: "1"};
         }
 
         generateProducts(cartData);
@@ -51,8 +53,10 @@ function placeOrder() {
 }
 
 window.onload = function() {
-    populateCartPage();
-    calcSubtotal();     
+    if (window.location.pathname == '/shopping-cart') {
+        populateCartPage();
+        calcSubtotal();        
+    }
 }
 
 // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
