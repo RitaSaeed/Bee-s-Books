@@ -54,11 +54,8 @@ function placeOrder() {
 }
 
 window.onload = function() {
-    if (window.location.pathname == '/shopping-cart') {
-        populateCartPage();
-        calcSubtotal();        
-    }
-    
+    populateCartPage();
+    calcSubtotal();
 }
 
 // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
