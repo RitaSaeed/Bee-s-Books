@@ -5,6 +5,7 @@ $(document).ready(async function () {
 
                 if (!isAdmin) {
                     alert("Access Denied: You are not authorized to view this content.");
+                    window.location.href = 'index.html';
                     return;
                 }
                 
