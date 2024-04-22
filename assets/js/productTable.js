@@ -14,10 +14,14 @@
 // });
 
 $(document).ready(function() {
+    const idToken = getCookie("id_token");
     var table = $('#products').DataTable({
         ajax: {
             url: 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/AdminMethods',
-            dataSrc: 'Items'
+            dataSrc: 'Items',
+            beforeSend: function (request) {
+                request.setRequestHeader("Authorization", `Bearer  ${idToken}`);
+            }
         },
         columns: [
             { data: 'SK' },
