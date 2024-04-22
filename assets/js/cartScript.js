@@ -25,7 +25,6 @@ function populateCartPage() {
             let isbnNumber = products[i]['ISBN'];
             console.log(isbnNumber.substring(5));
             cartData.Item.products[i] = {productID: isbnNumber.substring(5), quantity: "1"};
-
         }
 
         generateProducts(cartData);
