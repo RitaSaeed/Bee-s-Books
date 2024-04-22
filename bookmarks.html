@@ -210,9 +210,13 @@ function populateGroup(book, favsData) {
 }
 function removeFavorite(bookIsbn) {
     const endpoint = `https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user/favorites`;
+    const user = getValueFromJWT('access_token', 'username');
+            if(user == null){
+                window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+            }
     // Data to send to the Lambda function
     const data = {
-        username: "kjank",
+        username: user,
         favorites: [bookIsbn]
     };
     // Configure fetch options
