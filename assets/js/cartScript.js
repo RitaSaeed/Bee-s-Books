@@ -14,7 +14,7 @@ function populateCartPage() {
             }
         }
 
-        let products = data.body.products;
+        let products = data["body"]["products"];
 
         if (products === undefined) {
             console.log("Cart empty");
@@ -35,7 +35,7 @@ function calcSubtotal() {
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
-        document.getElementById('subtotalID').innerHTML = data.body.value;
+        document.getElementById('subtotalID').innerHTML = data["body"]["value"];
     });
 }
 
