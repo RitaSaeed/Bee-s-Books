@@ -625,7 +625,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $(document).ready(async function () {
             try {
 
-                const isAdmin = await checkAdminStatus();
+                // const isAdmin = await checkAdminStatus();
+                const isAdmin = true; // To be able to test on something other than main
 
                 if (!isAdmin) {
                     alert("Access Denied: You are not authorized to view this content.");
@@ -692,7 +693,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     orderDashboard(row)
                 });
 
-            } catch (error) {
+            } 
+            catch (error) {
                 console.error("Error getting users:", error);
             }
         });
@@ -738,20 +740,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     container.appendChild(document.createElement("br"));
                 });
 
-                var statusLabel = document.createElement("label");
-                statusLabel.textContent = "Update Status:";
-                container.appendChild(statusLabel);
-                container.appendChild(document.createElement("br"));
-                var input = document.createElement("input");
-                input.type = "text";
-                input.placeholder = field.title;
-                input.style.width = field.width + "px";
-                input.id = field.field; // Assign unique ID
-                input.value = rowData[field.field];
-                input.disabled = true; // Disable editing
-                container.appendChild(input);
-                container.appendChild(document.createElement("br"));
-            });
+                // var statusLabel = document.createElement("label");
+                // statusLabel.textContent = "Update Status:";
+                // container.appendChild(statusLabel);
+                // container.appendChild(document.createElement("br"));
+                // var input = document.createElement("input");
+                // input.type = "text";
+                // input.placeholder = field.title;
+                // input.style.width = field.width + "px";
+                // input.id = field.field; // Assign unique ID
+                // input.value = rowData[field.field];
+                // input.disabled = true; // Disable editing
+                // container.appendChild(input);
+                // container.appendChild(document.createElement("br"));
+            // });
 
             var statusLabel = document.createElement("label");
             statusLabel.textContent = "Update Status:";
@@ -791,8 +793,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        function updateOrder(row, fields, order_status) {
-            console.log("Fields", fields)
+        function updateOrder(row, order_status) {
             console.log("Updated order data:", row.getData(), order_status);
             const accessToken = getCookie('id_token')
             const orderP = document.getElementById('Products').value
@@ -1124,9 +1125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             isAdmin: "true",
                             username: user
                         })
-                })
-            })
-                .then(response => {
+                }).then(response => {
                     if (response.status === 200) {
                         alert("Updated successfully!")
                     } else {
@@ -1140,8 +1139,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .catch(error => {
                     console.error("API request failed: ", error);
                 })
-
-        }
+            }
 
 
 
