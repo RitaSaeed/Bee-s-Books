@@ -10,7 +10,7 @@ $(document).ready(async function () {
                 
                 const AdminUsername = getValueFromJWT('access_token', 'username');
                 
-                var heading = document.getElementById('#dashboard-main-heading');
+                var heading = document.getElementById('dashboard-main-heading');
 
                 heading.textContent = 'Welcome<br>' + AdminUsername;
 

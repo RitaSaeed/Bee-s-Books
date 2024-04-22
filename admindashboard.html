@@ -144,6 +144,11 @@
                                         </form>
                                     </div>
                                     <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="button">Close</button><button class="btn btn-primary" data-bs-dismiss="modal" form="productForm" id="submit-edit" style="background:var(--bs-primary-text-emphasis);color:var(--bs-emphasis-color);" type="submit">Submit</button><script>
+    const idToken = getCookie("id_token");
+    
+    const headers = new Headers({
+      'Authorization': `Bearer ${idToken}`
+    });
                                             // JavaScript
                                             document.getElementById('submit-edit').addEventListener('click', function (event) {
                                                 console.log("Submit-edit clicked.");
@@ -181,7 +186,8 @@
                                                 }
                                                 inputData = JSON.stringify(inputData);
                                                 fetch(url, {
-                                                    method: 'PUT',
+                                                    method: 'PUT', // or 'POST', 'PUT', etc.
+                                                    headers: headers,
                                                     body: inputData,
                                                 })
                                                     .then(response => {
@@ -222,7 +228,8 @@
                                                 }
                                                 inputData = JSON.stringify(inputData);
                                                 fetch(url, {
-                                                    method: 'POST',
+                                                    method: 'POST', // or 'POST', 'PUT', etc.
+                                                    headers: headers,
                                                     body: inputData,
                                                 })
                                                     .then(response => {
