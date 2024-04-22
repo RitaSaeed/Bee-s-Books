@@ -31,6 +31,8 @@ if (curURL.includes('code=')) {
         updateHref('home-user-1', window.location.href + "accountPage")
         const logoutLink = document.querySelector('#logout-link');
         logoutLink.style.display = 'inline-block';
+        const adminLink = document.querySelector('#admin-link');
+        adminLink.style.display = 'inline-block';
     })
     .catch((error) => {
       console.log('Error: ', error);
