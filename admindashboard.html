@@ -1071,8 +1071,7 @@
 
     }
 
-    function updateOrder(row, fields, order_status) {
-        console.log("Fields", fields)
+    function updateOrder(row, order_status) {
         console.log("Updated order data:", row.getData(), order_status);
         const accessToken = getCookie('id_token')
         const orderP = document.getElementById('Products').value
