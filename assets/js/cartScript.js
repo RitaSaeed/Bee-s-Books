@@ -53,12 +53,20 @@ function placeOrder() {
     });
 }
 
-window.onload = function() {
-    if (window.location.pathname == '/shopping-cart') {
+function clearCart() {
+    fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
+        method: 'POST',
+        body: eventData,
+        headers: {"Content-Type": "application/json"}})
+    .then(response => response.json()).then((data) => {
         populateCartPage();
-        calcSubtotal();        
-    }
-    
+        calcSubtotal();
+    });
+}
+
+window.onload = function() {
+    populateCartPage();
+    calcSubtotal();
 }
 
 // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
