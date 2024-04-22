@@ -23,8 +23,8 @@ function populateCartPage() {
 
         for (let i = 0; i < products.length; i++) {
             let isbnNumber = products[i]['ISBN'];
-            console.log(isbnNumber);
-            cartData.Item.products[i] = {productID: isbnNumber, quantity: "1"};
+            console.log(isbnNumber.substring(5));
+            cartData.Item.products[i] = {productID: isbnNumber.substring(5), quantity: "1"};
 
         }
 
