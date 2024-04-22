@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/Roboto.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/Back-To-Top.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
     <link rel="stylesheet" href="assets/css/Card-with-slide-up-text-effect.css">
@@ -20,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/Responsive-Product-Slider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous">
 </head>
 
 <body style="height:auto;width:auto;">
@@ -114,7 +117,11 @@
     <div class="container">
         <div class="row"><script>
         function call_favorites() {
-            const endpoint = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/userFavorites?username=kjank';
+            const user = getValueFromJWT('access_token', 'username');
+            if(user == null){
+                window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+            }
+            const endpoint = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/userFavorites?username=' + user;
         //Configure fetch options
 fetch(endpoint)
     .then(response => {
@@ -203,9 +210,13 @@ function populateGroup(book, favsData) {
 }
 function removeFavorite(bookIsbn) {
     const endpoint = `https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user/favorites`;
+    const user = getValueFromJWT('access_token', 'username');
+            if(user == null){
+                window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+            }
     // Data to send to the Lambda function
     const data = {
-        username: "kjank",
+        username: user,
         favorites: [bookIsbn]
     };
     // Configure fetch options
@@ -287,8 +298,11 @@ function removeFavorite(bookIsbn) {
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
     <script src="assets/js/modalStopper.js"></script>
     <script src="assets/js/productTable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ function addProductToCart() {
     }).then(data => {
         let eventData = JSON.stringify({
             "payload": {
-                "Key": {"userID": username}, 
+                "Key": username, 
                 "Products": [{
                     "ISBN": data["Items"][0]["SK"],
                     "Title": data["Items"][0]["title"],

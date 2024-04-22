@@ -14,7 +14,7 @@ function populateCartPage() {
             }
         }
 
-        let products = data.body.products;
+        let products = data["body"]["products"];
 
         if (products === undefined) {
             console.log("Cart empty");
@@ -22,7 +22,10 @@ function populateCartPage() {
         }
 
         for (let i = 0; i < products.length; i++) {
-            cartData.Item.products[i] = {"productID": products[i], "quantity": "1"};
+            let isbnNumber = products[i]['ISBN'];
+            console.log(isbnNumber);
+            cartData.Item.products[i] = {productID: isbnNumber, quantity: "1"};
+
         }
 
         generateProducts(cartData);
@@ -35,7 +38,7 @@ function calcSubtotal() {
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
-        document.getElementById('subtotalID').innerHTML = data.body.value;
+        document.getElementById('subtotalID').innerHTML = data["body"]["value"];
     });
 }
 
@@ -50,11 +53,20 @@ function placeOrder() {
     });
 }
 
-window.onload = function() {
-    if (window.location.pathname == '/shopping-cart') {
+function clearCart() {
+    fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
+        method: 'POST',
+        body: eventData,
+        headers: {"Content-Type": "application/json"}})
+    .then(response => response.json()).then((data) => {
         populateCartPage();
-        calcSubtotal();        
-    }
+        calcSubtotal();
+    });
+}
+
+window.onload = function() {
+    populateCartPage();
+    calcSubtotal();
 }
 
 // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
