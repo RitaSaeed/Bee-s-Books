@@ -1,4 +1,5 @@
 let username = getValueFromJWT('access_token', 'username');
+username = 'kjank' // test for updates
 
 function addProductToCart() {
     const apiUrl = localStorage.getItem('productURL');
