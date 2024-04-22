@@ -33,11 +33,10 @@ $(document).ready(async function () {
 
 
                 var table = new Tabulator("#userTableContainer", {
-                    height: 450,
                     data: mappedUsers,
                     layout: 'fitDataFill',
                     pagination: "local",
-                    paginationSize: 10,
+                    paginationSize: 15,
                     columns: [
                         { title: "Username", field: "username", width: 125 },
                         { title: "Email", field: "email", width: 250 },
