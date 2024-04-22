@@ -25,6 +25,7 @@ function populateCartPage() {
             let isbnNumber = products[i]['ISBN'];
             console.log(isbnNumber);
             cartData.Item.products[i] = {productID: isbnNumber, quantity: "1"};
+
         }
 
         generateProducts(cartData);
@@ -57,6 +58,7 @@ window.onload = function() {
         populateCartPage();
         calcSubtotal();        
     }
+    
 }
 
 // DO NOT EDIT PAST THIS POINT WITHOUT CONSULTING OUR TEAM
