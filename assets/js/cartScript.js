@@ -168,15 +168,15 @@ function populateGroup(book) {
             </div>
         </div>
     `;
-    const rowImg = document.getElementById("cart-item-image");
-    rowImg.onclick = function() {
-            console.log(book);
-            console.log('book clicked');
-            console.log(book.data.SK.slice(5));
-            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.data.SK.slice(5)}`);
-            console.log(localStorage.getItem('productURL'));
-            window.location.href = 'product.html';
-        };
+    // const rowImg = document.getElementById("cart-item-image");
+    // rowImg.onclick = function() {
+    //         console.log(book);
+    //         console.log('book clicked');
+    //         console.log(book.data.SK.slice(5));
+    //         localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.data.SK.slice(5)}`);
+    //         console.log(localStorage.getItem('productURL'));
+    //         window.location.href = 'product.html';
+    //     };
     row.appendChild(card);
     cardGroup.appendChild(row);
 }
