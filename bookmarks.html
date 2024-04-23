@@ -65,25 +65,27 @@
                 const logoutLink = document.querySelector('#logout-link');
                 logoutLink.style.display = 'inline-block';
                 
-                const isAdmin = checkAdminStatus();
-                if (isAdmin) {
-                    const adminLink = document.querySelector('#admin-link');
-                    adminLink.style.display = 'inline-block';
-                }
         }
     });
+    window.addEventListener('load', async function() {
+       const isAdmin = await checkAdminStatus();
+            if (isAdmin) {
+                const adminLink = document.querySelector('#admin-link');
+                adminLink.style.display = 'inline-block';
+            } 
+    });
     
-    function checkAdminStatus() {
+    async function checkAdminStatus() {
             try {
                 const accessToken = getCookie('id_token');
                 const username = getValueFromJWT('access_token', "username")
-                const response = fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
+                const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
                     headers: {
                         Authorization: `${accessToken}`,
                     },
                 });
 
-                const data = response.json();
+                const data = await response.json();
                 return data.isAdmin;
 
             } catch (error) {
