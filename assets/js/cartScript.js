@@ -46,7 +46,7 @@ function calcSubtotal() {
 
 function placeOrder() {
     fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
-        method: 'POST',
+        method: 'PUT',
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
