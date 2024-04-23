@@ -57,7 +57,7 @@ function placeOrder() {
 
 function clearCart() {
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
-        method: 'POST',
+        method: 'DELETE',
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
