@@ -66,6 +66,23 @@ function clearCart() {
     });
 }
 
+function removeSpecific(isbn) {
+    fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
+        method: 'DELETE',
+        body: JSON.stringify({
+            "payload": {
+                "Key": username,
+                "Products": [isbn.substring(5)]
+            }}),
+        headers: {"Content-Type": "application/json"}})
+    .then(response => response.json()).then((data) => {
+        document.getElementById('cart-items-group').innerHTML = "";
+        document.getElementById('subtotalID').innerHTML = "#######";
+        populateCartPage();
+        calcSubtotal();
+    });
+}
+
 window.onload = function() {
     populateCartPage();
     calcSubtotal();
