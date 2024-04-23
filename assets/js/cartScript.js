@@ -73,7 +73,7 @@ function removeSpecific(isbn) {
         body: JSON.stringify({
             "payload": {
                 "Key": username,
-                "Products": [isbn]
+                "Products": [isbn.substring(5)]
             }}),
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
