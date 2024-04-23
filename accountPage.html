@@ -5,6 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Account Page</title>
+    <meta name="description" content="Online e-commerce store for books, developed by students in their senior year software engineering course at Radford University.">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Inter.css">
     <link rel="stylesheet" href="assets/css/Libre%20Franklin.css">
@@ -36,19 +45,13 @@
             id="carousel-1" style="height: inherit;padding: 0px 0px;padding-bottom: 0px;margin-bottom: 0px;">
             <div class="carousel-inner" style="height: inherit;position: absolute;">
                 <div class="carousel-item active">
-                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel"
-                        style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">
-                        Free shipping on orders over $50, code SHIP50 at checkout</p>
+                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel" style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">10% DISCOUNT FOR ALL STUDENTS CODE: 10discountstudent</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-2"
-                        style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">
-                        Buy one, get one 50% off horror titles during October, code SPOOKYSZN at checkout</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-2" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">20% off all orders end of school year sale CODE: 20offorder</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-1"
-                        style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">
-                        Free Bee's Books bookmark when purchasing 3 books or more</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-1" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">new spring sale 40% off entire order code: buyseasonal40</p>
                 </div>
             </div>
             <div>
@@ -208,31 +211,24 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input
-                                class="form-control" type="search" id="uInput"
-                                placeholder="Search by title, author, ISBN..."
-                                style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);"
-                                name="uInput"><!-- Start: User Search -->
-                            <div>
-                                <script>
-                                    function handleSubmit(event) {
-                                        event.preventDefault();
-                                        let uInput = document.getElementById('uInput').value;
-                                        localStorage.setItem('uInput', uInput);
-
-                                        window.location.href = 'product-list.html?uInput=' + uInput;
-                                        // fetch(url)
-                                        //     .then(response => response.json())
-                                        //     .then(data => {
-                                        //         localStorage.setItem('apiData', JSON.stringify(data));
-                                        //         window.location.href = 'product-list.html'; // replace with your next page URL
-                                        //     });
-                                    }
-                                    function handleGenreClick() {
-
-                                    }
-                                </script>
-                            </div><!-- End: User Search -->
+                        <form id="search-input-form" style="margin-left: 0px;" onsubmit="handleSubmit(event)"><input class="form-control" type="search" id="uInput" placeholder="Search by title, author, ISBN..." style="border-radius: 15px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;margin: 0.5rem;border-width: 2px;border-color: var(--bs-primary-text-emphasis);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background: var(--bs-emphasis-color);" name="uInput"><!-- Start: User Search --><div><script>
+    function handleSubmit(event) {
+        event.preventDefault();
+            let uInput = document.getElementById('uInput').value;
+            localStorage.setItem('uInput', uInput);
+            
+            window.location.href = 'product-list.html?uInput=' + uInput;
+            // fetch(url)
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         localStorage.setItem('apiData', JSON.stringify(data));
+            //         window.location.href = 'product-list.html'; // replace with your next page URL
+            //     });
+    }
+    function handleGenreClick() {
+        
+    }
+</script></div><!-- End: User Search -->
                         </form>
                     </li>
                 </ul>
@@ -248,20 +244,9 @@
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1">
                             </path>
                         </svg></a>
-                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item"
-                            id="home-user-1"
-                            href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign
-                            Up/Login</a><a class="dropdown-item" id="home-bookmarks-1"
-                            href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1"
-                            href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto"
-                                style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;"
-                                href="shopping-cart.html">
-                                <path
-                                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0">
-                                </path>
-                            </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#"
-                            onclick="logoutClicked()">Logout</a></div>
+                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
+                            </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a></div>
                 </div>
             </div>
         </div>
@@ -269,24 +254,16 @@
     <header class="bg-primary-gradient"></header>
     <section class="d-md-flex justify-content-md-center">
         <div style="position:sticky;display:flex;margin-top:30px;width:100%;">
-            <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist"
-                style="width:20%;margin-left:10px;">
-                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab"
-                        href="#tab-1">Account&nbsp;</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                        href="#tab-3">Order History</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                        href="#tab-2">Notifications</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                        href="#tab-2">Save For Later</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
-                        href="#tab-2">Bookshelf</a></li>
+            <ul class="nav nav-tabs d-lg-flex flex-column justify-content-start justify-content-lg-start" role="tablist" style="width:20%;margin-left:10px;">
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Account&nbsp;</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-3">Order History</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Notifications</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Save For Later</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Bookshelf</a></li>
             </ul>
-            <div class="tab-content"
-                style="background:var(--bs-emphasis-color);margin-right:10%;margin-left:2%;margin-bottom:5%;width:70%;">
-                <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <div class="container bg-primary-gradient"
-                        style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
+            <div class="tab-content" style="background:var(--bs-emphasis-color);margin-right:10%;margin-left:2%;margin-bottom:5%;width:70%;">
+                <div class="tab-pane" role="tabpanel" id="tab-1">
+                    <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
                         <h2 style="text-align:center;">Account Information</h2>
                         <form class="d-lg-flex justify-content-lg-center" id="accountForm-1"
                             style="width:100%;margin-bottom:20px;">
@@ -369,12 +346,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="tab-3">
-                    <div class="container bg-primary-gradient"
-                        style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
+                <div class="tab-pane active" role="tabpanel" id="tab-3">
+                    <div class="container bg-primary-gradient" style="margin-bottom:37px;margin-top:37px;padding-left:0px;padding-right:0px;">
                         <h2 style="text-align:center;">Order History</h2>
-                        <div style="padding: 25px;">
-                            <div id="orderTableContainer" style="width:90%; margin:auto;"></div>
+                        <div style="padding:25px;">
+                            <div id="orderTableContainer" style="width:90%;margin:auto;"></div>
                         </div>
                     </div>
                 </div>
@@ -604,6 +580,7 @@
     <script src="assets/js/populateOrderHistory.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/Favorites.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Table */

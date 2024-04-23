@@ -13,6 +13,8 @@
 //     });
 // });
 
+
+
 $(document).ready(function() {
     const idToken = getCookie("id_token");
     var table = $('#products').DataTable({
@@ -29,11 +31,17 @@ $(document).ready(function() {
             { data: 'author' },
             { data: 'quantity'}       
         ]
+        
+        
     });
+    //$($.fn.dataTable.tables(true)).DataTable().columns.adjust();
 
     // Adjust column sizing when the table becomes visible
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+    window.addEventListener("load", function() {
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+           $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }); 
+         
     });
 });
 

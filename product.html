@@ -5,6 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>BeesBooksSprintTwo</title>
+    <meta name="description" content="Online e-commerce store for books, developed by students in their senior year software engineering course at Radford University.">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Inter.css">
     <link rel="stylesheet" href="assets/css/Libre%20Franklin.css">
@@ -24,6 +33,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous">
+<title>Bee's Books</title>
 </head>
 
 <body style="background:#E6E6FA;">
@@ -55,10 +65,34 @@
                 updateHref('home-user-1', "https://main.dva0ia48yehl5.amplifyapp.com/accountPage");
                 const logoutLink = document.querySelector('#logout-link');
                 logoutLink.style.display = 'inline-block';
+                
         }
     });
+    window.addEventListener('load', async function() {
+       const isAdmin = await checkAdminStatus();
+            if (isAdmin) {
+                const adminLink = document.querySelector('#admin-link');
+                adminLink.style.display = 'inline-block';
+            } 
+    });
+    
+    async function checkAdminStatus() {
+            try {
+                const accessToken = getCookie('id_token');
+                const username = getValueFromJWT('access_token', "username")
+                const response = await fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    },
+                });
 
+                const data = await response.json();
+                return data.isAdmin;
 
+            } catch (error) {
+                console.log("Not logged in.");
+            }
+    }
 
 
 </script><a class="navbar-brand d-flex align-items-center" id="navbar-logo" href="index.html" style="margin-left: 30px;"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
@@ -176,7 +210,7 @@
                         </svg></a>
                     <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
-                            </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a></div>
+                            </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a></div>
                 </div>
             </div>
         </div>
@@ -555,6 +589,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="assets/js/productPageIntegration.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/Favorites.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 

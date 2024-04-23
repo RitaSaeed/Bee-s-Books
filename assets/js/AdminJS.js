@@ -3,10 +3,15 @@ $(document).ready(async function () {
 
         const isAdmin = await checkAdminStatus();
 
-        if (!isAdmin) {
-            alert("Access Denied: You are not authorized to view this content.");
-            return;
-        }
+                if (!isAdmin) {
+                    alert("Access Denied: You are not authorized to view this content.");
+                    window.location.href = 'index.html';
+                    return;
+                }
+                
+                const AdminUsername = getValueFromJWT('access_token', 'username');
+                
+                var heading = document.getElementById('dashboard-main-heading');
 
         const AdminUsername = getValueFromJWT('access_token', 'username');
 
