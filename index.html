@@ -97,9 +97,7 @@
                 return data.isAdmin;
 
             } catch (error) {
-                console.error("API request failed:", error);
-                alert(error)
-                throw error;
+                console.log("Not logged in.");
             }
     }
 
