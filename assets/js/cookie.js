@@ -31,7 +31,7 @@ if (curURL.includes('code=')) {
         updateHref('home-user-1', window.location.href + "accountPage")
         const logoutLink = document.querySelector('#logout-link');
         logoutLink.style.display = 'inline-block';
-
+      
         // checks whether user is admin or not after login
         fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + getValueFromJWT('access_token', 'username'), {
             method: 'GET',
@@ -54,7 +54,6 @@ if (curURL.includes('code=')) {
          .catch((error) => {
             console.log('Error: ', error);
          });
-
     })
     .catch((error) => {
       console.log('Error: ', error);

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+<title>Bee's Books</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>BeesBooksSprintTwo</title>
     <meta name="description" content="Online e-commerce store for books, developed by students in their senior year software engineering course at Radford University.">
@@ -31,7 +32,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous">
-<title>Bee's Books</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
 </head>
 
 <body style="background:var(--bs-light-bg-subtle);">
@@ -595,7 +596,7 @@
                         <div id="loading-indicator" style="display:none;">
                             <div class="text-primary spinner-border" role="status"><span class="visually-hidden">Loading...</span></div><span>Loading...</span>
                         </div>
-                    </div><script>
+                    </div><!-- Start: GetUserCarts --><script>
                         document.getElementById("get-user-cart").addEventListener("click", async function () {
                             var userId = document.getElementById("user-id-input").value;
                             try {
@@ -745,7 +746,6 @@
 
                         // Function to populate modal with row data
                         function populateModal(isbn, title, author) {
-        
                             var modalBody = document.getElementById("modalBody");
                             modalBody.innerHTML = ""; // Clear previous content
                             modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
@@ -768,11 +768,13 @@
                                     },
                                     body: JSON.stringify(payload)
                                 });
-                                console.log(response)
+                                console.log(response);
+                                
                                 if (!response.ok) {
                                     throw new Error('Network response was not ok');
                                 }
 
+                                // Set the username in the "user-id-input" element
                                 document.getElementById('user-id-input').value = username;
 
                                 // Trigger click event on the "get-user-cart" button
@@ -788,7 +790,7 @@
                             }
                         }
 
-                    </script>
+                    </script><!-- End: GetUserCarts -->
                 </div>
                 <div class="container" style="padding:1rem;padding-top:0.1rem;"><style>
                         /* CSS for highlighting table row on hover */
@@ -904,7 +906,6 @@
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
     <script src="assets/js/modalStopper.js"></script>
     <script src="assets/js/productTable.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
     <script src="assets/js/usertable.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="assets/js/AdminJS.js"></script>
