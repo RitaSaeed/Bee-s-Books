@@ -117,15 +117,17 @@ function populateGroup(book) {
     const card = document.createElement('div');
     card.className = 'card';
     card.style = 'height: auto; border-width: 2px; border-style: solid; border-radius: 10px;';
-    card.onclick = function() {
-            console.log(book);
-            console.log('book clicked');
-            console.log(book.data.SK.slice(5));
-            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.data.SK.slice(5)}`);
-            console.log(localStorage.getItem('productURL'));
-            window.location.href = 'product.html';
-        };
+    // card.onclick = function() {
+    //         console.log(book);
+    //         console.log('book clicked');
+    //         console.log(book.data.SK.slice(5));
+    //         localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.data.SK.slice(5)}`);
+    //         console.log(localStorage.getItem('productURL'));
+    //         window.location.href = 'product.html';
+    //     };
 
+    // make only image clickable, add favorites call
+    
     // for product.quantity below, use quantity of the book that the user wants to purchase
     card.innerHTML = `
         <div class="card-body">
@@ -150,12 +152,10 @@ function populateGroup(book) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 justify-content-end align-items-end d-lg-flex">
-                            <input class="form-control-sm" type="number" min="1" name="Quantity" step="1" style="width: 75%; margin-top: 10px;" value="${book.userQuantity}" />
-                        </div>
+                        
                         <div class="col-auto col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                             <div class="row" style="height: 25%;">
-                                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center"><button class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 5px;"><i class="fas fa-heart d-lg-flex justify-content-lg-center align-items-lg-center" style="color: var(--bs-emphasis-color);width: 10px;"></i></button><button value="${book.data.SK}" class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 0px;"><i class="fa fa-remove" style="color: #ffffff;"></i></button></div>
+                                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center"><button class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" onclick="checkAndAddFavorite(${book.data.SK})" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 5px;"><i class="fas fa-heart d-lg-flex justify-content-lg-center align-items-lg-center" style="color: var(--bs-emphasis-color);width: 10px;"></i></button><button id="${book.data.SK}" value="${book.data.SK}" class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 0px;"><i class="fa fa-remove" style="color: #ffffff;" onclick="removeSpecific(${book.data.SK})"></i></button></div>
                             </div>
                             <div class="row d-lg-flex justify-content-lg-center align-items-lg-end" style="height: 75%;">
                                 <div class="col">
@@ -168,6 +168,15 @@ function populateGroup(book) {
             </div>
         </div>
     `;
+    const rowImg = document.getElementById("cart-item-image");
+    rowImg.onclick = function() {
+            console.log(book);
+            console.log('book clicked');
+            console.log(book.data.SK.slice(5));
+            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.data.SK.slice(5)}`);
+            console.log(localStorage.getItem('productURL'));
+            window.location.href = 'product.html';
+        };
     row.appendChild(card);
     cardGroup.appendChild(row);
 }
