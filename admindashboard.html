@@ -639,7 +639,7 @@
                                         // Iterate over the books and populate table rows
                                         books.forEach((book, index) => {
                                             const row = tableBody.insertRow();
-                                            addTableCell(row, 0, book.SK); // Insert ISBN
+                                            addTableCell(row, 0, isbns[index]); // Insert ISBN
                                             addTableCell(row, 1, book.title); // Insert title
                                             addTableCell(row, 2, book.author); // Insert author
                                             addTableCell(row, 3, book.price); // Insert price
@@ -672,10 +672,8 @@
                         }
 
                         function getBooksForUserCart(isbns) {
-                            isbns = isbns.map(product => product.ISBN);
                             const isbnString = isbns.join(',');
                             // Fetch data from the API
-                            console.log(isbnString);
                             return fetch('https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=' + encodeURIComponent(isbns.join(',')))
                                 .then(response => {
                                     if (!response.ok) {
@@ -745,7 +743,6 @@
 
                         // Function to populate modal with row data
                         function populateModal(isbn, title, author) {
-        
                             var modalBody = document.getElementById("modalBody");
                             modalBody.innerHTML = ""; // Clear previous content
                             modalBody.innerHTML = `<p><strong>ISBN:</strong> ${isbn}</p><p><strong>Title:</strong> ${title}</p><p><strong>Author:</strong> ${author}</p>`;
@@ -760,19 +757,22 @@
                                         Products: [isbn]
                                     }
                                 };
-                                console.log(payload);
-                                const response = await fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart/delete', {
-                                    method: 'POST',
+
+                                const response = await fetch('https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart', {
+                                    method: 'DELETE',
                                     headers: {
                                         'Content-Type': 'application/json'
                                     },
                                     body: JSON.stringify(payload)
                                 });
-                                console.log(response)
+
                                 if (!response.ok) {
                                     throw new Error('Network response was not ok');
                                 }
 
+                                console.log('Item removed successfully');
+
+                                // Set the username in the "user-id-input" element
                                 document.getElementById('user-id-input').value = username;
 
                                 // Trigger click event on the "get-user-cart" button

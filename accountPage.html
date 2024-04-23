@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="assets/css/Responsive-Product-Slider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous">
 <title>Bee's Books</title>
 </head>
@@ -337,107 +336,97 @@
             </div>
         </div>
     </section><script>
-        let orders;
-        window.onload = async function () {
-            populateAccountPage();
-            orders = await getUserOrders();
-            orders = orders.map(order => ({
-                OrderID: order.SK.S,
-                PlacedAt: order.DateTime.S,
-                Total: order.name,
-                Items: order.Products.L.map(product => {
-                    const { Title } = product.M;
-                    return Title.S;
-                }),
-                Status: order.OrderState.S
-            }));
-            let ordertable = new Tabulator("#orderTableContainer", {
-                height: "300px",
-                data: orders,
-                layout: 'fitColumns',
-                pagination: "local",
-                paginationSize: 10,
-                columns: [
-                    { title: "Order ID", field: "OrderID", width: 125 },
-                    { title: "Placed At", field: "PlacedAt", width: 250, formatter: formatDateTime },
-                    { title: "Items", field: "Items", width: 200 },
-                    { title: "Status", field: "Status", width: 100 },
-                ]
-            });
-
-        };
-
-        function toggleState(buttonId) {
-            const button = document.getElementById(buttonId);
-
-            if (button.textContent == 'Off') {
-                button.textContent = 'On';
-                button.style.background = '#7c83bc';
-            } else {
-                button.textContent = 'Off';
-                button.style.background = '#DB9D47';
+         let orders;
+            window.onload = async function () {
+                populateAccountPage();
+                orders = await getUserOrders();
+                orders = orders.map(order => ({
+                    OrderID: order.SK.S,
+                    PlacedAt: order.DateTime.S,
+                    Total: order.name,
+                    Items: order.Products.L.map(product => product.S).join(', '),
+                    Status: order.OrderState.S
+                }));
+                let ordertable = new Tabulator("#orderTableContainer", {
+                    height: "300px",
+                    data: orders,
+                    layout: 'fitColumns',
+                    pagination: "local",
+                    paginationSize: 10,
+                    columns: [
+                        { title: "Order ID", field: "OrderID", width: 125 },
+                        { title: "Placed At", field: "PlacedAt", width: 250, formatter: formatDateTime  },
+                        { title: "Items", field: "Items", width: 200 },
+                        { title: "Status", field: "Status", width: 100 },
+                    ]
+                });
+            };
+    
+            function toggleState(buttonId) {
+                const button = document.getElementById(buttonId);
+                if (button.textContent == 'Off') {
+                    button.textContent = 'On';
+                    button.style.background = '#7C83BC';
+                } else {
+                    button.textContent = 'Off';
+                    button.style.background = '#DB9D47';
+                }
             }
-        }
-
-        async function getUserOrders() {
-            try {
-                const accessToken = getCookie('id_token');
+    
+            async function getUserOrders() {
+                try {
+                    const accessToken = getCookie('id_token');
+                    const usernameVal = getValueFromJWT('id_token', 'cognito:username')
+                    const response = await fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Orders?userID=" + usernameVal, {
+                        headers: {
+                            Authorization: `${accessToken}`,
+                        }
+                    });
+                    const data = await response.json();
+                    return data.dynamodb_response;
+                } catch (error) {
+                    console.error("API request failed:", error);
+                    throw error;
+                }
+            }
+    
+            async function saveToggles() {
                 const usernameVal = getValueFromJWT('id_token', 'cognito:username')
-                const response = await fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Orders?userID=" + usernameVal, {
+                const accessToken = getCookie('id_token')
+                let unsubscribe;
+                if (document.getElementById("toggleEmail").textContent === 'On') {
+                    unsubscribe = 'false'
+                } else {
+                    unsubscribe = 'true'
+                }
+                const requestBody = {
+                    username: usernameVal,
+                    isUnsubscribed: unsubscribe,
+                }
+                fetch("https://49mdz9gah9.execute-api.us-east-1.amazonaws.com/beta/notification", {
+                    method: 'POST',
+                    body: JSON.stringify(requestBody),
                     headers: {
                         Authorization: `${accessToken}`,
+                        "Content-Type": "application/json"
                     }
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                }).then(data => {
+                    alert(JSON.stringify(data));
+                }).catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
                 });
-
-                const data = await response.json();
-                return data.dynamodb_response;
-            } catch (error) {
-                console.error("API request failed:", error);
-                throw error;
             }
-        }
-
-        async function saveToggles() {
-
-            const usernameVal = getValueFromJWT('id_token', 'cognito:username')
-            const accessToken = getCookie('id_token')
-
-            let unsubscribe;
-            if (document.getElementById("toggleEmail").textContent === 'On') {
-                unsubscribe = 'false'
-            } else {
-                unsubscribe = 'true'
+    
+            function formatDateTime(cell, formatterParams, onRendered) {
+                let date = new Date(cell.getValue());
+                return date.toLocaleString();
             }
-
-            const requestBody = {
-                username: usernameVal,
-                isUnsubscribed: unsubscribe,
-            }
-            fetch("https://49mdz9gah9.execute-api.us-east-1.amazonaws.com/beta/notification", {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-                headers: {
-                    Authorization: `${accessToken}`,
-                    "Content-Type": "application/json"
-                }
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            }).then(data => {
-                alert(JSON.stringify(data));
-            }).catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-        }
-
-        function formatDateTime(cell, formatterParams, onRendered) {
-            let date = new Date(cell.getValue());
-            return date.toLocaleString();
-        }
-    </script>
-<!-- Start: Footer Multi Column -->
+</script><!-- Start: Footer Multi Column -->
     <footer id="bb-footer" class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
             <div class="row justify-content-center">
