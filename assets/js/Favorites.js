@@ -18,7 +18,7 @@ function checkAndAddFavorite(bookIsbn){
             let found = false; // Variable to track if the book is found in favorites
             for (let i = 0; i < userFavorites.favorites.length; i++) {
                 console.log(userFavorites.favorites[i].SK.substring(5));
-                if (userFavorites.favorites[i].SK.substring(5) === bookIsbn.substring(5)) {
+                if (userFavorites.favorites[i].SK.substring(5) === bookIsbn) {
                     console.log("Book is already in favorites.");
                     found = true; // Set found to true if the book is found in favorites
                     break;
@@ -26,7 +26,7 @@ function checkAndAddFavorite(bookIsbn){
             }
             if (!found) { // If the book is not found in favorites, add it
                 console.log("New favorite");
-                addFavorite(bookIsbn.substring(5));
+                addFavorite(bookIsbn);
             }
         })
         .catch(error => {
