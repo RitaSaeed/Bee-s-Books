@@ -2,7 +2,6 @@ let username = getValueFromJWT('access_token', 'username');
 let eventData = JSON.stringify({"payload": {"Key": {"userID": username}}});
 
 function populateCartPage() {
-    document.getElementById('cart-items-group').innerHTML = "";
     fetch("https://pxtzuwk46l.execute-api.us-east-1.amazonaws.com/dev/cart", {
         method: 'POST',
         body: eventData,
@@ -51,8 +50,8 @@ function placeOrder() {
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
-        populateCartPage();
-        calcSubtotal();
+        document.getElementById('cart-items-group').innerHTML = "";
+        document.getElementById('subtotalID').innerHTML = "#######";
     });
 }
 
@@ -62,8 +61,8 @@ function clearCart() {
         body: JSON.stringify({"payload": {"Key": username}}),
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
-        populateCartPage();
-        calcSubtotal();
+        document.getElementById('cart-items-group').innerHTML = "";
+        document.getElementById('subtotalID').innerHTML = "#######";
     });
 }
 
