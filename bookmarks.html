@@ -199,6 +199,17 @@ function populateGroup(book, favsData) {
         </div>
     </div>
   `;
+    let image = card.querySelector(`#fav-item-image-${book.SK.replace(/[^a-zA-Z0-9-_]/g, '_')}`);
+    image.addEventListener('click', function() {
+        // Handle the click event, e.g., open a modal with more details about the book
+        console.log('Image clicked for book:', book);
+        console.log(book.SK.replace(/[^a-zA-Z0-9-_]/g, '_'));
+         localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5, 15)}`);
+                                console.log(localStorage.getItem('productURL'));
+                                window.location.href = 'product.html';
+        //window.location.href = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5, 15)}`;
+        // You can perform any action you want here, like displaying more details about the book
+    });
     //event listener for remove button
     const removeButton = card.querySelector('.remove-btn');
     removeButton.addEventListener('click', function() {
@@ -211,6 +222,7 @@ function populateGroup(book, favsData) {
         //console.log(book.SK.substring(5));
         removeFavorite(book.SK.substring(5));
     });
+    
   // Create a new div to wrap the card
   const cardWrapper = document.createElement('div');
   cardWrapper.style = 'width: 100%;';

@@ -178,6 +178,16 @@ function populateGroup(book) {
     //         console.log(localStorage.getItem('productURL'));
     //         window.location.href = 'product.html';
     //     };
+    let image = card.querySelector(`#cart-item-image-${book.SK.replace(/[^a-zA-Z0-9-_]/g, '_')}`);
+    image.addEventListener('click', function() {
+        // Handle the click event, e.g., open a modal with more details about the book
+        console.log('Image clicked for book:', book);
+        console.log(book.SK.replace(/[^a-zA-Z0-9-_]/g, '_'));
+         localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5, 15)}`);
+                                console.log(localStorage.getItem('productURL'));
+                                window.location.href = 'product.html';
+    });
+    
     row.appendChild(card);
     cardGroup.appendChild(row);
 }
