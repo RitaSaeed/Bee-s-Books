@@ -40,7 +40,7 @@ function calcSubtotal() {
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then(data => {
-        document.getElementById('subtotalID').innerHTML = data["body"]["value"];
+        document.getElementById('subtotalID').innerHTML = "$" + data["body"]["value"];
     });
 }
 
@@ -51,7 +51,7 @@ function placeOrder() {
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
         document.getElementById('cart-items-group').innerHTML = "";
-        document.getElementById('subtotalID').innerHTML = "#######";
+        document.getElementById('subtotalID').innerHTML = "$0";
     });
 }
 
@@ -62,7 +62,7 @@ function clearCart() {
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
         document.getElementById('cart-items-group').innerHTML = "";
-        document.getElementById('subtotalID').innerHTML = "#######";
+        document.getElementById('subtotalID').innerHTML = "$0";
     });
 }
 
@@ -78,7 +78,7 @@ function removeSpecific(isbn) {
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
         document.getElementById('cart-items-group').innerHTML = "";
-        document.getElementById('subtotalID').innerHTML = "#######";
+        document.getElementById('subtotalID').innerHTML = "$0";
         populateCartPage();
         calcSubtotal();
     });
