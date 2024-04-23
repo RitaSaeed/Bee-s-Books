@@ -31,8 +31,30 @@ if (curURL.includes('code=')) {
         updateHref('home-user-1', window.location.href + "accountPage")
         const logoutLink = document.querySelector('#logout-link');
         logoutLink.style.display = 'inline-block';
-        // const adminLink = document.querySelector('#admin-link'); //Not needed
-        // adminLink.style.display = 'inline-block';
+
+        // checks whether user is admin or not after login
+        fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + getValueFromJWT('access_token', 'username'), {
+            method: 'GET',
+            headers: {
+                Authorization: `${data.body.access_token}`,
+            },
+        })
+         .then((response) => {
+            if (!response.ok) {
+                throw new Error("Bad request.");
+            }
+            return response.json();
+         })
+         .then((data) => {
+            if (data.isAdmin) {
+                const adminLink = document.querySelector('#admin-link');
+                adminLink.style.display = 'inline-block';
+            }
+         })
+         .catch((error) => {
+            console.log('Error: ', error);
+         });
+
     })
     .catch((error) => {
       console.log('Error: ', error);
