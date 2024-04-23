@@ -34,15 +34,14 @@ $(document).ready(function() {
         
         
     });
-    table.columns.adjust();
     //$($.fn.dataTable.tables(true)).DataTable().columns.adjust();
 
     // Adjust column sizing when the table becomes visible
-    //window.addEventListener("load", function() {
-//         $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-           
-//         }); 
+    window.addEventListener("load", function() {
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+           $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }); 
          
-    //});
+    });
 });
 
