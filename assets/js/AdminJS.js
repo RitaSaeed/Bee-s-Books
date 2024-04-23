@@ -161,8 +161,6 @@ $(document).ready(async function () {
         }
 
         function updateOrder(row, fields, order_status) {
-            console.log("Fields", fields)
-            console.log("Updated order data:", row.getData(), order_status);
             const accessToken = getCookie('id_token')
             const orderP = document.getElementById('Products').value
             const s = orderP.split(',')
@@ -174,7 +172,7 @@ $(document).ready(async function () {
             const requestBody = {
                 userID: row.getData()['PK'],
                 orderNum: row.getData()['SK'],
-                orderState: order_status,
+                orderState: fields,
                 products: s
             }
             console.log(requestBody);
