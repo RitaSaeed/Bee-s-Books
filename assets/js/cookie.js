@@ -155,7 +155,6 @@ function populateAccountPage() {
         button.style.background = 'var(--bs-body-bg)';
         isOn = true;
       } 
-      modal.hide();
     })
     .catch(error => {
       console.error("API request failed: ", error);
