@@ -110,7 +110,6 @@ function updateHref(elementId, url) {
     }
 }
 function populateAccountPage() {
-    //$('#loadingModal').modal('show');
     const username = getValueFromJWT('access_token', 'username');
     const accessToken = getCookie('id_token')
     fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user="+username, {
@@ -131,7 +130,6 @@ function populateAccountPage() {
         button.style.background = 'var(--bs-body-bg)';
         isOn = true;
       } 
-      modal.hide();
     })
     .catch(error => {
       console.error("API request failed: ", error);
