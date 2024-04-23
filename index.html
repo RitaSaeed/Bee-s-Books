@@ -48,13 +48,13 @@
         <div class="carousel slide d-xxl-flex align-items-xxl-center" data-bs-ride="carousel" data-bs-interval="7500" id="carousel-1" style="height: inherit;padding: 0px 0px;padding-bottom: 0px;margin-bottom: 0px;">
             <div class="carousel-inner" style="height: inherit;position: absolute;">
                 <div class="carousel-item active">
-                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel" style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">Free shipping on orders over $50, code SHIP50 at checkout</p>
+                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel" style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">10% DISCOUNT FOR ALL STUDENTS CODE: 10discountstudent</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-2" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">Buy one, get one 50% off horror titles during October, code SPOOKYSZN at checkout</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-2" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">20% off all orders end of school year sale CODE: 20offorder</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-1" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">Free Bee's Books bookmark when purchasing 3 books or more</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-1" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">new spring sale 40% off entire order code: buyseasonal40</p>
                 </div>
             </div>
             <div>
@@ -72,10 +72,34 @@
                 updateHref('home-user-1', "https://main.dva0ia48yehl5.amplifyapp.com/accountPage");
                 const logoutLink = document.querySelector('#logout-link');
                 logoutLink.style.display = 'inline-block';
+                
+                const isAdmin = checkAdminStatus();
+                if (isAdmin) {
+                    const adminLink = document.querySelector('#admin-link');
+                    adminLink.style.display = 'inline-block';
+                }
         }
     });
+    
+    function checkAdminStatus() {
+            try {
+                const accessToken = getCookie('id_token');
+                const username = getValueFromJWT('access_token', "username")
+                const response = fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    },
+                });
 
+                const data = response.json();
+                return data.isAdmin;
 
+            } catch (error) {
+                console.error("API request failed:", error);
+                alert(error)
+                throw error;
+            }
+    }
 
 
 </script><a class="navbar-brand d-flex align-items-center" id="navbar-logo" href="index.html" style="margin-left: 30px;"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
@@ -198,8 +222,10 @@
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
-    <div style="width: 100%;height: 23rem;"><img style="width: 100%;height: 100%;object-fit: cover;object-position: center top;" src="assets/img/indexBannerCroppedTitle.jpg"></div><!-- Start: FictionCarouselDiv -->
-    <div class="fiction-carousel" style="margin: 3rem;height: 16rem;">
+    <div style="width: 100%;height: 23rem;"><img style="width: 100%;height: 100%;object-fit: cover;object-position: center top;" src="assets/img/indexBannerCroppedTitle.jpg"></div>
+    <h3 style="font-family: 'Libre Franklin';margin-right: 1rem;margin-left: 1rem;margin-bottom: 1rem;margin-top: 1rem;">Fiction Favorites</h3>
+    <hr style="width: 90%;margin: auto;"><!-- Start: FictionCarouselDiv -->
+    <div class="slick-carousel" style="margin: 3rem;height: 16rem;">
         <div style="width: 10rem;height: 15rem;">
             <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
                 <div class="card mt-auto" style="height: auto;">
@@ -306,215 +332,116 @@
             </div>
         </div>
     </div><!-- End: FictionCarouselDiv -->
-    <!-- Start: Landing Body -->
-    <section class="d-md-flex justify-content-md-center" style="height:auto;">
-        <div class="container bg-primary-gradient py-5" style="padding-left: 0px;padding-right: 0px;margin-top: 20px;margin-bottom: 20px;">
-            <div class="row" style="width: inherit;margin-left: 0px;margin-right: 0px;">
-                <div class="col text-start">
-                    <h3 style="font-family: 'Libre Franklin';margin-right: 1rem;margin-left: 1rem;margin-bottom: 0px;">Fiction Favorites</h3>
-                    <hr>
+    <h3 style="font-family: 'Libre Franklin';margin-right: 1rem;margin-left: 1rem;margin-bottom: 1rem;margin-top: 1rem;">Non-Fiction Favorites</h3>
+    <hr style="width: 90%;margin: auto;"><!-- Start: NonFictionCarouselDiv -->
+    <div class="slick-carousel" style="margin: 3rem;height: 16rem;">
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img1" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
                 </div>
             </div>
-            <div class="carousel slide d-md-flex" data-bs-ride="false" id="carousel-fiction">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-16">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img-1" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-17">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img-2" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-18">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img-3" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-19">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img-4" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-20">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img-5" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-21">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-6" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-22">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-7" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-23">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body" style="padding: 0px;"><img class="img-fluid" id="img-8" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-24">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-9" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-25">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-10" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-26">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-11" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-27">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-12" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-28">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-13" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-29">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-14" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-30">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img-15" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-4" role="button" data-bs-slide="prev" style="width:5%;"><span style="color:var(--bs-success-text-emphasis);filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Previous</span></a><!-- End: Previous -->
-                    <!-- Start: Next --><a class="carousel-control-next" href="#carousel-4" role="button" data-bs-slide="next" style="width:5%;"><span style="filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Next</span></a><!-- End: Next -->
-                </div>
-                <div class="carousel-indicators d-md-flex justify-content-md-center align-items-md-end" style="width: auto;height: auto;filter: invert(100%);margin-top: 0px;margin-bottom: -15px;"><button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-fiction" data-bs-slide-to="2"></button></div>
-            </div>
-            <div class="row" style="width: inherit;margin-left: 0px;margin-right: 0px;margin-top: 10px;">
-                <div class="col text-start">
-                    <h3 style="font-family: 'Libre Franklin';margin-right: 1rem;margin-left: 1rem;margin-bottom: 0px;">Non-Fiction Favorites</h3>
-                    <hr>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img2" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
                 </div>
             </div>
-            <div class="carousel slide d-md-flex" data-bs-ride="false" id="carousel-non-fiction">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-1">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img1" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-2">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img2" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-3">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img3" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-4">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img4" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-5">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid card-img-bottom" id="img5" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-6">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img6" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-7">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img7" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-8">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body" style="padding: 0px;"><img class="img-fluid" id="img8" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-9">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img9" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-10">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img10" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row" style="padding:0;padding-right:50px;padding-left:50px;padding-bottom:10px;">
-                            <div class="col d-flex align-items-end" id="container-11">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img11" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-12">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img12" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-13">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img13" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-14">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img14" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-end" id="container-15">
-                                <div class="card mt-auto" style="height: auto;">
-                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img class="img-fluid" id="img15" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img3" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
                 </div>
-                <div>
-                    <!-- Start: Previous --><a class="carousel-control-prev" href="#carousel-4" role="button" data-bs-slide="prev" style="width:5%;"><span style="color:var(--bs-success-text-emphasis);filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Previous</span></a><!-- End: Previous -->
-                    <!-- Start: Next --><a class="carousel-control-next" href="#carousel-4" role="button" data-bs-slide="next" style="width:5%;"><span style="filter:brightness(200%) invert(100%) saturate(125%);"></span><span class="visually-hidden">Next</span></a><!-- End: Next -->
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img4" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
                 </div>
-                <div class="carousel-indicators d-md-flex justify-content-md-center align-items-md-end" style="width: auto;height: auto;margin-bottom: -15px;filter: invert(100%);margin-top: 0px;"><button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-non-fiction" data-bs-slide-to="2"></button></div>
-            </div><!-- Start: ClickCode -->
-            <div>
-                <!-- Start: CarouselJavascript --><script> 
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img5" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img6" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img7" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img8" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img9" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img10" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img11" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img12" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img13" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img14" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 10rem;height: 15rem;">
+            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;">
+                <div class="card mt-auto" style="height: auto;">
+                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img15" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: NonFictionCarouselDiv -->
+    <!-- Start: CarouselJavascript --><script> 
         
         function randomDynamic(){
             
@@ -556,7 +483,6 @@
                 })
                 .then(data => {
                     for(let i = 1; i < data["Items"].length+1; i++) {
-                        // console.log("img"+i);
                         if (data["Items"][i-1].hasOwnProperty("img")) {
                             document.getElementById("img"+i).src = data["Items"][i-1]["img"];
                             document.getElementById("img"+i).onclick = function(){
@@ -564,14 +490,6 @@
                                localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${data["Items"][i-1]["SK"].slice(5, 15)}`); 
                                 console.log(localStorage.getItem('productURL'));
                                 window.location.href = 'product.html';
-                                // fetch(userClickURL)
-                                //     .then(response => response.json())
-                                //     .then(data => {
-                                //         //console.log(data);
-                                //         localStorage.setItem('userClick', JSON.stringify(data));
-                                //         window.location.href = 'product.html';
-                                //         console.log(localStorage.getItem('userClick'));// replace with your next page URL
-                                // });
                             };
                         }
                     }
@@ -580,7 +498,8 @@
                 .catch(error => {
                     console.error('Fetch error:',error);
                 });
-            $('.fiction-carousel').slick({
+            
+            $('.slick-carousel').slick({
                   dots: true,
                   infinite: true,
                   speed: 300,
@@ -632,17 +551,10 @@
                         dots: false
                       }
                     },
-                    // You can unslick at a given breakpoint now by adding:
-                    // settings: "unslick"
-                    // instead of a settings object
                   ]
                 });
         }
     </script><!-- End: CarouselJavascript -->
-            </div><!-- End: ClickCode -->
-            <hr style="margin-left: 15px;margin-right: 15px;">
-        </div>
-    </section><!-- End: Landing Body -->
     <!-- Start: Footer Multi Column -->
     <footer id="bb-footer" class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">

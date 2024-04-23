@@ -65,10 +65,34 @@
                 updateHref('home-user-1', "https://main.dva0ia48yehl5.amplifyapp.com/accountPage");
                 const logoutLink = document.querySelector('#logout-link');
                 logoutLink.style.display = 'inline-block';
+                
+                const isAdmin = checkAdminStatus();
+                if (isAdmin) {
+                    const adminLink = document.querySelector('#admin-link');
+                    adminLink.style.display = 'inline-block';
+                }
         }
     });
+    
+    function checkAdminStatus() {
+            try {
+                const accessToken = getCookie('id_token');
+                const username = getValueFromJWT('access_token', "username")
+                const response = fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    },
+                });
 
+                const data = response.json();
+                return data.isAdmin;
 
+            } catch (error) {
+                console.error("API request failed:", error);
+                alert(error)
+                throw error;
+            }
+    }
 
 
 </script><a class="navbar-brand d-flex align-items-center" id="navbar-logo" href="index.html" style="margin-left: 30px;"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">

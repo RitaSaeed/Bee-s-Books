@@ -40,13 +40,13 @@
         <div class="carousel slide d-xxl-flex align-items-xxl-center" data-bs-ride="carousel" data-bs-interval="7500" id="carousel-1" style="height: inherit;padding: 0px 0px;padding-bottom: 0px;margin-bottom: 0px;">
             <div class="carousel-inner" style="height: inherit;position: absolute;">
                 <div class="carousel-item active">
-                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel" style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">Free shipping on orders over $50, code SHIP50 at checkout</p>
+                    <p class="text-uppercase justify-content-xxl-center" id="promo-codes-carousel" style="text-align: center;padding: 5px;height: inherit;font-weight: bold;color: #FFFFFF;width: auto;margin-bottom: 0px;">10% DISCOUNT FOR ALL STUDENTS CODE: 10discountstudent</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-2" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">Buy one, get one 50% off horror titles during October, code SPOOKYSZN at checkout</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-2" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;color: #FFFFFF;font-weight: bold;">20% off all orders end of school year sale CODE: 20offorder</p>
                 </div>
                 <div class="carousel-item">
-                    <p class="text-uppercase" id="promo-codes-carousel-1" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">Free Bee's Books bookmark when purchasing 3 books or more</p>
+                    <p class="text-uppercase" id="promo-codes-carousel-1" style="text-align: center;padding: 5px;height: 35px;margin-bottom: 0px;font-weight: bold;color: #FFFFFF;">new spring sale 40% off entire order code: buyseasonal40</p>
                 </div>
             </div>
             <div>
@@ -64,10 +64,34 @@
                 updateHref('home-user-1', "https://main.dva0ia48yehl5.amplifyapp.com/accountPage");
                 const logoutLink = document.querySelector('#logout-link');
                 logoutLink.style.display = 'inline-block';
+                
+                const isAdmin = checkAdminStatus();
+                if (isAdmin) {
+                    const adminLink = document.querySelector('#admin-link');
+                    adminLink.style.display = 'inline-block';
+                }
         }
     });
+    
+    function checkAdminStatus() {
+            try {
+                const accessToken = getCookie('id_token');
+                const username = getValueFromJWT('access_token', "username")
+                const response = fetch("https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user?user=" + username, {
+                    headers: {
+                        Authorization: `${accessToken}`,
+                    },
+                });
 
+                const data = response.json();
+                return data.isAdmin;
 
+            } catch (error) {
+                console.error("API request failed:", error);
+                alert(error)
+                throw error;
+            }
+    }
 
 
 </script><a class="navbar-brand d-flex align-items-center" id="navbar-logo" href="index.html" style="margin-left: 30px;"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">

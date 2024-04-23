@@ -191,3 +191,4 @@ function populateGroup(book) {
     row.appendChild(card);
     cardGroup.appendChild(row);
 }
+
