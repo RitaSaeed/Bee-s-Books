@@ -174,7 +174,7 @@ $(document).ready(async function () {
             const requestBody = {
                 userID: row.getData()['PK'],
                 orderNum: row.getData()['SK'],
-                orderState: order_status,
+                orderState: fields,
                 products: s
             }
             console.log(requestBody);
