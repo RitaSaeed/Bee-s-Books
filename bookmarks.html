@@ -209,7 +209,7 @@
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
                         </svg></a>
-                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Bookmarks</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Saved For Later</a><a class="dropdown-item" href="#bookshelf">My Bookshelf</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
                             </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a></div>
                 </div>
@@ -218,7 +218,7 @@
     </nav><!-- End: Navbar Centered Links -->
     <div class="container">
         <header>
-            <h1 style="text-align:center;margin:15px;padding:3px;">My Favorites</h1>
+            <h1 style="text-align:center;margin:15px;padding:3px;">Saved for Later</h1>
         </header>
         <hr>
     </div>
@@ -252,82 +252,69 @@ fetch(endpoint)
         call_favorites();
     }
     function generateProducts(favsData) {
-        // Check if the 'favorites' key exists and if it contains any data
-//         if (favsData && favsData.favorites && favsData.favorites.length > 0) {
-//         } else {
-//             console.log('No favorites found.'); // Log a message if no favorites are found
-//         }
-        // favsData.favorites.forEach(category => {
-        //         category.forEach(book => {
-        //             populateGroup(book); // Pass each book to the populateGroup function
-        //         });
-        //         populateGroup(category[0]);
-        //     });
+        const product_url = `https://main.dva0ia48yehl5.amplifyapp.com/product.html`;
         console.log(favsData);
         favsData.favorites.forEach(book => {
-            populateGroup(book, favsData);
+            var book_isbn = book.SK.substring(5);
+            populateGroup(book, favsData, product_url, book_isbn);
         });
     }
-function populateGroup(book, favsData) {
+function populateGroup(book, favsData, productPageURL, isbn) {
     console.log(book);
-  const cardGroup = document.getElementById('fav-items-group'); // This is the container for all cards
-  // Create a new card element
-  const card = document.createElement('div');
-  card.className = 'card my-card'; // Use 'my-card' class for fixed sizing
-  card.style = 'margin: 5px; height: auto; border-width: 2px; border-style: solid; border-radius: 10px;'; // Center the card, adjust width, and add border
-  // Set the innerHTML of the card with inline styles for fixed dimensions
-  card.innerHTML = `
-    <div class="card-body" style="width: 100%; display: flex; align-items: center;">
-        <div style="flex: 0 0 auto; margin-right: 10px;">
-            <div style="max-width: 100px; max-height: 150px; overflow: hidden; margin: 0;">
-                <img id="fav-item-image" src="${book.img}" style="height: auto; width: 100%; margin: 0;" />
+      const cardGroup = document.getElementById('fav-items-group'); // This is the container for all cards
+      // Create a new card element
+      const card = document.createElement('div');
+      card.className = 'card my-card'; // Use 'my-card' class for fixed sizing
+      card.style = 'margin: 5px; height: auto; border-width: 2px; border-style: solid; border-radius: 10px;'; // Center the card, adjust width, and add border
+      // Set the innerHTML of the card with inline styles for fixed dimensions
+      card.innerHTML = `
+        <div class="card-body" style="width: 100%; display: flex; align-items: center;">
+            <div style="flex: 0 0 auto; margin-right: 10px;">
+                <div style="max-width: 100px; max-height: 150px; overflow: hidden; margin: 0;">
+                    <a href="${productPageURL}">
+                        <img id="fav-item-image" src="${book.img}" style="height: auto; width: 100%; margin: 0;" onclick="setProductISBN('${isbn}')"/>
+                    </a>
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <div>
+                    <h5>${book.title || 'Unknown'}</h5>
+                    <h5>${book.author || 'Unknown'}</h5>
+                </div>
+                <div>
+                    <h5>\$${book.price || '0'}</h5>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary btn-sm remove-btn" type="button" style="color: #FFFFFF">Remove <i class="fa fa-remove"></i></button>
+                </div>
             </div>
         </div>
-        <div style="flex: 1;">
-            <div>
-                <h5>${book.title || 'Unknown'}</h5>
-                <h5>${book.author || 'Unknown'}</h5>
-            </div>
-            <div>
-                <h5>\$${book.price || '0'}</h5>
-            </div>
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-primary btn-sm remove-btn" type="button" style="color: #FFFFFF">Remove <i class="fa fa-remove"></i></button>
-            </div>
-        </div>
-    </div>
-  `;
-    // let image = card.querySelector(`#fav-item-image-${book.SK.replace(/[^a-zA-Z0-9-_]/g, '_')}`);
-    // image.addEventListener('click', function() {
-    //     // Handle the click event, e.g., open a modal with more details about the book
-    //     console.log('Image clicked for book:', book);
-    //     console.log(book.SK.replace(/[^a-zA-Z0-9-_]/g, '_'));
-    //      localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5, 15)}`);
-    //                             console.log(localStorage.getItem('productURL'));
-    //                             window.location.href = 'product.html';
-    //     //window.location.href = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5, 15)}`;
-    //     // You can perform any action you want here, like displaying more details about the book
-    // });
-    //event listener for remove button
-    const removeButton = card.querySelector('.remove-btn');
-    removeButton.addEventListener('click', function() {
-        //remove corresponding card from UI
-        const cardToRemove = this.closest('.card.my-card');
-        if (cardToRemove) {
-            cardGroup.removeChild(cardToRemove.parentNode);
-        }
-        //remove corresponding favorite from list
-        //console.log(book.SK.substring(5));
-        removeFavorite(book.SK.substring(5));
-    });
-    
-  // Create a new div to wrap the card
-  const cardWrapper = document.createElement('div');
-  cardWrapper.style = 'width: 100%;';
-  cardWrapper.appendChild(card);
-  // Append the card wrapper to the card group
-  cardGroup.appendChild(cardWrapper);
+      `;
+        //event listener for remove button
+        const removeButton = card.querySelector('.remove-btn');
+        removeButton.addEventListener('click', function() {
+            //remove corresponding card from UI
+            const cardToRemove = this.closest('.card.my-card');
+            if (cardToRemove) {
+                cardGroup.removeChild(cardToRemove.parentNode);
+            }
+            //remove corresponding favorite from list
+            //console.log(book.SK.substring(5));
+            removeFavorite(book.SK.substring(5));
+        });
+
+      // Create a new div to wrap the card
+      const cardWrapper = document.createElement('div');
+      cardWrapper.style = 'width: 100%;';
+      cardWrapper.appendChild(card);
+      // Append the card wrapper to the card group
+      cardGroup.appendChild(cardWrapper);
 }
+    function setProductISBN(isbn) {
+        const invoke_url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${isbn}`
+        localStorage.setItem("productURL", invoke_url)
+    }
+    
 function removeFavorite(bookIsbn) {
     const endpoint = `https://oevgdgxf8f.execute-api.us-east-1.amazonaws.com/beta/user/favorites`;
     const user = getValueFromJWT('access_token', 'username');
