@@ -313,136 +313,83 @@
             if(genre != null && genre.length > 0) {
                 console.log("I am a genre.");
                 let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?genre=${genre}`;
-            let resultString = genre.toString();
-            switch(genre) {
-                case 'Action/Adventure':
-                    document.getElementById('action-radio').checked = true;
-                    break;
-                case 'Biography':
-                    document.getElementById('biography-radio').checked = true;
-                    resultString = 'Biographies';
-                    break;
-                case 'Children\'s':
-                    document.getElementById('children-radio').checked = true;
-                    break;
-                case 'Classics':
-                    document.getElementById('classic-radio').checked = true;
-                    break;
-                case 'Contemporary':
-                    document.getElementById('contemporary-radio').checked = true;
-                    break;
-                case 'Fantasy':
-                    document.getElementById('fantasy-radio').checked = true;
-                    break;
-                case 'Food and Drink':
-                    document.getElementById('food-radio').checked = true;
-                    break;
-                case 'Graphic Novel':
-                    document.getElementById('graphic-radio').checked = true;
-                    resultString = 'Graphic Novels';
-                    break;
-                case 'Horror':
-                    document.getElementById('horror-radio').checked = true;
-                    break;
-                case 'Memoir':
-                    document.getElementById('memoir-radio').checked = true;
-                    resultString = 'Memoirs';
-                    break;
-                case 'Mystery':
-                    document.getElementById('mystery-radio').checked = true;
-                    break;
-                case 'Romance':
-                    document.getElementById('romance-radio').checked = true;
-                    break;
-                case 'Science Fiction':
-                    document.getElementById('science-radio').checked = true;
-                    break;
-                case 'Self Help':
-                    document.getElementById('self-radio').checked = true;
-                    break;
-                case 'Textbook':
-                    document.getElementById('textbook-radio').checked = true;
-                    resultString = 'Textbooks';
-                    break;
-                case 'True Crime':
-                    document.getElementById('true-radio').checked = true;
-                    break;
-            }
-            //document.getElementById('results-heading').innerText = "Results for \"" + resultString + "\"";
-            //history.replaceState(null, '', removeAllParamsFromURL(window.location.href));
-            // fetch(url)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         generateCards(data.Items);
-            //     });
+                let resultString = genre.toString();
+                switch(genre) {
+                    case 'Action/Adventure':
+                        document.getElementById('action-radio').checked = true;
+                        break;
+                    case 'Biography':
+                        document.getElementById('biography-radio').checked = true;
+                        resultString = 'Biographies';
+                        break;
+                    case 'Children\'s':
+                        document.getElementById('children-radio').checked = true;
+                        break;
+                    case 'Classics':
+                        document.getElementById('classic-radio').checked = true;
+                        break;
+                    case 'Contemporary':
+                        document.getElementById('contemporary-radio').checked = true;
+                        break;
+                    case 'Fantasy':
+                        document.getElementById('fantasy-radio').checked = true;
+                        break;
+                    case 'Food and Drink':
+                        document.getElementById('food-radio').checked = true;
+                        break;
+                    case 'Graphic Novel':
+                        document.getElementById('graphic-radio').checked = true;
+                        resultString = 'Graphic Novels';
+                        break;
+                    case 'Horror':
+                        document.getElementById('horror-radio').checked = true;
+                        break;
+                    case 'Memoir':
+                        document.getElementById('memoir-radio').checked = true;
+                        resultString = 'Memoirs';
+                        break;
+                    case 'Mystery':
+                        document.getElementById('mystery-radio').checked = true;
+                        break;
+                    case 'Romance':
+                        document.getElementById('romance-radio').checked = true;
+                        break;
+                    case 'Science Fiction':
+                        document.getElementById('science-radio').checked = true;
+                        break;
+                    case 'Self Help':
+                        document.getElementById('self-radio').checked = true;
+                        break;
+                    case 'Textbook':
+                        document.getElementById('textbook-radio').checked = true;
+                        resultString = 'Textbooks';
+                        break;
+                    case 'True Crime':
+                        document.getElementById('true-radio').checked = true;
+                        break;
+                }
             }
             if (fiction != null) {
                 console.log("I am fiction/nonfiction.");
                 let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?fiction=${fiction}`;
                 let fictionTag = fiction == 'Yes' ? 'fiction' : 'nonfiction';
-                //document.getElementById('results-heading').innerText = "Results for \"" + fictionTag + "\"";
-            switch(fiction) {
-                case 'Yes':
-                    document.getElementById('fiction-radio').checked = true;
-                    break;
-                case 'No':
-                    document.getElementById('nonfiction-radio').checked = true;
-                    break;
+                switch(fiction) {
+                    case 'Yes':
+                        document.getElementById('fiction-radio').checked = true;
+                        break;
+                    case 'No':
+                        document.getElementById('nonfiction-radio').checked = true;
+                        break;
+                }   
             }
-                // fetch(url)
-                // .then(response => response.json())
-                // .then(data => {
-                //     generateCards(data.Items);
-                // });
-                
-            }
-            // else {
-            //     let uInput = localStorage.getItem('uInput');
-            //     if (uInput != null) {
-            //         let url = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?uInput=${uInput}`;
-            //             document.getElementById('results-heading').innerText = "Results for \"" + uInput.toString() + "\"";
-            //             fetch(url)
-            //             .then(response => response.json())
-            //             .then(data => {
-            //                 generateCards(data.Items);
-            //             });
-            //         console.log("Showing results for " + uInput.toString());
-            //         localStorage.clear();
-            //         }
-            // }
             
     }
-    
-//     document.getElementById('filter-submit').addEventListener('click', function(event) {
-//        event.preventDefault();
-//           console.log("Filter-submit clicked.");
-//           // const myForm = document.getElementById('filter-form');
-//           // const formData = new FormData(myForm);
-//           // console.log(formData);
-//         var url = new URL(window.location.href);
-//         var params = new URLSearchParams(url.search);
-//           let userIn = document.getElementById("uInput").value;
-        
-//         var newParams = new URLSearchParams('uInput=' + userIn);
-        
-//        for (let pair of params.entries()) {
-//             newParams.append(pair[0], pair[1]);
-//         }
-
-//         url.search = newParams.toString();
-
-//             history.replaceState(null, null, url.toString());
-        
-//             document.getElementById('filter-form').submit(); 
-            
-//     });
     
     document.getElementById('filter-clear').addEventListener('click', function(event) {
         console.log('Filter-clear clicked.');
         deselectAllRadios('filter-form');
         window.location.href = 'product-list.html';
-        //localStorage.removeItem('uInput');
-        //removeAllParamsFromURL(window.location.href);
+        document.getElementById("product-list-spinner").style.display = "none";
     })
     
     function removeAllParamsFromURL(url) {
@@ -464,61 +411,63 @@
 
     
     function generateCards(books) {
-    let row = document.getElementById('results-row'); // Container for cards
+        if (books === undefined) {
+            document.getElementById('results-heading').innerText = "No results found.";
+            document.getElementById("product-list-spinner").style.display = "none";
+        }
+        else {
+            let row = document.getElementById('results-row'); // Container for cards
 
-    books.forEach(book => {
-        let card = document.createElement('div');
-        card.className = 'card col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2 m-3 d-flex flex-column'; // Add margins to the card
+            books.forEach(book => {
+                let card = document.createElement('div');
+                card.className = 'card col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2 m-3 d-flex flex-column'; // Add margins to the card
 
-        let img = document.createElement('img');
-        img.src = book.img == null ? 'placeholder-book.gif' : book.img;
-        img.className = 'card-img-top flex-grow-1';
-        img.style.width = '100%';
-        img.style.height = '70%';
-        img.style.objectFit = 'contain';
+                let img = document.createElement('img');
+                img.src = book.img == null ? 'placeholder-book.gif' : book.img;
+                img.className = 'card-img-top flex-grow-1';
+                img.style.width = '100%';
+                img.style.height = '70%';
+                img.style.objectFit = 'contain';
 
-        let cardBody = document.createElement('div');
-        cardBody.className = 'card-body d-flex flex-column p-3';
+                let cardBody = document.createElement('div');
+                cardBody.className = 'card-body d-flex flex-column p-3';
 
-        let title = document.createElement('h5');
-        title.className = 'card-title text-wrap'; // Add text-truncate class to make the title responsive
-        title.textContent = book.title;
+                let title = document.createElement('h5');
+                title.className = 'card-title text-wrap'; // Add text-truncate class to make the title responsive
+                title.textContent = book.title;
 
-        let price = document.createElement('p');
-        price.className = 'card-text text-wrap';
-        price.textContent = '$' + book.price;
+                let price = document.createElement('p');
+                price.className = 'card-text text-wrap';
+                price.textContent = '$' + book.price;
 
-        // let button = document.createElement('button');
-        // button.className = 'btn btn-primary mt-auto invisible'; // Add to Cart button at the bottom
-        // button.style.color = 'white'; // Set the text color to white
-        // button.textContent = 'Add to Cart';
-        let author = document.createElement('p');
-        author.className = 'card-text';
-        author.textContent = 'by ' + book.author;
+                let author = document.createElement('p');
+                author.className = 'card-text';
+                author.textContent = 'by ' + book.author;
 
-        cardBody.appendChild(title);
-        cardBody.appendChild(author);
-        cardBody.appendChild(price);
+                cardBody.appendChild(title);
+                cardBody.appendChild(author);
+                cardBody.appendChild(price);
 
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        row.appendChild(card);
+                card.appendChild(img);
+                card.appendChild(cardBody);
+                row.appendChild(card);
 
-        // Add hover effects
-        card.onmouseover = function() {
-            this.style.border = '1px solid'; // Add a border when hovered over
-        };
-        card.onmouseout = function() {
-            this.style.border = 'none'; // Remove the border when not hovered over
-        };
-        card.onclick = function() {
-            console.log('book clicked');
-            console.log(book.SK.slice(5));
-            localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5)}`);
-            console.log(localStorage.getItem('productURL'));
-            window.location.href = 'product.html';
-        };
-    });
+                // Add hover effects
+                card.onmouseover = function() {
+                    this.style.border = '1px solid'; // Add a border when hovered over
+                };
+                card.onmouseout = function() {
+                    this.style.border = 'none'; // Remove the border when not hovered over
+                };
+                card.onclick = function() {
+                    console.log('book clicked');
+                    console.log(book.SK.slice(5));
+                    localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${book.SK.slice(5)}`);
+                    console.log(localStorage.getItem('productURL'));
+                    window.location.href = 'product.html';
+                };
+            });
+        }
 }
 
 
