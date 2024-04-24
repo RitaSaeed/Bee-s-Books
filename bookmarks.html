@@ -261,6 +261,10 @@ fetch(endpoint)
     function generateProducts(favsData) {
         const product_url = `https://main.dva0ia48yehl5.amplifyapp.com/product.html`;
         console.log(favsData);
+        if (favsData.favorites.length === 0) {
+            document.getElementById('fav-items-group').innerHTML = `<h1 id='bookmarkStatus'>No books saved for later.</h1>`;
+            return;
+        }
         favsData.favorites.forEach(book => {
             var book_isbn = book.SK.substring(5);
             populateGroup(book, favsData, product_url, book_isbn);

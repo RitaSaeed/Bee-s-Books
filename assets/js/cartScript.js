@@ -112,6 +112,7 @@ function clearCart() {
     .then(response => response.json()).then((data) => {
         document.getElementById('cart-items-group').innerHTML = "";
         document.getElementById('subtotalID').innerHTML = "$0";
+        document.getElementById('cart-items-group').innerHTML = `<h1 id='cartStatus'>Cart is empty.</h1>`;
     });
 }
 

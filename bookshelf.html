@@ -260,6 +260,10 @@ fetch(endpoint)
     }
     function generateProducts(shelfData) {
         // console.log(favsData);
+        if (shelfData.Items.length === 0) {
+            document.getElementById('bookshelf-items-group').innerHTML = `<h1 id='bookshelfStatus'>You haven't purchased any books yet!</h1>`;
+            return;
+        }
         shelfData.Items.forEach(book => {
             populateGroup(book);
         });
