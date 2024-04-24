@@ -341,14 +341,18 @@
          let orders;
             window.onload = async function () {
                 populateAccountPage();
+                
                 orders = await getUserOrders();
+                console.log(orders);
+
                 orders = orders.map(order => ({
                     OrderID: order.SK.S,
                     PlacedAt: order.DateTime.S,
                     Total: order.name,
-                    Items: order.Products.L.map(product => product.S).join(', '),
+                    Items: order.Products.L.map(product => product.M?.Title?.S).join(', '),
                     Status: order.OrderState.S
                 }));
+                console.log(orders);
                 let ordertable = new Tabulator("#orderTableContainer", {
                     height: "300px",
                     data: orders,
