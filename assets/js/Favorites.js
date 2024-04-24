@@ -1,7 +1,7 @@
 function checkAndAddFavorite(bookIsbn){
         const user = getValueFromJWT('access_token', 'username');
         if(user == null){
-            window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+                window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
         }
         const endpoint = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/userFavorites?username=' + user;
         // Fetch user's favorites
