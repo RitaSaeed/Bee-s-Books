@@ -1,6 +1,7 @@
 let username = getValueFromJWT('access_token', 'username');
 let eventData = JSON.stringify({"payload": {"Key": {"userID": username}}});
 let isOrderProcessing = false;
+let cartFilled = true;
 
 function populateCartPage() {
     const user = getValueFromJWT('access_token', 'username');
@@ -20,11 +21,13 @@ function populateCartPage() {
         }
 
         let products = data["body"]["products"];
+        console.log(products);
 
-        if (products === undefined) {
+        if (!products || products.length === 0) {
             document.getElementById("cart-spinner").style.display = "none";
             document.getElementById('cart-items-group').innerHTML = `<h1 id='cartStatus'>Cart is empty.</h1>`;
             console.log("Cart empty");
+            cartFilled = false;
             return;
         }
 
@@ -69,6 +72,10 @@ function calcSubtotal() {
 // 
 
 function placeOrder() {
+    if (!cartFilled) {
+        spawnAlert('empty-alert-placeholder','Cart is empty.','primary');
+        return;
+    }
     if (isOrderProcessing) {
         return;
     }
