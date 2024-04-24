@@ -20,7 +20,7 @@ const idToken = getCookie("id_token");
                                                 addBook(addFormData);
                                             });
 
-                                            document.getElementById('submit-delete').addEventListener('click' function (event) {
+                                            document.getElementById('submit-delete').addEventListener('click', function (event) {
                                                 console.log("Submit-delete clicked.");
                                                 const deleteForm = document.getElementById('product-form-edit');
                                                 const deleteFormData = new FormData(deleteForm);
