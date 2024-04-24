@@ -156,25 +156,21 @@ function populateGroup(book, productPageURL, isbn) {
                             </div>
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5" style="padding: 0px;">
-                            <div class="row" style="height: 50%; width: 100%; margin: 0px;">
+                            <div class="row" style="height: 50%; width: 180%; margin: 0px;">
                                 <div class="col" style="width: 100%;">
                                     <h5 style="width: 100%;">${book.data.title || 'Unknown'}</h5>
                                     <h5 style="width: 100%;">${book.data.author || 'Unknown'}</h5>
                                 </div>
-                            </div>
-                            <div class="row d-lg-flex align-items-lg-end" style="height: 50%; width: 100%; margin: 0px;">
-                                <div class="col" style="width: 100%;">
-                                    <h5 class="d-lg-flex align-items-lg-end" style="width: 100%;">\$${book.data.price || '0'}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-auto col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                            <div class="col-auto col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                             <div class="row" style="height: 25%;">
-                                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center"><button class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" onclick="checkAndAddFavorite('${book.data.SK}')" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 5px;"><i class="fas fa-heart d-lg-flex justify-content-lg-center align-items-lg-center" style="color: var(--bs-emphasis-color);width: 10px;"></i></button><button id="${book.data.SK}" value="${book.data.SK}" onclick="removeSpecific('${book.data.SK}')" class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 0px;"><span style="color: white;"><strong>X</strong></span></button></div>
+                                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center"><button class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" onclick="checkAndAddFavorite('${book.data.SK}')" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 5px;"><i class="fas fa-heart d-lg-flex justify-content-lg-center align-items-lg-center" style="color: var(--bs-emphasis-color);width: 10px;"></i></button><button id="${book.data.SK}" value="${book.data.SK}" onclick="removeSpecific('${book.data.SK}')" class="btn btn-primary btn-sm d-lg-flex justify-content-center align-items-center align-content-center justify-content-lg-center align-items-lg-center pull-right" type="button" style="padding: 10px;height: 35px;width: 35px;margin-bottom: 10px;margin-top: 10px;margin-right: 0px;"><i class="fa fa-remove" style="color: #FFFFFF;"></i></button></div>
                             </div>
                             <div class="row d-lg-flex justify-content-lg-center align-items-lg-end" style="height: 75%;">
-                                
+                        </div>
+                            <div class="row d-lg-flex align-items-lg-end" style="height: 50%; width: 100%; margin: 0px;">
+                                <div class="col" style="width: 100%;">
+                                    <h5 class="d-lg-flex justify-content-lg-center align-items-lg-end" style="width: 100%;">\$${book.data.price || '0'}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
