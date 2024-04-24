@@ -344,7 +344,7 @@
                 
                 orders = await getUserOrders();
                 console.log(orders);
-
+                
                 orders = orders.map(order => ({
                     OrderID: order.SK.S,
                     PlacedAt: order.DateTime.S,
