@@ -20,6 +20,16 @@ const idToken = getCookie("id_token");
                                                 addBook(addFormData);
                                             });
 
+                                            document.getElementById('submit-delete').addEventListener('click' function (event) {
+                                                console.log("Submit-delete clicked.");
+                                                const deleteForm = document.getElementById('product-form-edit');
+                                                const deleteFormData = new FormData(deleteForm);
+                                                console.log(deleteFormData);
+                                                addBook(deleteFormData);
+                                            });
+
+
+
                                             // updates book information from admin dashboard
                                             function alterBook(formData) {
                                                 console.log('Form submitted!');
@@ -103,3 +113,36 @@ const idToken = getCookie("id_token");
                                                         console.error(error);
                                                     });
                                             }
+
+                                            function deleteBook(formData) {
+                                                console.log('Form submitted!');
+
+                                                const url = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/AdminMethods';
+                                                console.log(formData);
+                                                let inputData = {
+                                                    "genrepk": formData.get("PK"),
+                                                    "isbnsk": formData.get("SK"),
+                                                }
+                                                inputData = JSON.stringify(inputData);
+                                                fetch(url, {
+                                                    method: 'DELETE', // or 'POST', 'PUT', etc.
+                                                    headers: headers,
+                                                    body: inputData,
+                                                })
+                                                    .then(response => {
+                                                        if (response.ok) {
+                                                            // Handle successful response
+                                                            return response.json();
+                                                        } else {
+                                                            // Handle error response
+                                                            throw new Error(`Error: ${response.status} ${response.statusText}`);
+                                                        }
+                                                    })
+                                                    .then(data => {
+                                                        console.log('Book deleted successfully');
+                                                        console.log('Response data:', data);
+                                                    })
+                                                    .catch(error => {
+                                                        console.error(error);
+                                                    });
+                                                }
