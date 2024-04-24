@@ -25,14 +25,14 @@ const idToken = getCookie("id_token");
                                                 const deleteForm = document.getElementById('product-form-edit');
                                                 const deleteFormData = new FormData(deleteForm);
                                                 console.log(deleteFormData);
-                                                addBook(deleteFormData);
+                                                deleteBook(deleteFormData);
                                             });
 
 
 
                                             // updates book information from admin dashboard
                                             function alterBook(formData) {
-                                                console.log('Form submitted!');
+                                                console.log('Edit form submitted!');
 
                                                 const url = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/AdminMethods';
                                                 console.log(formData);
@@ -74,7 +74,7 @@ const idToken = getCookie("id_token");
 
                                             // adds a new book using form on admin dashboard
                                             function addBook(addFormData) {
-                                                console.log('Form submitted!');
+                                                console.log('Add form submitted!');
 
                                                 const url = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/AdminMethods';
                                                 console.log(addFormData);
@@ -114,14 +114,14 @@ const idToken = getCookie("id_token");
                                                     });
                                             }
 
-                                            function deleteBook(formData) {
-                                                console.log('Form submitted!');
+                                            function deleteBook(deleteFormData) {
+                                                console.log('Delete form submitted!');
 
                                                 const url = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/AdminMethods';
-                                                console.log(formData);
+                                                console.log(deleteFormData);
                                                 let inputData = {
-                                                    "genrepk": formData.get("PK"),
-                                                    "isbnsk": formData.get("SK"),
+                                                    "genrepk": deleteFormData.get("PK"),
+                                                    "isbnsk": deleteFormData.get("SK"),
                                                 }
                                                 inputData = JSON.stringify(inputData);
                                                 fetch(url, {
