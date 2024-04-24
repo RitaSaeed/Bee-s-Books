@@ -21,7 +21,8 @@ function populateCartPage() {
         let products = data["body"]["products"];
 
         if (products === undefined) {
-            document.getElementById('cart-items-group').innerHTML = "<h1 id='cartStatus'>Cart is empty.</h1>";
+            document.getElementById("cart-spinner").style.display = "none";
+            document.getElementById('cart-items-group').innerHTML = `<h1 id='cartStatus'>Cart is empty.</h1>`;
             console.log("Cart empty");
             return;
         }
@@ -53,12 +54,13 @@ function calcSubtotal() {
 }
 
 function placeOrder() {
+    document.getElementById('cart-items-group').innerHTML = "";
+    document.getElementById("cart-spinner").style.display = "";
     fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
         method: 'PUT',
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
-        document.getElementById('cart-items-group').innerHTML = "";
         document.getElementById('subtotalID').innerHTML = "$0";
         document.getElementById('totalID').innerHTML = "$0";
         window.location.href = '/order-confirmation.html';
