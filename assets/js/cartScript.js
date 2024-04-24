@@ -1,5 +1,6 @@
 let username = getValueFromJWT('access_token', 'username');
 let eventData = JSON.stringify({"payload": {"Key": {"userID": username}}});
+let isOrderProcessing = false;
 
 function populateCartPage() {
     const user = getValueFromJWT('access_token', 'username');
@@ -53,9 +54,31 @@ function calcSubtotal() {
     });
 }
 
+// function placeOrder() {
+//     document.getElementById('cart-items-group').innerHTML = "";
+//     document.getElementById("cart-spinner").style.display = "";
+//     fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
+//         method: 'PUT',
+//         body: eventData,
+//         headers: {"Content-Type": "application/json"}})
+//     .then(response => response.json()).then((data) => {
+//         document.getElementById('subtotalID').innerHTML = "$0";
+//         document.getElementById('totalID').innerHTML = "$0";
+//         window.location.href = '/order-confirmation.html';
+//     });
+// 
+
 function placeOrder() {
+    if (isOrderProcessing) {
+        return;
+    }
+    
+    isOrderProcessing = true;
+    
     document.getElementById('cart-items-group').innerHTML = "";
+    document.getElementById("place-order").disabled = true;
     document.getElementById("cart-spinner").style.display = "";
+    
     fetch("https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order", {
         method: 'PUT',
         body: eventData,
@@ -64,7 +87,14 @@ function placeOrder() {
         document.getElementById('subtotalID').innerHTML = "$0";
         document.getElementById('totalID').innerHTML = "$0";
         window.location.href = '/order-confirmation.html';
+    })
+    .finally(() => {
+        // Reset the flag and re-enable the button when the request is complete
+        isOrderProcessing = false;
+        // reenable the place-order button in case you are still on the page
+        document.getElementById('place-order').disabled = false;
     });
+    
 }
 
 function clearCart() {
