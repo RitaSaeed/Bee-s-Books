@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
 <title>Bee's Books</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Products - Brand</title>
+    <title>Bee's Books</title>
     <meta name="description" content="Online e-commerce store for books, developed by students in their senior year software engineering course at Radford University.">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
@@ -37,7 +37,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
 </head>
 
-<body style="background: #E6E6FA;">
+<body style="background:#E6E6FA;">
     <div id="promo-carousel" style="height: 35px;background: var(--bs-primary-text-emphasis);">
         <div class="carousel slide d-xxl-flex align-items-xxl-center" data-bs-ride="carousel" data-bs-interval="7500" id="carousel-1" style="height: inherit;padding: 0px 0px;padding-bottom: 0px;margin-bottom: 0px;">
             <div class="carousel-inner" style="height: inherit;position: absolute;">
@@ -212,52 +212,54 @@
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
                         </svg></a>
-                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Saved For Later</a><a class="dropdown-item" id="home-bookshelf" href="bookshelf.html">My Bookshelf</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                    <div class="dropdown-menu" style="background: var(--bs-emphasis-color);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Saved For Later</a><a class="dropdown-item" id="home-bookshelf" href="bookshelf.html">My Bookshelf</a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
-                            </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a></div>
+                            </svg></a></div>
                 </div>
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
-    <section class="py-5" style="margin-right: 2rem;margin-left: 2rem;margin-bottom: 3rem;margin-top: 1rem;background: white;">
-        <div class="row" style="width: 100%;margin: 1rem;">
-            <div class="col-3" style="border-right-width: 1px;border-right-style: solid;">
+    <section class="py-5" style="margin-right:2rem;margin-left:2rem;margin-bottom:3rem;margin-top:1rem;background:white;">
+        <div class="row" style="width:100%;margin:1rem;">
+            <div class="col-3" style="border-right-width:1px;border-right-style:solid;">
                 <header>
-                    <h5 style="margin-top: 1rem;">Filter your search:</h5>
+                    <h5 style="margin-top:1rem;">Filter your search:</h5>
                     <hr>
                 </header>
-                <form id="filter-form" style="width: 100%;">
+                <form id="filter-form" style="width:100%;">
                     <fieldset id="fic-non-field">
                         <h6>Fiction/Nonfiction</h6>
-                        <div class="form-check"><input type="radio" id="fiction-radio" class="form-check-input" name="fiction" value="Yes"><label class="form-label form-check-label" for="group1Option1">Fiction</label></div>
-                        <div class="form-check"><input type="radio" id="nonfiction-radio" class="form-check-input" name="fiction" value="No"><label class="form-label form-check-label" for="group1Option2"> Nonfiction</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="fiction-radio" name="fiction" value="Yes"><label class="form-label form-label form-check-label" for="group1Option1">Fiction</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="nonfiction-radio" name="fiction" value="No"><label class="form-label form-label form-check-label" for="group1Option2"> Nonfiction</label></div>
                         <hr>
                     </fieldset>
                     <fieldset id="genre-field">
                         <h6>Genre</h6>
-                        <div class="form-check"><input type="radio" id="action-radio" class="form-check-input" name="genre" value="Action/Adventure"><label class="form-label form-check-label" for="group2Option1"> Action/Adventure</label></div>
-                        <div class="form-check"><input type="radio" id="biography-radio" class="form-check-input" name="genre" value="Biography"><label class="form-label form-check-label" for="group2Option2">Biographies</label></div>
-                        <div class="form-check"><input type="radio" id="children-radio" class="form-check-input" name="genre" value="Children's"><label class="form-label form-check-label" for="group2Option2">Children's</label></div>
-                        <div class="form-check"><input type="radio" id="classic-radio" class="form-check-input" name="genre" value="Classics"><label class="form-label form-check-label" for="group2Option2">Classics</label></div>
-                        <div class="form-check"><input type="radio" id="contemporary-radio" class="form-check-input" name="genre" value="Contemporary"><label class="form-label form-check-label" for="group2Option2">Contemporary</label></div>
-                        <div class="form-check"><input type="radio" id="fantasy-radio" class="form-check-input" name="genre" value="Fantasy"><label class="form-label form-check-label" for="group2Option2">Fantasy</label></div>
-                        <div class="form-check"><input type="radio" id="food-radio" class="form-check-input" name="genre" value="Food and Drink"><label class="form-label form-check-label" for="group2Option2">Food and Drink</label></div>
-                        <div class="form-check"><input type="radio" id="graphic-radio" class="form-check-input" name="genre" value="Graphic Novel"><label class="form-label form-check-label" for="group2Option2">Graphic Novels</label></div>
-                        <div class="form-check"><input type="radio" id="horror-radio" class="form-check-input" name="genre" value="Horror"><label class="form-label form-check-label" for="group2Option2">Horror</label></div>
-                        <div class="form-check"><input type="radio" id="memoir-radio" class="form-check-input" name="genre" value="Memoir"><label class="form-label form-check-label" for="group2Option2">Memoirs</label></div>
-                        <div class="form-check"><input type="radio" id="mystery-radio" class="form-check-input" name="genre" value="Mystery"><label class="form-label form-check-label" for="group2Option2">Mystery</label></div>
-                        <div class="form-check"><input type="radio" id="romance-radio" class="form-check-input" name="genre" value="Romance"><label class="form-label form-check-label" for="group2Option2">Romance</label></div>
-                        <div class="form-check"><input type="radio" id="science-radio" class="form-check-input" name="genre" value="Science Fiction"><label class="form-label form-check-label" for="group2Option2">Science Fiction</label></div>
-                        <div class="form-check"><input type="radio" id="self-radio" class="form-check-input" name="genre" value="Self Help"><label class="form-label form-check-label" for="group2Option2">Self Help</label></div>
-                        <div class="form-check"><input type="radio" id="textbook-radio" class="form-check-input" name="genre" value="Textbook"><label class="form-label form-check-label" for="group2Option2">Textbooks</label></div>
-                        <div class="form-check"><input type="radio" id="true-radio" class="form-check-input" name="genre" value="True Crime"><label class="form-label form-check-label" for="group2Option2">True Crime</label></div>
-                    </fieldset><button class="btn btn-primary" id="filter-submit" type="submit" style="margin-top: 1rem;color: var(--bs-emphasis-color);" form="filter-form">Apply Filter</button><button class="btn btn-primary" id="filter-clear" style="margin-top: 1rem;color: var(--bs-emphasis-color);margin-left: 1rem;" form="filter-form" type="button">Clear Filter</button>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="action-radio" name="genre" value="Action/Adventure"><label class="form-label form-label form-check-label" for="group2Option1"> Action/Adventure</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="biography-radio" name="genre" value="Biography"><label class="form-label form-label form-check-label" for="group2Option2">Biographies</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="children-radio" name="genre" value="Children's"><label class="form-label form-label form-check-label" for="group2Option2">Children's</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="classic-radio" name="genre" value="Classics"><label class="form-label form-label form-check-label" for="group2Option2">Classics</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="contemporary-radio" name="genre" value="Contemporary"><label class="form-label form-label form-check-label" for="group2Option2">Contemporary</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="fantasy-radio" name="genre" value="Fantasy"><label class="form-label form-label form-check-label" for="group2Option2">Fantasy</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="food-radio" name="genre" value="Food and Drink"><label class="form-label form-label form-check-label" for="group2Option2">Food and Drink</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="graphic-radio" name="genre" value="Graphic Novel"><label class="form-label form-label form-check-label" for="group2Option2">Graphic Novels</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="horror-radio" name="genre" value="Horror"><label class="form-label form-label form-check-label" for="group2Option2">Horror</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="memoir-radio" name="genre" value="Memoir"><label class="form-label form-label form-check-label" for="group2Option2">Memoirs</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="mystery-radio" name="genre" value="Mystery"><label class="form-label form-label form-check-label" for="group2Option2">Mystery</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="romance-radio" name="genre" value="Romance"><label class="form-label form-label form-check-label" for="group2Option2">Romance</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="science-radio" name="genre" value="Science Fiction"><label class="form-label form-label form-check-label" for="group2Option2">Science Fiction</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="self-radio" name="genre" value="Self Help"><label class="form-label form-label form-check-label" for="group2Option2">Self Help</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="textbook-radio" name="genre" value="Textbook"><label class="form-label form-label form-check-label" for="group2Option2">Textbooks</label></div>
+                        <div class="form-check"><input type="radio" class="form-check-input" id="true-radio" name="genre" value="True Crime"><label class="form-label form-label form-check-label" for="group2Option2">True Crime</label></div>
+                    </fieldset><button class="btn btn-primary" id="filter-submit" type="submit" style="margin-top:1rem;color:var(--bs-emphasis-color);" form="filter-form">Apply Filter</button><button class="btn btn-primary" id="filter-clear" style="margin-top:1rem;color:var(--bs-emphasis-color);margin-left:1rem;" form="filter-form" type="button">Clear Filter</button>
                 </form>
             </div>
             <div class="col-9">
-                <h3 class="fw-bold text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start" id="results-heading" style="margin: 1rem;">Results for</h3><!-- Start: Results Container -->
-                <div class="container" id="results-container" style="padding-top: 1rem;padding-right: 2rem;padding-left: 2rem;padding-bottom: 2rem;">
-                    <!-- Start: Results --><script>
+                <h3 class="fw-bold text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start" id="results-heading" style="margin:1rem;">Results for</h3>
+                <div class="d-flex justify-content-center">
+                    <div id="product-list-spinner" class="spinner-border m-5" role="status"></div>
+                </div>
+                <div class="container" id="results-container" style="padding-top:1rem;padding-right:2rem;padding-left:2rem;padding-bottom:2rem;"><script>
         window.onload = function() {
             const urlSearchParams = new URLSearchParams(window.location.search);
             const genre = urlSearchParams.get('genre');
@@ -304,6 +306,7 @@
                 .then(response => response.json())
                 .then(data => {
                     generateCards(data.Items);
+                    document.getElementById("product-list-spinner").style.display = "none";
                 });
             
             
@@ -519,9 +522,9 @@
 }
 
 
-    </script><!-- End: Results -->
+    </script>
                     <div class="row" id="results-row"></div>
-                </div><!-- End: Results Container -->
+                </div>
             </div>
         </div>
     </section><!-- Start: Footer Multi Column -->

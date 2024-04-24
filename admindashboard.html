@@ -42,8 +42,8 @@
     </header>
     <div>
         <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item" role="presentation" id="tab1"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Dashboard Home</a></li>
-            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
+            <li class="nav-item" role="presentation" id="tab1"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Dashboard Home</a></li>
+            <li class="nav-item" role="presentation" id="tab2"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Products</a></li>
             <li class="nav-item" role="presentation" id="tab3"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Users</a></li>
             <li class="nav-item" role="presentation" id="tab4"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Active Promotions</a></li>
             <li class="nav-item" role="presentation" id="tab5"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-5">Orders</a></li>
@@ -51,7 +51,7 @@
             <li class="nav-item" role="presentation" id="tab7"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-7">User Carts</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" role="tabpanel" id="tab-1">
+            <div class="tab-pane active" role="tabpanel" id="tab-1">
                 <section class="py-4 py-xl-5">
                     <div class="container">
                         <div class="text-center p-4 p-lg-5">
@@ -95,10 +95,11 @@
                         <div></div>
                     </div><script>
         window.onload = function() {
-            // const user = getValueFromJWT('access_token', 'username');
-            // if(user == null){
-            //     window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
-            // }
+            // disable next few lines of code if you need to test admin dashboard locally
+            const user = getValueFromJWT('access_token', 'username');
+            if(user == null){
+                window.location.href = "https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F";
+            }
             const apiUrl = "https://y5b2vf326i.execute-api.us-east-1.amazonaws.com/Testing/Order?username=ORDERMETRICS&orderNum=ORDERMETRICS";
             console.log(apiUrl);
 
@@ -251,7 +252,7 @@
     </script>
                 </section>
             </div>
-            <div class="tab-pane active" role="tabpanel" id="tab-2">
+            <div class="tab-pane" role="tabpanel" id="tab-2">
                 <div class="container text-end" style="padding-top:1rem;">
                     <div class="container"><button class="btn btn-primary circle-button" id="add-product" type="button" data-bs-toggle="modal" data-bs-target="#add-product-modal" style="margin-right: 40px;font-size: 20px;background: linear-gradient(black, var(--bs-primary-text-emphasis));"><svg class="bi bi-plus-lg" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#ffffff" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path></svg></button>
                         <div class="modal fade" role="dialog" tabindex="-1" id="add-product-modal" aria-labelledby="add-product-modal" aria-hidden="true">

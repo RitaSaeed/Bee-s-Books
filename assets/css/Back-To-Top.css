@@ -111,3 +111,7 @@ body {
   color: black !important;
 }
 
+.nav {
+  --bs-body-bg: var(--bs-primary-text-emphasis);
+}
+
