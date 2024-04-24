@@ -22,11 +22,12 @@
     <link rel="stylesheet" href="assets/css/Roboto.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Back-To-Top.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form-.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/Back-To-Top.css">
-    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
     <link rel="stylesheet" href="assets/css/Card-with-slide-up-text-effect.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-icons.css">
@@ -363,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="row">
                             <div class="col"><button class="btn btn-primary btn-lg" id="product-to-cart" style="margin-right:0px;font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;" onclick="addProductToCart()">Add to Cart</button><button class="btn btn-primary" id="product-for-later" style="font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;margin-left:1rem;">Save for Later</button></div>
                         </div>
+                        <div id="product-alert-placeholder" style="margin: 1rem;"></div>
                     </div>
                 </div>
             </div>
@@ -448,12 +450,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(userFavorites.favorites[i].SK.substring(5));
                 if (userFavorites.favorites[i].SK.substring(5) === bookIsbn) {
                     console.log("Book is already in favorites.");
+                    spawnAlert('product-alert-placeholder','Book is already in your favorites.','primary');
                     found = true; // Set found to true if the book is found in favorites
                     break;
                 }
             }
             if (!found) { // If the book is not found in favorites, add it
                 console.log("New favorite");
+                spawnAlert('product-alert-placeholder','Added to favorites!','primary');
                 addFavorite(bookIsbn);
             }
         })
@@ -492,7 +496,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(responseData => {
             //handle response from lambda function
             console.log('Favorites updated successfully', responseData);
-            showNotification("Favorite has been added!")
+            //showNotification("Favorite has been added!")
         })
         .catch(error => {
             //handle fetch errors
@@ -589,6 +593,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="assets/js/productPageIntegration.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/Alerts.js"></script>
     <script src="assets/js/Favorites.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>

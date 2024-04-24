@@ -21,11 +21,14 @@
     <link rel="stylesheet" href="assets/css/Raleway.css">
     <link rel="stylesheet" href="assets/css/Roboto.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Back-To-Top.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-Payment-Form-.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/Back-To-Top.css">
-    <link rel="stylesheet" href="assets/css/Bootstrap-DataTables.css">
     <link rel="stylesheet" href="assets/css/Card-with-slide-up-text-effect.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-icons.css">
@@ -226,7 +229,7 @@
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                 <div class="card-group" id="cart-items-group"></div>
             </div>
-            <div class="col">
+            <div class="col-lg-4 col-xl-4 col-xxl-4">
                 <div class="card" style="height: auto;border-width: 2px;border-style: solid;border-radius: 10px;">
                     <div class="card-body">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" style="padding-bottom: 0px;padding-top: 0px;padding-right: 12px;padding-left: 12px;background: rgb(255, 255, 255);">
@@ -240,14 +243,14 @@
                                 <div class="col-6">
                                     <p>Promo Code:</p>
                                 </div>
-                                <div class="col-6"><input type="text" id="promo-code" style="width: 100%;"></div>
+                                <div class="col-6"><input type="text" id="promo-code" style="width: 100%;border-radius: 10px;border-width: 1px;border-color: var(--bs-primary-bg-subtle);"></div>
                             </div>
                             <div class="row" style="border-bottom-color: var(--bs-success-text-emphasis);">
                                 <div class="col-7">
                                     <p>Discounts Applied:&nbsp;</p>
                                 </div>
                                 <div class="col">
-                                    <p>#######</p>
+                                    <p>$0.00</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -260,18 +263,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Estimated Shipping:</p>
-                                </div>
-                                <div class="col">
-                                    <p>#######</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-7">
                                     <p>Estimated Tax:&nbsp;</p>
                                 </div>
                                 <div class="col">
-                                    <p>#######</p>
+                                    <p>$0.00</p>
                                 </div>
                             </div>
                             <hr>
@@ -280,7 +275,41 @@
                                     <p>Order Total:</p>
                                 </div>
                                 <div class="col">
-                                    <p>#######</p>
+                                    <p id="totalID">#######</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Start: Bootstrap Payment Form -->
+                                    <div class="row .payment-dialog-row">
+                                        <div class="col-12 offset-md-4" style="margin-left: 0px;height: auto;">
+                                            <div class="card credit-card-box" style="height: auto;">
+                                                <div class="card-header">
+                                                    <h3><span class="panel-title-text">Payment Details </span><img class="img-fluid panel-title-image" src="assets/img/accepted_cards.png"></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form id="payment-form" style="width: auto;">
+                                                        <div class="row">
+                                                            <div class="col-12" style="width: auto;">
+                                                                <div class="form-group mb-3"><label class="form-label" for="cardNumber">Card Number </label>
+                                                                    <div class="input-group"><input class="form-control" type="tel" id="cardNumber" required="" placeholder="Valid Card Number" style="background: var(--bs-emphasis-color);"><span class="input-group-text"><i class="fa fa-credit-card"></i></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="width: auto;">
+                                                            <div class="col-7 col-sm-7">
+                                                                <div class="form-group mb-3"><label class="form-label" for="cardExpiry"><span></span><span>EXP </span> date</label><input class="form-control" type="tel" id="cardExpiry" required="" placeholder="MM / YY" style="background: var(--bs-emphasis-color);"></div>
+                                                            </div>
+                                                            <div class="col-5 pull-right">
+                                                                <div class="form-group mb-3"><label class="form-label" for="cardCVC">CV Code</label><input class="form-control" type="tel" id="cardCVC" required="" placeholder="CVC" style="background: var(--bs-emphasis-color);"></div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End: Bootstrap Payment Form -->
                                 </div>
                             </div>
                             <div class="row">
@@ -472,6 +501,7 @@
     <script src="assets/js/cartScript.js"></script>
     <script src="assets/js/viewProductModal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/Alerts.js"></script>
     <script src="assets/js/Favorites.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>

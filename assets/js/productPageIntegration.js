@@ -2,9 +2,10 @@ let username = getValueFromJWT('access_token', 'username');
 
 function addProductToCart() {
     const apiUrl = localStorage.getItem('productURL');
-
+    
     fetch(apiUrl).then(response => {
         if (!response.ok) {
+            spawnAlert('product-alert-placeholder','Issue adding to cart.','danger');
             throw new Error('HTTP error! Status: ${response.status}');
         }
 
@@ -28,5 +29,6 @@ function addProductToCart() {
             body: eventData,
             headers: {"Content-Type": "application/json"}
         });
+        spawnAlert('product-alert-placeholder','Added to cart!','primary','Go to cart.','/shopping-cart.html');
     });
 }
