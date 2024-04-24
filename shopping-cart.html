@@ -70,6 +70,9 @@
                 logoutLink.style.display = 'inline-block';
                 
         }
+        // initializes tooltips for every page
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     });
     window.addEventListener('load', async function() {
        const isAdmin = await checkAdminStatus();
@@ -116,10 +119,10 @@
                                         <!-- Start: Fictional? -->
                                         <div class="col-3 text-end">
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?fiction=Yes">Fiction</a></div>
+                                                <div class="col"><a href="product-list.html?fiction=Yes" onclick="handleGenreClick()">Fiction</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?fiction=No">Non-Fiction</a></div>
+                                                <div class="col"><a href="product-list.html?fiction=No" onclick="handleGenreClick()">Non-Fiction</a></div>
                                             </div>
                                         </div><!-- End: Fictional? -->
                                         <!-- Start: Vertical Rule -->
@@ -129,55 +132,55 @@
                                         <!-- Start: Genres -->
                                         <div class="col-4">
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Action%2FAdventure">Action/Adventure</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Action%2FAdventure" onclick="handleGenreClick()">Action/Adventure</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Biography">Biographies</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Biography" onclick="handleGenreClick()">Biographies</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Children's">Children's</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Children's" onclick="handleGenreClick()">Children's</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Classics">Classics</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Classics" onclick="handleGenreClick()">Classics</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Contemporary">Contemporary</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Contemporary" onclick="handleGenreClick()">Contemporary</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Fantasy">Fantasy</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Fantasy" onclick="handleGenreClick()">Fantasy</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Food%20and%20Drink">Food and Drink</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Food%20and%20Drink" onclick="handleGenreClick()">Food and Drink</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Graphic%20Novels">Graphic Novels</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Graphic%20Novels" onclick="handleGenreClick()">Graphic Novels</a></div>
                                             </div>
                                         </div><!-- End: Genres -->
                                         <!-- Start: Genres2 -->
                                         <div class="col-4">
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Horror">Horror</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Horror" onclick="handleGenreClick()">Horror</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Memoir">Memoirs</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Memoir" onclick="handleGenreClick()">Memoirs</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Mystery">Mystery</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Mystery" onclick="handleGenreClick()">Mystery</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Romance">Romance</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Romance" onclick="handleGenreClick()">Romance</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Science%20Fiction">Science Fiction</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Science%20Fiction" onclick="handleGenreClick()">Science Fiction</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Self%20Help">Self Help</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Self%20Help" onclick="handleGenreClick()">Self Help</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=Textbook">Textbooks</a></div>
+                                                <div class="col"><a href="product-list.html?genre=Textbook" onclick="handleGenreClick()">Textbooks</a></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col"><a href="product-list.html?genre=True%20Crime">True Crime</a></div>
+                                                <div class="col"><a href="product-list.html?genre=True%20Crime" onclick="handleGenreClick()">True Crime</a></div>
                                             </div>
                                         </div><!-- End: Genres2 -->
                                     </div>
@@ -201,7 +204,7 @@
             //     });
     }
     function handleGenreClick() {
-        
+        localStorage.removeItem('uInput');
     }
 </script></div><!-- End: User Search -->
                         </form>
@@ -211,7 +214,7 @@
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
                         </svg></a>
-                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Saved For Later</a><a class="dropdown-item" href="#bookshelf">My Bookshelf</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
+                    <div class="dropdown-menu" style="background: var(--bs-primary-bg-subtle);"><a class="dropdown-item" id="home-user-1" href="https://beesbooks.auth.us-east-1.amazoncognito.com/oauth2/authorize?client_id=6fn54hfl5sql09gnvtsvcerg7n&amp;response_type=code&amp;scope=email+openid+phone&amp;redirect_uri=https%3A%2F%2Fmain.dva0ia48yehl5.amplifyapp.com%2F">Sign Up/Login</a><a class="dropdown-item" id="home-bookmarks-1" href="bookmarks.html">Saved For Later</a><a class="dropdown-item" id="home-bookshelf" href="bookshelf.html">My Bookshelf</a><a class="dropdown-item" id="home-cart-1" href="shopping-cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart4 focus-ring ms-auto" style="width: 35px;height: 35px;transform: scaleX(-1);padding-left: 0px;color: #432E36;position: static;" href="shopping-cart.html">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
                             </svg></a><a class="dropdown-item" id="logout-link" style="display:none;" href="#" onclick="logoutClicked()">Logout</a><a class="dropdown-item" id="admin-link" style="display:none;" href="https://main.dva0ia48yehl5.amplifyapp.com/admindashboard.html">Admin Dashboard</a></div>
                 </div>
@@ -467,9 +470,9 @@
                 <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
                     <h3 class="fs-6 fw-bold">Orders</h3>
                     <ul class="list-unstyled">
-                        <li><a id="order-tracking" href="#">Tracking</a></li>
-                        <li><a id="order-status" href="#">Status</a></li>
-                        <li><a id="order-history" href="#">History</a></li>
+                        <li><a id="order-tracking" href="#" data-bs-toggle="tooltip" data-bs-title="&quot;Not yet available&quot;">Tracking</a></li>
+                        <li><a id="order-status" href="#" data-bs-toggle="tooltip" data-bs-title="&quot;Not yet available&quot;">Status</a></li>
+                        <li><a id="order-history" href="#" data-bs-toggle="tooltip" data-bs-title="&quot;Not yet available&quot;">History</a></li>
                     </ul>
                 </div><!-- End: Orders -->
                 <!-- Start: Customer Support -->
@@ -477,14 +480,14 @@
                     <h3 class="fs-6 fw-bold">Customer Support</h3>
                     <ul class="list-unstyled">
                         <li><a id="footer-contact-link" href="contact.html">Contact Us</a></li>
-                        <li><a id="footer-support-forum" href="#">Support Forum</a></li>
-                        <li><a id="footer-refunds" href="#">Refunds/Exchanges</a></li>
+                        <li><a id="footer-support-forum" href="#" data-bs-toggle="tooltip" data-bs-title="&quot;Not yet available&quot;">Support Forum</a></li>
+                        <li><a id="footer-refunds" href="#" data-bs-toggle="tooltip" data-bs-title="&quot;Not yet available&quot;">Refunds/Exchanges</a></li>
                     </ul>
                 </div><!-- End: Customer Support -->
             </div>
             <hr>
             <div class="text-muted d-flex justify-content-between align-items-center pt-3">
-                <p class="mb-0">Copyright © 2023 Bee's Books</p><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
+                <p class="mb-0">Copyright © 2023 Bee's Books</p><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="width: 40px;height: 40px;background: #7C83BC;" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 25px;height: 25px;">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M17.9513 15.571C17.7695 17.2187 16.9205 18.6654 15.6805 19.635C15.332 20.4692 14.7092 21.1601 13.9247 21.5951C13.7025 22.4574 12.9196 23.0944 11.9879 23.0944C11.0562 23.0944 10.2733 22.4574 10.0511 21.5951C9.26672 21.1602 8.64392 20.4693 8.29547 19.6353C7.05955 18.6691 6.21203 17.229 6.02621 15.5883C4.93527 16.4161 3.37955 16.4118 2.28618 15.4944C1.01696 14.4294 0.851409 12.5371 1.91641 11.2679L6.00966 6.38975C6.27125 3.31753 8.84785 0.905579 11.9878 0.905579C15.1166 0.905579 17.6861 3.30046 17.9631 6.35711L22.0837 11.2679C23.1487 12.5371 22.9831 14.4294 21.7139 15.4944C20.613 16.4182 19.0433 16.4161 17.9513 15.571ZM15.6254 12.9056L13.9472 10.9056H10.0529L8.37467 12.9056H15.6254ZM17.9878 12.6095L19.0195 13.839C19.3745 14.2621 20.0053 14.3173 20.4283 13.9623C20.8514 13.6073 20.9066 12.9765 20.5516 12.5535L17.9878 9.49803V12.6095ZM15.9878 8.90558V6.90558C15.9878 4.69644 14.1969 2.90558 11.9878 2.90558C9.77865 2.90558 7.98779 4.69644 7.98779 6.90558V8.90558H15.9878ZM4.98059 13.839L5.98779 12.6387V9.52726L3.4485 12.5535C3.0935 12.9765 3.14869 13.6073 3.57176 13.9623C3.99483 14.3173 4.62559 14.2621 4.98059 13.839ZM11.9878 18.9056C9.77865 18.9056 7.98779 17.1147 7.98779 14.9056H15.9878C15.9878 17.1147 14.1969 18.9056 11.9878 18.9056Z" fill="currentColor"></path>
                     </svg></span>
             </div>
