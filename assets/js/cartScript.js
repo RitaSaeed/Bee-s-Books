@@ -52,8 +52,6 @@ function placeOrder() {
         body: eventData,
         headers: {"Content-Type": "application/json"}})
     .then(response => response.json()).then((data) => {
-        console.log(data);
-        console.log(response.json());
         document.getElementById('cart-items-group').innerHTML = "";
         document.getElementById('subtotalID').innerHTML = "$0";
     });
