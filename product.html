@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="assets/css/Responsive-Product-Slider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/menu-collapse-ultimate.css">
+    <link rel="stylesheet" href="assets/css/Hero-Clean-images.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/css/tabulator.min.css" integrity="sha512-lYViaxM+7FHlHtQbmis/zPPWu+U+7AedEpiI1Jge4bhou50w1PxIokRz26zX4D3Jb9bEnaN9+mwDnjMKwFxqsg==" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.0.1/js/tabulator.min.js" integrity="sha512-G8zWCXA5j7VW/AF0D8Fl1/U5SXVRvTW2KBd0ykbziOocVu7yITccB+iV47uIROE1GXXbxL3dLPn8iqSF3KQLiQ==" crossorigin="anonymous"></script>
 </head>
@@ -323,8 +324,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .then(response => {
                         if (response.ok) {
+                            spawnAlert('product-alert-placeholder', 'Review placed!', 'primary');
                             return response.json();
                         } else {
+                            spawnAlert('product-alert-placeholder', 'Error placing review.', 'danger');
                             throw new Error(`Error: ${response.status} ${response.statusText}`);
                         }
                     })
@@ -365,11 +368,122 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p id="book-rating"><strong>Rating:&nbsp;</strong></p>
                         <p id="book-price"><strong>Price:&nbsp;</strong></p>
                         <div class="row">
-                            <div class="col"><button class="btn btn-primary btn-lg" id="product-to-cart" style="margin-right:0px;font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;" onclick="addProductToCart()">Add to Cart</button><button class="btn btn-primary" id="product-for-later" style="font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;margin-left:1rem;">Save for Later</button></div>
+                            <div class="col"><button class="btn btn-primary btn-lg disabled" id="product-to-cart" style="margin-right:0px;font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;" onclick="addProductToCart()" disabled="">Add to Cart</button><button class="btn btn-primary disabled" id="product-for-later" style="font-size:12.7px;width:154.6px;height:44.4px;font-weight:bold;color:#ffffff;margin-left:1rem;" disabled="">Save for Later</button></div>
                         </div>
                         <div id="product-alert-placeholder" style="margin: 1rem;"></div>
                     </div>
-                </div>
+                </div><!-- Start: Suggestions -->
+                <div style="margin: 2rem;padding: 1rem;">
+                    <h3 id="genre-rec" style="font-family: 'Libre Franklin';margin-right: 1rem;margin-left: 1rem;margin-bottom: 1rem;margin-top: 1rem;">Other books in the "" category:</h3>
+                    <hr style="width: 90%;margin: auto;"><!-- Start: SuggestionCarousel -->
+                    <div class="slick-carousel" style="margin: 3rem;height: 16rem;">
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-1" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-2" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-3" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-4" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-5" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-6" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-7" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-8" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-9" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-10" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-11" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-12" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-13" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-14" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 10rem;height: 15rem;">
+                            <div class="col d-flex align-items-end" style="width: 10rem;height: 15rem;margin: auto;">
+                                <div class="card mt-auto" style="height: auto;">
+                                    <div class="card-body flex-grow-1" style="padding: 0px;"><img id="img-15" src="assets/img/placeholder-book.gif" style="width:100%;height:100%;objectFit:contain;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End: SuggestionCarousel -->
+                </div><!-- End: Suggestions -->
             </div>
         </div>
     </div>
@@ -410,16 +524,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 document.getElementById('book-image').src =
                    data["Items"][0]["img"];
-                //console.log(JSON.parse(data["Item"]["reviews"])[1])
-                // document.getElementById('book-review-two').textContent =
-                //     JSON.parse(data["Item"]["reviews"])[1];
-                // document.getElementById('book-review-three').textContent =
-                //     data["Item"]["reviews"][2];
-                // document.getElementById("product-for-later").onclick = function(){
-                //     console.log("clicked");
-                //     const isbn = bookIsbn.substring(5);
-                //     checkAndAddFavorite(isbn);
-                // }
+
+                document.getElementById('product-to-cart').classList.remove('disabled');
+                document.getElementById('product-for-later').classList.remove('disabled');
+                document.getElementById('product-to-cart').disabled = false;
+                document.getElementById('product-for-later').disabled = false;
+                
+                randomDynamic(data["Items"][0]["PK"].slice(6));
+                let tempGenre = data["Items"][0]["PK"].slice(6);
+                document.getElementById('genre-rec').textContent = 'Other books in the "' + tempGenre + '" category:';
             })
             .catch(error => {
                 console.error('Fetch error:', error);
@@ -516,6 +629,92 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000); // Remove the notification after 3 seconds
         location.reload();
 }
+    
+    function randomDynamic(genre){
+            
+        const apiUrlGenre = 'https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?batchNum=15&genre=' + genre;
+                
+            fetch(apiUrlGenre)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error! Status: ${response.status}');
+                }
+                return response.json();
+            })
+            .then(data => {
+                for(let i = 1; i < data["Items"].length+1; i++) {
+                    // console.log("img-"+i);
+                    if (data["Items"][i-1].hasOwnProperty("img")) {
+                        document.getElementById("img-"+i).src = data["Items"][i-1]["img"];
+                        document.getElementById("img-"+i).onclick = function(){
+                                console.log("clicked");
+                               localStorage.setItem('productURL', `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${data["Items"][i-1]["SK"].slice(5, 15)}`); 
+                                console.log(localStorage.getItem('productURL'));
+                                window.location.href = 'product.html';
+                            };
+                    }
+                }
+                console.log("Picture loading done.")
+            })
+            .catch(error => {
+                console.error('Fetch error:',error);
+            });
+            
+            $('.slick-carousel').slick({
+                  dots: true,
+                  infinite: true,
+                  speed: 300,
+                  slidesToShow: 6,
+                  slidesToScroll: 6,
+                  responsive: [
+                    {
+                      breakpoint: 1400,
+                      settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        infinite: true,
+                        dots: true
+                      }
+                    },
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: true,
+                        dots: true
+                      }
+                    },
+                    {
+                      breakpoint: 992,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: false
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: false
+                      }
+                    },
+                    {
+                      breakpoint: 576,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false
+                      }
+                    },
+                  ]
+                });
+        }
         
     </script></div>
     <footer id="bb-footer" class="bg-primary-gradient">
@@ -587,6 +786,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/bold-and-bright.js"></script>
     <script src="assets/js/cookie.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/datatables.min.js"></script>
