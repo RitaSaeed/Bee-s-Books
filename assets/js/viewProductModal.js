@@ -4,7 +4,7 @@ $(document).ready(function() {
         var firstColumnText = $(this).find('td:first').text();
 
         // Pass the text to the modal
-        $('#view-product-modal .modal-header').text(firstColumnText);
+        //$('#view-product-modal .modal-header').text(firstColumnText);
         
         const apiUrl = `https://psiceqjjgb.execute-api.us-east-1.amazonaws.com/BB_prod/getBooks?isbn=${firstColumnText.slice(5, 15)}`;
             console.log(apiUrl);
